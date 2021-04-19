@@ -13,9 +13,15 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Identity.Web;
 using Microsoft.IdentityModel.Tokens;
+using SMT.Core;
+using SMT.Core.Repositories;
+using SMT.Core.Services;
 using SMT.Data.Models.HRDBContext;
 using SMT.Data.Models.SMTDBContext;
 using SMT.Data.Models.SMTDBContext.SMTDBContext;
+using SMT.Domain;
+using SMT.Domain.Repositories;
+using SMT.Domain.Services;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -39,11 +45,24 @@ namespace SalesManagmentTool
         {
             //services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             //    .AddMicrosoftIdentityWebApi(Configuration.GetSection("AzureAd"));
-
+            services.AddDirectoryBrowser();
+            services.AddHttpContextAccessor();
             services.AddControllers();
+            services.AddMvc();
             services.AddCors();
             services.AddDbContext<SMTDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SMTConnectionStr")));
             services.AddDbContext<HRDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("HRConnection")));
+
+            services.AddTransient<IProjectComponentsService, ProjectComponentsService>();
+            services.AddTransient<IProjectComponentsRepository, ProjectComponentsRepository>();
+
+
+
+
+
+
+
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddIdentity<ApplicationUser, IdentityRole>()
                     .AddEntityFrameworkStores<SMTDbContext>()
                     .AddDefaultTokenProviders();
