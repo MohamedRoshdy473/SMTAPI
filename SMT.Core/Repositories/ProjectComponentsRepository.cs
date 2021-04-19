@@ -34,7 +34,7 @@ namespace SMT.Core.Repositories
                 {
                     var response = new HttpResponseMessage(HttpStatusCode.NotFound)
                     {
-                        Content = new StringContent("ProjectComponent doesn't exist", System.Text.Encoding.UTF8, "text/plain"),
+                        Content = new StringContent("Project Component doesn't exist", System.Text.Encoding.UTF8, "text/plain"),
                         StatusCode = HttpStatusCode.NotFound
                     };
                     throw new HttpResponseException(response);

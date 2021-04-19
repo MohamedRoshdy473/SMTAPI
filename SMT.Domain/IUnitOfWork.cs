@@ -10,6 +10,9 @@ namespace SMT.Domain
     public interface IUnitOfWork:IDisposable
     {
         int CommitAsync();
-        IProjectComponentsRepository projectComponents { get; }
+        IProjectComponentsRepository ProjectComponents { get; }
+        IProjectStatusRepository ProjectStatus { get; }
+        IContractorsRepository Contractors { get; }
+        IEndUsersRepository EndUsers { get; }
     }
 }

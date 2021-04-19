@@ -55,8 +55,12 @@ namespace SalesManagmentTool
 
             services.AddTransient<IProjectComponentsService, ProjectComponentsService>();
             services.AddTransient<IProjectComponentsRepository, ProjectComponentsRepository>();
-
-
+            services.AddTransient<IContractorsService, ContractorsService>();
+            services.AddTransient<IContractorsRepository, ContractorsRepository>();
+            services.AddTransient<IEndUsersService, EndUsersService>();
+            services.AddTransient<IEndUsersRepository, EndUsersRepository>();
+            services.AddTransient<IProjectStatusService, ProjectStatusService>();
+            services.AddTransient<IProjectStatusRepository, ProjectStatusRepository>();
 
 
 

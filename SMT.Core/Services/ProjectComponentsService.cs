@@ -18,27 +18,27 @@ namespace SMT.Core.Services
         }
         public void AddProjectComponent(ProjectComponents ProjectComponent)
         {
-            _unitOfWork.projectComponents.Add(ProjectComponent);
+            _unitOfWork.ProjectComponents.Add(ProjectComponent);
         }
 
         public void DeleteProjectComponent(int ProjectComponentId)
         {
-            _unitOfWork.projectComponents.Delete(ProjectComponentId);
+            _unitOfWork.ProjectComponents.Delete(ProjectComponentId);
         }
 
         public IEnumerable<ProjectComponents> GetAllProjectComponents()
         {
-           return _unitOfWork.projectComponents.GetAll();
+           return _unitOfWork.ProjectComponents.GetAll();
         }
 
         public ProjectComponents GetProjectComponent(int id)
         {
-           return _unitOfWork.projectComponents.Get(id);
+           return _unitOfWork.ProjectComponents.Get(id);
         }
 
         public void UpdateProjectComponent(int ProjectComponentId, ProjectComponents ProjectComponent)
         {
-            _unitOfWork.projectComponents.Update(ProjectComponentId, ProjectComponent);
+            _unitOfWork.ProjectComponents.Update(ProjectComponentId, ProjectComponent);
         }
     }
 }

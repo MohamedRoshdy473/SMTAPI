@@ -73,7 +73,7 @@ namespace SMT.API.Controllers
                 string msg = ex.Message;
             }
 
-            return NoContent();
+            return Ok();
         }
     }
 }
