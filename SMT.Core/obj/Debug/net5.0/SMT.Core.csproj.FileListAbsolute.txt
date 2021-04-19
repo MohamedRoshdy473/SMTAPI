@@ -1,0 +1,12 @@
+D:\SalesManagmentTool\SMT.Core\bin\Debug\net5.0\SMT.Core.deps.json
+D:\SalesManagmentTool\SMT.Core\bin\Debug\net5.0\SMT.Core.dll
+D:\SalesManagmentTool\SMT.Core\bin\Debug\net5.0\ref\SMT.Core.dll
+D:\SalesManagmentTool\SMT.Core\bin\Debug\net5.0\SMT.Core.pdb
+D:\SalesManagmentTool\SMT.Core\obj\Debug\net5.0\SMT.Core.csprojAssemblyReference.cache
+D:\SalesManagmentTool\SMT.Core\obj\Debug\net5.0\SMT.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\SalesManagmentTool\SMT.Core\obj\Debug\net5.0\SMT.Core.AssemblyInfoInputs.cache
+D:\SalesManagmentTool\SMT.Core\obj\Debug\net5.0\SMT.Core.AssemblyInfo.cs
+D:\SalesManagmentTool\SMT.Core\obj\Debug\net5.0\SMT.Core.csproj.CoreCompileInputs.cache
+D:\SalesManagmentTool\SMT.Core\obj\Debug\net5.0\SMT.Core.dll
+D:\SalesManagmentTool\SMT.Core\obj\Debug\net5.0\ref\SMT.Core.dll
+D:\SalesManagmentTool\SMT.Core\obj\Debug\net5.0\SMT.Core.pdb
