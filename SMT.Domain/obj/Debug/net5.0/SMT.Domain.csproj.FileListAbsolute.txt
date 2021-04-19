@@ -21,3 +21,15 @@ D:\SMTAPI\SMT.Domain\obj\Debug\net5.0\SMT.Domain.csproj.CoreCompileInputs.cache
 D:\SMTAPI\SMT.Domain\obj\Debug\net5.0\SMT.Domain.dll
 D:\SMTAPI\SMT.Domain\obj\Debug\net5.0\ref\SMT.Domain.dll
 D:\SMTAPI\SMT.Domain\obj\Debug\net5.0\SMT.Domain.pdb
+E:\SMTAPI\SMT.Domain\bin\Debug\net5.0\SMT.Domain.deps.json
+E:\SMTAPI\SMT.Domain\bin\Debug\net5.0\SMT.Domain.dll
+E:\SMTAPI\SMT.Domain\bin\Debug\net5.0\ref\SMT.Domain.dll
+E:\SMTAPI\SMT.Domain\bin\Debug\net5.0\SMT.Domain.pdb
+E:\SMTAPI\SMT.Domain\obj\Debug\net5.0\SMT.Domain.csprojAssemblyReference.cache
+E:\SMTAPI\SMT.Domain\obj\Debug\net5.0\SMT.Domain.GeneratedMSBuildEditorConfig.editorconfig
+E:\SMTAPI\SMT.Domain\obj\Debug\net5.0\SMT.Domain.AssemblyInfoInputs.cache
+E:\SMTAPI\SMT.Domain\obj\Debug\net5.0\SMT.Domain.AssemblyInfo.cs
+E:\SMTAPI\SMT.Domain\obj\Debug\net5.0\SMT.Domain.csproj.CoreCompileInputs.cache
+E:\SMTAPI\SMT.Domain\obj\Debug\net5.0\SMT.Domain.dll
+E:\SMTAPI\SMT.Domain\obj\Debug\net5.0\ref\SMT.Domain.dll
+E:\SMTAPI\SMT.Domain\obj\Debug\net5.0\SMT.Domain.pdb

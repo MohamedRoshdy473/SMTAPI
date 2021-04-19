@@ -2565,19 +2565,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {}
+    "C:\\Users\\pc\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\SMTAPI\\SMT.API\\SMT.API.csproj",
+      "projectUniqueName": "E:\\SMTAPI\\SMT.API\\SMT.API.csproj",
       "projectName": "SMT.API",
-      "projectPath": "D:\\SMTAPI\\SMT.API\\SMT.API.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\SMTAPI\\SMT.API\\obj\\",
+      "projectPath": "E:\\SMTAPI\\SMT.API\\SMT.API.csproj",
+      "packagesPath": "C:\\Users\\pc\\.nuget\\packages\\",
+      "outputPath": "E:\\SMTAPI\\SMT.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\pc\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2591,8 +2591,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\SMTAPI\\SMT.Data\\SMT.Data.csproj": {
-              "projectPath": "D:\\SMTAPI\\SMT.Data\\SMT.Data.csproj"
+            "E:\\SMTAPI\\SMT.Data\\SMT.Data.csproj": {
+              "projectPath": "E:\\SMTAPI\\SMT.Data\\SMT.Data.csproj"
             }
           }
         }
@@ -2666,7 +2666,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
       }
     }
   },

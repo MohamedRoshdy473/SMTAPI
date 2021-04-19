@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\SMTAPI\\SMT.Core\\SMT.Core.csproj": {}
+    "E:\\SMTAPI\\SMT.Core\\SMT.Core.csproj": {}
   },
   "projects": {
-    "D:\\SMTAPI\\SMT.Core\\SMT.Core.csproj": {
+    "E:\\SMTAPI\\SMT.Core\\SMT.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\SMTAPI\\SMT.Core\\SMT.Core.csproj",
+        "projectUniqueName": "E:\\SMTAPI\\SMT.Core\\SMT.Core.csproj",
         "projectName": "SMT.Core",
-        "projectPath": "D:\\SMTAPI\\SMT.Core\\SMT.Core.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\SMTAPI\\SMT.Core\\obj\\",
+        "projectPath": "E:\\SMTAPI\\SMT.Core\\SMT.Core.csproj",
+        "packagesPath": "C:\\Users\\pc\\.nuget\\packages\\",
+        "outputPath": "E:\\SMTAPI\\SMT.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\pc\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -68,7 +68,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
         }
       }
     }
