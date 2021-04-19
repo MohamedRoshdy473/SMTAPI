@@ -4,20 +4,17 @@
     "E:\\SMTAPI\\SMT.Domain\\SMT.Domain.csproj": {}
   },
   "projects": {
-<<<<<<< HEAD
-    "E:\\SMTAPI\\SMT.Domain\\SMT.Domain.csproj": {
-=======
-    "D:\\SMTAPI\\SMT.Data\\SMT.Data.csproj": {
+    "E:\\SMTAPI\\SMT.Data\\SMT.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\SMTAPI\\SMT.Data\\SMT.Data.csproj",
+        "projectUniqueName": "E:\\SMTAPI\\SMT.Data\\SMT.Data.csproj",
         "projectName": "SMT.Data",
-        "projectPath": "D:\\SMTAPI\\SMT.Data\\SMT.Data.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\SMTAPI\\SMT.Data\\obj\\",
+        "projectPath": "E:\\SMTAPI\\SMT.Data\\SMT.Data.csproj",
+        "packagesPath": "C:\\Users\\pc\\.nuget\\packages\\",
+        "outputPath": "E:\\SMTAPI\\SMT.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\pc\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -87,12 +84,11 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\SMTAPI\\SMT.Domain\\SMT.Domain.csproj": {
->>>>>>> 6304b5fb958e3b30cf37eee0f931afc190688dec
+    "E:\\SMTAPI\\SMT.Domain\\SMT.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
         "projectUniqueName": "E:\\SMTAPI\\SMT.Domain\\SMT.Domain.csproj",
@@ -116,8 +112,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "D:\\SMTAPI\\SMT.Data\\SMT.Data.csproj": {
-                "projectPath": "D:\\SMTAPI\\SMT.Data\\SMT.Data.csproj"
+              "E:\\SMTAPI\\SMT.Data\\SMT.Data.csproj": {
+                "projectPath": "E:\\SMTAPI\\SMT.Data\\SMT.Data.csproj"
               }
             }
           }

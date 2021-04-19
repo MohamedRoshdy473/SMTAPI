@@ -37,3 +37,6 @@ E:\SMTAPI\SMT.Domain\obj\Debug\net5.0\SMT.Domain.csproj.CoreCompileInputs.cache
 E:\SMTAPI\SMT.Domain\obj\Debug\net5.0\SMT.Domain.dll
 E:\SMTAPI\SMT.Domain\obj\Debug\net5.0\ref\SMT.Domain.dll
 E:\SMTAPI\SMT.Domain\obj\Debug\net5.0\SMT.Domain.pdb
+E:\SMTAPI\SMT.Domain\bin\Debug\net5.0\SMT.Data.dll
+E:\SMTAPI\SMT.Domain\bin\Debug\net5.0\SMT.Data.pdb
+E:\SMTAPI\SMT.Domain\obj\Debug\net5.0\SMT.Domain.csproj.CopyComplete

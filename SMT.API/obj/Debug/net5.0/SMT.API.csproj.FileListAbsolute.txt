@@ -225,3 +225,11 @@ E:\SMTAPI\SMT.API\obj\Debug\net5.0\SMT.API.dll
 E:\SMTAPI\SMT.API\obj\Debug\net5.0\ref\SMT.API.dll
 E:\SMTAPI\SMT.API\obj\Debug\net5.0\SMT.API.pdb
 E:\SMTAPI\SMT.API\obj\Debug\net5.0\SMT.API.genruntimeconfig.cache
+E:\SMTAPI\SMT.API\bin\Debug\net5.0\System.Net.Http.Formatting.dll
+E:\SMTAPI\SMT.API\bin\Debug\net5.0\System.Web.Http.dll
+E:\SMTAPI\SMT.API\bin\Debug\net5.0\Newtonsoft.Json.dll
+E:\SMTAPI\SMT.API\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll
+E:\SMTAPI\SMT.API\bin\Debug\net5.0\SMT.Core.dll
+E:\SMTAPI\SMT.API\bin\Debug\net5.0\SMT.Domain.dll
+E:\SMTAPI\SMT.API\bin\Debug\net5.0\SMT.Core.pdb
+E:\SMTAPI\SMT.API\bin\Debug\net5.0\SMT.Domain.pdb
