@@ -10,4 +10,8 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.5" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SMT.Data\SMT.Data.csproj" />
+  </ItemGroup>
+
 </Project>

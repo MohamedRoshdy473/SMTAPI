@@ -14,10 +14,14 @@ D:\SMTAPI\SMT.Domain\bin\Debug\net5.0\SMT.Domain.deps.json
 D:\SMTAPI\SMT.Domain\bin\Debug\net5.0\SMT.Domain.dll
 D:\SMTAPI\SMT.Domain\bin\Debug\net5.0\ref\SMT.Domain.dll
 D:\SMTAPI\SMT.Domain\bin\Debug\net5.0\SMT.Domain.pdb
+D:\SMTAPI\SMT.Domain\bin\Debug\net5.0\SMT.Data.dll
+D:\SMTAPI\SMT.Domain\bin\Debug\net5.0\SMT.Data.pdb
+D:\SMTAPI\SMT.Domain\obj\Debug\net5.0\SMT.Domain.csprojAssemblyReference.cache
 D:\SMTAPI\SMT.Domain\obj\Debug\net5.0\SMT.Domain.GeneratedMSBuildEditorConfig.editorconfig
 D:\SMTAPI\SMT.Domain\obj\Debug\net5.0\SMT.Domain.AssemblyInfoInputs.cache
 D:\SMTAPI\SMT.Domain\obj\Debug\net5.0\SMT.Domain.AssemblyInfo.cs
 D:\SMTAPI\SMT.Domain\obj\Debug\net5.0\SMT.Domain.csproj.CoreCompileInputs.cache
+D:\SMTAPI\SMT.Domain\obj\Debug\net5.0\SMT.Domain.csproj.CopyComplete
 D:\SMTAPI\SMT.Domain\obj\Debug\net5.0\SMT.Domain.dll
 D:\SMTAPI\SMT.Domain\obj\Debug\net5.0\ref\SMT.Domain.dll
 D:\SMTAPI\SMT.Domain\obj\Debug\net5.0\SMT.Domain.pdb
