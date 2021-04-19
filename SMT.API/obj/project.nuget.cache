@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1jnqwQVohyWLfUZmKpVcSVEfqUcBIGJnF78tK3j+KFsF40eguYbfk/NDLchJkuSyWyxpukTGVyk2KnFFTqloYA==",
+  "dgSpecHash": "RQA98eb49SczHE2UwYECZIOIO5ZJ4iS30kD93KMblMhJ7ZmABAqFb5crORugdff7Z+nQWHmdEo/0l44DWzijpQ==",
   "success": true,
-  "projectFilePath": "D:\\SalesManagmentTool\\SMT.API\\SMT.API.csproj",
+  "projectFilePath": "D:\\SMTAPI\\SMT.API\\SMT.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\azure.core\\1.4.1\\azure.core.1.4.1.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\azure.identity\\1.2.3\\azure.identity.1.2.3.nupkg.sha512",
