@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\SalesManagmentTool\\SMT.Data\\SMT.Data.csproj": {}
+    "D:\\SMTAPI\\SMT.Data\\SMT.Data.csproj": {}
   },
   "projects": {
-    "D:\\SalesManagmentTool\\SMT.Data\\SMT.Data.csproj": {
+    "D:\\SMTAPI\\SMT.Data\\SMT.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\SalesManagmentTool\\SMT.Data\\SMT.Data.csproj",
+        "projectUniqueName": "D:\\SMTAPI\\SMT.Data\\SMT.Data.csproj",
         "projectName": "SMT.Data",
-        "projectPath": "D:\\SalesManagmentTool\\SMT.Data\\SMT.Data.csproj",
+        "projectPath": "D:\\SMTAPI\\SMT.Data\\SMT.Data.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\SalesManagmentTool\\SMT.Data\\obj\\",
+        "outputPath": "D:\\SMTAPI\\SMT.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",

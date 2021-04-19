@@ -2570,11 +2570,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\SalesManagmentTool\\SMT.API\\SMT.API.csproj",
+      "projectUniqueName": "D:\\SMTAPI\\SMT.API\\SMT.API.csproj",
       "projectName": "SMT.API",
-      "projectPath": "D:\\SalesManagmentTool\\SMT.API\\SMT.API.csproj",
+      "projectPath": "D:\\SMTAPI\\SMT.API\\SMT.API.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\SalesManagmentTool\\SMT.API\\obj\\",
+      "outputPath": "D:\\SMTAPI\\SMT.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2591,8 +2591,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\SalesManagmentTool\\SMT.Data\\SMT.Data.csproj": {
-              "projectPath": "D:\\SalesManagmentTool\\SMT.Data\\SMT.Data.csproj"
+            "D:\\SMTAPI\\SMT.Data\\SMT.Data.csproj": {
+              "projectPath": "D:\\SMTAPI\\SMT.Data\\SMT.Data.csproj"
             }
           }
         }
