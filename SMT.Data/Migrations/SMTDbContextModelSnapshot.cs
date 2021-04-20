@@ -1172,12 +1172,17 @@ namespace SMT.Data.Migrations
                     b.Property<int>("ProjectId")
                         .HasColumnType("int");
 
+                    b.Property<int>("ProjectUpdateId")
+                        .HasColumnType("int");
+
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("ProjectId");
+
+                    b.HasIndex("ProjectUpdateId");
 
                     b.HasIndex("UserId");
 
@@ -1737,11 +1742,19 @@ namespace SMT.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("SMT.Data.Models.SMTDBContext.ProjectUpdate", "ProjectUpdate")
+                        .WithMany()
+                        .HasForeignKey("ProjectUpdateId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("SMT.Data.Models.SMTDBContext.SMTDBContext.ApplicationUser", "User")
                         .WithMany()
                         .HasForeignKey("UserId");
 
                     b.Navigation("projects");
+
+                    b.Navigation("ProjectUpdate");
 
                     b.Navigation("User");
                 });
