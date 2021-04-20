@@ -34,6 +34,7 @@ E:\SMTAPI\SMT.Data\bin\Debug\net5.0\SMT.Data.runtimeconfig.dev.json
 E:\SMTAPI\SMT.Data\bin\Debug\net5.0\SMT.Data.dll
 E:\SMTAPI\SMT.Data\bin\Debug\net5.0\ref\SMT.Data.dll
 E:\SMTAPI\SMT.Data\bin\Debug\net5.0\SMT.Data.pdb
+E:\SMTAPI\SMT.Data\obj\Debug\net5.0\SMT.Data.csprojAssemblyReference.cache
 E:\SMTAPI\SMT.Data\obj\Debug\net5.0\SMT.Data.GeneratedMSBuildEditorConfig.editorconfig
 E:\SMTAPI\SMT.Data\obj\Debug\net5.0\SMT.Data.AssemblyInfoInputs.cache
 E:\SMTAPI\SMT.Data\obj\Debug\net5.0\SMT.Data.AssemblyInfo.cs

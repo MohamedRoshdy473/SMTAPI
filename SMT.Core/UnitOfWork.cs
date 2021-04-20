@@ -19,8 +19,6 @@ namespace SMT.Core
         private ContractorsRepository _contractors;
         private EndUsersRepository _endUsers;
         private ProjectRepository _projectRepository;
-        private ProjectDescriptionsRepository _projectDescriptionsRepository;
-
         public UnitOfWork(SMTDbContext context)
         {
             _context = context;
@@ -30,8 +28,6 @@ namespace SMT.Core
         public IContractorsRepository ContractorsRepository => new ContractorsRepository(_context);
         public IEndUsersRepository EndUsersRepository => new EndUsersRepository(_context);
         public IProjectRepository ProjectRepository => new ProjectRepository(_context);
-        public ProjectDescriptionsRepository ProjectDescriptionsRepository => new ProjectDescriptionsRepository(_context);
-
 
 
 
@@ -65,7 +61,5 @@ namespace SMT.Core
         public IEndUsersRepository EndUsers => _endUsers = _endUsers ?? new EndUsersRepository(_context);
 
         public IProjectRepository Project => _projectRepository = _projectRepository ?? new ProjectRepository(_context);
-
-        public IProjectDescriptionsRepository ProjectDescriptions => _projectDescriptionsRepository = _projectDescriptionsRepository ?? new ProjectDescriptionsRepository(_context);
     }
 }
