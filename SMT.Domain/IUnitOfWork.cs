@@ -14,5 +14,6 @@ namespace SMT.Domain
         IProjectStatusRepository ProjectStatus { get; }
         IContractorsRepository Contractors { get; }
         IEndUsersRepository EndUsers { get; }
+        IProjectRepository Project { get; }
     }
 }

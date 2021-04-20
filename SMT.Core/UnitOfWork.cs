@@ -12,11 +12,13 @@ namespace SMT.Core
 {
     public class UnitOfWork : IUnitOfWork
     {
+        private bool disposed = false;
         private readonly SMTDbContext _context;
         private  ProjectComponentsRepository _projectComponentsRepository;
         private ProjectStatusRepository _projectStatusRepository;
         private ContractorsRepository _contractors;
         private EndUsersRepository _endUsers;
+        private ProjectRepository _projectRepository;
         public UnitOfWork(SMTDbContext context)
         {
             _context = context;
@@ -25,15 +27,14 @@ namespace SMT.Core
         public IProjectStatusRepository ProjectStatusRepository => new ProjectStatusRepository(_context);
         public IContractorsRepository ContractorsRepository => new ContractorsRepository(_context);
         public IEndUsersRepository EndUsersRepository => new EndUsersRepository(_context);
+        public IProjectRepository ProjectRepository => new ProjectRepository(_context);
+
 
 
         public int CommitAsync()
         {
             return _context.SaveChanges();
         }
-        private bool disposed = false;
-
-
         protected virtual void Dispose(bool disposing)
         {
             if (!this.disposed)
@@ -59,5 +60,6 @@ namespace SMT.Core
 
         public IEndUsersRepository EndUsers => _endUsers = _endUsers ?? new EndUsersRepository(_context);
 
+        public IProjectRepository Project => _projectRepository = _projectRepository ?? new ProjectRepository(_context);
     }
 }

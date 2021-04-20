@@ -8481,19 +8481,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\pc\\.nuget\\packages\\": {}
+    "C:\\Users\\Admin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\SMTAPI\\SMT.API\\SMT.API.csproj",
+      "projectUniqueName": "D:\\SMTAPI\\SMT.API\\SMT.API.csproj",
       "projectName": "SMT.API",
-      "projectPath": "E:\\SMTAPI\\SMT.API\\SMT.API.csproj",
-      "packagesPath": "C:\\Users\\pc\\.nuget\\packages\\",
-      "outputPath": "E:\\SMTAPI\\SMT.API\\obj\\",
+      "projectPath": "D:\\SMTAPI\\SMT.API\\SMT.API.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "D:\\SMTAPI\\SMT.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\pc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8507,10 +8507,6 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-<<<<<<< HEAD
-            "E:\\SMTAPI\\SMT.Data\\SMT.Data.csproj": {
-              "projectPath": "E:\\SMTAPI\\SMT.Data\\SMT.Data.csproj"
-=======
             "D:\\SMTAPI\\SMT.Core\\SMT.Core.csproj": {
               "projectPath": "D:\\SMTAPI\\SMT.Core\\SMT.Core.csproj"
             },
@@ -8519,7 +8515,6 @@
             },
             "D:\\SMTAPI\\SMT.Domain\\SMT.Domain.csproj": {
               "projectPath": "D:\\SMTAPI\\SMT.Domain\\SMT.Domain.csproj"
->>>>>>> 6304b5fb958e3b30cf37eee0f931afc190688dec
             }
           }
         }
@@ -8601,7 +8596,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   },

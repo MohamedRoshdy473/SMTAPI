@@ -11,7 +11,7 @@ namespace SMT.Domain.Repositories
     {
         ProjectsDTO Get(int id);
         IEnumerable<ProjectsDTO> GetAll();
-        void Add(ProjectsDTO projectsDTO);
+        int Add(ProjectsDTO projectsDTO);
         void Delete(int projectsDTOId);
         void Update(int projectsDTOId, ProjectsDTO projectsDTO);
     }

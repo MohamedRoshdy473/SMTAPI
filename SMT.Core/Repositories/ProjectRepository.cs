@@ -1,4 +1,5 @@
-﻿using SMT.Data.DTO;
+﻿using Microsoft.EntityFrameworkCore;
+using SMT.Data.DTO;
 using SMT.Data.Models.SMTDBContext;
 using SMT.Domain.Repositories;
 using System;
@@ -20,7 +21,7 @@ namespace SMT.Core.Repositories
         {
             _context = context;
         }
-        public void Add(ProjectsDTO projectsDTO)
+        public int Add(ProjectsDTO projectsDTO)
         {
             try
             {
@@ -52,6 +53,7 @@ namespace SMT.Core.Repositories
             {
                 msg = ex.Message;
             }
+            return projectsDTO.Id;
         }
 
         public void Delete(int projectsDTOId)
@@ -82,17 +84,98 @@ namespace SMT.Core.Repositories
 
         public ProjectsDTO Get(int id)
         {
-            throw new NotImplementedException();
+            var project = _context.Projects.Where(p => p.Id == id).Include(p => p.EndUsers).Include(p => p.Contractors)
+                                                                  .Include(p => p.EndUsers).Include(p => p.ProjectStatus)
+                                                                  .Include(p => p.ProjectComponents).FirstOrDefault();
+
+            if (project == null)
+            {
+                var response = new HttpResponseMessage(HttpStatusCode.NotFound)
+                {
+                    Content = new StringContent("Project doesn't exist", System.Text.Encoding.UTF8, "text/plain"),
+                    StatusCode = HttpStatusCode.NotFound
+                };
+                throw new HttpResponseException(response);
+            }
+            else
+            {
+                var projectDTO = new ProjectsDTO
+                {
+                    Id = project.Id,
+                    ProjectName = project.ProjectName,
+                    ProjectCreationDate = project.ProjectCreationDate,
+                    Rank = project.Rank,
+                    ProjectComponentsId = project.ProjectComponentsId,
+                    ProjectComponentName = project.ProjectComponents.ProjectComponentName,
+                    ProjectStatusId = project.ProjectStatusId,
+                    ProjectStatusName = project.ProjectStatus.ProjectStatusName,
+                    EndUsersId = project.EndUsersId,
+                    EndUserContactName = project.EndUsers.ContactName,
+                    CompanyName = project.EndUsers.CompanyName,
+                    ContractorsId = project.ContractorsId,
+                    ContractorContactName = project.Contractors.ContactName,
+                    ContractorName = project.Contractors.ContractorName
+                };
+                return projectDTO;
+
+            }
         }
 
         public IEnumerable<ProjectsDTO> GetAll()
         {
-            throw new NotImplementedException();
+            var projectDTO = _context.Projects.Select(project=>new ProjectsDTO
+            {
+                Id = project.Id,
+                ProjectName = project.ProjectName,
+                ProjectCreationDate = project.ProjectCreationDate,
+                Rank = project.Rank,
+                ProjectComponentsId = project.ProjectComponentsId,
+                ProjectComponentName = project.ProjectComponents.ProjectComponentName,
+                ProjectStatusId = project.ProjectStatusId,
+                ProjectStatusName = project.ProjectStatus.ProjectStatusName,
+                EndUsersId = project.EndUsersId,
+                EndUserContactName = project.EndUsers.ContactName,
+                CompanyName = project.EndUsers.CompanyName,
+                ContractorsId = project.ContractorsId,
+                ContractorContactName = project.Contractors.ContactName,
+                ContractorName = project.Contractors.ContractorName
+            }).ToList();
+            return projectDTO;
         }
 
         public void Update(int projectsDTOId, ProjectsDTO projectsDTO)
         {
-            throw new NotImplementedException();
+            try
+            {
+                if (projectsDTO != null)
+                {
+
+                Projects project = new Projects();
+                project.Id = projectsDTO.Id;
+                project.ProjectName = projectsDTO.ProjectName;
+                project.ProjectCreationDate = projectsDTO.ProjectCreationDate;
+                project.Rank = projectsDTO.Rank;
+                project.ProjectComponentsId = projectsDTO.ProjectComponentsId;
+                project.ProjectStatusId = projectsDTO.ProjectStatusId;
+                project.EndUsersId = projectsDTO.EndUsersId;
+                project.ContractorsId = projectsDTO.ContractorsId;
+                _context.Entry(project).State = EntityState.Modified;
+                _context.SaveChanges();
+                }
+                else
+                {
+                    var response = new HttpResponseMessage(HttpStatusCode.NotFound)
+                    {
+                        Content = new StringContent("Project doesn't exist", System.Text.Encoding.UTF8, "text/plain"),
+                        StatusCode = HttpStatusCode.NotFound
+                    };
+                    throw new HttpResponseException(response);
+                }
+            }
+            catch (Exception ex)
+            {
+                msg = ex.Message;
+            }
         }
     }
 }
