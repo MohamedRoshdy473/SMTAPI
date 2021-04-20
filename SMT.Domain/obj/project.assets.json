@@ -5928,8 +5928,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "E:\\SMTAPI\\SMT.Data\\SMT.Data.csproj": {
-              "projectPath": "E:\\SMTAPI\\SMT.Data\\SMT.Data.csproj"
+            "D:\\SMTAPI\\SMT.Data\\SMT.Data.csproj": {
+              "projectPath": "D:\\SMTAPI\\SMT.Data\\SMT.Data.csproj"
             }
           }
         }
@@ -5977,12 +5977,6 @@
     }
   },
   "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file D:\\SMTAPI\\SMT.Domain\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    },
     {
       "code": "NU1701",
       "level": "Warning",

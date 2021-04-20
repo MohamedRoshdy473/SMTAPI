@@ -53,7 +53,7 @@ namespace SMT.API.Controllers
 
         }
 
-        // DELETE api/<ProjectDescriptionsController>/5
+        //// DELETE api/<ProjectDescriptionsController>/5
         [HttpDelete("{id}")]
         public ActionResult<ProjectDescriptions> Delete(int id)
         {
