@@ -62,9 +62,11 @@ namespace SalesManagmentTool
             services.AddTransient<IProjectStatusService, ProjectStatusService>();
             services.AddTransient<IProjectStatusRepository, ProjectStatusRepository>();
 
+            services.AddTransient<IProjectService, ProjectService>();
+            services.AddTransient<IProjectRepository, ProjectRepository>();
 
-
-
+            services.AddTransient<IProjectDescriptionsService, ProjectDescriptionsService>();
+            services.AddTransient<IProjectDescriptionsRepository, ProjectDescriptionsRepository>();
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddIdentity<ApplicationUser, IdentityRole>()
