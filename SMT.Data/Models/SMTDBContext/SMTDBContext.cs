@@ -30,6 +30,7 @@ namespace SMT.Data.Models.SMTDBContext
         public DbSet<ProjectUpdate> projectUpdates { get; set; }
         public DbSet<ProjectDocuments> ProjectDocuments { get; set; }
         public DbSet<ProjectStatus> ProjectStatus { get; set; }
+        public DbSet<Projects> Projects { get; set; }
         public DbSet<ProjectDescriptions> ProjectDescriptions { get; set; }
         public DbSet<EndUsers> EndUsers { get; set; }
         public DbSet<Contractors> Contractors { get; set; }
