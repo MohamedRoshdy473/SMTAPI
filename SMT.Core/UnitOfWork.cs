@@ -12,20 +12,29 @@ namespace SMT.Core
 {
     public class UnitOfWork : IUnitOfWork
     {
+        private bool disposed = false;
         private readonly SMTDbContext _context;
         private  ProjectComponentsRepository _projectComponentsRepository;
-
+        private ProjectStatusRepository _projectStatusRepository;
+        private ContractorsRepository _contractors;
+        private EndUsersRepository _endUsers;
+        private ProjectRepository _projectRepository;
         public UnitOfWork(SMTDbContext context)
         {
             _context = context;
         }
         public IProjectComponentsRepository projectComponentsRepository => new ProjectComponentsRepository(_context);
+        public IProjectStatusRepository ProjectStatusRepository => new ProjectStatusRepository(_context);
+        public IContractorsRepository ContractorsRepository => new ContractorsRepository(_context);
+        public IEndUsersRepository EndUsersRepository => new EndUsersRepository(_context);
+        public IProjectRepository ProjectRepository => new ProjectRepository(_context);
+
+
 
         public int CommitAsync()
         {
             return _context.SaveChanges();
         }
-        private bool disposed = false;
         protected virtual void Dispose(bool disposing)
         {
             if (!this.disposed)
@@ -43,7 +52,14 @@ namespace SMT.Core
             GC.SuppressFinalize(this);
         }
 
-        public IProjectComponentsRepository projectComponents => _projectComponentsRepository = _projectComponentsRepository ?? new ProjectComponentsRepository(_context);
+        public IProjectComponentsRepository ProjectComponents => _projectComponentsRepository = _projectComponentsRepository ?? new ProjectComponentsRepository(_context);
 
+        public IProjectStatusRepository ProjectStatus => _projectStatusRepository = _projectStatusRepository ?? new ProjectStatusRepository(_context);
+
+        public IContractorsRepository Contractors => _contractors = _contractors ?? new ContractorsRepository(_context);
+
+        public IEndUsersRepository EndUsers => _endUsers = _endUsers ?? new EndUsersRepository(_context);
+
+        public IProjectRepository Project => _projectRepository = _projectRepository ?? new ProjectRepository(_context);
     }
 }
