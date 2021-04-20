@@ -27,3 +27,8 @@ E:\SMTAPI\SMT.Core\obj\Debug\net5.0\SMT.Core.csproj.CopyComplete
 E:\SMTAPI\SMT.Core\obj\Debug\net5.0\SMT.Core.dll
 E:\SMTAPI\SMT.Core\obj\Debug\net5.0\ref\SMT.Core.dll
 E:\SMTAPI\SMT.Core\obj\Debug\net5.0\SMT.Core.pdb
+D:\SMTAPI\SMT.Core\obj\Debug\net5.0\SMT.Core.csprojAssemblyReference.cache
+D:\SMTAPI\SMT.Core\obj\Debug\net5.0\SMT.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\SMTAPI\SMT.Core\obj\Debug\net5.0\SMT.Core.AssemblyInfoInputs.cache
+D:\SMTAPI\SMT.Core\obj\Debug\net5.0\SMT.Core.AssemblyInfo.cs
+D:\SMTAPI\SMT.Core\obj\Debug\net5.0\SMT.Core.csproj.CoreCompileInputs.cache

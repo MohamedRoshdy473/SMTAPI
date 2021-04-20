@@ -25,3 +25,8 @@ E:\SMTAPI\SMT.Domain\obj\Debug\net5.0\SMT.Domain.csproj.CopyComplete
 E:\SMTAPI\SMT.Domain\obj\Debug\net5.0\SMT.Domain.dll
 E:\SMTAPI\SMT.Domain\obj\Debug\net5.0\ref\SMT.Domain.dll
 E:\SMTAPI\SMT.Domain\obj\Debug\net5.0\SMT.Domain.pdb
+D:\SMTAPI\SMT.Domain\obj\Debug\net5.0\SMT.Domain.csprojAssemblyReference.cache
+D:\SMTAPI\SMT.Domain\obj\Debug\net5.0\SMT.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\SMTAPI\SMT.Domain\obj\Debug\net5.0\SMT.Domain.AssemblyInfoInputs.cache
+D:\SMTAPI\SMT.Domain\obj\Debug\net5.0\SMT.Domain.AssemblyInfo.cs
+D:\SMTAPI\SMT.Domain\obj\Debug\net5.0\SMT.Domain.csproj.CoreCompileInputs.cache

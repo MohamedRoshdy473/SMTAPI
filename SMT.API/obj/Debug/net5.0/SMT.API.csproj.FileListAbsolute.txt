@@ -152,3 +152,10 @@ E:\SMTAPI\SMT.API\obj\Debug\net5.0\SMT.API.dll
 E:\SMTAPI\SMT.API\obj\Debug\net5.0\ref\SMT.API.dll
 E:\SMTAPI\SMT.API\obj\Debug\net5.0\SMT.API.pdb
 E:\SMTAPI\SMT.API\obj\Debug\net5.0\SMT.API.genruntimeconfig.cache
+D:\SMTAPI\SMT.API\obj\Debug\net5.0\SMT.API.csprojAssemblyReference.cache
+D:\SMTAPI\SMT.API\obj\Debug\net5.0\SMT.API.GeneratedMSBuildEditorConfig.editorconfig
+D:\SMTAPI\SMT.API\obj\Debug\net5.0\SMT.API.AssemblyInfoInputs.cache
+D:\SMTAPI\SMT.API\obj\Debug\net5.0\SMT.API.AssemblyInfo.cs
+D:\SMTAPI\SMT.API\obj\Debug\net5.0\SMT.API.csproj.CoreCompileInputs.cache
+D:\SMTAPI\SMT.API\obj\Debug\net5.0\SMT.API.MvcApplicationPartsAssemblyInfo.cs
+D:\SMTAPI\SMT.API\obj\Debug\net5.0\SMT.API.MvcApplicationPartsAssemblyInfo.cache
