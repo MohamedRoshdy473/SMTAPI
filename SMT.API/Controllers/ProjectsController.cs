@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SMT.Data.DTO;
+using SMT.Data.Models.SMTDBContext;
 using SMT.Domain.Services;
 using System;
 using System.Collections.Generic;
@@ -53,7 +54,7 @@ namespace SMT.API.Controllers
 
         // DELETE api/<ProjectsController>/5
         [HttpDelete("{id}")]
-        public ActionResult<ProjectsDTO> Delete(int id)
+        public ActionResult<Projects> Delete(int id)
         {
             _projectService.DeleteProject(id);
             return Ok();
