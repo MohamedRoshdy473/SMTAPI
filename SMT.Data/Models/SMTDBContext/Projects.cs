@@ -25,5 +25,8 @@ namespace SMT.Data.Models.SMTDBContext
         public int ProjectComponentsId { get; set; }
         [ForeignKey("ProjectComponentsId")]
         public virtual ProjectComponents ProjectComponents { get; set; }
+        public int GovernoratesId { get; set; }
+        [ForeignKey("GovernoratesId")]
+        public virtual Governorates Governorates { get; set; }
     }
 }

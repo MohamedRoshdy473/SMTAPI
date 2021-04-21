@@ -22,5 +22,7 @@ namespace SMT.Data.DTO
         public string EndUserContactName { get; set; }
         public int ProjectComponentsId { get; set; }
         public string ProjectComponentName { get; set; }
+        public int GovernorateId { get; set; }
+        public string GovernorateName { get; set; }
     }
 }

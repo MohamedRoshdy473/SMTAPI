@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SMT.Data.Models.SMTDBContext;
 
 namespace SMT.Data.Migrations
 {
     [DbContext(typeof(SMTDbContext))]
-    partial class SMTDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210420125458_addgovernoratess")]
+    partial class addgovernoratess
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1034,8 +1036,8 @@ namespace SMT.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("GovernorateName")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("GovernorateName")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -1282,9 +1284,6 @@ namespace SMT.Data.Migrations
                     b.Property<int>("EndUsersId")
                         .HasColumnType("int");
 
-                    b.Property<int>("GovernoratesId")
-                        .HasColumnType("int");
-
                     b.Property<int>("ProjectComponentsId")
                         .HasColumnType("int");
 
@@ -1305,8 +1304,6 @@ namespace SMT.Data.Migrations
                     b.HasIndex("ContractorsId");
 
                     b.HasIndex("EndUsersId");
-
-                    b.HasIndex("GovernoratesId");
 
                     b.HasIndex("ProjectComponentsId");
 
@@ -1831,12 +1828,6 @@ namespace SMT.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("SMT.Data.Models.SMTDBContext.Governorates", "Governorates")
-                        .WithMany()
-                        .HasForeignKey("GovernoratesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("SMT.Data.Models.SMTDBContext.ProjectComponents", "ProjectComponents")
                         .WithMany()
                         .HasForeignKey("ProjectComponentsId")
@@ -1852,8 +1843,6 @@ namespace SMT.Data.Migrations
                     b.Navigation("Contractors");
 
                     b.Navigation("EndUsers");
-
-                    b.Navigation("Governorates");
 
                     b.Navigation("ProjectComponents");
 

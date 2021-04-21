@@ -61,13 +61,12 @@ namespace SalesManagmentTool
             services.AddTransient<IEndUsersRepository, EndUsersRepository>();
             services.AddTransient<IProjectStatusService, ProjectStatusService>();
             services.AddTransient<IProjectStatusRepository, ProjectStatusRepository>();
-
             services.AddTransient<IProjectService, ProjectService>();
             services.AddTransient<IProjectRepository, ProjectRepository>();
-
             services.AddTransient<IProjectDescriptionsService, ProjectDescriptionsService>();
             services.AddTransient<IProjectDescriptionsRepository, ProjectDescriptionsRepository>();
-
+            services.AddTransient<IGovernoratesService, GovernoratesService>();
+            services.AddTransient<IGovernoratesRepository, GovernoratesRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddIdentity<ApplicationUser, IdentityRole>()
                     .AddEntityFrameworkStores<SMTDbContext>()

@@ -20,6 +20,7 @@ namespace SMT.Core
         private EndUsersRepository _endUsers;
         private ProjectRepository _projectRepository;
         private ProjectDescriptionsRepository _projectDescriptionsRepository;
+        private GovernoratesRepository _governoratesRepository;
 
         public UnitOfWork(SMTDbContext context)
         {
@@ -30,8 +31,8 @@ namespace SMT.Core
         public IContractorsRepository ContractorsRepository => new ContractorsRepository(_context);
         public IEndUsersRepository EndUsersRepository => new EndUsersRepository(_context);
         public IProjectRepository ProjectRepository => new ProjectRepository(_context);
-        public ProjectDescriptionsRepository ProjectDescriptionsRepository => new ProjectDescriptionsRepository(_context);
-
+        public IProjectDescriptionsRepository ProjectDescriptionsRepository => new ProjectDescriptionsRepository(_context);
+        public IGovernoratesRepository GovernoratesRepository => new GovernoratesRepository(_context);
 
 
 
@@ -67,5 +68,7 @@ namespace SMT.Core
         public IProjectRepository Project => _projectRepository = _projectRepository ?? new ProjectRepository(_context);
 
         public IProjectDescriptionsRepository ProjectDescriptions => _projectDescriptionsRepository = _projectDescriptionsRepository ?? new ProjectDescriptionsRepository(_context);
+
+        public IGovernoratesRepository Governorates => _governoratesRepository = _governoratesRepository ?? new GovernoratesRepository(_context);
     }
 }

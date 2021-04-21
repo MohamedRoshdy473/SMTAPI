@@ -16,5 +16,6 @@ namespace SMT.Domain
         IEndUsersRepository EndUsers { get; }
         IProjectRepository Project { get; }
         IProjectDescriptionsRepository ProjectDescriptions { get; }
+        IGovernoratesRepository Governorates { get; }
     }
 }
