@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SMT.Domain
 {
-    public interface IUnitOfWork:IDisposable
+    public interface IUnitOfWork : IDisposable
     {
         int CommitAsync();
         IProjectComponentsRepository ProjectComponents { get; }
@@ -17,5 +17,6 @@ namespace SMT.Domain
         IProjectRepository Project { get; }
         IProjectDescriptionsRepository ProjectDescriptions { get; }
         IGovernoratesRepository Governorates { get; }
+        IDocumentsCategoriesRepository DocumentsCategories {get;}
     }
 }
