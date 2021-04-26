@@ -22,6 +22,7 @@ namespace SMT.Core
         private ProjectDescriptionsRepository _projectDescriptionsRepository;
         private GovernoratesRepository _governoratesRepository;
         private DocumentsCategoriesRepository _documentsCategoriesRepository;
+        private ProjectUpdateRepository _projectUpdateRepository;
 
         public UnitOfWork(SMTDbContext context)
         {
@@ -35,7 +36,7 @@ namespace SMT.Core
         public IProjectDescriptionsRepository ProjectDescriptionsRepository => new ProjectDescriptionsRepository(_context);
         public IGovernoratesRepository GovernoratesRepository => new GovernoratesRepository(_context);
         public IDocumentsCategoriesRepository DocumentsCategoriesRepository => new DocumentsCategoriesRepository(_context);
-
+        public IProjectUpdateRepository ProjectUpdateRepository => new ProjectUpdateRepository(_context);
 
 
         public int CommitAsync()
@@ -60,19 +61,13 @@ namespace SMT.Core
         }
 
         public IProjectComponentsRepository ProjectComponents => _projectComponentsRepository = _projectComponentsRepository ?? new ProjectComponentsRepository(_context);
-
         public IProjectStatusRepository ProjectStatus => _projectStatusRepository = _projectStatusRepository ?? new ProjectStatusRepository(_context);
-
         public IContractorsRepository Contractors => _contractors = _contractors ?? new ContractorsRepository(_context);
-
         public IEndUsersRepository EndUsers => _endUsers = _endUsers ?? new EndUsersRepository(_context);
-
         public IProjectRepository Project => _projectRepository = _projectRepository ?? new ProjectRepository(_context);
-
         public IProjectDescriptionsRepository ProjectDescriptions => _projectDescriptionsRepository = _projectDescriptionsRepository ?? new ProjectDescriptionsRepository(_context);
-
         public IGovernoratesRepository Governorates => _governoratesRepository = _governoratesRepository ?? new GovernoratesRepository(_context);
-
         public IDocumentsCategoriesRepository DocumentsCategories => _documentsCategoriesRepository = _documentsCategoriesRepository ?? new DocumentsCategoriesRepository(_context);
+        public IProjectUpdateRepository ProjectUpdate => _projectUpdateRepository = _projectUpdateRepository ?? new ProjectUpdateRepository(_context);
     }
 }

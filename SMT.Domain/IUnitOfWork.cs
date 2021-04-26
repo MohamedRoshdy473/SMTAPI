@@ -18,5 +18,6 @@ namespace SMT.Domain
         IProjectDescriptionsRepository ProjectDescriptions { get; }
         IGovernoratesRepository Governorates { get; }
         IDocumentsCategoriesRepository DocumentsCategories {get;}
+        IProjectUpdateRepository ProjectUpdate {get;}
     }
 }
