@@ -15,8 +15,6 @@ namespace SMT.Core.Repositories
     public class GovernoratesRepository : IGovernoratesRepository
     {
         private readonly SMTDbContext _context;
-        private string msg;
-
         public GovernoratesRepository(SMTDbContext context)
         {
             _context = context;
@@ -32,43 +30,26 @@ namespace SMT.Core.Repositories
                 }
                 else
                 {
-                    var response = new HttpResponseMessage(HttpStatusCode.NotFound)
-                    {
-                        Content = new StringContent("Governorate doesn't exist", System.Text.Encoding.UTF8, "text/plain"),
-                        StatusCode = HttpStatusCode.NotFound
-                    };
-                    throw new HttpResponseException(response);
+                    throw new NotCompletedException("Not Completed Exception");
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                msg = ex.Message;
+                throw new NotExistException("Not Exist Exception");
             }
         }
 
         public void Delete(int GovernorateId)
         {
             var Governorate = _context.Governorates.Find(GovernorateId);
-            try
+            if (Governorate != null)
             {
-                if (Governorate != null)
-                {
-                    _context.Governorates.Remove(Governorate);
-                    _context.SaveChanges();
-                }
-                else
-                {
-                    var response = new HttpResponseMessage(HttpStatusCode.NotFound)
-                    {
-                        Content = new StringContent("Governorate doesn't exist", System.Text.Encoding.UTF8, "text/plain"),
-                        StatusCode = HttpStatusCode.NotFound
-                    };
-                    throw new HttpResponseException(response);
-                }
+                _context.Governorates.Remove(Governorate);
+                _context.SaveChanges();
             }
-            catch (Exception ex)
+            else
             {
-                msg = ex.Message;
+                throw new NotExistException("Not Exist Exception");
             }
         }
 
@@ -78,17 +59,11 @@ namespace SMT.Core.Repositories
 
             if (Governorate == null)
             {
-                var response = new HttpResponseMessage(HttpStatusCode.NotFound)
-                {
-                    Content = new StringContent("Governorate doesn't exist", System.Text.Encoding.UTF8, "text/plain"),
-                    StatusCode = HttpStatusCode.NotFound
-                };
-                throw new HttpResponseException(response);
+                throw new NotExistException("Not Exist Exception");
             }
             else
             {
                 return Governorate;
-
             }
         }
 
@@ -99,26 +74,21 @@ namespace SMT.Core.Repositories
 
         public void Update(int GovernorateId, Governorates Governorate)
         {
+
+            if (GovernorateId != Governorate.Id)
+            {
+                throw new NotExistException("Not Exist Exception");
+            }
+            _context.Entry(Governorate).State = EntityState.Modified;
+
             try
             {
-                if (Governorate != null)
-                {
-                    _context.Entry(Governorate).State = EntityState.Modified;
-                    _context.SaveChanges();
-                }
-                else
-                {
-                    var response = new HttpResponseMessage(HttpStatusCode.NotFound)
-                    {
-                        Content = new StringContent("Governorate doesn't exist", System.Text.Encoding.UTF8, "text/plain"),
-                        StatusCode = HttpStatusCode.NotFound
-                    };
-                    throw new HttpResponseException(response);
-                }
+                _context.SaveChanges();
+         
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                msg = ex.Message;
+                throw new NotCompletedException("Not Completed Exception");
             }
         }
     }

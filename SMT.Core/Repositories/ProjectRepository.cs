@@ -17,7 +17,6 @@ namespace SMT.Core.Repositories
     public class ProjectRepository : IProjectRepository
     {
         protected readonly SMTDbContext _context;
-        private string msg;
         public ProjectRepository(SMTDbContext context)
         {
             _context = context;
@@ -41,20 +40,16 @@ namespace SMT.Core.Repositories
                     project.GovernoratesId = projectsDTO.GovernorateId;
                     _context.Add(project);
                     _context.SaveChanges();
+                    projectsDTO.Id = project.Id;
                 }
                 else
                 {
-                    var response = new HttpResponseMessage(HttpStatusCode.NotFound)
-                    {
-                        Content = new StringContent("Project  doesn't exist", System.Text.Encoding.UTF8, "text/plain"),
-                        StatusCode = HttpStatusCode.NotFound
-                    };
-                    throw new HttpResponseException(response);
+                    throw new NotCompletedException("Not Completed Exception");
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                msg = ex.Message;
+                throw new NotExistException("Not Exist Exception");
             }
             return projectsDTO.Id;
         }
@@ -62,26 +57,16 @@ namespace SMT.Core.Repositories
         public void Delete(int projectsDTOId)
         {
             var Project = _context.Projects.Find(projectsDTOId);
-            try
+
+            if (Project != null)
             {
-                if (Project != null)
-                {
-                    _context.Projects.Remove(Project);
-                    _context.SaveChanges();
-                }
-                else
-                {
-                    var response = new HttpResponseMessage(HttpStatusCode.NotFound)
-                    {
-                        Content = new StringContent("Project doesn't exist", System.Text.Encoding.UTF8, "text/plain"),
-                        StatusCode = HttpStatusCode.NotFound
-                    };
-                    throw new HttpResponseException(response);
-                }
+                _context.Projects.Remove(Project);
+                _context.SaveChanges();
             }
-            catch (Exception ex)
+            else
             {
-                msg = ex.Message;
+                throw new NotExistException("Not Exist Exception");
+
             }
         }
 
@@ -90,15 +75,9 @@ namespace SMT.Core.Repositories
             var project = _context.Projects.Where(p => p.Id == id).Include(p => p.EndUsers).Include(p => p.Contractors)
                                                                   .Include(p => p.EndUsers).Include(p => p.ProjectStatus)
                                                                   .Include(p => p.ProjectComponents).Include(p => p.Governorates).FirstOrDefault();
-
             if (project == null)
             {
-                var response = new HttpResponseMessage(HttpStatusCode.NotFound)
-                {
-                    Content = new StringContent("Project doesn't exist", System.Text.Encoding.UTF8, "text/plain"),
-                    StatusCode = HttpStatusCode.NotFound
-                };
-                throw new HttpResponseException(response);
+                throw new NotExistException("Not Exist Exception");
             }
             else
             {
@@ -118,11 +97,10 @@ namespace SMT.Core.Repositories
                     ContractorsId = project.ContractorsId,
                     ContractorContactName = project.Contractors.ContactName,
                     ContractorName = project.Contractors.ContractorName,
-                    GovernorateId=project.GovernoratesId,
-                    GovernorateName=project.Governorates.GovernorateName
+                    GovernorateId = project.GovernoratesId,
+                    GovernorateName = project.Governorates.GovernorateName
                 };
                 return projectDTO;
-
             }
         }
 
@@ -152,37 +130,28 @@ namespace SMT.Core.Repositories
 
         public void Update(int projectsDTOId, ProjectsDTO projectsDTO)
         {
+            if (projectsDTOId != projectsDTO.Id)
+            {
+                throw new NotExistException("Not Exist Exception");
+            }
+            Projects project = new Projects();
+            project.Id = projectsDTO.Id;
+            project.ProjectName = projectsDTO.ProjectName;
+            project.ProjectCreationDate = projectsDTO.ProjectCreationDate;
+            project.Rank = projectsDTO.Rank;
+            project.ProjectComponentsId = projectsDTO.ProjectComponentsId;
+            project.ProjectStatusId = projectsDTO.ProjectStatusId;
+            project.EndUsersId = projectsDTO.EndUsersId;
+            project.ContractorsId = projectsDTO.ContractorsId;
+            project.GovernoratesId = projectsDTO.GovernorateId;
+            _context.Entry(project).State = EntityState.Modified;
             try
             {
-                if (projectsDTO != null)
-                {
-
-                    Projects project = new Projects();
-                    project.Id = projectsDTO.Id;
-                    project.ProjectName = projectsDTO.ProjectName;
-                    project.ProjectCreationDate = projectsDTO.ProjectCreationDate;
-                    project.Rank = projectsDTO.Rank;
-                    project.ProjectComponentsId = projectsDTO.ProjectComponentsId;
-                    project.ProjectStatusId = projectsDTO.ProjectStatusId;
-                    project.EndUsersId = projectsDTO.EndUsersId;
-                    project.ContractorsId = projectsDTO.ContractorsId;
-                    project.GovernoratesId = projectsDTO.GovernorateId;
-                    _context.Entry(project).State = EntityState.Modified;
-                    _context.SaveChanges();
-                }
-                else
-                {
-                    var response = new HttpResponseMessage(HttpStatusCode.NotFound)
-                    {
-                        Content = new StringContent("Project doesn't exist", System.Text.Encoding.UTF8, "text/plain"),
-                        StatusCode = HttpStatusCode.NotFound
-                    };
-                    throw new HttpResponseException(response);
-                }
+                _context.SaveChanges();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                msg = ex.Message;
+                throw new NotCompletedException("Not Completed Exception");
             }
         }
     }

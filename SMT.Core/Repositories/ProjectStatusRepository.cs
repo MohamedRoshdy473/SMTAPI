@@ -12,10 +12,9 @@ using System.Web.Http;
 
 namespace SMT.Core.Repositories
 {
-    public class ProjectStatusRepository: IProjectStatusRepository
+    public class ProjectStatusRepository : IProjectStatusRepository
     {
         protected readonly SMTDbContext _context;
-        private string msg;
 
         public ProjectStatusRepository(SMTDbContext context)
         {
@@ -33,43 +32,27 @@ namespace SMT.Core.Repositories
                 }
                 else
                 {
-                    var response = new HttpResponseMessage(HttpStatusCode.NotFound)
-                    {
-                        Content = new StringContent("Project Status doesn't exist", System.Text.Encoding.UTF8, "text/plain"),
-                        StatusCode = HttpStatusCode.NotFound
-                    };
-                    throw new HttpResponseException(response);
+                    throw new NotCompletedException("Not Completed Exception");
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                msg = ex.Message;
+                throw new NotExistException("Not Exist Exception");
             }
         }
 
         public void Delete(int ProjectStatusId)
         {
             var projectStatus = _context.ProjectStatus.Find(ProjectStatusId);
-            try
+
+            if (projectStatus != null)
             {
-                if (projectStatus != null)
-                {
-                    _context.ProjectStatus.Remove(projectStatus);
-                    _context.SaveChanges();
-                }
-                else
-                {
-                    var response = new HttpResponseMessage(HttpStatusCode.NotFound)
-                    {
-                        Content = new StringContent("Project Status doesn't exist", System.Text.Encoding.UTF8, "text/plain"),
-                        StatusCode = HttpStatusCode.NotFound
-                    };
-                    throw new HttpResponseException(response);
-                }
+                _context.ProjectStatus.Remove(projectStatus);
+                _context.SaveChanges();
             }
-            catch (Exception ex)
+            else
             {
-                msg = ex.Message;
+                throw new NotExistException("Not Exist Exception");
             }
         }
 
@@ -79,17 +62,11 @@ namespace SMT.Core.Repositories
 
             if (projectStatus == null)
             {
-                var response = new HttpResponseMessage(HttpStatusCode.NotFound)
-                {
-                    Content = new StringContent("Project Status doesn't exist", System.Text.Encoding.UTF8, "text/plain"),
-                    StatusCode = HttpStatusCode.NotFound
-                };
-                throw new HttpResponseException(response);
+                throw new NotExistException("Not Exist Exception");
             }
             else
             {
                 return projectStatus;
-
             }
         }
 
@@ -100,26 +77,18 @@ namespace SMT.Core.Repositories
 
         public void Update(int ProjectStatusId, ProjectStatus ProjectStatus)
         {
+            if (ProjectStatusId != ProjectStatus.Id)
+            {
+                throw new NotExistException("Not Exist Exception");
+            }
+            _context.Entry(ProjectStatus).State = EntityState.Modified;
             try
             {
-                if (ProjectStatus != null)
-                {
-                    _context.Entry(ProjectStatus).State = EntityState.Modified;
-                    _context.SaveChanges();
-                }
-                else
-                {
-                    var response = new HttpResponseMessage(HttpStatusCode.NotFound)
-                    {
-                        Content = new StringContent("Project Status doesn't exist", System.Text.Encoding.UTF8, "text/plain"),
-                        StatusCode = HttpStatusCode.NotFound
-                    };
-                    throw new HttpResponseException(response);
-                }
+                _context.SaveChanges();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                msg = ex.Message;
+                throw new NotCompletedException("Not Completed Exception");
             }
         }
     }

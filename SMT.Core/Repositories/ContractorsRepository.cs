@@ -15,8 +15,6 @@ namespace SMT.Core.Repositories
     public class ContractorsRepository : IContractorsRepository
     {
         private readonly SMTDbContext _context;
-        private string msg;
-
         public ContractorsRepository(SMTDbContext context)
         {
             _context = context;
@@ -32,43 +30,27 @@ namespace SMT.Core.Repositories
                 }
                 else
                 {
-                    var response = new HttpResponseMessage(HttpStatusCode.NotFound)
-                    {
-                        Content = new StringContent("Contractor doesn't exist", System.Text.Encoding.UTF8, "text/plain"),
-                        StatusCode = HttpStatusCode.NotFound
-                    };
-                    throw new HttpResponseException(response);
+                    throw new NotCompletedException("Not Completed Exception");
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                msg = ex.Message;
+                throw new NotExistException("Not Exist Exception");
             }
         }
 
         public void Delete(int ContractorId)
         {
             var Contractor = _context.Contractors.Find(ContractorId);
-            try
+
+            if (Contractor != null)
             {
-                if (Contractor != null)
-                {
-                    _context.Contractors.Remove(Contractor);
-                    _context.SaveChanges();
-                }
-                else
-                {
-                    var response = new HttpResponseMessage(HttpStatusCode.NotFound)
-                    {
-                        Content = new StringContent("Contractor doesn't exist", System.Text.Encoding.UTF8, "text/plain"),
-                        StatusCode = HttpStatusCode.NotFound
-                    };
-                    throw new HttpResponseException(response);
-                }
+                _context.Contractors.Remove(Contractor);
+                _context.SaveChanges();
             }
-            catch (Exception ex)
+            else
             {
-                msg = ex.Message;
+                throw new NotExistException("Not Exist Exception");
             }
         }
 
@@ -78,12 +60,7 @@ namespace SMT.Core.Repositories
 
             if (Contractor == null)
             {
-                var response = new HttpResponseMessage(HttpStatusCode.NotFound)
-                {
-                    Content = new StringContent("Contractor doesn't exist", System.Text.Encoding.UTF8, "text/plain"),
-                    StatusCode = HttpStatusCode.NotFound
-                };
-                throw new HttpResponseException(response);
+                throw new NotExistException("Not Exist Exception");
             }
             else
             {
@@ -99,26 +76,18 @@ namespace SMT.Core.Repositories
 
         public void Update(int ContractorId, Contractors Contractor)
         {
+            if (ContractorId != Contractor.ID)
+            {
+                throw new NotExistException("Not Exist Exception");
+            }
+            _context.Entry(Contractor).State = EntityState.Modified;
             try
             {
-                if (Contractor != null)
-                {
-                    _context.Entry(Contractor).State = EntityState.Modified;
-                    _context.SaveChanges();
-                }
-                else
-                {
-                    var response = new HttpResponseMessage(HttpStatusCode.NotFound)
-                    {
-                        Content = new StringContent("Contractor doesn't exist", System.Text.Encoding.UTF8, "text/plain"),
-                        StatusCode = HttpStatusCode.NotFound
-                    };
-                    throw new HttpResponseException(response);
-                }
+                _context.SaveChanges();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                msg = ex.Message;
+                throw new NotCompletedException("Not Completed Exception");
             }
         }
     }

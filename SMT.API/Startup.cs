@@ -68,7 +68,7 @@ namespace SalesManagmentTool
             services.AddTransient<IGovernoratesService, GovernoratesService>();
             services.AddTransient<IGovernoratesRepository, GovernoratesRepository>();
             services.AddTransient<IDocumentsCategoriesService, DocumentsCategoriesService>();
-            services.AddTransient<IDocumentsCategoriesRepository, IDocumentsCategoriesRepository>();
+            services.AddTransient<IDocumentsCategoriesRepository, DocumentsCategoriesRepository>();
             services.AddTransient<IProjectUpdateService, ProjectUpdateService>();
             services.AddTransient<IProjectUpdateRepository, ProjectUpdateRepository>();
 
@@ -98,6 +98,12 @@ namespace SalesManagmentTool
                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JWT:Secret"]))
                };
            });
+            // Add framework services.
+            services.AddMvc(
+                config => {
+                    config.Filters.Add(typeof(CustomExceptionFilter));
+                }
+            );
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

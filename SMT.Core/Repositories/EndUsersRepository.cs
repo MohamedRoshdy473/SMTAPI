@@ -12,16 +12,13 @@ using System.Web.Http;
 
 namespace SMT.Core.Repositories
 {
-    public class EndUsersRepository: IEndUsersRepository
+    public class EndUsersRepository : IEndUsersRepository
     {
         private readonly SMTDbContext _context;
-        private string msg;
-
         public EndUsersRepository(SMTDbContext context)
         {
             _context = context;
         }
-
         public void Add(EndUsers EndUser)
         {
             try
@@ -33,63 +30,39 @@ namespace SMT.Core.Repositories
                 }
                 else
                 {
-                    var response = new HttpResponseMessage(HttpStatusCode.NotFound)
-                    {
-                        Content = new StringContent("EndUser doesn't exist", System.Text.Encoding.UTF8, "text/plain"),
-                        StatusCode = HttpStatusCode.NotFound
-                    };
-                    throw new HttpResponseException(response);
+                    throw new NotCompletedException("Not Completed Exception");
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                msg = ex.Message;
+                throw new NotExistException("Not Exist Exception");
             }
         }
-
         public void Delete(int EndUserId)
         {
             var EndUser = _context.EndUsers.Find(EndUserId);
-            try
+
+            if (EndUser != null)
             {
-                if (EndUser != null)
-                {
-                    _context.EndUsers.Remove(EndUser);
-                    _context.SaveChanges();
-                }
-                else
-                {
-                    var response = new HttpResponseMessage(HttpStatusCode.NotFound)
-                    {
-                        Content = new StringContent("End User doesn't exist", System.Text.Encoding.UTF8, "text/plain"),
-                        StatusCode = HttpStatusCode.NotFound
-                    };
-                    throw new HttpResponseException(response);
-                }
+                _context.EndUsers.Remove(EndUser);
+                _context.SaveChanges();
             }
-            catch (Exception ex)
+            else
             {
-                msg = ex.Message;
+                throw new NotExistException("Not Exist Exception");
             }
         }
 
         public EndUsers Get(int id)
         {
             var EndUser = _context.EndUsers.Find(id);
-
             if (EndUser == null)
             {
-                var response = new HttpResponseMessage(HttpStatusCode.NotFound)
-                {
-                    Content = new StringContent("End User doesn't exist", System.Text.Encoding.UTF8, "text/plain"),
-                    StatusCode = HttpStatusCode.NotFound
-                };
-                throw new HttpResponseException(response);
+                throw new NotExistException("Not Exist Exception");
             }
             else
             {
                 return EndUser;
-
             }
         }
 
@@ -100,26 +73,18 @@ namespace SMT.Core.Repositories
 
         public void Update(int EndUserId, EndUsers EndUser)
         {
+            if (EndUserId != EndUser.ID)
+            {
+                throw new NotExistException("Not Exist Exception");
+            }
+            _context.Entry(EndUser).State = EntityState.Modified;
             try
             {
-                if (EndUser != null)
-                {
-                    _context.Entry(EndUser).State = EntityState.Modified;
-                    _context.SaveChanges();
-                }
-                else
-                {
-                    var response = new HttpResponseMessage(HttpStatusCode.NotFound)
-                    {
-                        Content = new StringContent("End User doesn't exist", System.Text.Encoding.UTF8, "text/plain"),
-                        StatusCode = HttpStatusCode.NotFound
-                    };
-                    throw new HttpResponseException(response);
-                }
+                _context.SaveChanges();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                msg = ex.Message;
+                throw new NotCompletedException("Not Completed Exception");
             }
         }
     }

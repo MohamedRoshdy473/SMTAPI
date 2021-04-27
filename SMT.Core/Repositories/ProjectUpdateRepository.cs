@@ -1,6 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using SMT.Data.DTO;
 using SMT.Data.Models.SMTDBContext;
+using SMT.Data.ViewModels;
 using SMT.Domain.Repositories;
 using System;
 using System.Collections.Generic;
@@ -16,79 +18,59 @@ namespace SMT.Core.Repositories
     public class ProjectUpdateRepository : IProjectUpdateRepository
     {
         protected readonly SMTDbContext _context;
-        private string msg;
-
         public ProjectUpdateRepository(SMTDbContext context)
         {
             _context = context;
         }
-        public int Add(ProjectUpdateDTO ProjectUpdate)
+        public int Add(ProjectUpdateDTO ProjectUpdateDTO)
         {
             try
             {
-                if (ProjectUpdate != null)
+                if (ProjectUpdateDTO != null)
                 {
                     ProjectUpdate projectUpdate = new ProjectUpdate();
-                    projectUpdate.ProjectId = ProjectUpdate.ProjectId;
-                    projectUpdate.DueDate = ProjectUpdate.DueDate;
-                    _context.Add(ProjectUpdate);
+                    projectUpdate.Id = ProjectUpdateDTO.Id;
+                    projectUpdate.ProjectId = ProjectUpdateDTO.ProjectId;
+                    projectUpdate.DueDate = ProjectUpdateDTO.DueDate;
+                    _context.Add(projectUpdate);
                     _context.SaveChanges();
+                    ProjectUpdateDTO.Id = projectUpdate.Id;
                 }
                 else
                 {
-                    var response = new HttpResponseMessage(HttpStatusCode.NotFound)
-                    {
-                        Content = new StringContent("Project Update doesn't exist", System.Text.Encoding.UTF8, "text/plain"),
-                        StatusCode = HttpStatusCode.NotFound
-                    };
-                    throw new HttpResponseException(response);
+                    throw new NotCompletedException("Not Completed Exception");
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                msg = ex.Message;
+                throw new NotExistException("Not Exist Exception");
+
             }
-            return ProjectUpdate.Id;
+            return ProjectUpdateDTO.Id;
         }
 
         public void Delete(int ProjectUpdateId)
         {
             var ProjectUpdate = _context.projectUpdates.Find(ProjectUpdateId);
-            try
+
+            if (ProjectUpdate != null)
             {
-                if (ProjectUpdate != null)
-                {
-                    _context.projectUpdates.Remove(ProjectUpdate);
-                    _context.SaveChanges();
-                }
-                else
-                {
-                    var response = new HttpResponseMessage(HttpStatusCode.NotFound)
-                    {
-                        Content = new StringContent("Project Update doesn't exist", System.Text.Encoding.UTF8, "text/plain"),
-                        StatusCode = HttpStatusCode.NotFound
-                    };
-                    throw new HttpResponseException(response);
-                }
+                _context.projectUpdates.Remove(ProjectUpdate);
+                _context.SaveChanges();
             }
-            catch (Exception ex)
+            else
             {
-                msg = ex.Message;
+                throw new NotExistException("Not Exist Exception");
             }
         }
-
+    
         public ProjectUpdateDTO Get(int id)
         {
-            var ProjectUpdate = _context.projectUpdates.Find(id);
+            var ProjectUpdate = _context.projectUpdates.Include(p=>p.projects).FirstOrDefault(p=>p.Id==id);
 
             if (ProjectUpdate == null)
             {
-                var response = new HttpResponseMessage(HttpStatusCode.NotFound)
-                {
-                    Content = new StringContent("Project Update doesn't exist", System.Text.Encoding.UTF8, "text/plain"),
-                    StatusCode = HttpStatusCode.NotFound
-                };
-                throw new HttpResponseException(response);
+                throw new NotExistException("Not Exist Exception");
             }
             else
             {
@@ -116,32 +98,27 @@ namespace SMT.Core.Repositories
             return projectUpdates;
         }
 
-        public void Update(int ProjectUpdateId, ProjectUpdateDTO ProjectUpdate)
+        public void Update(int ProjectUpdateId, ProjectUpdateDTO projectUpdateDTO)
         {
+            if (ProjectUpdateId != projectUpdateDTO.Id)
+            {
+                throw new NotExistException("Not Exist Exception");
+            }
+            ProjectUpdate projectUpdate = new ProjectUpdate();
+            projectUpdate.Id = projectUpdateDTO.Id;
+            projectUpdate.ProjectId = projectUpdateDTO.ProjectId;
+            projectUpdate.DueDate = projectUpdateDTO.DueDate;
+
             try
             {
-                if (ProjectUpdate != null)
-                {
-                    ProjectUpdate projectUpdate = new ProjectUpdate();
-                    projectUpdate.ProjectId = ProjectUpdate.ProjectId;
-                    projectUpdate.DueDate = ProjectUpdate.DueDate;
-                    _context.Entry(projectUpdate).State = EntityState.Modified;
-                    _context.SaveChanges();
-                }
-                else
-                {
-                    var response = new HttpResponseMessage(HttpStatusCode.NotFound)
-                    {
-                        Content = new StringContent("Project Update doesn't exist", System.Text.Encoding.UTF8, "text/plain"),
-                        StatusCode = HttpStatusCode.NotFound
-                    };
-                    throw new HttpResponseException(response);
-                }
+                _context.Entry(projectUpdate).State = EntityState.Modified;
+                _context.SaveChanges();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                msg = ex.Message;
+                throw new NotCompletedException("Not Completed Exception");
             }
+
         }
     }
 }

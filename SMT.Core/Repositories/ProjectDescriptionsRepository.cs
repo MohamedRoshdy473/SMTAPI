@@ -16,8 +16,6 @@ namespace SMT.Core.Repositories
     public class ProjectDescriptionsRepository : IProjectDescriptionsRepository
     {
         private readonly SMTDbContext _context;
-        private string msg;
-
         public ProjectDescriptionsRepository(SMTDbContext context)
         {
             _context = context;
@@ -40,43 +38,27 @@ namespace SMT.Core.Repositories
                 }
                 else
                 {
-                    var response = new HttpResponseMessage(HttpStatusCode.NotFound)
-                    {
-                        Content = new StringContent("Project Descriptions doesn't exist", System.Text.Encoding.UTF8, "text/plain"),
-                        StatusCode = HttpStatusCode.NotFound
-                    };
-                    throw new HttpResponseException(response);
+                    throw new NotCompletedException("Not Completed Exception");
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                msg = ex.Message;
+                throw new NotExistException("Not Exist Exception");
             }
         }
 
         public void Delete(int projectDescriptionsDTOId)
         {
             var projectDescriptions = _context.ProjectDescriptions.Find(projectDescriptionsDTOId);
-            try
+
+            if (projectDescriptions != null)
             {
-                if (projectDescriptions != null)
-                {
-                    _context.ProjectDescriptions.Remove(projectDescriptions);
-                    _context.SaveChanges();
-                }
-                else
-                {
-                    var response = new HttpResponseMessage(HttpStatusCode.NotFound)
-                    {
-                        Content = new StringContent("Project Descriptions doesn't exist", System.Text.Encoding.UTF8, "text/plain"),
-                        StatusCode = HttpStatusCode.NotFound
-                    };
-                    throw new HttpResponseException(response);
-                }
+                _context.ProjectDescriptions.Remove(projectDescriptions);
+                _context.SaveChanges();
             }
-            catch (Exception ex)
+            else
             {
-                msg = ex.Message;
+                throw new NotExistException("Not Exist Exception");
             }
         }
 
@@ -88,16 +70,11 @@ namespace SMT.Core.Repositories
 
             if (ProDescription == null)
             {
-                var response = new HttpResponseMessage(HttpStatusCode.NotFound)
-                {
-                    Content = new StringContent("Project Descriptions doesn't exist", System.Text.Encoding.UTF8, "text/plain"),
-                    StatusCode = HttpStatusCode.NotFound
-                };
-                throw new HttpResponseException(response);
+                throw new NotExistException("Not Exist Exception");
             }
             else
             {
-                var projectDescriptionsDTO =new ProjectDescriptionsDTO
+                var projectDescriptionsDTO = new ProjectDescriptionsDTO
                 {
                     Id = ProDescription.Id,
                     Description = ProDescription.Description,
@@ -128,39 +105,31 @@ namespace SMT.Core.Repositories
                 UserId = ProDescription.UserId,
                 UserName = ProDescription.User.UserName
 
-            }).ToList() ;
+            }).ToList();
             return projectDescriptionsDTO;
         }
 
         public void Update(int projectDescriptionsDTOId, ProjectDescriptionsDTO projectDescriptionsDTO)
         {
+            if (projectDescriptionsDTOId != projectDescriptionsDTO.Id)
+            {
+                throw new NotExistException("Not Exist Exception");
+            }
+            ProjectDescriptions projectDescriptions = new ProjectDescriptions();
+            projectDescriptions.Id = projectDescriptionsDTO.Id;
+            projectDescriptions.Description = projectDescriptionsDTO.Description;
+            projectDescriptions.DescriptionDate = projectDescriptionsDTO.DescriptionDate;
+            projectDescriptions.ProjectId = projectDescriptionsDTO.ProjectId;
+            projectDescriptions.ProjectUpdateId = projectDescriptionsDTO.ProjectUpdateId;
+            projectDescriptions.UserId = projectDescriptionsDTO.UserId;
+            _context.Entry(projectDescriptions).State = EntityState.Modified;
             try
             {
-                if (projectDescriptionsDTO != null)
-                {
-                    ProjectDescriptions projectDescriptions = new ProjectDescriptions();
-                    projectDescriptions.Id = projectDescriptionsDTO.Id;
-                    projectDescriptions.Description = projectDescriptionsDTO.Description;
-                    projectDescriptions.DescriptionDate = projectDescriptionsDTO.DescriptionDate;
-                    projectDescriptions.ProjectId = projectDescriptionsDTO.ProjectId;
-                    projectDescriptions.ProjectUpdateId = projectDescriptionsDTO.ProjectUpdateId;
-                    projectDescriptions.UserId = projectDescriptionsDTO.UserId;
-                    _context.Entry(projectDescriptions).State = EntityState.Modified;
-                    _context.SaveChanges();
-                }
-                else
-                {
-                    var response = new HttpResponseMessage(HttpStatusCode.NotFound)
-                    {
-                        Content = new StringContent("Project Descriptions doesn't exist", System.Text.Encoding.UTF8, "text/plain"),
-                        StatusCode = HttpStatusCode.NotFound
-                    };
-                    throw new HttpResponseException(response);
-                }
+                _context.SaveChanges();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                msg = ex.Message;
+                throw new NotCompletedException("Not Completed Exception");
             }
         }
     }

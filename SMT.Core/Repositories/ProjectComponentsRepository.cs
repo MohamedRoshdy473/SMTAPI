@@ -15,7 +15,6 @@ namespace SMT.Core.Repositories
     public class ProjectComponentsRepository : IProjectComponentsRepository
     {
         protected readonly SMTDbContext _context;
-        private string msg;
 
         public ProjectComponentsRepository(SMTDbContext context)
         {
@@ -32,43 +31,27 @@ namespace SMT.Core.Repositories
                 }
                 else
                 {
-                    var response = new HttpResponseMessage(HttpStatusCode.NotFound)
-                    {
-                        Content = new StringContent("Project Component doesn't exist", System.Text.Encoding.UTF8, "text/plain"),
-                        StatusCode = HttpStatusCode.NotFound
-                    };
-                    throw new HttpResponseException(response);
+                    throw new NotCompletedException("Not Completed Exception");
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                msg = ex.Message;
+                throw new NotExistException("Not Exist Exception");
             }
         }
 
         public void Delete(int ProjectComponentId)
         {
             var ProjectComponent = _context.ProjectComponents.Find(ProjectComponentId);
-            try
+
+            if (ProjectComponent != null)
             {
-                if (ProjectComponent != null)
-                {
-                    _context.ProjectComponents.Remove(ProjectComponent);
-                    _context.SaveChanges();
-                }
-                else
-                {
-                    var response = new HttpResponseMessage(HttpStatusCode.NotFound)
-                    {
-                        Content = new StringContent("Project Component doesn't exist", System.Text.Encoding.UTF8, "text/plain"),
-                        StatusCode = HttpStatusCode.NotFound
-                    };
-                    throw new HttpResponseException(response);
-                }
+                _context.ProjectComponents.Remove(ProjectComponent);
+                _context.SaveChanges();
             }
-            catch (Exception ex)
+            else
             {
-                msg = ex.Message;
+                throw new NotExistException("Not Exist Exception");
             }
         }
 
@@ -78,17 +61,11 @@ namespace SMT.Core.Repositories
 
             if (ProjectComponent == null)
             {
-                var response = new HttpResponseMessage(HttpStatusCode.NotFound)
-                {
-                    Content = new StringContent("Project Component doesn't exist", System.Text.Encoding.UTF8, "text/plain"),
-                    StatusCode = HttpStatusCode.NotFound
-                };
-                throw new HttpResponseException(response);
+                throw new NotExistException("Not Exist Exception");
             }
             else
             {
                 return ProjectComponent;
-
             }
         }
 
@@ -99,27 +76,21 @@ namespace SMT.Core.Repositories
 
         public void Update(int ProjectComponentId, ProjectComponents ProjectComponent)
         {
+            if (ProjectComponentId != ProjectComponent.Id)
+            {
+                throw new NotExistException("Not Exist Exception");
+            }
+            _context.Entry(ProjectComponent).State = EntityState.Modified;
+
             try
             {
-                if (ProjectComponent != null)
-                {
-                    _context.Entry(ProjectComponent).State = EntityState.Modified;
-                    _context.SaveChanges();
-                }
-                else
-                {
-                    var response = new HttpResponseMessage(HttpStatusCode.NotFound)
-                    {
-                        Content = new StringContent("Project Component doesn't exist", System.Text.Encoding.UTF8, "text/plain"),
-                        StatusCode = HttpStatusCode.NotFound
-                    };
-                    throw new HttpResponseException(response);
-                }
+                _context.SaveChanges();
             }
             catch (Exception ex)
             {
-                msg = ex.Message;
+                throw new NotCompletedException("Not Completed Exception");
             }
         }
     }
 }
+

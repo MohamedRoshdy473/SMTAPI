@@ -14,8 +14,7 @@ namespace SMT.Core.Repositories
 {
     public class DocumentsCategoriesRepository : IDocumentsCategoriesRepository
     {
-        protected readonly SMTDbContext _context;
-        private string msg;
+        private readonly SMTDbContext _context;
         public DocumentsCategoriesRepository(SMTDbContext context)
         {
             _context = context;
@@ -32,43 +31,28 @@ namespace SMT.Core.Repositories
                 }
                 else
                 {
-                    var response = new HttpResponseMessage(HttpStatusCode.NotFound)
-                    {
-                        Content = new StringContent("Documents Category doesn't exist", System.Text.Encoding.UTF8, "text/plain"),
-                        StatusCode = HttpStatusCode.NotFound
-                    };
-                    throw new HttpResponseException(response);
+                    throw new NotCompletedException("Not Completed Exception");
+
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                msg = ex.Message;
+                throw new NotExistException("Not Exist Exception");
             }
         }
 
         public void Delete(int DocumentsCategoryId)
         {
             var DocumentsCategory = _context.DocumentsCategories.Find(DocumentsCategoryId);
-            try
+
+            if (DocumentsCategory != null)
             {
-                if (DocumentsCategory != null)
-                {
-                    _context.DocumentsCategories.Remove(DocumentsCategory);
-                    _context.SaveChanges();
-                }
-                else
-                {
-                    var response = new HttpResponseMessage(HttpStatusCode.NotFound)
-                    {
-                        Content = new StringContent("Documents Category doesn't exist", System.Text.Encoding.UTF8, "text/plain"),
-                        StatusCode = HttpStatusCode.NotFound
-                    };
-                    throw new HttpResponseException(response);
-                }
+                _context.DocumentsCategories.Remove(DocumentsCategory);
+                _context.SaveChanges();
             }
-            catch (Exception ex)
+            else
             {
-                msg = ex.Message;
+                throw new NotExistException("Not Exist Exception");
             }
         }
 
@@ -78,20 +62,13 @@ namespace SMT.Core.Repositories
 
             if (DocumentsCategory == null)
             {
-                var response = new HttpResponseMessage(HttpStatusCode.NotFound)
-                {
-                    Content = new StringContent("Documents Category doesn't exist", System.Text.Encoding.UTF8, "text/plain"),
-                    StatusCode = HttpStatusCode.NotFound
-                };
-                throw new HttpResponseException(response);
+                throw new NotExistException("Not Exist Exception");
             }
             else
             {
                 return DocumentsCategory;
-
             }
         }
-
         public IEnumerable<DocumentsCategories> GetAll()
         {
             return _context.DocumentsCategories.ToList();
@@ -99,27 +76,18 @@ namespace SMT.Core.Repositories
 
         public void Update(int DocumentsCategoryId, DocumentsCategories DocumentsCategory)
         {
-
+            if (DocumentsCategoryId != DocumentsCategory.Id)
+            {
+                throw new NotExistException("Not Exist Exception");
+            }
+            _context.Entry(DocumentsCategory).State = EntityState.Modified;
             try
             {
-                if (DocumentsCategory != null)
-                {
-                    _context.Entry(DocumentsCategory).State = EntityState.Modified;
-                    _context.SaveChanges();
-                }
-                else
-                {
-                    var response = new HttpResponseMessage(HttpStatusCode.NotFound)
-                    {
-                        Content = new StringContent("DocumentsCategory doesn't exist", System.Text.Encoding.UTF8, "text/plain"),
-                        StatusCode = HttpStatusCode.NotFound
-                    };
-                    throw new HttpResponseException(response);
-                }
+                _context.SaveChanges();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                msg = ex.Message;
+                throw new NotCompletedException("Not Completed Exception");
             }
         }
     }
