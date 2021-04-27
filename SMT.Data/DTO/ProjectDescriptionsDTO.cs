@@ -16,6 +16,5 @@ namespace SMT.Data.DTO
         public int ProjectId { get; set; }
         public string projectName { get; set; }
         public int ProjectUpdateId { get; set; }
-        public DateTime DueDate { get; set; }
     }
 }
