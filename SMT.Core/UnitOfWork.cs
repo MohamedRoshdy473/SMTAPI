@@ -23,6 +23,7 @@ namespace SMT.Core
         private GovernoratesRepository _governoratesRepository;
         private DocumentsCategoriesRepository _documentsCategoriesRepository;
         private ProjectUpdateRepository _projectUpdateRepository;
+        private ProjectDocumentsRepository _projectDocumentsRepository;
 
         public UnitOfWork(SMTDbContext context)
         {
@@ -37,6 +38,7 @@ namespace SMT.Core
         public IGovernoratesRepository GovernoratesRepository => new GovernoratesRepository(_context);
         public IDocumentsCategoriesRepository DocumentsCategoriesRepository => new DocumentsCategoriesRepository(_context);
         public IProjectUpdateRepository ProjectUpdateRepository => new ProjectUpdateRepository(_context);
+        public IProjectDocumentsRepository ProjectDocumentsRepository => new ProjectDocumentsRepository(_context);
 
 
         public int CommitAsync()
@@ -69,5 +71,6 @@ namespace SMT.Core
         public IGovernoratesRepository Governorates => _governoratesRepository = _governoratesRepository ?? new GovernoratesRepository(_context);
         public IDocumentsCategoriesRepository DocumentsCategories => _documentsCategoriesRepository = _documentsCategoriesRepository ?? new DocumentsCategoriesRepository(_context);
         public IProjectUpdateRepository ProjectUpdate => _projectUpdateRepository = _projectUpdateRepository ?? new ProjectUpdateRepository(_context);
+        public IProjectDocumentsRepository ProjectDocuments => _projectDocumentsRepository = _projectDocumentsRepository ?? new ProjectDocumentsRepository(_context);
     }
 }

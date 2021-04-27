@@ -69,8 +69,8 @@ namespace SalesManagmentTool
             services.AddTransient<IGovernoratesRepository, GovernoratesRepository>();
             services.AddTransient<IDocumentsCategoriesService, DocumentsCategoriesService>();
             services.AddTransient<IDocumentsCategoriesRepository, DocumentsCategoriesRepository>();
-            services.AddTransient<IProjectUpdateService, ProjectUpdateService>();
-            services.AddTransient<IProjectUpdateRepository, ProjectUpdateRepository>();
+            services.AddTransient<IProjectDocumentsService, ProjectDocumentsService>();
+            services.AddTransient<IProjectDocumentsRepository, ProjectDocumentsRepository>();
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddIdentity<ApplicationUser, IdentityRole>()

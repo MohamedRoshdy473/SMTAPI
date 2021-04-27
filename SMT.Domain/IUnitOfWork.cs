@@ -19,5 +19,6 @@ namespace SMT.Domain
         IGovernoratesRepository Governorates { get; }
         IDocumentsCategoriesRepository DocumentsCategories {get;}
         IProjectUpdateRepository ProjectUpdate {get;}
+        IProjectDocumentsRepository ProjectDocuments { get; }
     }
 }

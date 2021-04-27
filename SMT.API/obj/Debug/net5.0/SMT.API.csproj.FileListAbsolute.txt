@@ -306,3 +306,5 @@ D:\SMTAPI\SMT.API\obj\Debug\net5.0\SMT.API.dll
 D:\SMTAPI\SMT.API\obj\Debug\net5.0\ref\SMT.API.dll
 D:\SMTAPI\SMT.API\obj\Debug\net5.0\SMT.API.pdb
 D:\SMTAPI\SMT.API\obj\Debug\net5.0\SMT.API.genruntimeconfig.cache
+D:\SMTAPI\SMT.API\bin\Debug\net5.0\Microsoft.DotNet.PlatformAbstractions.dll
+D:\SMTAPI\SMT.API\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
