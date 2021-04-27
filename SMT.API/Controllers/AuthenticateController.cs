@@ -88,6 +88,7 @@ namespace SMT.API.Controllers
 
                 var name = user.UserName;
                 var Useremail = user.Email;
+                var UserId = user.Id;
                 return Ok(new
                 {
                     token = new JwtSecurityTokenHandler().WriteToken(token),
@@ -95,7 +96,7 @@ namespace SMT.API.Controllers
                     UserName = name,
                     roles = userRoles,
                     expiration = token.ValidTo,
-                    id = usrId
+                    UserId = UserId
                 });
             }
             return Unauthorized();
