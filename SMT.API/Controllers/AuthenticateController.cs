@@ -2,12 +2,15 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using SMT.Data.DTO;
 using SMT.Data.Models.HRDBContext;
 using SMT.Data.Models.SMTDBContext;
 using SMT.Data.Models.SMTDBContext.SMTDBContext;
 using SMT.Data.ViewModels;
+using SMT.Domain;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
@@ -26,15 +29,15 @@ namespace SMT.API.Controllers
         private readonly RoleManager<IdentityRole> roleManager;
         private readonly IConfiguration _configuration;
         private readonly HRDBContext _context;
-        //private readonly IEmailSender _emailSender;
-        public AuthenticateController(UserManager<ApplicationUser> userManager, 
+        private readonly IEmailSender _emailSender;
+        public AuthenticateController(UserManager<ApplicationUser> userManager, IEmailSender emailSender,
             RoleManager<IdentityRole> roleManager, IConfiguration configuration, HRDBContext context)
         {
             this.userManager = userManager;
             this.roleManager = roleManager;
             _configuration = configuration;
             _context = context;
-           // _emailSender = emailSender;
+            _emailSender = emailSender;
 
         }
 
@@ -155,9 +158,9 @@ namespace SMT.API.Controllers
                     await roleManager.CreateAsync(new IdentityRole(UserRoles.Admin));
                 await userManager.AddToRoleAsync(user, UserRoles.Admin);
             }
-            //  string url = "http://10.10.0.129:7777/#/login";
-            //  var message = new Message(new string[] { $"{model.Email}" }, "Confirmation Email", $"Dear {model.UserName}\r\n Hope this email finds you well \r\n This is Al-Mostakbal Technology. As per your registration , please note that your Email : {model.Email} And Password :{model.Password} follow link to login {url}");
-            //  _emailSender.SendEmail(message);
+              string url = "http://localhost:4200/login";
+             var message = new MessageDTO(new string[] { $"{model.Email}" }, "Confirmation Email", $"Dear {model.UserName}\r\n Hope this email finds you well \r\n This is Al-Mostakbal Technology. As per your registration , please note that your Email : {model.Email} And Password :{model.Password} follow link to login {url}");
+              _emailSender.SendEmail(message);
             return Ok(new Response { Status = "Success", Message = "User created successfully!" });
         }
         [HttpPost]
@@ -165,7 +168,6 @@ namespace SMT.API.Controllers
         public async Task<IActionResult> ChangPassword(ChangePasswordVM model)
         {
             var user = await userManager.FindByNameAsync(model.userName);
-            //user != null && await userManager.CheckPasswordAsync(user, model.Password)
             await userManager.ChangePasswordAsync(user, model.Password, model.NewPassword);
             return Ok();
         }
@@ -179,51 +181,51 @@ namespace SMT.API.Controllers
             return Ok();
         }
 
-        //[HttpPost("ForgotPassword")]
-        //public async Task<IActionResult> ForgotPassword([FromBody] ForgotPasswordModel forgotPasswordModel)
-        //{
-        //    if (!ModelState.IsValid)
-        //        return BadRequest();
+        [HttpPost("ForgotPassword")]
+        public async Task<IActionResult> ForgotPassword([FromBody] ForgotPasswordDTO forgotPasswordModel)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest();
 
-        //    var user = await userManager.FindByEmailAsync(forgotPasswordModel.Email);
-        //    if (user == null)
-        //        return BadRequest("Invalid Request");
+            var user = await userManager.FindByEmailAsync(forgotPasswordModel.Email);
+            if (user == null)
+                return BadRequest("Invalid Request");
 
-        //    var token = await userManager.GeneratePasswordResetTokenAsync(user);
-        //    var param = new Dictionary<string, string>
-        //     {
-        //         {"token", token },
-        //         {"email", forgotPasswordModel.Email }
-        //     };
+            var token = await userManager.GeneratePasswordResetTokenAsync(user);
+            var param = new Dictionary<string, string>
+             {
+                 {"token", token },
+                 {"email", forgotPasswordModel.Email }
+             };
 
-        //    var callback = QueryHelpers.AddQueryString(forgotPasswordModel.ClientURI, param);
-        //    var hash = callback.Split("#");
-        //    var query = hash[0];
-        //    string replace = query.Replace("/?", "/#/Resetpassword?");
-        //    var message = new Message(new string[] { user.Email }, "Al-Mostakbal Technology.", $"Dear {user.UserName}\r\n Please follow link to reset your password {replace}");
-        //    // var message = new Message(new string[] { user.Email }, "Al-Mostakbal Technology.", replace);
-        //    _emailSender.SendEmail(message);
-        //    return Ok();
-        //}
-        //[HttpPost("ResetPassword")]
-        //public async Task<IActionResult> ResetPassword([FromBody] ResetPasswordDTO resetPasswordDto)
-        //{
-        //    if (!ModelState.IsValid)
-        //        return BadRequest();
+            var callback = QueryHelpers.AddQueryString(forgotPasswordModel.ClientURI, param);
+            var hash = callback.Split("#");
+            var query = hash[0];
+            string replace = query.Replace("/?", "/#/Resetpassword?");
+            var message = new MessageDTO(new string[] { user.Email }, "Al-Mostakbal Technology.", $"Dear {user.UserName}\r\n Please follow link to reset your password {replace}");
+            // var message = new Message(new string[] { user.Email }, "Al-Mostakbal Technology.", replace);
+            _emailSender.SendEmail(message);
+            return Ok();
+        }
+        [HttpPost("ResetPassword")]
+        public async Task<IActionResult> ResetPassword([FromBody] ResetPasswordDTO resetPasswordDto)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest();
 
-        //    var user = await userManager.FindByEmailAsync(resetPasswordDto.Email);
-        //    if (user == null)
-        //        return BadRequest("Invalid Request");
+            var user = await userManager.FindByEmailAsync(resetPasswordDto.Email);
+            if (user == null)
+                return BadRequest("Invalid Request");
 
-        //    var resetPassResult = await userManager.ResetPasswordAsync(user, resetPasswordDto.Token, resetPasswordDto.Password);
-        //    if (!resetPassResult.Succeeded)
-        //    {
-        //        var errors = resetPassResult.Errors.Select(e => e.Description);
+            var resetPassResult = await userManager.ResetPasswordAsync(user, resetPasswordDto.Token, resetPasswordDto.Password);
+            if (!resetPassResult.Succeeded)
+            {
+                var errors = resetPassResult.Errors.Select(e => e.Description);
 
-        //        return BadRequest(new { Errors = errors });
-        //    }
+                return BadRequest(new { Errors = errors });
+            }
 
-        //    return Ok();
-        //}
+            return Ok();
+        }
     }
 }

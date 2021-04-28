@@ -80,7 +80,7 @@ namespace SMT.Core.Repositories
                 {
                     Id = projectDocuments.Id,
                     DocumentFile = projectDocuments.DocumentFile,
-                    ProjectUpdateId = projectDocuments.ProjectUpdateId,
+                    ProjectUpdateId = (int)projectDocuments.ProjectUpdateId,
                     DueDate = projectDocuments.ProjectUpdate.DueDate,
                     ProjectId = projectDocuments.ProjectId,
                     ProjectName = projectDocuments.projects.ProjectName,
@@ -98,7 +98,7 @@ namespace SMT.Core.Repositories
             {
                 Id = projectDocuments.Id,
                 DocumentFile = projectDocuments.DocumentFile,
-                ProjectUpdateId = projectDocuments.ProjectUpdateId,
+                ProjectUpdateId = (int)projectDocuments.ProjectUpdateId,
                 DueDate = projectDocuments.ProjectUpdate.DueDate,
                 ProjectId = projectDocuments.ProjectId,
                 ProjectName = projectDocuments.projects.ProjectName,

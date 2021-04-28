@@ -86,7 +86,7 @@ namespace SMT.Core.Repositories
             {
                 _context.SaveChanges();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 throw new NotCompletedException("Not Completed Exception");
             }

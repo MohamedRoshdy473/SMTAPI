@@ -1187,7 +1187,7 @@ namespace SMT.Data.Migrations
                     b.Property<int>("ProjectId")
                         .HasColumnType("int");
 
-                    b.Property<int>("ProjectUpdateId")
+                    b.Property<int?>("ProjectUpdateId")
                         .HasColumnType("int");
 
                     b.Property<string>("UserId")
@@ -1220,7 +1220,7 @@ namespace SMT.Data.Migrations
                     b.Property<int>("ProjectId")
                         .HasColumnType("int");
 
-                    b.Property<int>("ProjectUpdateId")
+                    b.Property<int?>("ProjectUpdateId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -1764,9 +1764,7 @@ namespace SMT.Data.Migrations
 
                     b.HasOne("SMT.Data.Models.SMTDBContext.ProjectUpdate", "ProjectUpdate")
                         .WithMany()
-                        .HasForeignKey("ProjectUpdateId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ProjectUpdateId");
 
                     b.HasOne("SMT.Data.Models.SMTDBContext.SMTDBContext.ApplicationUser", "User")
                         .WithMany()
@@ -1795,9 +1793,7 @@ namespace SMT.Data.Migrations
 
                     b.HasOne("SMT.Data.Models.SMTDBContext.ProjectUpdate", "ProjectUpdate")
                         .WithMany()
-                        .HasForeignKey("ProjectUpdateId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ProjectUpdateId");
 
                     b.Navigation("DocumentsCategories");
 

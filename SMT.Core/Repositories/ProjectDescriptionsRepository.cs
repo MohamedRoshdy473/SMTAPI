@@ -81,7 +81,7 @@ namespace SMT.Core.Repositories
                     DescriptionDate = ProDescription.DescriptionDate,
                     ProjectId = ProDescription.ProjectId,
                     projectName = ProDescription.projects.ProjectName,
-                    ProjectUpdateId = ProDescription.ProjectUpdateId,
+                    ProjectUpdateId = (int)ProDescription.ProjectUpdateId,
                     UserId = ProDescription.UserId,
                     UserName = ProDescription.User.UserName
 
@@ -99,7 +99,7 @@ namespace SMT.Core.Repositories
                 DescriptionDate = ProDescription.DescriptionDate,
                 ProjectId = ProDescription.ProjectId,
                 projectName = ProDescription.projects.ProjectName,
-                ProjectUpdateId = ProDescription.ProjectUpdateId,
+                ProjectUpdateId = (int)ProDescription.ProjectUpdateId,
                 UserId = ProDescription.UserId,
                 UserName = ProDescription.User.UserName
 

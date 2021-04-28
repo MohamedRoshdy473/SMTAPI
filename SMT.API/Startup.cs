@@ -16,6 +16,7 @@ using Microsoft.IdentityModel.Tokens;
 using SMT.Core;
 using SMT.Core.Repositories;
 using SMT.Core.Services;
+using SMT.Data.DTO;
 using SMT.Data.Models.HRDBContext;
 using SMT.Data.Models.SMTDBContext;
 using SMT.Data.Models.SMTDBContext.SMTDBContext;
@@ -50,6 +51,9 @@ namespace SalesManagmentTool
             services.AddControllers();
             services.AddMvc();
             services.AddCors();
+            var emailConfig = Configuration.GetSection("EmailConfiguration").Get<EmailConfigurationDTO>();
+            services.AddSingleton(emailConfig);
+            services.AddScoped<IEmailSender, EmailSender>();
             services.AddDbContext<SMTDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("SMTConnectionStr")));
             services.AddDbContext<HRDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("HRConnection")));
 
