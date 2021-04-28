@@ -1,0 +1,13 @@
+https://mdbootstrap.com/docs/angular/getting-started/quick-start/
+
+
+
+Angular Material installation
+
+https://lukasznojek.com/blog/2020/03/add-angular-material-to-an-angular-8-application/
+
+// Clean Code
+https://www.freecodecamp.org/news/best-practices-for-a-clean-and-performant-angular-application-288e7b39eb6f/
+
+//install specific version of angular
+https://stackoverflow.com/questions/52331625/how-to-create-a-specific-version-of-angular-project-using-cli#:~:text=Now%20type%20angular%20specific%20version,that%20you%20recently%20install%20angular.

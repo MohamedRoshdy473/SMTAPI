@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +15,6 @@ namespace SMT.Data.DTO
         public string UserName { get; set; }
         public int ProjectId { get; set; }
         public string projectName { get; set; }
-        public int ProjectUpdateId { get; set; }
+        public int? ProjectUpdateId { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SMT.Data.DTO;
 using SMT.Data.Models.SMTDBContext;
@@ -24,11 +24,17 @@ namespace SMT.Core.Repositories
         {
             try
             {
+     
                 if (projectDocumentsDTO != null)
                 {
                     foreach (var item in projectDocumentsDTO)
                     {
-                    ProjectDocuments projectDocuments = new ProjectDocuments();
+          
+                if (item.ProjectUpdateId == 0)
+                {
+              item.ProjectUpdateId = null;
+                }
+                ProjectDocuments projectDocuments = new ProjectDocuments();
                     projectDocuments.Id = item.Id;
                     projectDocuments.DocumentFile = item.DocumentFile;
                     projectDocuments.ProjectId = item.ProjectId;

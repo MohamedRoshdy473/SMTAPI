@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using SMT.Data.DTO;
 using SMT.Data.Models.SMTDBContext;
 using SMT.Domain.Repositories;
@@ -26,6 +26,10 @@ namespace SMT.Core.Repositories
             {
                 if (projectDescriptionsDTO != null)
                 {
+          if (projectDescriptionsDTO.ProjectUpdateId==0)
+          {
+            projectDescriptionsDTO.ProjectUpdateId =null;
+          }
                     ProjectDescriptions projectDescriptions = new ProjectDescriptions();
                     projectDescriptions.Id = projectDescriptionsDTO.Id;
                     projectDescriptions.Description = projectDescriptionsDTO.Description;

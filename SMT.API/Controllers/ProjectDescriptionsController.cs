@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SMT.Data.DTO;
 using SMT.Data.Models.SMTDBContext;
 using SMT.Domain.Services;
@@ -41,7 +41,6 @@ namespace SMT.API.Controllers
         {
             _projectDescriptionsService.AddProjectDescription(projectDescriptionsDTO);
             return CreatedAtAction("Get", new { id = projectDescriptionsDTO.Id }, projectDescriptionsDTO);
-
         }
 
         // PUT api/<ProjectDescriptionsController>/5

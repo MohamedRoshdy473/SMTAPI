@@ -312,3 +312,9 @@ D:\SMTAPI\SMT.API\bin\Debug\net5.0\MailKit.dll
 D:\SMTAPI\SMT.API\bin\Debug\net5.0\MimeKit.dll
 D:\SMTAPI\SMT.API\bin\Debug\net5.0\NETCore.MailKit.dll
 D:\SMTAPI\SMT.API\bin\Debug\net5.0\BouncyCastle.Crypto.dll
+E:\SMTAPI\SMT.API\bin\Debug\net5.0\MailKit.dll
+E:\SMTAPI\SMT.API\bin\Debug\net5.0\Microsoft.DotNet.PlatformAbstractions.dll
+E:\SMTAPI\SMT.API\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
+E:\SMTAPI\SMT.API\bin\Debug\net5.0\MimeKit.dll
+E:\SMTAPI\SMT.API\bin\Debug\net5.0\NETCore.MailKit.dll
+E:\SMTAPI\SMT.API\bin\Debug\net5.0\BouncyCastle.Crypto.dll
