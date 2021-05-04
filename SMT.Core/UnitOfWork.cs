@@ -14,7 +14,7 @@ namespace SMT.Core
     {
         private bool disposed = false;
         private readonly SMTDbContext _context;
-        private  ProjectComponentsRepository _projectComponentsRepository;
+        private ProjectComponentsRepository _projectComponentsRepository;
         private ProjectStatusRepository _projectStatusRepository;
         private ContractorsRepository _contractors;
         private EndUsersRepository _endUsers;
@@ -24,6 +24,9 @@ namespace SMT.Core
         private DocumentsCategoriesRepository _documentsCategoriesRepository;
         private ProjectUpdateRepository _projectUpdateRepository;
         private ProjectDocumentsRepository _projectDocumentsRepository;
+        private OfferStatusRepository _offerStatusRepository;
+        private OfferDocumentsRepository _offerDocumentsRepository;
+        private ProjectCostsRepository _projectCostRepository;
 
         public UnitOfWork(SMTDbContext context)
         {
@@ -39,7 +42,9 @@ namespace SMT.Core
         public IDocumentsCategoriesRepository DocumentsCategoriesRepository => new DocumentsCategoriesRepository(_context);
         public IProjectUpdateRepository ProjectUpdateRepository => new ProjectUpdateRepository(_context);
         public IProjectDocumentsRepository ProjectDocumentsRepository => new ProjectDocumentsRepository(_context);
-
+        public IOfferStatusRepository OfferStatusRepository => new OfferStatusRepository(_context);
+        public IOfferDocumentsRepository OfferDocumentsRepository => new OfferDocumentsRepository(_context);
+        public IProjectCostsRepository ProjectCostsRepository => new ProjectCostsRepository(_context);
 
         public int CommitAsync()
         {
@@ -72,5 +77,10 @@ namespace SMT.Core
         public IDocumentsCategoriesRepository DocumentsCategories => _documentsCategoriesRepository = _documentsCategoriesRepository ?? new DocumentsCategoriesRepository(_context);
         public IProjectUpdateRepository ProjectUpdate => _projectUpdateRepository = _projectUpdateRepository ?? new ProjectUpdateRepository(_context);
         public IProjectDocumentsRepository ProjectDocuments => _projectDocumentsRepository = _projectDocumentsRepository ?? new ProjectDocumentsRepository(_context);
+        public IOfferStatusRepository OfferStatus => _offerStatusRepository = _offerStatusRepository ?? new OfferStatusRepository(_context);
+
+        public IOfferDocumentsRepository OfferDocuments => _offerDocumentsRepository = _offerDocumentsRepository ?? new OfferDocumentsRepository(_context);
+
+        public IProjectCostsRepository ProjectCosts => _projectCostRepository = _projectCostRepository ?? new ProjectCostsRepository(_context);
     }
 }

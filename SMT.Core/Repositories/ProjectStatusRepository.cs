@@ -14,7 +14,7 @@ namespace SMT.Core.Repositories
 {
     public class ProjectStatusRepository : IProjectStatusRepository
     {
-        protected readonly SMTDbContext _context;
+        private readonly SMTDbContext _context;
 
         public ProjectStatusRepository(SMTDbContext context)
         {

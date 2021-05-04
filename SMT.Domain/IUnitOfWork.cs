@@ -20,6 +20,9 @@ namespace SMT.Domain
         IDocumentsCategoriesRepository DocumentsCategories {get;}
         IProjectUpdateRepository ProjectUpdate {get;}
         IProjectDocumentsRepository ProjectDocuments { get; }
+        IOfferStatusRepository OfferStatus { get; }
+        IOfferDocumentsRepository OfferDocuments { get; }
+        IProjectCostsRepository ProjectCosts { get; }
 
     }
 }

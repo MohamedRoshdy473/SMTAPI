@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using SMT.Core;
 using SMT.Data.DTO;
 using SMT.Domain.Services;
@@ -78,7 +79,28 @@ namespace SMT.API.Controllers
                 throw new NotExistException("Not Exist Exception");
             }
         }
+        [AllowAnonymous]
+        [HttpGet]
+        [Route("GetDocument/{docName}")]
+        public IActionResult GetDocument(string docName)
+        {
+            if (docName == null)
+                return Content("filename not present");
 
+            var path = Path.Combine(
+                           Directory.GetCurrentDirectory(),
+                           "wwwroot/documentFiles", docName);
+
+            var memory = new MemoryStream();
+            var ext = System.IO.Path.GetExtension(path);
+            using (var stream = new FileStream(path, FileMode.Open))
+            {
+                stream.CopyTo(memory);
+            }
+            memory.Position = 0;
+            var contentType = "APPLICATION/octet-stream";
+            return File(memory, contentType, Path.GetFileName(path));
+        }
         // PUT api/<ProjectDocumentsController>/5
         [HttpPut("{id}")]
         public ActionResult<ProjectDocumentsDTO> Put(int id, ProjectDocumentsDTO projectDocumentsDTO)

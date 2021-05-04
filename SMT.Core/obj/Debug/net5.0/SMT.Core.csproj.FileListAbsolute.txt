@@ -27,11 +27,6 @@ E:\SMTAPI\SMT.Core\obj\Debug\net5.0\SMT.Core.csproj.CopyComplete
 E:\SMTAPI\SMT.Core\obj\Debug\net5.0\SMT.Core.dll
 E:\SMTAPI\SMT.Core\obj\Debug\net5.0\ref\SMT.Core.dll
 E:\SMTAPI\SMT.Core\obj\Debug\net5.0\SMT.Core.pdb
-D:\SMTAPI\SMT.Core\obj\Debug\net5.0\SMT.Core.csprojAssemblyReference.cache
-D:\SMTAPI\SMT.Core\obj\Debug\net5.0\SMT.Core.GeneratedMSBuildEditorConfig.editorconfig
-D:\SMTAPI\SMT.Core\obj\Debug\net5.0\SMT.Core.AssemblyInfoInputs.cache
-D:\SMTAPI\SMT.Core\obj\Debug\net5.0\SMT.Core.AssemblyInfo.cs
-D:\SMTAPI\SMT.Core\obj\Debug\net5.0\SMT.Core.csproj.CoreCompileInputs.cache
 D:\SMTAPI\SMT.Core\bin\Debug\net5.0\SMT.Core.deps.json
 D:\SMTAPI\SMT.Core\bin\Debug\net5.0\SMT.Core.dll
 D:\SMTAPI\SMT.Core\bin\Debug\net5.0\ref\SMT.Core.dll
@@ -40,6 +35,11 @@ D:\SMTAPI\SMT.Core\bin\Debug\net5.0\SMT.Data.dll
 D:\SMTAPI\SMT.Core\bin\Debug\net5.0\SMT.Domain.dll
 D:\SMTAPI\SMT.Core\bin\Debug\net5.0\SMT.Data.pdb
 D:\SMTAPI\SMT.Core\bin\Debug\net5.0\SMT.Domain.pdb
+D:\SMTAPI\SMT.Core\obj\Debug\net5.0\SMT.Core.csprojAssemblyReference.cache
+D:\SMTAPI\SMT.Core\obj\Debug\net5.0\SMT.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\SMTAPI\SMT.Core\obj\Debug\net5.0\SMT.Core.AssemblyInfoInputs.cache
+D:\SMTAPI\SMT.Core\obj\Debug\net5.0\SMT.Core.AssemblyInfo.cs
+D:\SMTAPI\SMT.Core\obj\Debug\net5.0\SMT.Core.csproj.CoreCompileInputs.cache
 D:\SMTAPI\SMT.Core\obj\Debug\net5.0\SMT.Core.csproj.CopyComplete
 D:\SMTAPI\SMT.Core\obj\Debug\net5.0\SMT.Core.dll
 D:\SMTAPI\SMT.Core\obj\Debug\net5.0\ref\SMT.Core.dll
