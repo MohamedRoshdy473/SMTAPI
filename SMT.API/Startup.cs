@@ -77,7 +77,8 @@ namespace SalesManagmentTool
             services.AddTransient<IOfferDocumentsService, OfferDocumentsService>();
             services.AddTransient<IProjectCostsService, ProjectCostsService>();
             services.AddTransient<IProjectCostsRepository, ProjectCostsRepository>();
-
+            services.AddTransient<IProjectUpdateRepository, ProjectUpdateRepository>();
+            services.AddTransient<IProjectUpdateService, ProjectUpdateService>();
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddIdentity<ApplicationUser, IdentityRole>()
