@@ -1,4 +1,4 @@
-﻿using SMT.Data.DTO;
+using SMT.Data.DTO;
 using SMT.Domain;
 using SMT.Domain.Services;
 using System;
@@ -26,7 +26,10 @@ namespace SMT.Core.Services
         {
             _unitOfWork.ProjectDescriptions.Delete(projectDescriptionsDTOId);
         }
-
+        public IEnumerable<ProjectDescriptionsDTO> GetDescriptionsByProjectId(int projectId)
+        {
+           return _unitOfWork.ProjectDescriptions.GetDescriptionsByProjectId(projectId);
+        }
         public IEnumerable<ProjectDescriptionsDTO> GetAllProjectDescriptions()
         {
             return _unitOfWork.ProjectDescriptions.GetAll();

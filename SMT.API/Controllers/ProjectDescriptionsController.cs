@@ -59,5 +59,11 @@ namespace SMT.API.Controllers
             _projectDescriptionsService.DeleteProjectDescription(id);
             return Ok();
         }
-    }
+        [HttpGet]
+        [Route("GetDescriptionsByProjectId/{projectId}")]
+        public IEnumerable<ProjectDescriptionsDTO> GetDescriptionsByProjectId(int ProjectId)
+        {
+          return _projectDescriptionsService.GetDescriptionsByProjectId(ProjectId);
+        }
+  }
 }

@@ -1,4 +1,4 @@
-﻿using SMT.Data.DTO;
+using SMT.Data.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +10,7 @@ namespace SMT.Domain.Services
     public interface IProjectDescriptionsService
     {
         ProjectDescriptionsDTO GetProjectDescription(int id);
+        IEnumerable<ProjectDescriptionsDTO> GetDescriptionsByProjectId(int projectId);
         IEnumerable<ProjectDescriptionsDTO> GetAllProjectDescriptions();
         void AddProjectDescription(ProjectDescriptionsDTO projectDescriptionsDTO);
         void DeleteProjectDescription(int projectDescriptionsDTOId);

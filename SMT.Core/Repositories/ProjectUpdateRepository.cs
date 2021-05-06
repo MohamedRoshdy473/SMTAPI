@@ -102,6 +102,7 @@ namespace SMT.Core.Repositories
     {
       var projectUpdates = _context.projectUpdates.Where(e => e.ProjectId == projectId).Select(proUpdates => new ProjectUpdateDTO
       {
+        Id = proUpdates.Id,
         ProjectId = proUpdates.ProjectId,
         DueDate = proUpdates.DueDate,
         ProjectName = proUpdates.projects.ProjectName

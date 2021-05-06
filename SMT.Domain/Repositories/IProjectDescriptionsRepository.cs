@@ -1,4 +1,4 @@
-﻿using SMT.Data.DTO;
+using SMT.Data.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +11,7 @@ namespace SMT.Domain.Repositories
     {
         ProjectDescriptionsDTO Get(int id);
         IEnumerable<ProjectDescriptionsDTO> GetAll();
+        IEnumerable<ProjectDescriptionsDTO> GetDescriptionsByProjectId(int ProjectId);
         void Add(ProjectDescriptionsDTO projectDescriptionsDTO);
         void Delete(int projectDescriptionsDTOId);
         void Update(int projectDescriptionsDTOId, ProjectDescriptionsDTO projectDescriptionsDTO);
