@@ -1,4 +1,4 @@
-﻿using SMT.Data.DTO;
+using SMT.Data.DTO;
 using SMT.Domain;
 using SMT.Domain.Services;
 using System;
@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Http;
 
 namespace SMT.Core.Services
 {
@@ -42,5 +43,10 @@ namespace SMT.Core.Services
         {
            return _unitOfWork.ProjectUpdate.Get(id);
         }
-    }
+      
+        public IEnumerable<ProjectUpdateDTO> GetAllUpdatesByProjectId(int projectId)
+        {
+          return _unitOfWork.ProjectUpdate.GetAllUpdatesByProjectId(projectId);
+        }
+  }
 }

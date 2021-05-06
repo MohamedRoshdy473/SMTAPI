@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using SMT.Data.DTO;
 using SMT.Data.Models.SMTDBContext;
@@ -98,7 +98,18 @@ namespace SMT.Core.Repositories
             return projectUpdates;
         }
 
-        public void Update(int ProjectUpdateId, ProjectUpdateDTO projectUpdateDTO)
+    public IEnumerable<ProjectUpdateDTO> GetAllUpdatesByProjectId(int projectId)
+    {
+      var projectUpdates = _context.projectUpdates.Where(e => e.ProjectId == projectId).Select(proUpdates => new ProjectUpdateDTO
+      {
+        ProjectId = proUpdates.ProjectId,
+        DueDate = proUpdates.DueDate,
+        ProjectName = proUpdates.projects.ProjectName
+      }).ToList();
+      return projectUpdates;
+    }
+
+    public void Update(int ProjectUpdateId, ProjectUpdateDTO projectUpdateDTO)
         {
             if (ProjectUpdateId != projectUpdateDTO.Id)
             {

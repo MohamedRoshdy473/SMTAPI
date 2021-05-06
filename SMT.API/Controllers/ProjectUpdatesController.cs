@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SMT.Data.DTO;
 using SMT.Domain.Services;
 using System;
@@ -57,5 +57,11 @@ namespace SMT.API.Controllers
             _projectUpdateService.DeleteProjectUpdate(id);
             return Ok();
         }
-    }
+    [HttpGet]
+    [Route("GetAllUpdatesByProjectId/{projectId}")]
+    public IEnumerable<ProjectUpdateDTO> GetAllUpdatesByProjectId(int projectId)
+          {
+            return _projectUpdateService.GetAllUpdatesByProjectId(projectId);
+          }
+  }
 }
