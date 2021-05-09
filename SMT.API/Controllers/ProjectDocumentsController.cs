@@ -37,14 +37,19 @@ namespace SMT.API.Controllers
         {
             return _projectDocumentsService.GetProjectDocument(id);
         }
-    [HttpGet]
-    [Route("GetProjectDocumentByProjectId/{ProjectId}")]
+        [HttpGet]
+        [Route("GetProjectDocumentByProjectId/{ProjectId}")]
         public IEnumerable<ProjectDocumentsDTO> GetProjectDocumentsByProjectId(int ProjectId)
         {
-          return _projectDocumentsService.GetProjectDocumentByProjectId(ProjectId);
+            return _projectDocumentsService.GetProjectDocumentByProjectId(ProjectId);
         }
-    // POST api/<ProjectDocumentsController>
-    [HttpPost]
+        [Route("GetProjectDocumentByProjectUpdateId/{ProjectUpdateId}")]
+        public IEnumerable<ProjectDocumentsDTO> GetProjectDocumentByProjectUpdateId(int ProjectUpdateId)
+        {
+            return _projectDocumentsService.GetProjectDocumentByProjectUpdateId(ProjectUpdateId);
+        }
+        // POST api/<ProjectDocumentsController>
+        [HttpPost]
         public ActionResult<ProjectDocumentsDTO> Post(List<ProjectDocumentsDTO> projectDocumentsDTO)
         {
             _projectDocumentsService.AddProjectDocument(projectDocumentsDTO);
