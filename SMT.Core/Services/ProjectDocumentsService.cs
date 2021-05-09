@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SMT.Data.DTO;
 using SMT.Domain;
 using SMT.Domain.Services;
@@ -37,11 +37,15 @@ namespace SMT.Core.Services
         {
            return _unitOfWork.ProjectDocuments.Get(id);
         }
+        public IEnumerable<ProjectDocumentsDTO> GetProjectDocumentByProjectId(int ProjectId)
+        {
+          return _unitOfWork.ProjectDocuments.GetProjectDocumentByProjectId(ProjectId);
+        }
 
         public void UpdateProjectDocument(int projectDocumentsDTOId, ProjectDocumentsDTO projectDocumentsDTO)
-        {
-            _unitOfWork.ProjectDocuments.Update(projectDocumentsDTOId, projectDocumentsDTO);
-        }
+            {
+                _unitOfWork.ProjectDocuments.Update(projectDocumentsDTOId, projectDocumentsDTO);
+            }
 
         public IActionResult UploadProjectDocument()
         {

@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SMT.Core;
 using SMT.Data.DTO;
@@ -37,9 +37,14 @@ namespace SMT.API.Controllers
         {
             return _projectDocumentsService.GetProjectDocument(id);
         }
-
-        // POST api/<ProjectDocumentsController>
-        [HttpPost]
+    [HttpGet]
+    [Route("GetProjectDocumentByProjectId/{ProjectId}")]
+        public IEnumerable<ProjectDocumentsDTO> GetProjectDocumentsByProjectId(int ProjectId)
+        {
+          return _projectDocumentsService.GetProjectDocumentByProjectId(ProjectId);
+        }
+    // POST api/<ProjectDocumentsController>
+    [HttpPost]
         public ActionResult<ProjectDocumentsDTO> Post(List<ProjectDocumentsDTO> projectDocumentsDTO)
         {
             _projectDocumentsService.AddProjectDocument(projectDocumentsDTO);

@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SMT.Data.DTO;
 using System;
 using System.Collections.Generic;
@@ -11,6 +11,7 @@ namespace SMT.Domain.Repositories
    public interface IProjectDocumentsRepository
     {
         ProjectDocumentsDTO Get(int id);
+        IEnumerable<ProjectDocumentsDTO> GetProjectDocumentByProjectId(int ProjectId);
         IEnumerable<ProjectDocumentsDTO> GetAll();
         IActionResult Upload();
         void Add(List<ProjectDocumentsDTO> projectDocumentsDTO);

@@ -115,7 +115,26 @@ namespace SMT.Core.Repositories
             return projectDocuments;
         }
 
-        public void Update(int projectDocumentsDTOId, ProjectDocumentsDTO projectDocumentsDTO)
+
+
+    public IEnumerable<ProjectDocumentsDTO> GetProjectDocumentByProjectId(int ProjectId)
+    {
+      var projectDocuments = _context.ProjectDocuments.Where(e=>e.ProjectId==ProjectId).Select(projectDocuments => new ProjectDocumentsDTO
+      {
+        Id = projectDocuments.Id,
+        DocumentFile = projectDocuments.DocumentFile,
+        ProjectUpdateId = (int)projectDocuments.ProjectUpdateId,
+        DueDate = projectDocuments.ProjectUpdate.DueDate,
+        ProjectId = projectDocuments.ProjectId,
+        ProjectName = projectDocuments.projects.ProjectName,
+        DocumentsCategoryId = projectDocuments.DocumentsCategoryId,
+        DocumentsCategoryName = projectDocuments.DocumentsCategories.CategoryName
+
+      }).ToList();
+      return projectDocuments;
+    }
+
+    public void Update(int projectDocumentsDTOId, ProjectDocumentsDTO projectDocumentsDTO)
         {
             if (projectDocumentsDTOId != projectDocumentsDTO.Id)
             {

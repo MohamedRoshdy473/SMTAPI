@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SMT.Data.DTO;
 using System;
 using System.Collections.Generic;
@@ -12,6 +12,7 @@ namespace SMT.Domain.Services
     {
         ProjectDocumentsDTO GetProjectDocument(int id);
         IEnumerable<ProjectDocumentsDTO> GetAllProjectDocuments();
+         IEnumerable<ProjectDocumentsDTO> GetProjectDocumentByProjectId(int ProjectId);
         IActionResult UploadProjectDocument();
         void AddProjectDocument(List<ProjectDocumentsDTO> projectDocumentsDTO);
         void DeleteProjectDocument(int projectDocumentsDTOId);

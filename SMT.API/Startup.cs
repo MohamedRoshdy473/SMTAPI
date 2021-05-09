@@ -79,8 +79,9 @@ namespace SalesManagmentTool
             services.AddTransient<IProjectCostsRepository, ProjectCostsRepository>();
             services.AddTransient<IProjectUpdateRepository, ProjectUpdateRepository>();
             services.AddTransient<IProjectUpdateService, ProjectUpdateService>();
+             services.AddTransient<IProjectDocumentsService, ProjectDocumentsService>();
 
-            services.AddScoped<IUnitOfWork, UnitOfWork>();
+      services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddIdentity<ApplicationUser, IdentityRole>()
                     .AddEntityFrameworkStores<SMTDbContext>()
                     .AddDefaultTokenProviders();
