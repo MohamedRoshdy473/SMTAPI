@@ -13,6 +13,7 @@ namespace SMT.Domain.Services
         ProjectDocumentsDTO GetProjectDocument(int id);
         IEnumerable<ProjectDocumentsDTO> GetAllProjectDocuments();
          IEnumerable<ProjectDocumentsDTO> GetProjectDocumentByProjectId(int ProjectId);
+         IEnumerable<ProjectDocumentsDTO> GetProjectDocumentByProjectUpdateId(int ProjectUpdateId);
         IActionResult UploadProjectDocument();
         void AddProjectDocument(List<ProjectDocumentsDTO> projectDocumentsDTO);
         void DeleteProjectDocument(int projectDocumentsDTOId);

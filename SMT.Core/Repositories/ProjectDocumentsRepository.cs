@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace SMT.Core.Repositories
 {
-    public class ProjectDocumentsRepository : ControllerBase , IProjectDocumentsRepository
+    public class ProjectDocumentsRepository : ControllerBase, IProjectDocumentsRepository
     {
         private readonly SMTDbContext _context;
         public ProjectDocumentsRepository(SMTDbContext context)
@@ -24,24 +24,25 @@ namespace SMT.Core.Repositories
         {
             try
             {
-     
+               var documentsCategories = _context.DocumentsCategories.ToList();
+
                 if (projectDocumentsDTO != null)
                 {
                     foreach (var item in projectDocumentsDTO)
                     {
-          
-                if (item.ProjectUpdateId == 0)
-                {
-              item.ProjectUpdateId = null;
-                }
-                ProjectDocuments projectDocuments = new ProjectDocuments();
-                    projectDocuments.Id = item.Id;
-                    projectDocuments.DocumentFile = item.DocumentFile;
-                    projectDocuments.ProjectId = item.ProjectId;
-                    projectDocuments.ProjectUpdateId = item.ProjectUpdateId;
-                    projectDocuments.DocumentsCategoryId = item.DocumentsCategoryId;
-                    _context.Add(projectDocuments);
-                    _context.SaveChanges();
+
+                        if (item.ProjectUpdateId == 0)
+                        {
+                            item.ProjectUpdateId = null;
+                        }
+                        ProjectDocuments projectDocuments = new ProjectDocuments();
+                        projectDocuments.Id = item.Id;
+                        projectDocuments.DocumentFile = item.DocumentFile;
+                        projectDocuments.ProjectId = item.ProjectId;
+                        projectDocuments.ProjectUpdateId = item.ProjectUpdateId;
+                        projectDocuments.DocumentsCategoryId = item.DocumentsCategoryId;
+                        _context.Add(projectDocuments);
+                        _context.SaveChanges();
                     }
                 }
                 else
@@ -117,24 +118,41 @@ namespace SMT.Core.Repositories
 
 
 
-    public IEnumerable<ProjectDocumentsDTO> GetProjectDocumentByProjectId(int ProjectId)
-    {
-      var projectDocuments = _context.ProjectDocuments.Where(e=>e.ProjectId==ProjectId).Select(projectDocuments => new ProjectDocumentsDTO
-      {
-        Id = projectDocuments.Id,
-        DocumentFile = projectDocuments.DocumentFile,
-        ProjectUpdateId = (int)projectDocuments.ProjectUpdateId,
-        DueDate = projectDocuments.ProjectUpdate.DueDate,
-        ProjectId = projectDocuments.ProjectId,
-        ProjectName = projectDocuments.projects.ProjectName,
-        DocumentsCategoryId = projectDocuments.DocumentsCategoryId,
-        DocumentsCategoryName = projectDocuments.DocumentsCategories.CategoryName
+        public IEnumerable<ProjectDocumentsDTO> GetProjectDocumentByProjectId(int ProjectId)
+        {
+            var projectDocuments = _context.ProjectDocuments.Where(e => e.ProjectId == ProjectId).Select(projectDocuments => new ProjectDocumentsDTO
+            {
+                Id = projectDocuments.Id,
+                DocumentFile = projectDocuments.DocumentFile,
+                ProjectUpdateId = (int)projectDocuments.ProjectUpdateId,
+                DueDate = projectDocuments.ProjectUpdate.DueDate,
+                ProjectId = projectDocuments.ProjectId,
+                ProjectName = projectDocuments.projects.ProjectName,
+                DocumentsCategoryId = projectDocuments.DocumentsCategoryId,
+                DocumentsCategoryName = projectDocuments.DocumentsCategories.CategoryName
 
-      }).ToList();
-      return projectDocuments;
-    }
+            }).ToList();
+            return projectDocuments;
+        }
 
-    public void Update(int projectDocumentsDTOId, ProjectDocumentsDTO projectDocumentsDTO)
+        public IEnumerable<ProjectDocumentsDTO> GetProjectDocumentByProjectUpdateId(int ProjectUpdateId)
+        {
+            var projectDocuments = _context.ProjectDocuments.Where(e => e.ProjectUpdateId == ProjectUpdateId).Select(projectDocuments => new ProjectDocumentsDTO
+            {
+                Id = projectDocuments.Id,
+                DocumentFile = projectDocuments.DocumentFile,
+                ProjectUpdateId = (int)projectDocuments.ProjectUpdateId,
+                DueDate = projectDocuments.ProjectUpdate.DueDate,
+                ProjectId = projectDocuments.ProjectId,
+                ProjectName = projectDocuments.projects.ProjectName,
+                DocumentsCategoryId = projectDocuments.DocumentsCategoryId,
+                DocumentsCategoryName = projectDocuments.DocumentsCategories.CategoryName
+
+            }).ToList();
+            return projectDocuments;
+        }
+
+        public void Update(int projectDocumentsDTOId, ProjectDocumentsDTO projectDocumentsDTO)
         {
             if (projectDocumentsDTOId != projectDocumentsDTO.Id)
             {
