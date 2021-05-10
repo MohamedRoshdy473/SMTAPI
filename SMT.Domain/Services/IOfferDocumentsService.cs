@@ -1,4 +1,5 @@
-﻿using SMT.Data.Models.SMTDBContext;
+﻿using SMT.Data.DTO;
+using SMT.Data.Models.SMTDBContext;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace SMT.Domain.Services
     {
         OfferDocuments GetOfferDocument(int id);
         IEnumerable<OfferDocuments> GetAllOfferDocuments();
-        void AddOfferDocument(OfferDocuments offerDocuments);
+        void AddOfferDocument(List<OfferDocumentsDTO> offerDocumentsDTO);
         void DeleteOfferDocument(int offerDocumentsId);
         void UpdateOfferDocument(int offerDocumentsId, OfferDocuments offerDocuments);
     }

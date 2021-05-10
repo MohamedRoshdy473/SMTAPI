@@ -24,8 +24,8 @@ namespace SMT.Core.Repositories
         {
             try
             {
-               var documentsCategories = _context.DocumentsCategories.ToList();
-                int documentsCatId=0;
+               //var documentsCategories = _context.DocumentsCategories.ToList();
+               // int documentsCatId=0;
                 if (projectDocumentsDTO != null)
                 {
                     foreach (var item in projectDocumentsDTO)
@@ -41,23 +41,23 @@ namespace SMT.Core.Repositories
                         projectDocuments.ProjectId = item.ProjectId;
                         projectDocuments.ProjectUpdateId = item.ProjectUpdateId;
                         projectDocuments.DocumentsCategoryId = item.DocumentsCategoryId;
-                        if (documentsCategories[0].Id== 0)
-                        {
-                             documentsCatId = _context.ProjectDocuments.Where(d => d.ProjectUpdateId == item.ProjectUpdateId).LastOrDefault().DocumentsCategoryId;
-                        }
-                        if (documentsCategories[1].Id == 0)
-                        {
-                            documentsCatId = _context.ProjectDocuments.Where(d => d.ProjectUpdateId == item.ProjectUpdateId).LastOrDefault().DocumentsCategoryId;
-                        }
-                        if (documentsCategories[2].Id == 0)
-                        {
-                            documentsCatId = _context.ProjectDocuments.Where(d => d.ProjectUpdateId == item.ProjectUpdateId).LastOrDefault().DocumentsCategoryId;
-                        }
-                        if (documentsCategories[3].Id == 0)
-                        {
-                            documentsCatId = _context.ProjectDocuments.Where(d => d.ProjectUpdateId == item.ProjectUpdateId).LastOrDefault().DocumentsCategoryId;
-                        }
-                        projectDocuments.DocumentsCategoryId = documentsCatId;
+                        //if (documentsCategories[0].Id== 0)
+                        //{
+                        //     documentsCatId = _context.ProjectDocuments.Where(d => d.ProjectUpdateId == item.ProjectUpdateId).LastOrDefault().DocumentsCategoryId;
+                        //}
+                        //if (documentsCategories[1].Id == 0)
+                        //{
+                        //    documentsCatId = _context.ProjectDocuments.Where(d => d.ProjectUpdateId == item.ProjectUpdateId).LastOrDefault().DocumentsCategoryId;
+                        //}
+                        //if (documentsCategories[2].Id == 0)
+                        //{
+                        //    documentsCatId = _context.ProjectDocuments.Where(d => d.ProjectUpdateId == item.ProjectUpdateId).LastOrDefault().DocumentsCategoryId;
+                        //}
+                        //if (documentsCategories[3].Id == 0)
+                        //{
+                        //    documentsCatId = _context.ProjectDocuments.Where(d => d.ProjectUpdateId == item.ProjectUpdateId).LastOrDefault().DocumentsCategoryId;
+                        //}
+                        //projectDocuments.DocumentsCategoryId = documentsCatId;
                         _context.Add(projectDocuments);
                         _context.SaveChanges();
                     }

@@ -1,4 +1,5 @@
-﻿using SMT.Data.Models.SMTDBContext;
+﻿using SMT.Data.DTO;
+using SMT.Data.Models.SMTDBContext;
 using SMT.Domain;
 using SMT.Domain.Services;
 using System;
@@ -17,9 +18,9 @@ namespace SMT.Core.Services
         {
             _unitOfWork = unitOfWork;
         }
-        public void AddOfferDocument(OfferDocuments offerDocuments)
+        public void AddOfferDocument(List<OfferDocumentsDTO> offerDocumentsDTO)
         {
-            _unitOfWork.OfferDocuments.Add(offerDocuments);
+            _unitOfWork.OfferDocuments.Add(offerDocumentsDTO);
         }
 
         public void DeleteOfferDocument(int offerDocumentsId)

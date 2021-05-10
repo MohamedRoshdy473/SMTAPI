@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SMT.Data.DTO;
 using SMT.Data.Models.SMTDBContext;
 using SMT.Domain.Repositories;
 using System;
@@ -17,14 +18,22 @@ namespace SMT.Core.Repositories
         {
             _context = context;
         }
-        public void Add(OfferDocuments offerDocuments)
+        public void Add(List<OfferDocumentsDTO> offerDocumentsDTO)
         {
             try
             {
-                if (offerDocuments != null)
+                if (offerDocumentsDTO != null)
                 {
-                    _context.Add(offerDocuments);
-                    _context.SaveChanges();
+                    foreach (var item in offerDocumentsDTO)
+                    {
+                        OfferDocuments offerDocuments = new OfferDocuments();
+                        offerDocuments.Id = item.Id;
+                        offerDocuments.DocumentFile = item.DocumentFile;
+                        offerDocuments.DocumentName = item.DocumentName;
+                        offerDocuments.OfferId = item.OfferId;
+                        _context.Add(offerDocuments);
+                        _context.SaveChanges();
+                    }
                 }
                 else
                 {

@@ -7,11 +7,10 @@ using System.Threading.Tasks;
 
 namespace SMT.Data.Models.SMTDBContext
 {
-    public class OfferDocuments
+    public class DataSheets
     {
-        public int Id {get; set; }
-        public string DocumentName { get; set; }
-        public string DocumentFile { get; set; }
+        public int Id { get; set; }
+        public string DocumentLink { get; set; }
         public int OfferId { get; set; }
         [ForeignKey("OfferId")]
         public virtual Offers Offers { get; set; }

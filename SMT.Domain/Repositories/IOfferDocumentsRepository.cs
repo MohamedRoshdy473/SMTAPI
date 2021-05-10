@@ -1,4 +1,5 @@
-﻿using SMT.Data.Models.SMTDBContext;
+﻿using SMT.Data.DTO;
+using SMT.Data.Models.SMTDBContext;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace SMT.Domain.Repositories
     {
         OfferDocuments Get(int id);
         IEnumerable<OfferDocuments> GetAll();
-        void Add(OfferDocuments offerDocuments);
+        void Add(List<OfferDocumentsDTO> offerDocumentsDTO);
         void Delete(int offerDocumentsId);
         void Update(int offerDocumentsId, OfferDocuments offerDocuments);
     }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SMT.Core;
+using SMT.Data.DTO;
 using SMT.Data.Models.SMTDBContext;
 using SMT.Domain.Services;
 using System;
@@ -40,10 +41,10 @@ namespace SMT.API.Controllers
 
         // POST api/<OfferDocumentsController>
         [HttpPost]
-        public ActionResult<OfferDocuments> Post(OfferDocuments offerDocuments)
+        public ActionResult<OfferDocuments> Post(List<OfferDocumentsDTO> offerDocumentsDTO)
         {
-            _offerDocumentsService.AddOfferDocument(offerDocuments);
-            return CreatedAtAction("Get", new { id = offerDocuments.Id }, offerDocuments);
+            _offerDocumentsService.AddOfferDocument(offerDocumentsDTO);
+            return CreatedAtAction("Get", new { offerDocumentsDTO });
         }
 
         // PUT api/<OfferDocumentsController>/5

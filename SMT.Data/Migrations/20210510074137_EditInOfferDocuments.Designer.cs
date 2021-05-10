@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SMT.Data.Models.SMTDBContext;
 
 namespace SMT.Data.Migrations
 {
     [DbContext(typeof(SMTDbContext))]
-    partial class SMTDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210510074137_EditInOfferDocuments")]
+    partial class EditInOfferDocuments
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -985,26 +987,6 @@ namespace SMT.Data.Migrations
                     b.ToTable("Contractors");
                 });
 
-            modelBuilder.Entity("SMT.Data.Models.SMTDBContext.DataSheets", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("DocumentLink")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("OfferId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("OfferId");
-
-                    b.ToTable("DataSheets");
-                });
-
             modelBuilder.Entity("SMT.Data.Models.SMTDBContext.DocumentsCategories", b =>
                 {
                     b.Property<int>("Id")
@@ -1134,6 +1116,9 @@ namespace SMT.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("DataSheet")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("OfferCreationDate")
                         .HasColumnType("datetime2");
@@ -1719,17 +1704,6 @@ namespace SMT.Data.Migrations
                     b.Navigation("Project");
                 });
 
-            modelBuilder.Entity("SMT.Data.Models.SMTDBContext.DataSheets", b =>
-                {
-                    b.HasOne("SMT.Data.Models.SMTDBContext.Offers", "Offers")
-                        .WithMany()
-                        .HasForeignKey("OfferId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Offers");
-                });
-
             modelBuilder.Entity("SMT.Data.Models.SMTDBContext.OfferDescriptions", b =>
                 {
                     b.HasOne("SMT.Data.Models.SMTDBContext.Offers", "Offers")
@@ -1766,7 +1740,7 @@ namespace SMT.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("SMT.Data.Models.SMTDBContext.ProjectCosts", "ProjectCosts")
+                    b.HasOne("SMT.Data.Models.SMTDBContext.ProjectCosts", "Project")
                         .WithMany()
                         .HasForeignKey("ProjectCostsId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -1780,7 +1754,7 @@ namespace SMT.Data.Migrations
 
                     b.Navigation("OfferStatus");
 
-                    b.Navigation("ProjectCosts");
+                    b.Navigation("Project");
 
                     b.Navigation("Projects");
                 });

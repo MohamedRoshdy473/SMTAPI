@@ -23,6 +23,7 @@ namespace SMT.Domain
         IOfferStatusRepository OfferStatus { get; }
         IOfferDocumentsRepository OfferDocuments { get; }
         IProjectCostsRepository ProjectCosts { get; }
+        IOffersRepsository Offers { get; }
 
     }
 }

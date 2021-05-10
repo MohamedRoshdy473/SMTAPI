@@ -35,6 +35,7 @@ namespace SMT.Data.Models.SMTDBContext
         public DbSet<EndUsers> EndUsers { get; set; }
         public DbSet<Contractors> Contractors { get; set; }
         public DbSet<Governorates> Governorates { get; set; }
+        public DbSet<DataSheets> DataSheets { get; set; }
 
     }
 }

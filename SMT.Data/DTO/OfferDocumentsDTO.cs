@@ -1,19 +1,17 @@
-﻿using System;
+﻿using SMT.Data.Models.SMTDBContext;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SMT.Data.Models.SMTDBContext
+namespace SMT.Data.DTO
 {
-    public class OfferDocuments
+    public class OfferDocumentsDTO
     {
-        public int Id {get; set; }
+        public int Id { get; set; }
         public string DocumentName { get; set; }
         public string DocumentFile { get; set; }
         public int OfferId { get; set; }
-        [ForeignKey("OfferId")]
-        public virtual Offers Offers { get; set; }
     }
 }

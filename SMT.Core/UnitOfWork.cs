@@ -27,6 +27,7 @@ namespace SMT.Core
         private OfferStatusRepository _offerStatusRepository;
         private OfferDocumentsRepository _offerDocumentsRepository;
         private ProjectCostsRepository _projectCostRepository;
+        private OffersRepsository _offerRepository;
 
         public UnitOfWork(SMTDbContext context)
         {
@@ -45,6 +46,7 @@ namespace SMT.Core
         public IOfferStatusRepository OfferStatusRepository => new OfferStatusRepository(_context);
         public IOfferDocumentsRepository OfferDocumentsRepository => new OfferDocumentsRepository(_context);
         public IProjectCostsRepository ProjectCostsRepository => new ProjectCostsRepository(_context);
+        public IOffersRepsository OffersRepsository => new OffersRepsository(_context);
 
         public int CommitAsync()
         {
@@ -82,5 +84,7 @@ namespace SMT.Core
         public IOfferDocumentsRepository OfferDocuments => _offerDocumentsRepository = _offerDocumentsRepository ?? new OfferDocumentsRepository(_context);
 
         public IProjectCostsRepository ProjectCosts => _projectCostRepository = _projectCostRepository ?? new ProjectCostsRepository(_context);
+
+        public IOffersRepsository Offers => _offerRepository = _offerRepository ?? new OffersRepsository(_context);
     }
 }
