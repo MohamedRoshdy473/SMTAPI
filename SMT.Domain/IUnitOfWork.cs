@@ -24,6 +24,7 @@ namespace SMT.Domain
         IOfferDocumentsRepository OfferDocuments { get; }
         IProjectCostsRepository ProjectCosts { get; }
         IOffersRepsository Offers { get; }
+        IOfferDescriptionsRepository OfferDescriptions { get; }
 
     }
 }

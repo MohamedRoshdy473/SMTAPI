@@ -26,12 +26,12 @@ namespace SMT.Core.Repositories
             {
                 if (projectDescriptionsDTO != null)
                 {
-          if (projectDescriptionsDTO.ProjectUpdateId==0)
-          {
-            projectDescriptionsDTO.ProjectUpdateId =null;
-          }
+                    if (projectDescriptionsDTO.ProjectUpdateId == 0)
+                    {
+                        projectDescriptionsDTO.ProjectUpdateId = null;
+                    }
                     ProjectDescriptions projectDescriptions = new ProjectDescriptions();
-                    projectDescriptions.Id = projectDescriptionsDTO.Id;
+                    //projectDescriptions.Id = projectDescriptionsDTO.Id;
                     projectDescriptions.Description = projectDescriptionsDTO.Description;
                     projectDescriptions.DescriptionDate = projectDescriptionsDTO.DescriptionDate;
                     projectDescriptions.ProjectId = projectDescriptionsDTO.ProjectId;
@@ -111,24 +111,24 @@ namespace SMT.Core.Repositories
             return projectDescriptionsDTO;
         }
 
-    public IEnumerable<ProjectDescriptionsDTO> GetDescriptionsByProjectId(int id)
-    {
-      var projDescriptions = _context.ProjectDescriptions.Where(d => d.ProjectId == id).Select(projDesc => new ProjectDescriptionsDTO
-      {
-        Id = projDesc.Id,
-        Description = projDesc.Description,
-        ProjectId = projDesc.ProjectId,
-        DescriptionDate = projDesc.DescriptionDate,
-        projectName = projDesc.projects.ProjectName,
-        UserId = projDesc.UserId,
-        ProjectUpdateId = projDesc.ProjectUpdateId,
-        UserName = projDesc.User.UserName
-      }).ToList();
+        public IEnumerable<ProjectDescriptionsDTO> GetDescriptionsByProjectId(int id)
+        {
+            var projDescriptions = _context.ProjectDescriptions.Where(d => d.ProjectId == id).Select(projDesc => new ProjectDescriptionsDTO
+            {
+                Id = projDesc.Id,
+                Description = projDesc.Description,
+                ProjectId = projDesc.ProjectId,
+                DescriptionDate = projDesc.DescriptionDate,
+                projectName = projDesc.projects.ProjectName,
+                UserId = projDesc.UserId,
+                ProjectUpdateId = projDesc.ProjectUpdateId,
+                UserName = projDesc.User.UserName
+            }).ToList();
 
-      return projDescriptions;
-    }
+            return projDescriptions;
+        }
 
-    public void Update(int projectDescriptionsDTOId, ProjectDescriptionsDTO projectDescriptionsDTO)
+        public void Update(int projectDescriptionsDTOId, ProjectDescriptionsDTO projectDescriptionsDTO)
         {
             if (projectDescriptionsDTOId != projectDescriptionsDTO.Id)
             {

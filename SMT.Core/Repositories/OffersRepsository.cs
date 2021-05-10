@@ -26,7 +26,6 @@ namespace SMT.Core.Repositories
                 if (offersDTO != null)
                 {
                     Offers offer = new Offers();
-                    offer.Id = offersDTO.Id;
                     offer.OfferStatusId = offersDTO.OfferStatusId;
                     offer.OfferCreationDate = offersDTO.OfferCreationDate;
                     offer.ProjectsId = offersDTO.ProjectsId;
