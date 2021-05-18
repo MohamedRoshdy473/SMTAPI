@@ -18,19 +18,18 @@ namespace SMT.Core.Repositories
         {
             _context = context;
         }
-        public void Add(List<ProjectSystemsDTO> projectSystemsDTO)
+        public void Add(ProjectSystemsDTO projectSystemsDTO)
         {
 
             try
             {
                 if (projectSystemsDTO != null)
                 {
-                    foreach (var item in projectSystemsDTO)
+                    foreach (var item in projectSystemsDTO.LstprojectComponents)
                     {
                         ProjectSystems projectSystems = new ProjectSystems();
-                        projectSystems.Id = item.Id;
-                        projectSystems.ProjectId = item.ProjectId;
-                        projectSystems.ProjectComponentsId = item.ProjectComponentsId;
+                        projectSystems.ProjectComponentsId = item.Id;
+                        projectSystems.ProjectId = projectSystemsDTO.ProjectId;
                         _context.Add(projectSystems);
                         _context.SaveChanges();
                     }

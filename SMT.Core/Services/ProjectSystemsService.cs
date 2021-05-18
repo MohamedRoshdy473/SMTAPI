@@ -17,7 +17,7 @@ namespace SMT.Core.Services
         {
             _unitOfWork = unitOfWork;
         }
-        public void AddProjectSystem(List<ProjectSystemsDTO> projectSystemsDTO)
+        public void AddProjectSystem(ProjectSystemsDTO projectSystemsDTO)
         {
             _unitOfWork.ProjectSystems.Add(projectSystemsDTO);
         }

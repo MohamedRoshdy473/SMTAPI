@@ -36,7 +36,7 @@ namespace SMT.API.Controllers
 
         // POST api/<ProjectSystemsController>
         [HttpPost]
-        public ActionResult<ProjectSystemsDTO> Post(List<ProjectSystemsDTO> projectSystemsDTOs)
+        public ActionResult<ProjectSystemsDTO> Post(ProjectSystemsDTO projectSystemsDTOs)
         {
             _projectSystemsService.AddProjectSystem(projectSystemsDTOs);
             return CreatedAtAction("Get", new { projectSystemsDTOs });

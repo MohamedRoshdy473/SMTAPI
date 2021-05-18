@@ -11,7 +11,7 @@ namespace SMT.Domain.Services
     {
         ProjectSystemsDTO GetProjectSystem(int id);
         IEnumerable<ProjectSystemsDTO> GetAllProjectSystems();
-        void AddProjectSystem(List<ProjectSystemsDTO> projectSystemsDTO);
+        void AddProjectSystem(ProjectSystemsDTO projectSystemsDTO);
         void DeleteProjectSystem(int projectSystemsDTOId);
         void UpdateProjectSystem(int projectSystemsDTOId, ProjectSystemsDTO projectSystemsDTO);
     }
