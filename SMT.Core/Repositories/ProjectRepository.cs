@@ -111,6 +111,7 @@ namespace SMT.Core.Repositories
                 ProjectName = project.ProjectName,
                 ProjectCreationDate = project.ProjectCreationDate,
                 Rank = project.Rank,
+                //list of ProjectComponents
                 //ProjectComponentsId = project.ProjectComponentsId,
                 //ProjectComponentName = project.ProjectComponents.ProjectComponentName,
                 ProjectStatusId = project.ProjectStatusId,

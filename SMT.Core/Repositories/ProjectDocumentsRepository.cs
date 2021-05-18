@@ -24,7 +24,7 @@ namespace SMT.Core.Repositories
         {
             try
             {
-               //var documentsCategories = _context.DocumentsCategories.ToList();
+               var documentsCategories = _context.DocumentsCategories.ToList();
                // int documentsCatId=0;
                 if (projectDocumentsDTO != null)
                 {
