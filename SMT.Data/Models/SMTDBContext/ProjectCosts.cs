@@ -10,5 +10,6 @@ namespace SMT.Data.Models.SMTDBContext
     {
         public int Id { get; set; }
         public int Cost { get; set; }
+        public string Currency { get; set; }
     }
 }

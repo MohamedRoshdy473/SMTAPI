@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SMT.Data.Models.SMTDBContext;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

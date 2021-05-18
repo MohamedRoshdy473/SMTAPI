@@ -86,6 +86,10 @@ namespace SalesManagmentTool
             services.AddTransient<IOfferStatusRepository, OfferStatusRepository>();
             services.AddTransient<IOfferDescriptionsService, OfferDescriptionsService>();
             services.AddTransient<IOfferDescriptionsRepository, OfferDescriptionsRepository>();
+            services.AddTransient<IDataSheetsService, DataSheetsService>();
+            services.AddTransient<IDataSheetsRepository, DataSheetsRepository>();
+            services.AddTransient<IProjectSystemsService, ProjectSystemsService>();
+            services.AddTransient<IProjectSystemsRepository, ProjectSystemsRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddIdentity<ApplicationUser, IdentityRole>()
                     .AddEntityFrameworkStores<SMTDbContext>()

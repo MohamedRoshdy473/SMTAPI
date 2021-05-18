@@ -29,6 +29,9 @@ namespace SMT.Core
         private ProjectCostsRepository _projectCostRepository;
         private OffersRepsository _offerRepository;
         private OfferDescriptionsRepository _offerDescriptions;
+        private DataSheetsRepository _dataSheetsRepository;
+        private ProjectSystemsRepository _projectSystemsRepository;
+
         public UnitOfWork(SMTDbContext context)
         {
             _context = context;
@@ -48,6 +51,8 @@ namespace SMT.Core
         public IProjectCostsRepository ProjectCostsRepository => new ProjectCostsRepository(_context);
         public IOffersRepsository OffersRepsository => new OffersRepsository(_context);
         public IOfferDescriptionsRepository OfferDescriptionsRepository => new OfferDescriptionsRepository(_context);
+        public IDataSheetsRepository DataSheetsRepository => new DataSheetsRepository(_context);
+        public IProjectSystemsRepository ProjectSystemsRepository => new ProjectSystemsRepository(_context);
 
         public int CommitAsync()
         {
@@ -81,13 +86,11 @@ namespace SMT.Core
         public IProjectUpdateRepository ProjectUpdate => _projectUpdateRepository = _projectUpdateRepository ?? new ProjectUpdateRepository(_context);
         public IProjectDocumentsRepository ProjectDocuments => _projectDocumentsRepository = _projectDocumentsRepository ?? new ProjectDocumentsRepository(_context);
         public IOfferStatusRepository OfferStatus => _offerStatusRepository = _offerStatusRepository ?? new OfferStatusRepository(_context);
-
         public IOfferDocumentsRepository OfferDocuments => _offerDocumentsRepository = _offerDocumentsRepository ?? new OfferDocumentsRepository(_context);
-
         public IProjectCostsRepository ProjectCosts => _projectCostRepository = _projectCostRepository ?? new ProjectCostsRepository(_context);
-
         public IOffersRepsository Offers => _offerRepository = _offerRepository ?? new OffersRepsository(_context);
-
         public IOfferDescriptionsRepository OfferDescriptions => _offerDescriptions = _offerDescriptions ?? new OfferDescriptionsRepository(_context);
+        public IDataSheetsRepository DataSheets => _dataSheetsRepository = _dataSheetsRepository ?? new DataSheetsRepository(_context);
+        public IProjectSystemsRepository ProjectSystems => _projectSystemsRepository = _projectSystemsRepository ?? new ProjectSystemsRepository(_context);
     }
 }

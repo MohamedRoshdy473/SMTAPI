@@ -1,0 +1,124 @@
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using SMT.Core;
+using SMT.Data.DTO;
+using SMT.Domain.Services;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Net.Http.Headers;
+using System.Threading.Tasks;
+
+// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+
+namespace SMT.API.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class DataSheetsController : ControllerBase
+    {
+        private readonly IDataSheetsService _dataSheetsService;
+        private readonly IWebHostEnvironment Environment;
+
+        public DataSheetsController(IDataSheetsService dataSheetsService, IWebHostEnvironment _Environment)
+        {
+            _dataSheetsService = dataSheetsService;
+            Environment = _Environment;
+        }
+        // GET: api/<DataSheetsController>
+        [HttpGet]
+        public IEnumerable<DataSheetsDTO> Get()
+        {
+            return _dataSheetsService.GetAllDataSheets();
+        }
+
+        // GET api/<DataSheetsController>/5
+        [HttpGet("{id}")]
+        public ActionResult<DataSheetsDTO> Get(int id)
+        {
+            return _dataSheetsService.GetDataSheet(id);
+        }
+
+        // POST api/<DataSheetsController>
+        [HttpPost]
+        public ActionResult<DataSheetsDTO> Post(DataSheetsDTO dataSheetsDTO)
+        {
+            _dataSheetsService.AddDataSheet(dataSheetsDTO);
+            return CreatedAtAction("Get", new { id = dataSheetsDTO.Id }, dataSheetsDTO);
+        }
+
+        // PUT api/<DataSheetsController>/5
+        [HttpPut("{id}")]
+        public ActionResult<DataSheetsDTO> Put(int id, DataSheetsDTO dataSheetsDTO)
+        {
+            _dataSheetsService.UpdateDataSheet(id,dataSheetsDTO);
+            return CreatedAtAction("Get", new { id = dataSheetsDTO.Id }, dataSheetsDTO);
+        }
+
+        // DELETE api/<DataSheetsController>/5
+        [HttpDelete("{id}")]
+        public ActionResult<DataSheetsDTO> Delete(int id)
+        {
+            _dataSheetsService.DeleteDataSheet(id);
+            return Ok();
+        }
+
+
+
+        [HttpPost, DisableRequestSizeLimit]
+        [Route("Uploadfile")]
+        public IActionResult Upload()
+        {
+            try
+            {
+                var file = Request.Form.Files[0];
+                var folderName = Path.Combine("Resources", "Images");
+                var pathToSave = Path.Combine(Directory.GetCurrentDirectory(), folderName);
+                if (file.Length > 0)
+                {
+                    var fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
+                    var fullPath = Path.Combine(pathToSave, fileName);
+                    var dbPath = Path.Combine(folderName, fileName);
+                    using (var stream = new FileStream(fullPath, FileMode.Create))
+                    {
+                        file.CopyTo(stream);
+                    }
+                    return Ok(new { dbPath });
+                }
+                else
+                {
+                    return BadRequest();
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex}");
+            }
+        }
+        [AllowAnonymous]
+        [HttpGet]
+        [Route("GetDocument/{docName}")]
+        public IActionResult GetDocument(string docName)
+        {
+            if (docName == null)
+                return Content("filename not present");
+
+            var path = Path.Combine(
+                           Directory.GetCurrentDirectory(),
+                           "wwwroot/documentFiles", docName);
+
+            var memory = new MemoryStream();
+            var ext = System.IO.Path.GetExtension(path);
+            using (var stream = new FileStream(path, FileMode.Open))
+            {
+                stream.CopyTo(memory);
+            }
+            memory.Position = 0;
+            var contentType = "APPLICATION/octet-stream";
+            return File(memory, contentType, Path.GetFileName(path));
+        }
+    }
+}

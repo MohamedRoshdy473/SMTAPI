@@ -33,7 +33,6 @@ namespace SMT.Core.Repositories
                     project.ProjectName = projectsDTO.ProjectName;
                     project.ProjectCreationDate = projectsDTO.ProjectCreationDate;
                     project.Rank = projectsDTO.Rank;
-                    project.ProjectComponentsId = projectsDTO.ProjectComponentsId;
                     project.ProjectStatusId = projectsDTO.ProjectStatusId;
                     project.EndUsersId = projectsDTO.EndUsersId;
                     project.ContractorsId = projectsDTO.ContractorsId;
@@ -74,7 +73,7 @@ namespace SMT.Core.Repositories
         {
             var project = _context.Projects.Where(p => p.Id == id).Include(p => p.EndUsers).Include(p => p.Contractors)
                                                                   .Include(p => p.EndUsers).Include(p => p.ProjectStatus)
-                                                                  .Include(p => p.ProjectComponents).Include(p => p.Governorates).FirstOrDefault();
+                                                                  .Include(p => p.Governorates).FirstOrDefault();
             if (project == null)
             {
                 throw new NotExistException("Not Exist Exception");
@@ -87,8 +86,8 @@ namespace SMT.Core.Repositories
                     ProjectName = project.ProjectName,
                     ProjectCreationDate = project.ProjectCreationDate,
                     Rank = project.Rank,
-                    ProjectComponentsId = project.ProjectComponentsId,
-                    ProjectComponentName = project.ProjectComponents.ProjectComponentName,
+                    //ProjectComponentsId = project.ProjectComponentsId,
+                    //ProjectComponentName = project.ProjectComponents.ProjectComponentName,
                     ProjectStatusId = project.ProjectStatusId,
                     ProjectStatusName = project.ProjectStatus.ProjectStatusName,
                     EndUsersId = project.EndUsersId,
@@ -112,8 +111,8 @@ namespace SMT.Core.Repositories
                 ProjectName = project.ProjectName,
                 ProjectCreationDate = project.ProjectCreationDate,
                 Rank = project.Rank,
-                ProjectComponentsId = project.ProjectComponentsId,
-                ProjectComponentName = project.ProjectComponents.ProjectComponentName,
+                //ProjectComponentsId = project.ProjectComponentsId,
+                //ProjectComponentName = project.ProjectComponents.ProjectComponentName,
                 ProjectStatusId = project.ProjectStatusId,
                 ProjectStatusName = project.ProjectStatus.ProjectStatusName,
                 EndUsersId = project.EndUsersId,
@@ -139,7 +138,7 @@ namespace SMT.Core.Repositories
             project.ProjectName = projectsDTO.ProjectName;
             project.ProjectCreationDate = projectsDTO.ProjectCreationDate;
             project.Rank = projectsDTO.Rank;
-            project.ProjectComponentsId = projectsDTO.ProjectComponentsId;
+            //project.ProjectComponentsId = projectsDTO.ProjectComponentsId;
             project.ProjectStatusId = projectsDTO.ProjectStatusId;
             project.EndUsersId = projectsDTO.EndUsersId;
             project.ContractorsId = projectsDTO.ContractorsId;

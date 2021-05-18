@@ -1183,6 +1183,9 @@ namespace SMT.Data.Migrations
                     b.Property<int>("Cost")
                         .HasColumnType("int");
 
+                    b.Property<string>("Currency")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("ProjectCosts");
@@ -1266,6 +1269,28 @@ namespace SMT.Data.Migrations
                     b.ToTable("ProjectStatus");
                 });
 
+            modelBuilder.Entity("SMT.Data.Models.SMTDBContext.ProjectSystems", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("ProjectComponentsId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProjectId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProjectComponentsId");
+
+                    b.HasIndex("ProjectId");
+
+                    b.ToTable("ProjectSystems");
+                });
+
             modelBuilder.Entity("SMT.Data.Models.SMTDBContext.ProjectUpdate", b =>
                 {
                     b.Property<int>("Id")
@@ -1302,9 +1327,6 @@ namespace SMT.Data.Migrations
                     b.Property<int>("GovernoratesId")
                         .HasColumnType("int");
 
-                    b.Property<int>("ProjectComponentsId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("ProjectCreationDate")
                         .HasColumnType("datetime2");
 
@@ -1324,8 +1346,6 @@ namespace SMT.Data.Migrations
                     b.HasIndex("EndUsersId");
 
                     b.HasIndex("GovernoratesId");
-
-                    b.HasIndex("ProjectComponentsId");
 
                     b.HasIndex("ProjectStatusId");
 
@@ -1833,6 +1853,25 @@ namespace SMT.Data.Migrations
                     b.Navigation("ProjectUpdate");
                 });
 
+            modelBuilder.Entity("SMT.Data.Models.SMTDBContext.ProjectSystems", b =>
+                {
+                    b.HasOne("SMT.Data.Models.SMTDBContext.ProjectComponents", "ProjectComponents")
+                        .WithMany()
+                        .HasForeignKey("ProjectComponentsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SMT.Data.Models.SMTDBContext.Projects", "projects")
+                        .WithMany()
+                        .HasForeignKey("ProjectId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("ProjectComponents");
+
+                    b.Navigation("projects");
+                });
+
             modelBuilder.Entity("SMT.Data.Models.SMTDBContext.ProjectUpdate", b =>
                 {
                     b.HasOne("SMT.Data.Models.SMTDBContext.Projects", "projects")
@@ -1864,12 +1903,6 @@ namespace SMT.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("SMT.Data.Models.SMTDBContext.ProjectComponents", "ProjectComponents")
-                        .WithMany()
-                        .HasForeignKey("ProjectComponentsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("SMT.Data.Models.SMTDBContext.ProjectStatus", "ProjectStatus")
                         .WithMany()
                         .HasForeignKey("ProjectStatusId")
@@ -1881,8 +1914,6 @@ namespace SMT.Data.Migrations
                     b.Navigation("EndUsers");
 
                     b.Navigation("Governorates");
-
-                    b.Navigation("ProjectComponents");
 
                     b.Navigation("ProjectStatus");
                 });
