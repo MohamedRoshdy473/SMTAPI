@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SMT.Core;
 using SMT.Data.DTO;
+using SMT.Data.Models.SMTDBContext;
 using SMT.Domain.Services;
 using System;
 using System.Collections.Generic;
@@ -21,12 +22,12 @@ namespace SMT.API.Controllers
     public class DataSheetsController : ControllerBase
     {
         private readonly IDataSheetsService _dataSheetsService;
-        private readonly IWebHostEnvironment Environment;
+        private readonly SMTDbContext _context;
 
-        public DataSheetsController(IDataSheetsService dataSheetsService, IWebHostEnvironment _Environment)
+        public DataSheetsController(IDataSheetsService dataSheetsService,SMTDbContext context)
         {
             _dataSheetsService = dataSheetsService;
-            Environment = _Environment;
+            _context = context;
         }
         // GET: api/<DataSheetsController>
         [HttpGet]
@@ -41,7 +42,34 @@ namespace SMT.API.Controllers
         {
             return _dataSheetsService.GetDataSheet(id);
         }
+        [HttpPost, DisableRequestSizeLimit]
+        [Route("Uploadfile")]
+        public IActionResult Upload()
+        {
+            try
+            {
+                var file = Request.Form.Files[0];
+                var folderName = "F://desktop/";
+                //http://localhost:57910/wwwroot/documentFiles/CleanArch.txt
+                var pathToSave = Path.Combine(Directory.GetCurrentDirectory(), folderName);
+                if (file.Length > 0)
+                {
+                    var fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
+                    var fullPath = Path.Combine(pathToSave, fileName);
+                    //  var dbPath = Path.Combine(folderName, fileName);
 
+                    return Ok(new { fullPath });
+                }
+                else
+                {
+                    return BadRequest();
+                }
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex}");
+            }
+        }
         // POST api/<DataSheetsController>
         [HttpPost]
         public ActionResult<DataSheetsDTO> Post(DataSheetsDTO dataSheetsDTO)
@@ -65,39 +93,6 @@ namespace SMT.API.Controllers
             _dataSheetsService.DeleteDataSheet(id);
             return Ok();
         }
-
-
-
-        [HttpPost, DisableRequestSizeLimit]
-        [Route("Uploadfile")]
-        public IActionResult Upload()
-        {
-            try
-            {
-                var file = Request.Form.Files[0];
-                var folderName = Path.Combine("Resources", "Images");
-                var pathToSave = Path.Combine(Directory.GetCurrentDirectory(), folderName);
-                if (file.Length > 0)
-                {
-                    var fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
-                    var fullPath = Path.Combine(pathToSave, fileName);
-                    var dbPath = Path.Combine(folderName, fileName);
-                    using (var stream = new FileStream(fullPath, FileMode.Create))
-                    {
-                        file.CopyTo(stream);
-                    }
-                    return Ok(new { dbPath });
-                }
-                else
-                {
-                    return BadRequest();
-                }
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, $"Internal server error: {ex}");
-            }
-        }
         [AllowAnonymous]
         [HttpGet]
         [Route("GetDocument/{docName}")]
@@ -106,9 +101,8 @@ namespace SMT.API.Controllers
             if (docName == null)
                 return Content("filename not present");
 
-            var path = Path.Combine(
-                           Directory.GetCurrentDirectory(),
-                           "wwwroot/documentFiles", docName);
+            var path = docName;
+                //Path.Combine("F://desktop/", docName);
 
             var memory = new MemoryStream();
             var ext = System.IO.Path.GetExtension(path);

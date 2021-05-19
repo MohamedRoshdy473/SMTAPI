@@ -28,11 +28,13 @@ namespace SMT.Core.Repositories
                 if (dataSheetsDTO != null)
                 {
                     DataSheets dataSheets = new DataSheets();
-                    var file = Request.Form.Files[0];
-                    var pathToSave = Path.Combine(Directory.GetCurrentDirectory());
-                    var fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
-                    var fullPath = Path.Combine(pathToSave, fileName);
-                    dataSheets.DocumentLink = fullPath;
+                    //var file = Request.Form.Files[0];
+                    //var folderName = dataSheetsDTO.DocumentLink;
+                    //var pathToSave = Path.Combine(Directory.GetCurrentDirectory(), folderName);
+                    //var fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
+                    //var fullPath = Path.Combine(pathToSave, fileName);
+
+                    dataSheets.DocumentLink = dataSheetsDTO.DocumentLink;
                     dataSheets.OfferId = dataSheetsDTO.OfferId;
                     _context.Add(dataSheets);
                     _context.SaveChanges();
