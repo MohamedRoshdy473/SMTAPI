@@ -30,30 +30,36 @@ namespace SMT.Core.Services
 
         public IEnumerable<ProjectDocumentsDTO> GetAllProjectDocuments()
         {
-           return _unitOfWork.ProjectDocuments.GetAll();
+            return _unitOfWork.ProjectDocuments.GetAll();
         }
 
         public ProjectDocumentsDTO GetProjectDocument(int id)
         {
-           return _unitOfWork.ProjectDocuments.Get(id);
+            return _unitOfWork.ProjectDocuments.Get(id);
         }
         public IEnumerable<ProjectDocumentsDTO> GetProjectDocumentByProjectId(int ProjectId)
         {
-          return _unitOfWork.ProjectDocuments.GetProjectDocumentByProjectId(ProjectId);
+            return _unitOfWork.ProjectDocuments.GetProjectDocumentByProjectId(ProjectId);
         }
         public IEnumerable<ProjectDocumentsDTO> GetProjectDocumentByProjectUpdateId(int ProjectUpdateId)
         {
-          return _unitOfWork.ProjectDocuments.GetProjectDocumentByProjectUpdateId(ProjectUpdateId);
+            return _unitOfWork.ProjectDocuments.GetProjectDocumentByProjectUpdateId(ProjectUpdateId);
         }
 
         public void UpdateProjectDocument(int projectDocumentsDTOId, ProjectDocumentsDTO projectDocumentsDTO)
-            {
-                _unitOfWork.ProjectDocuments.Update(projectDocumentsDTOId, projectDocumentsDTO);
-            }
+        {
+            _unitOfWork.ProjectDocuments.Update(projectDocumentsDTOId, projectDocumentsDTO);
+        }
 
         public IActionResult UploadProjectDocument()
         {
-           return _unitOfWork.ProjectDocuments.Upload();           
+            return _unitOfWork.ProjectDocuments.Upload();
+        }
+
+        public List<ProjectDocumentsDTO> GetGetLatestDocuments(int projectId)
+        {
+
+            return _unitOfWork.ProjectDocuments.GetGetLatestDocuments(projectId);
         }
     }
 }

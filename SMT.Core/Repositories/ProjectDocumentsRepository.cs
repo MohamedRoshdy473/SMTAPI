@@ -24,42 +24,36 @@ namespace SMT.Core.Repositories
         {
             try
             {
-               var documentsCategories = _context.DocumentsCategories.ToList();
-                int documentsCatId=0;
+                var proUpdateIdInProjectDocuments = _context.ProjectDocuments.Where(p=>p.ProjectId== projectDocumentsDTO[0].ProjectId).OrderByDescending(p=>p.Id).ToList();
                 if (projectDocumentsDTO != null)
                 {
                     foreach (var item in projectDocumentsDTO)
                     {
-
                         if (item.ProjectUpdateId == 0)
                         {
                             item.ProjectUpdateId = null;
                         }
                         ProjectDocuments projectDocuments = new ProjectDocuments();
-                        projectDocuments.Id = item.Id;
                         projectDocuments.DocumentFile = item.DocumentFile;
                         projectDocuments.ProjectId = item.ProjectId;
                         projectDocuments.ProjectUpdateId = item.ProjectUpdateId;
-                        //projectDocuments.DocumentsCategoryId = item.DocumentsCategoryId;
-                        if (documentsCategories[0].Id != item.DocumentsCategoryId)
-                        {
-                            documentsCatId = _context.ProjectDocuments.Where(d => d.ProjectUpdateId == item.ProjectUpdateId).FirstOrDefault().DocumentsCategoryId;
-                        }
-                        if (documentsCategories[1].Id != item.DocumentsCategoryId)
-                        {
-                            documentsCatId = _context.ProjectDocuments.Where(d => d.ProjectUpdateId == item.ProjectUpdateId).FirstOrDefault().DocumentsCategoryId;
-                        }
-                        if (documentsCategories[2].Id != item.DocumentsCategoryId)
-                        {
-                            documentsCatId = _context.ProjectDocuments.Where(d => d.ProjectUpdateId == item.ProjectUpdateId).FirstOrDefault().DocumentsCategoryId;
-                        }
-                        if (documentsCategories[3].Id != item.DocumentsCategoryId)
-                        {
-                            documentsCatId = _context.ProjectDocuments.Where(d => d.ProjectUpdateId == item.ProjectUpdateId).FirstOrDefault().DocumentsCategoryId;
-                        }
-                        projectDocuments.DocumentsCategoryId = documentsCatId;
+                        projectDocuments.DocumentsCategoryId = item.DocumentsCategoryId;
                         _context.Add(projectDocuments);
                         _context.SaveChanges();
+
+                        //var lst = _context.ProjectDocuments.Where(p => p.DocumentsCategoryId != item.DocumentsCategoryId && p.ProjectId == item.ProjectId
+                        //&& p.ProjectUpdateId == proUpdateIdInProjectDocuments[0].ProjectUpdateId).OrderByDescending(p => p.Id).ToList();
+
+                        //foreach (var item2 in lst)
+                        //{
+                        //    ProjectDocuments documentsDTO = new ProjectDocuments();
+                        //    documentsDTO.DocumentFile = item2.DocumentFile;
+                        //    documentsDTO.ProjectId = item2.ProjectId;
+                        //    documentsDTO.ProjectUpdateId = item.ProjectUpdateId;
+                        //    documentsDTO.DocumentsCategoryId = item2.DocumentsCategoryId;
+                        //    _context.Add(documentsDTO);
+                        //    _context.SaveChanges();
+                        //}                       
                     }
                 }
                 else
@@ -133,7 +127,62 @@ namespace SMT.Core.Repositories
             return projectDocuments;
         }
 
-
+        public List<ProjectDocumentsDTO> GetGetLatestDocuments(int projectId)
+        {
+            List<int> lstCount = new List<int>();
+            List<int> result = new List<int>();
+            List<int> lstCountDocs = new List<int>();
+            List<ProjectDocumentsDTO> lstAllDocuments = new List<ProjectDocumentsDTO>();
+            var documentsCategories = _context.DocumentsCategories.ToList();
+            var proUpdateIdInProjectDocuments = _context.projectUpdates.Where(p => p.ProjectId == projectId).OrderByDescending(p => p.Id).ToList();
+            foreach (var num in documentsCategories)
+            {
+                lstCount.Add(num.Id);
+            }
+            IEnumerable<ProjectDocumentsDTO> LastDoc = _context.ProjectDocuments
+                                                                    .Where(p => p.ProjectUpdateId == proUpdateIdInProjectDocuments[0].Id)
+                                                                    .Select(projectDocuments => new ProjectDocumentsDTO
+                                                                    {
+                                                                        Id = projectDocuments.Id,
+                                                                        DocumentFile = projectDocuments.DocumentFile,
+                                                                        ProjectUpdateId = (int)projectDocuments.ProjectUpdateId,
+                                                                        DueDate = projectDocuments.ProjectUpdate.DueDate,
+                                                                        ProjectId = projectDocuments.ProjectId,
+                                                                        ProjectName = projectDocuments.projects.ProjectName,
+                                                                        DocumentsCategoryId = projectDocuments.DocumentsCategoryId,
+                                                                        DocumentsCategoryName = projectDocuments.DocumentsCategories.CategoryName
+                                                                    }).ToList();
+            foreach (var doc in LastDoc)
+            {
+                lstAllDocuments.Add(doc);
+            }
+            var groupIds = LastDoc.GroupBy(a => a.DocumentsCategoryId).ToList();
+            foreach (var item in groupIds)
+            {
+                lstCountDocs.Add(item.FirstOrDefault().DocumentsCategoryId);
+            }
+            result = lstCount.Except(lstCountDocs).ToList();
+            if (result.Count > 0)
+            {
+                foreach (var item in result)
+                {
+                    lstAllDocuments.Add(_context.ProjectDocuments
+                                                                    .Where(p => p.DocumentsCategoryId == item && p.ProjectId == projectId)
+                                                                    .Select(projectDocuments => new ProjectDocumentsDTO
+                                                                    {
+                                                                        Id = projectDocuments.Id,
+                                                                        DocumentFile = projectDocuments.DocumentFile,
+                                                                        ProjectUpdateId = (int)projectDocuments.ProjectUpdateId,
+                                                                        DueDate = projectDocuments.ProjectUpdate.DueDate,
+                                                                        ProjectId = projectDocuments.ProjectId,
+                                                                        ProjectName = projectDocuments.projects.ProjectName,
+                                                                        DocumentsCategoryId = projectDocuments.DocumentsCategoryId,
+                                                                        DocumentsCategoryName = projectDocuments.DocumentsCategories.CategoryName
+                                                                    }).ToList().FirstOrDefault());
+                }
+            }
+            return lstAllDocuments;
+        }
 
         public IEnumerable<ProjectDocumentsDTO> GetProjectDocumentByProjectId(int ProjectId)
         {

@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SMT.Core;
 using SMT.Data.DTO;
+using SMT.Data.Models.SMTDBContext;
 using SMT.Domain.Services;
 using System;
 using System.Collections.Generic;
@@ -19,11 +20,19 @@ namespace SMT.API.Controllers
     public class ProjectDocumentsController : ControllerBase
     {
         private readonly IProjectDocumentsService _projectDocumentsService;
+        private readonly SMTDbContext _context;
 
-        public ProjectDocumentsController(IProjectDocumentsService projectDocumentsService)
+        public ProjectDocumentsController(IProjectDocumentsService projectDocumentsService, SMTDbContext context)
         {
             _projectDocumentsService = projectDocumentsService;
+            _context = context;
         }
+        [Route("GetLatestDocuments/{projectId}")]
+        public List<ProjectDocumentsDTO> GetGetLatestDocuments(int projectId)
+        {
+            return _projectDocumentsService.GetGetLatestDocuments(projectId);
+        }
+
         // GET: api/<ProjectDocumentsController>
         [HttpGet]
         public IEnumerable<ProjectDocumentsDTO> Get()
@@ -126,5 +135,6 @@ namespace SMT.API.Controllers
             _projectDocumentsService.DeleteProjectDocument(id);
             return Ok();
         }
+
     }
 }

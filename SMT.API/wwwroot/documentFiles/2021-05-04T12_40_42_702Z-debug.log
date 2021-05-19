@@ -1,0 +1,2519 @@
+0 info it worked if it ends with ok
+1 verbose cli [
+1 verbose cli   'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'i'
+1 verbose cli ]
+2 info using npm@6.14.6
+3 info using node@v12.18.3
+4 verbose npm-session 5c122525cc76eabc
+5 silly install runPreinstallTopLevelLifecycles
+6 silly preinstall material-dashboard-angular@2.5.0
+7 info lifecycle material-dashboard-angular@2.5.0~preinstall: material-dashboard-angular@2.5.0
+8 silly install loadCurrentTree
+9 silly install readLocalPackageData
+10 timing stage:loadCurrentTree Completed in 1431ms
+11 silly install loadIdealTree
+12 silly install cloneCurrentTreeToIdealTree
+13 timing stage:loadIdealTree:cloneCurrentTree Completed in 12ms
+14 silly install loadShrinkwrap
+15 timing stage:loadIdealTree:loadShrinkwrap Completed in 743ms
+16 silly install loadAllDepsIntoIdealTree
+17 http fetch GET 304 https://registry.npmjs.org/@types%2fjasmine 514ms (from cache)
+18 http fetch GET 304 https://registry.npmjs.org/@types%2fbootstrap 523ms (from cache)
+19 http fetch GET 304 https://registry.npmjs.org/@types%2fjquery 519ms (from cache)
+20 silly pacote version manifest for @types/jasmine@3.5.14 fetched in 524ms
+21 silly pacote version manifest for @types/bootstrap@4.5.0 fetched in 534ms
+22 silly pacote version manifest for @types/jquery@3.5.2 fetched in 531ms
+23 http fetch GET 304 https://registry.npmjs.org/@angular%2fcompiler-cli 549ms (from cache)
+24 http fetch GET 304 https://registry.npmjs.org/@angular%2fcli 556ms (from cache)
+25 http fetch GET 304 https://registry.npmjs.org/codelyzer 555ms (from cache)
+26 silly pacote version manifest for @angular/compiler-cli@10.1.4 fetched in 568ms
+27 silly pacote version manifest for @angular/cli@10.1.4 fetched in 577ms
+28 silly pacote version manifest for codelyzer@6.0.1 fetched in 561ms
+29 http fetch GET 304 https://registry.npmjs.org/@types%2fgooglemaps 573ms (from cache)
+30 silly pacote version manifest for @types/googlemaps@3.39.14 fetched in 581ms
+31 http fetch GET 304 https://registry.npmjs.org/@types%2fnode 583ms (from cache)
+32 silly pacote version manifest for @types/node@14.11.5 fetched in 592ms
+33 http fetch GET 304 https://registry.npmjs.org/jasmine-core 119ms (from cache)
+34 silly pacote version manifest for jasmine-core@3.6.0 fetched in 121ms
+35 http fetch GET 304 https://registry.npmjs.org/karma 125ms (from cache)
+36 silly fetchPackageMetaData error for karma@5.2.3 Unexpected end of JSON input while parsing near '...":"^0.0.15","phantomj'
+37 http fetch GET 304 https://registry.npmjs.org/karma-coverage-istanbul-reporter 106ms (from cache)
+38 silly pacote version manifest for karma-coverage-istanbul-reporter@3.0.3 fetched in 110ms
+39 http fetch GET 304 https://registry.npmjs.org/karma-cli 114ms (from cache)
+40 silly pacote version manifest for karma-cli@2.0.0 fetched in 115ms
+41 http fetch GET 304 https://registry.npmjs.org/jasmine-spec-reporter 155ms (from cache)
+42 silly pacote version manifest for jasmine-spec-reporter@6.0.0 fetched in 158ms
+43 http fetch GET 304 https://registry.npmjs.org/karma-chrome-launcher 133ms (from cache)
+44 silly pacote version manifest for karma-chrome-launcher@3.1.0 fetched in 134ms
+45 http fetch GET 304 https://registry.npmjs.org/karma-jasmine 120ms (from cache)
+46 http fetch GET 304 https://registry.npmjs.org/karma-jasmine-html-reporter 109ms (from cache)
+47 silly pacote version manifest for karma-jasmine@4.0.1 fetched in 122ms
+48 silly pacote version manifest for karma-jasmine-html-reporter@1.5.4 fetched in 110ms
+49 http fetch GET 304 https://registry.npmjs.org/protractor 95ms (from cache)
+50 silly pacote version manifest for protractor@7.0.0 fetched in 98ms
+51 http fetch GET 304 https://registry.npmjs.org/ts-node 87ms (from cache)
+52 silly pacote version manifest for ts-node@9.0.0 fetched in 90ms
+53 http fetch GET 304 https://registry.npmjs.org/tslint 131ms (from cache)
+54 silly pacote version manifest for tslint@6.1.3 fetched in 137ms
+55 warn deprecated tslint@6.1.3: TSLint has been deprecated in favor of ESLint. Please see https://github.com/palantir/tslint/issues/4534 for more information.
+56 http fetch GET 304 https://registry.npmjs.org/@angular%2fcdk 143ms (from cache)
+57 http fetch GET 304 https://registry.npmjs.org/@angular%2fanimations 153ms (from cache)
+58 http fetch GET 304 https://registry.npmjs.org/@angular%2fcommon 154ms (from cache)
+59 silly pacote version manifest for @angular/cdk@10.2.4 fetched in 159ms
+60 silly pacote version manifest for @angular/animations@10.1.4 fetched in 166ms
+61 silly pacote version manifest for @angular/common@10.1.4 fetched in 162ms
+62 http fetch GET 304 https://registry.npmjs.org/@angular%2fcompiler 139ms (from cache)
+63 silly pacote version manifest for @angular/compiler@10.1.4 fetched in 144ms
+64 http fetch GET 304 https://registry.npmjs.org/@angular%2fcore 138ms (from cache)
+65 silly pacote version manifest for @angular/core@10.1.4 fetched in 142ms
+66 http fetch GET 304 https://registry.npmjs.org/typescript 227ms (from cache)
+67 silly pacote version manifest for typescript@4.0.3 fetched in 289ms
+68 http fetch GET 304 https://registry.npmjs.org/@agm%2fcore 291ms (from cache)
+69 silly pacote range manifest for @agm/core@^1.1.0 fetched in 305ms
+70 http fetch GET 304 https://registry.npmjs.org/@types%2fchartist 1034ms (from cache)
+71 http fetch GET 304 https://registry.npmjs.org/@angular%2fmaterial 171ms (from cache)
+72 silly pacote version manifest for @types/chartist@0.11.0 fetched in 1040ms
+73 http fetch GET 304 https://registry.npmjs.org/@angular%2flanguage-service 1044ms (from cache)
+74 http fetch GET 304 https://registry.npmjs.org/@angular%2fforms 225ms (from cache)
+75 silly pacote version manifest for @angular/material@10.2.4 fetched in 186ms
+76 http fetch GET 304 https://registry.npmjs.org/@angular%2fplatform-browser-dynamic 183ms (from cache)
+77 silly pacote version manifest for @angular/language-service@10.1.4 fetched in 1059ms
+78 http fetch GET 304 https://registry.npmjs.org/@angular%2fplatform-browser 193ms (from cache)
+79 silly pacote version manifest for @angular/forms@10.1.4 fetched in 243ms
+80 silly pacote version manifest for @angular/platform-browser-dynamic@10.1.4 fetched in 196ms
+81 silly pacote version manifest for @angular/platform-browser@10.1.4 fetched in 202ms
+82 http fetch GET 304 https://registry.npmjs.org/@angular%2fplatform-server 182ms (from cache)
+83 silly pacote version manifest for @angular/platform-server@10.1.4 fetched in 188ms
+84 http fetch GET 304 https://registry.npmjs.org/@angular%2frouter 185ms (from cache)
+85 silly pacote version manifest for @angular/router@10.1.4 fetched in 192ms
+86 http fetch GET 304 https://registry.npmjs.org/ajv 128ms (from cache)
+87 silly pacote version manifest for ajv@6.12.5 fetched in 133ms
+88 http fetch GET 304 https://registry.npmjs.org/arrive 110ms (from cache)
+89 silly pacote version manifest for arrive@2.4.1 fetched in 111ms
+90 http fetch GET 304 https://registry.npmjs.org/bootstrap 104ms (from cache)
+91 http fetch GET 304 https://registry.npmjs.org/bootstrap-material-design 91ms (from cache)
+92 http fetch GET 304 https://registry.npmjs.org/bootstrap-notify 86ms (from cache)
+93 silly pacote version manifest for bootstrap@4.5.2 fetched in 109ms
+94 silly pacote version manifest for bootstrap-material-design@4.1.3 fetched in 95ms
+95 silly pacote version manifest for bootstrap-notify@3.1.3 fetched in 91ms
+96 http fetch GET 304 https://registry.npmjs.org/chartist 100ms (from cache)
+97 silly pacote version manifest for chartist@0.11.4 fetched in 102ms
+98 http fetch GET 304 https://registry.npmjs.org/core-js 109ms (from cache)
+99 silly pacote version manifest for core-js@3.6.5 fetched in 113ms
+100 http fetch GET 304 https://registry.npmjs.org/express 97ms (from cache)
+101 silly pacote version manifest for express@4.17.1 fetched in 104ms
+102 http fetch GET 304 https://registry.npmjs.org/eslint 150ms (from cache)
+103 silly pacote range manifest for eslint@^7.10.0 fetched in 164ms
+104 http fetch GET 304 https://registry.npmjs.org/classlist.js 197ms (from cache)
+105 http fetch GET 304 https://registry.npmjs.org/hammerjs 153ms (from cache)
+106 silly pacote version manifest for classlist.js@1.1.20150312 fetched in 200ms
+107 silly pacote version manifest for hammerjs@2.0.8 fetched in 159ms
+108 silly pacote range manifest for @types/jquery@* fetched in 4ms
+109 http fetch GET 304 https://registry.npmjs.org/googleapis 168ms (from cache)
+110 http fetch GET 304 https://registry.npmjs.org/jquery 130ms (from cache)
+111 silly pacote version manifest for googleapis@61.0.0 fetched in 173ms
+112 http fetch GET 304 https://registry.npmjs.org/perfect-scrollbar 131ms (from cache)
+113 http fetch GET 304 https://registry.npmjs.org/popper.js 118ms (from cache)
+114 silly pacote version manifest for jquery@3.5.1 fetched in 137ms
+115 http fetch GET 304 https://registry.npmjs.org/moment 136ms (from cache)
+116 silly pacote version manifest for perfect-scrollbar@1.5.0 fetched in 139ms
+117 silly pacote version manifest for popper.js@1.16.1 fetched in 126ms
+118 warn deprecated popper.js@1.16.1: You can find the new Popper v2 at @popperjs/core, this package is dedicated to the legacy v1
+119 silly pacote version manifest for moment@2.29.1 fetched in 144ms
+120 http fetch GET 304 https://registry.npmjs.org/rxjs 128ms (from cache)
+121 silly pacote version manifest for rxjs@6.6.3 fetched in 133ms
+122 http fetch GET 304 https://registry.npmjs.org/rxjs-compat 125ms (from cache)
+123 silly pacote version manifest for rxjs-compat@6.6.3 fetched in 126ms
+124 http fetch GET 304 https://registry.npmjs.org/web-animations-js 120ms (from cache)
+125 silly pacote version manifest for web-animations-js@2.3.2 fetched in 121ms
+126 http fetch GET 304 https://registry.npmjs.org/zone.js 106ms (from cache)
+127 silly pacote version manifest for zone.js@0.11.1 fetched in 109ms
+128 http fetch GET 304 https://registry.npmjs.org/popper.js 117ms (from cache)
+129 http fetch GET 304 https://registry.npmjs.org/reflect-metadata 105ms (from cache)
+130 silly pacote range manifest for popper.js@^1.14.1 fetched in 126ms
+131 http fetch GET 304 https://registry.npmjs.org/canonical-path 109ms (from cache)
+132 silly pacote range manifest for reflect-metadata@^0.1.2 fetched in 113ms
+133 http fetch GET 304 https://registry.npmjs.org/@types%2fsizzle 122ms (from cache)
+134 silly pacote version manifest for canonical-path@1.0.0 fetched in 114ms
+135 silly pacote range manifest for @types/sizzle@* fetched in 131ms
+136 http fetch GET 304 https://registry.npmjs.org/fs-extra 123ms (from cache)
+137 http fetch GET 304 https://registry.npmjs.org/semver 106ms (from cache)
+138 silly pacote version manifest for fs-extra@4.0.2 fetched in 127ms
+139 http fetch GET 304 https://registry.npmjs.org/dependency-graph 130ms (from cache)
+140 silly pacote range manifest for semver@^6.3.0 fetched in 110ms
+141 silly pacote range manifest for dependency-graph@^0.7.2 fetched in 134ms
+142 http fetch GET 304 https://registry.npmjs.org/source-map 112ms (from cache)
+143 silly pacote range manifest for source-map@^0.6.1 fetched in 113ms
+144 http fetch GET 304 https://registry.npmjs.org/yargs 93ms (from cache)
+145 silly pacote version manifest for yargs@15.3.0 fetched in 96ms
+146 http fetch GET 304 https://registry.npmjs.org/debug 82ms (from cache)
+147 http fetch GET 304 https://registry.npmjs.org/ini 83ms (from cache)
+148 silly pacote version manifest for debug@4.1.1 fetched in 87ms
+149 warn deprecated debug@4.1.1: Debug versions >=3.2.0 <3.2.7 || >=4 <4.3.1 have a low-severity ReDos regression when used in a Node.js environment. It is recommended you upgrade to 3.2.7 or 4.3.1. (https://github.com/visionmedia/debug/issues/797)
+150 silly pacote version manifest for ini@1.3.5 fetched in 89ms
+151 warn deprecated ini@1.3.5: Please update to ini >=1.3.6 to avoid a prototype pollution issue
+152 http fetch GET 304 https://registry.npmjs.org/ansi-colors 111ms (from cache)
+153 silly pacote version manifest for ansi-colors@4.1.1 fetched in 115ms
+154 http fetch GET 304 https://registry.npmjs.org/inquirer 108ms (from cache)
+155 silly pacote version manifest for inquirer@7.3.3 fetched in 112ms
+156 http fetch GET 304 https://registry.npmjs.org/@schematics%2fupdate 142ms (from cache)
+157 silly pacote version manifest for @schematics/update@0.1001.4 fetched in 150ms
+158 http fetch GET 304 https://registry.npmjs.org/@schematics%2fangular 161ms (from cache)
+159 http fetch GET 304 https://registry.npmjs.org/@angular-devkit%2fschematics 171ms (from cache)
+160 silly pacote version manifest for @schematics/angular@10.1.4 fetched in 174ms
+161 silly pacote version manifest for @angular-devkit/schematics@10.1.4 fetched in 178ms
+162 silly pacote version manifest for @angular/core@9.0.0 fetched in 3ms
+163 silly pacote version manifest for @angular/compiler@9.0.0 fetched in 2ms
+164 silly pacote range manifest for zone.js@~0.10.3 fetched in 3ms
+165 silly pacote range manifest for rxjs@^6.5.3 fetched in 1ms
+166 http fetch GET 304 https://registry.npmjs.org/@yarnpkg%2flockfile 181ms (from cache)
+167 http fetch GET 304 https://registry.npmjs.org/npm-package-arg 122ms (from cache)
+168 silly pacote version manifest for @yarnpkg/lockfile@1.1.0 fetched in 183ms
+169 silly pacote version manifest for npm-package-arg@8.0.1 fetched in 123ms
+170 http fetch GET 304 https://registry.npmjs.org/npm-pick-manifest 99ms (from cache)
+171 silly pacote version manifest for npm-pick-manifest@6.1.0 fetched in 100ms
+172 http fetch GET 304 https://registry.npmjs.org/pacote 101ms (from cache)
+173 silly pacote version manifest for pacote@9.5.12 fetched in 105ms
+174 http fetch GET 304 https://registry.npmjs.org/read-package-tree 98ms (from cache)
+175 http fetch GET 304 https://registry.npmjs.org/symbol-observable 91ms (from cache)
+176 silly pacote version manifest for read-package-tree@5.3.1 fetched in 99ms
+177 silly pacote version manifest for symbol-observable@1.2.0 fetched in 93ms
+178 http fetch GET 304 https://registry.npmjs.org/universal-analytics 104ms (from cache)
+179 silly pacote version manifest for universal-analytics@0.4.23 fetched in 106ms
+180 silly pacote range manifest for source-map@^0.5.7 fetched in 2ms
+181 http fetch GET 200 https://registry.npmjs.org/sprintf-js 3ms (from cache)
+182 silly pacote range manifest for sprintf-js@^1.1.2 fetched in 8ms
+183 http fetch GET 304 https://registry.npmjs.org/uuid 110ms (from cache)
+184 http fetch GET 304 https://registry.npmjs.org/app-root-path 100ms (from cache)
+185 silly pacote version manifest for uuid@8.3.0 fetched in 114ms
+186 silly pacote range manifest for app-root-path@^3.0.0 fetched in 104ms
+187 http fetch GET 304 https://registry.npmjs.org/aria-query 98ms (from cache)
+188 silly pacote range manifest for aria-query@^3.0.0 fetched in 106ms
+189 http fetch GET 304 https://registry.npmjs.org/css-selector-tokenizer 93ms (from cache)
+190 silly pacote range manifest for css-selector-tokenizer@^0.7.1 fetched in 95ms
+191 silly pacote range manifest for jasmine-core@^3.6.0 fetched in 1ms
+192 http fetch GET 304 https://registry.npmjs.org/axobject-query 119ms (from cache)
+193 http fetch GET 304 https://registry.npmjs.org/cssauron 92ms (from cache)
+194 silly pacote version manifest for axobject-query@2.0.2 fetched in 121ms
+195 silly pacote range manifest for cssauron@^1.4.0 fetched in 94ms
+196 http fetch GET 200 https://registry.npmjs.org/blocking-proxy 2ms (from cache)
+197 silly pacote range manifest for blocking-proxy@^1.0.0 fetched in 3ms
+198 http fetch GET 304 https://registry.npmjs.org/semver-dsl 89ms (from cache)
+199 silly pacote range manifest for semver-dsl@^1.0.1 fetched in 89ms
+200 http fetch GET 304 https://registry.npmjs.org/tslib 440ms (from cache)
+201 silly pacote range manifest for tslib@^2.0.0 fetched in 454ms
+202 http fetch GET 304 https://registry.npmjs.org/istanbul-lib-source-maps 131ms (from cache)
+203 http fetch GET 304 https://registry.npmjs.org/istanbul-reports 134ms (from cache)
+204 silly pacote range manifest for istanbul-lib-source-maps@^3.0.6 fetched in 142ms
+205 silly pacote range manifest for istanbul-reports@^3.0.2 fetched in 145ms
+206 http fetch GET 304 https://registry.npmjs.org/istanbul-lib-report 164ms (from cache)
+207 http fetch GET 304 https://registry.npmjs.org/colors 139ms (from cache)
+208 silly pacote range manifest for istanbul-lib-report@^3.0.0 fetched in 170ms
+209 silly pacote version manifest for colors@1.4.0 fetched in 145ms
+210 http fetch GET 304 https://registry.npmjs.org/browserstack 129ms (from cache)
+211 http fetch GET 304 https://registry.npmjs.org/@types%2fq 139ms (from cache)
+212 silly pacote range manifest for browserstack@^1.5.1 fetched in 131ms
+213 silly pacote range manifest for @types/q@^0.0.32 fetched in 141ms
+214 http fetch GET 304 https://registry.npmjs.org/chalk 130ms (from cache)
+215 http fetch GET 304 https://registry.npmjs.org/@types%2fselenium-webdriver 141ms (from cache)
+216 http fetch GET 200 https://registry.npmjs.org/webdriver-js-extender 7ms (from cache)
+217 silly pacote range manifest for chalk@^1.1.3 fetched in 133ms
+218 silly pacote range manifest for @types/selenium-webdriver@^3.0.0 fetched in 145ms
+219 silly pacote version manifest for webdriver-js-extender@2.1.0 fetched in 13ms
+220 silly pacote range manifest for yargs@^15.3.1 fetched in 7ms
+221 http fetch GET 304 https://registry.npmjs.org/selenium-webdriver 141ms (from cache)
+222 http fetch GET 304 https://registry.npmjs.org/source-map-support 137ms (from cache)
+223 http fetch GET 304 https://registry.npmjs.org/jasmine 169ms (from cache)
+224 http fetch GET 304 https://registry.npmjs.org/q 155ms (from cache)
+225 http fetch GET 304 https://registry.npmjs.org/jasminewd2 161ms (from cache)
+226 http fetch GET 304 https://registry.npmjs.org/saucelabs 150ms (from cache)
+227 silly pacote version manifest for selenium-webdriver@3.6.0 fetched in 152ms
+228 silly pacote range manifest for source-map-support@~0.4.0 fetched in 149ms
+229 silly pacote version manifest for jasmine@2.8.0 fetched in 179ms
+230 silly pacote version manifest for q@1.4.1 fetched in 165ms
+231 silly pacote range manifest for jasminewd2@^2.1.0 fetched in 172ms
+232 silly pacote range manifest for saucelabs@^1.5.0 fetched in 161ms
+233 http fetch GET 304 https://registry.npmjs.org/arg 143ms (from cache)
+234 silly pacote range manifest for semver@^5.3.0 fetched in 7ms
+235 http fetch GET 304 https://registry.npmjs.org/webdriver-manager 154ms (from cache)
+236 silly pacote range manifest for arg@^4.1.0 fetched in 150ms
+237 http fetch GET 304 https://registry.npmjs.org/diff 149ms (from cache)
+238 silly pacote range manifest for webdriver-manager@^12.1.7 fetched in 161ms
+239 silly pacote range manifest for diff@^4.0.1 fetched in 157ms
+240 silly pacote version manifest for debug@2.6.9 fetched in 3ms
+241 http fetch GET 304 https://registry.npmjs.org/damerau-levenshtein 402ms (from cache)
+242 silly pacote range manifest for damerau-levenshtein@^1.0.4 fetched in 404ms
+243 http fetch GET 304 https://registry.npmjs.org/yn 96ms (from cache)
+244 silly pacote version manifest for yn@3.1.1 fetched in 97ms
+245 silly pacote range manifest for ajv@^6.10.0 fetched in 3ms
+246 silly pacote range manifest for chalk@^4.0.0 fetched in 1ms
+247 http fetch GET 304 https://registry.npmjs.org/make-error 111ms (from cache)
+248 silly pacote range manifest for make-error@^1.1.1 fetched in 114ms
+249 http fetch GET 304 https://registry.npmjs.org/domino 113ms (from cache)
+250 silly pacote range manifest for domino@^2.1.2 fetched in 116ms
+251 http fetch GET 304 https://registry.npmjs.org/builtin-modules 132ms (from cache)
+252 http fetch GET 304 https://registry.npmjs.org/array-flatten 113ms (from cache)
+253 silly pacote range manifest for builtin-modules@^1.1.1 fetched in 135ms
+254 silly pacote version manifest for array-flatten@1.1.1 fetched in 116ms
+255 http fetch GET 304 https://registry.npmjs.org/parse5 132ms (from cache)
+256 http fetch GET 304 https://registry.npmjs.org/tsutils 138ms (from cache)
+257 silly pacote range manifest for parse5@^5.0.0 fetched in 139ms
+258 silly pacote range manifest for tsutils@^2.29.0 fetched in 144ms
+259 http fetch GET 304 https://registry.npmjs.org/@babel%2fcode-frame 124ms (from cache)
+260 http fetch GET 304 https://registry.npmjs.org/xhr2 141ms (from cache)
+261 silly pacote version manifest for @babel/code-frame@7.12.11 fetched in 129ms
+262 silly pacote range manifest for xhr2@^0.2.0 fetched in 144ms
+263 http fetch GET 304 https://registry.npmjs.org/@eslint%2feslintrc 124ms (from cache)
+264 silly pacote range manifest for @eslint/eslintrc@^0.4.0 fetched in 125ms
+265 http fetch GET 304 https://registry.npmjs.org/cross-spawn 89ms (from cache)
+266 silly pacote range manifest for cross-spawn@^7.0.2 fetched in 91ms
+267 http fetch GET 304 https://registry.npmjs.org/doctrine 85ms (from cache)
+268 silly pacote range manifest for doctrine@^3.0.0 fetched in 86ms
+269 http fetch GET 304 https://registry.npmjs.org/enquirer 75ms (from cache)
+270 silly pacote range manifest for enquirer@^2.3.5 fetched in 77ms
+271 http fetch GET 304 https://registry.npmjs.org/eslint-scope 112ms (from cache)
+272 silly pacote range manifest for eslint-scope@^5.1.1 fetched in 115ms
+273 http fetch GET 304 https://registry.npmjs.org/eslint-visitor-keys 111ms (from cache)
+274 http fetch GET 304 https://registry.npmjs.org/eslint-utils 120ms (from cache)
+275 silly pacote range manifest for eslint-visitor-keys@^2.0.0 fetched in 115ms
+276 silly pacote range manifest for eslint-utils@^2.1.0 fetched in 123ms
+277 http fetch GET 304 https://registry.npmjs.org/file-entry-cache 103ms (from cache)
+278 http fetch GET 304 https://registry.npmjs.org/espree 118ms (from cache)
+279 silly pacote range manifest for file-entry-cache@^6.0.1 fetched in 108ms
+280 silly pacote range manifest for espree@^7.3.1 fetched in 122ms
+281 http fetch GET 304 https://registry.npmjs.org/functional-red-black-tree 110ms (from cache)
+282 silly pacote range manifest for functional-red-black-tree@^1.0.1 fetched in 111ms
+283 http fetch GET 304 https://registry.npmjs.org/esquery 123ms (from cache)
+284 silly pacote range manifest for esquery@^1.4.0 fetched in 127ms
+285 http fetch GET 304 https://registry.npmjs.org/ignore 100ms (from cache)
+286 silly pacote range manifest for ignore@^4.0.6 fetched in 102ms
+287 http fetch GET 304 https://registry.npmjs.org/import-fresh 96ms (from cache)
+288 silly pacote range manifest for import-fresh@^3.0.0 fetched in 98ms
+289 http fetch GET 304 https://registry.npmjs.org/globals 122ms (from cache)
+290 silly pacote range manifest for globals@^13.6.0 fetched in 123ms
+291 http fetch GET 200 https://registry.npmjs.org/text-table 2ms (from cache)
+292 silly pacote range manifest for text-table@^0.2.0 fetched in 3ms
+293 http fetch GET 304 https://registry.npmjs.org/levn 95ms (from cache)
+294 silly pacote range manifest for levn@^0.4.1 fetched in 98ms
+295 http fetch GET 304 https://registry.npmjs.org/json-stable-stringify-without-jsonify 110ms (from cache)
+296 silly pacote range manifest for json-stable-stringify-without-jsonify@^1.0.1 fetched in 111ms
+297 http fetch GET 304 https://registry.npmjs.org/regexpp 90ms (from cache)
+298 http fetch GET 304 https://registry.npmjs.org/progress 96ms (from cache)
+299 silly pacote range manifest for regexpp@^3.1.0 fetched in 92ms
+300 silly pacote range manifest for progress@^2.0.0 fetched in 99ms
+301 http fetch GET 304 https://registry.npmjs.org/optionator 101ms (from cache)
+302 silly pacote range manifest for optionator@^0.9.1 fetched in 103ms
+303 http fetch GET 304 https://registry.npmjs.org/natural-compare 118ms (from cache)
+304 silly pacote range manifest for natural-compare@^1.4.0 fetched in 119ms
+305 http fetch GET 304 https://registry.npmjs.org/strip-json-comments 85ms (from cache)
+306 silly pacote range manifest for strip-json-comments@^3.1.0 fetched in 87ms
+307 http fetch GET 304 https://registry.npmjs.org/table 90ms (from cache)
+308 silly pacote range manifest for table@^6.0.4 fetched in 93ms
+309 http fetch GET 304 https://registry.npmjs.org/strip-ansi 115ms (from cache)
+310 silly pacote range manifest for strip-ansi@^6.0.0 fetched in 116ms
+311 http fetch GET 304 https://registry.npmjs.org/v8-compile-cache 103ms (from cache)
+312 silly pacote range manifest for v8-compile-cache@^2.0.3 fetched in 104ms
+313 silly pacote range manifest for chalk@^4.1.0 fetched in 0ms
+314 http fetch GET 304 https://registry.npmjs.org/universalify 94ms (from cache)
+315 http fetch GET 304 https://registry.npmjs.org/googleapis-common 100ms (from cache)
+316 silly pacote range manifest for googleapis-common@^4.4.0 fetched in 103ms
+317 silly pacote range manifest for universalify@^0.1.0 fetched in 99ms
+318 http fetch GET 304 https://registry.npmjs.org/google-auth-library 111ms (from cache)
+319 silly pacote range manifest for google-auth-library@^6.0.0 fetched in 120ms
+320 http fetch GET 304 https://registry.npmjs.org/jsonfile 113ms (from cache)
+321 silly pacote range manifest for jsonfile@^4.0.0 fetched in 116ms
+322 http fetch GET 304 https://registry.npmjs.org/cliui 115ms (from cache)
+323 http fetch GET 304 https://registry.npmjs.org/find-up 110ms (from cache)
+324 silly pacote range manifest for cliui@^6.0.0 fetched in 122ms
+325 silly pacote range manifest for find-up@^4.1.0 fetched in 115ms
+326 silly pacote range manifest for rxjs@^6.6.0 fetched in 5ms
+327 http fetch GET 304 https://registry.npmjs.org/string-width 117ms (from cache)
+328 silly pacote range manifest for string-width@^4.2.0 fetched in 119ms
+329 http fetch GET 304 https://registry.npmjs.org/ansi-escapes 107ms (from cache)
+330 silly pacote range manifest for ansi-escapes@^4.2.1 fetched in 108ms
+331 silly pacote range manifest for npm-package-arg@^8.0.0 fetched in 1ms
+332 http fetch GET 304 https://registry.npmjs.org/yargs-parser 118ms (from cache)
+333 silly pacote range manifest for yargs-parser@^18.1.0 fetched in 121ms
+334 http fetch GET 304 https://registry.npmjs.org/cli-cursor 99ms (from cache)
+335 silly pacote range manifest for cli-cursor@^3.1.0 fetched in 101ms
+336 http fetch GET 304 https://registry.npmjs.org/figures 81ms (from cache)
+337 silly pacote range manifest for figures@^3.0.0 fetched in 83ms
+338 silly pacote version manifest for rxjs@6.6.2 fetched in 1ms
+339 http fetch GET 304 https://registry.npmjs.org/cli-width 97ms (from cache)
+340 silly pacote range manifest for cli-width@^3.0.0 fetched in 99ms
+341 http fetch GET 304 https://registry.npmjs.org/external-editor 100ms (from cache)
+342 silly pacote range manifest for external-editor@^3.0.3 fetched in 101ms
+343 http fetch GET 304 https://registry.npmjs.org/mute-stream 99ms (from cache)
+344 silly pacote version manifest for mute-stream@0.0.8 fetched in 99ms
+345 http fetch GET 304 https://registry.npmjs.org/run-async 114ms (from cache)
+346 silly pacote range manifest for run-async@^2.4.0 fetched in 115ms
+347 http fetch GET 304 https://registry.npmjs.org/through 166ms (from cache)
+348 silly pacote range manifest for through@^2.3.6 fetched in 175ms
+349 http fetch GET 304 https://registry.npmjs.org/string-width 182ms (from cache)
+350 http fetch GET 304 https://registry.npmjs.org/semver-intersect 172ms (from cache)
+351 http fetch GET 304 https://registry.npmjs.org/ora 161ms (from cache)
+352 silly pacote range manifest for string-width@^4.1.0 fetched in 191ms
+353 silly pacote version manifest for semver-intersect@1.4.0 fetched in 182ms
+354 silly pacote version manifest for ora@5.0.0 fetched in 173ms
+355 http fetch GET 304 https://registry.npmjs.org/hosted-git-info 136ms (from cache)
+356 http fetch GET 304 https://registry.npmjs.org/jsonc-parser 184ms (from cache)
+357 silly pacote range manifest for hosted-git-info@^3.0.2 fetched in 143ms
+358 silly pacote version manifest for jsonc-parser@2.3.0 fetched in 190ms
+359 http fetch GET 304 https://registry.npmjs.org/npm-install-checks 141ms (from cache)
+360 silly pacote range manifest for npm-package-arg@^6.1.0 fetched in 4ms
+361 http fetch GET 304 https://registry.npmjs.org/validate-npm-package-name 148ms (from cache)
+362 silly pacote range manifest for npm-install-checks@^4.0.0 fetched in 146ms
+363 silly pacote range manifest for validate-npm-package-name@^3.0.0 fetched in 151ms
+364 silly pacote range manifest for npm-pick-manifest@^3.0.0 fetched in 3ms
+365 http fetch GET 304 https://registry.npmjs.org/cacache 138ms (from cache)
+366 silly pacote range manifest for cacache@^12.0.2 fetched in 142ms
+367 http fetch GET 304 https://registry.npmjs.org/chownr 119ms (from cache)
+368 silly pacote range manifest for chownr@^1.1.2 fetched in 119ms
+369 http fetch GET 304 https://registry.npmjs.org/lru-cache 153ms (from cache)
+370 http fetch GET 304 https://registry.npmjs.org/minipass 144ms (from cache)
+371 silly pacote range manifest for lru-cache@^5.1.1 fetched in 161ms
+372 silly pacote range manifest for minipass@^2.3.5 fetched in 152ms
+373 http fetch GET 304 https://registry.npmjs.org/npm-packlist 140ms (from cache)
+374 silly pacote range manifest for semver@^5.6.0 fetched in 5ms
+375 http fetch GET 304 https://registry.npmjs.org/normalize-package-data 159ms (from cache)
+376 http fetch GET 304 https://registry.npmjs.org/npm-registry-fetch 141ms (from cache)
+377 silly pacote range manifest for npm-packlist@^1.1.12 fetched in 153ms
+378 http fetch GET 304 https://registry.npmjs.org/make-fetch-happen 173ms (from cache)
+379 silly pacote range manifest for normalize-package-data@^2.4.0 fetched in 173ms
+380 silly pacote range manifest for npm-registry-fetch@^4.0.0 fetched in 155ms
+381 http fetch GET 304 https://registry.npmjs.org/promise-retry 151ms (from cache)
+382 http fetch GET 304 https://registry.npmjs.org/protoduck 149ms (from cache)
+383 http fetch GET 304 https://registry.npmjs.org/osenv 161ms (from cache)
+384 silly pacote range manifest for make-fetch-happen@^5.0.0 fetched in 186ms
+385 silly pacote range manifest for promise-retry@^1.1.1 fetched in 161ms
+386 silly pacote range manifest for protoduck@^5.0.1 fetched in 157ms
+387 http fetch GET 304 https://registry.npmjs.org/npm-normalize-package-bin 179ms (from cache)
+388 silly pacote range manifest for osenv@^0.1.5 fetched in 169ms
+389 silly pacote range manifest for npm-normalize-package-bin@^1.0.0 fetched in 184ms
+390 silly pacote range manifest for through@X.X.X fetched in 5ms
+391 http fetch GET 304 https://registry.npmjs.org/rimraf 111ms (from cache)
+392 silly pacote range manifest for rimraf@^2.6.2 fetched in 114ms
+393 silly pacote range manifest for rimraf@^2.6.3 fetched in 4ms
+394 http fetch GET 304 https://registry.npmjs.org/ssri 134ms (from cache)
+395 http fetch GET 304 https://registry.npmjs.org/tar 128ms (from cache)
+396 silly pacote range manifest for ssri@^6.0.1 fetched in 143ms
+397 silly pacote range manifest for tar@^4.4.10 fetched in 140ms
+398 http fetch GET 304 https://registry.npmjs.org/ast-types-flow 164ms (from cache)
+399 http fetch GET 304 https://registry.npmjs.org/util-promisify 170ms (from cache)
+400 http fetch GET 304 https://registry.npmjs.org/fastparse 165ms (from cache)
+401 silly pacote version manifest for ast-types-flow@0.0.7 fetched in 166ms
+402 http fetch GET 304 https://registry.npmjs.org/request 167ms (from cache)
+403 http fetch GET 304 https://registry.npmjs.org/readdir-scoped-modules 182ms (from cache)
+404 http fetch GET 304 https://registry.npmjs.org/istanbul-lib-coverage 161ms (from cache)
+405 silly pacote range manifest for util-promisify@^2.1.0 fetched in 176ms
+406 http fetch GET 304 https://registry.npmjs.org/read-package-json 185ms (from cache)
+407 silly pacote range manifest for fastparse@^1.1.2 fetched in 173ms
+408 silly pacote range manifest for request@^2.88.2 fetched in 177ms
+409 warn deprecated request@2.88.2: request has been deprecated, see https://github.com/request/request/issues/3142
+410 silly pacote range manifest for readdir-scoped-modules@^1.0.0 fetched in 197ms
+411 silly pacote range manifest for istanbul-lib-coverage@^2.0.5 fetched in 176ms
+412 silly pacote range manifest for read-package-json@^2.0.0 fetched in 200ms
+413 silly pacote range manifest for selenium-webdriver@^3.0.1 fetched in 13ms
+414 silly pacote range manifest for yargs-parser@^18.1.2 fetched in 12ms
+415 http fetch GET 304 https://registry.npmjs.org/html-escaper 125ms (from cache)
+416 silly pacote range manifest for rimraf@^2.5.4 fetched in 5ms
+417 silly pacote range manifest for html-escaper@^2.0.0 fetched in 127ms
+418 silly pacote range manifest for source-map@^0.5.6 fetched in 2ms
+419 http fetch GET 304 https://registry.npmjs.org/supports-color 130ms (from cache)
+420 silly pacote range manifest for supports-color@^7.1.0 fetched in 131ms
+421 silly pacote range manifest for jasmine-core@~2.8.0 fetched in 1ms
+422 http fetch GET 304 https://registry.npmjs.org/https-proxy-agent 124ms (from cache)
+423 http fetch GET 304 https://registry.npmjs.org/make-dir 180ms (from cache)
+424 silly pacote range manifest for https-proxy-agent@^2.2.1 fetched in 126ms
+425 silly pacote range manifest for make-dir@^3.0.0 fetched in 183ms
+426 silly pacote range manifest for chalk@^1.1.1 fetched in 2ms
+427 silly pacote range manifest for ini@^1.3.4 fetched in 2ms
+428 silly pacote range manifest for request@^2.87.0 fetched in 1ms
+429 silly pacote range manifest for rimraf@^2.5.2 fetched in 3ms
+430 http fetch GET 304 https://registry.npmjs.org/ansi-styles 185ms (from cache)
+431 silly pacote range manifest for ansi-styles@^2.2.1 fetched in 186ms
+432 silly pacote range manifest for ansi-styles@^4.1.0 fetched in 1ms
+433 silly pacote range manifest for ajv@^6.12.4 fetched in 1ms
+434 silly pacote range manifest for espree@^7.3.0 fetched in 1ms
+435 silly pacote range manifest for globals@^12.1.0 fetched in 2ms
+436 silly pacote range manifest for import-fresh@^3.2.1 fetched in 2ms
+437 silly pacote range manifest for strip-json-comments@^3.1.1 fetched in 2ms
+438 http fetch GET 304 https://registry.npmjs.org/exit 172ms (from cache)
+439 http fetch GET 304 https://registry.npmjs.org/jszip 193ms (from cache)
+440 http fetch GET 304 https://registry.npmjs.org/has-ansi 205ms (from cache)
+441 http fetch GET 304 https://registry.npmjs.org/xml2js 179ms (from cache)
+442 silly pacote range manifest for exit@^0.1.2 fetched in 177ms
+443 silly pacote range manifest for jszip@^3.1.3 fetched in 199ms
+444 silly pacote range manifest for has-ansi@^2.0.0 fetched in 211ms
+445 silly pacote range manifest for xml2js@^0.4.17 fetched in 185ms
+446 silly pacote range manifest for ansi-colors@^4.1.1 fetched in 5ms
+447 silly pacote range manifest for eslint-visitor-keys@^1.1.0 fetched in 5ms
+448 http fetch GET 304 https://registry.npmjs.org/tmp 194ms (from cache)
+449 http fetch GET 304 https://registry.npmjs.org/adm-zip 141ms (from cache)
+450 http fetch GET 200 https://registry.npmjs.org/shebang-command 11ms (from cache)
+451 silly pacote version manifest for tmp@0.0.30 fetched in 198ms
+452 silly pacote range manifest for adm-zip@^0.4.9 fetched in 149ms
+453 silly pacote range manifest for shebang-command@^2.0.0 fetched in 19ms
+454 silly pacote range manifest for eslint-visitor-keys@^1.3.0 fetched in 2ms
+455 http fetch GET 304 https://registry.npmjs.org/ms 114ms (from cache)
+456 http fetch GET 304 https://registry.npmjs.org/del 122ms (from cache)
+457 silly pacote version manifest for ms@2.0.0 fetched in 116ms
+458 silly pacote range manifest for del@^2.2.0 fetched in 123ms
+459 http fetch GET 304 https://registry.npmjs.org/supports-color 271ms (from cache)
+460 silly pacote range manifest for supports-color@^2.0.0 fetched in 273ms
+461 http fetch GET 304 https://registry.npmjs.org/path-key 94ms (from cache)
+462 silly pacote range manifest for path-key@^3.1.0 fetched in 95ms
+463 http fetch GET 304 https://registry.npmjs.org/acorn-jsx 101ms (from cache)
+464 silly pacote range manifest for acorn-jsx@^5.3.1 fetched in 102ms
+465 http fetch GET 304 https://registry.npmjs.org/which 120ms (from cache)
+466 silly pacote range manifest for which@^2.0.1 fetched in 123ms
+467 http fetch GET 304 https://registry.npmjs.org/flat-cache 120ms (from cache)
+468 silly pacote range manifest for flat-cache@^3.0.4 fetched in 121ms
+469 http fetch GET 304 https://registry.npmjs.org/parent-module 113ms (from cache)
+470 silly pacote range manifest for parent-module@^1.0.0 fetched in 115ms
+471 http fetch GET 304 https://registry.npmjs.org/estraverse 129ms (from cache)
+472 http fetch GET 304 https://registry.npmjs.org/resolve-from 112ms (from cache)
+473 http fetch GET 304 https://registry.npmjs.org/type-fest 113ms (from cache)
+474 silly pacote range manifest for estraverse@^5.1.0 fetched in 132ms
+475 silly pacote range manifest for resolve-from@^4.0.0 fetched in 115ms
+476 http fetch GET 304 https://registry.npmjs.org/acorn 143ms (from cache)
+477 silly pacote range manifest for type-fest@^0.20.2 fetched in 118ms
+478 silly pacote range manifest for ajv@^8.0.1 fetched in 6ms
+479 silly pacote range manifest for acorn@^7.4.0 fetched in 149ms
+480 http fetch GET 304 https://registry.npmjs.org/prelude-ls 114ms (from cache)
+481 silly pacote range manifest for prelude-ls@^1.2.1 fetched in 117ms
+482 http fetch GET 304 https://registry.npmjs.org/type-check 110ms (from cache)
+483 silly pacote range manifest for type-check@~0.4.0 fetched in 111ms
+484 http fetch GET 304 https://registry.npmjs.org/deep-is 81ms (from cache)
+485 http fetch GET 304 https://registry.npmjs.org/word-wrap 77ms (from cache)
+486 silly pacote range manifest for deep-is@^0.1.3 fetched in 82ms
+487 silly pacote range manifest for word-wrap@^1.2.3 fetched in 79ms
+488 silly pacote range manifest for uuid@^8.0.0 fetched in 1ms
+489 http fetch GET 304 https://registry.npmjs.org/type-check 99ms (from cache)
+490 silly pacote range manifest for type-check@^0.4.0 fetched in 100ms
+491 http fetch GET 304 https://registry.npmjs.org/fast-levenshtein 106ms (from cache)
+492 silly pacote range manifest for fast-levenshtein@^2.0.6 fetched in 108ms
+493 http fetch GET 304 https://registry.npmjs.org/lodash.flatten 96ms (from cache)
+494 silly pacote range manifest for lodash.flatten@^4.4.0 fetched in 98ms
+495 http fetch GET 304 https://registry.npmjs.org/slice-ansi 103ms (from cache)
+496 http fetch GET 304 https://registry.npmjs.org/ansi-regex 102ms (from cache)
+497 http fetch GET 304 https://registry.npmjs.org/lodash.truncate 106ms (from cache)
+498 silly pacote range manifest for slice-ansi@^4.0.0 fetched in 106ms
+499 silly pacote range manifest for ansi-regex@^5.0.0 fetched in 104ms
+500 silly pacote range manifest for lodash.truncate@^4.4.2 fetched in 110ms
+501 http fetch GET 304 https://registry.npmjs.org/gaxios 92ms (from cache)
+502 silly pacote range manifest for gaxios@^4.0.0 fetched in 94ms
+503 http fetch GET 304 https://registry.npmjs.org/extend 113ms (from cache)
+504 silly pacote range manifest for extend@^3.0.2 fetched in 114ms
+505 http fetch GET 304 https://registry.npmjs.org/arrify 127ms (from cache)
+506 http fetch GET 304 https://registry.npmjs.org/url-template 129ms (from cache)
+507 silly pacote range manifest for arrify@^2.0.0 fetched in 128ms
+508 silly pacote range manifest for url-template@^2.0.8 fetched in 130ms
+509 http fetch GET 304 https://registry.npmjs.org/ecdsa-sig-formatter 109ms (from cache)
+510 silly pacote range manifest for ecdsa-sig-formatter@^1.0.11 fetched in 111ms
+511 silly pacote range manifest for type-fest@^0.21.3 fetched in 1ms
+512 silly pacote range manifest for hosted-git-info@^4.0.1 fetched in 1ms
+513 silly pacote range manifest for semver@^7.3.4 fetched in 1ms
+514 http fetch GET 304 https://registry.npmjs.org/fast-text-encoding 108ms (from cache)
+515 silly pacote range manifest for fast-text-encoding@^1.0.0 fetched in 108ms
+516 http fetch GET 304 https://registry.npmjs.org/gcp-metadata 106ms (from cache)
+517 silly pacote range manifest for gcp-metadata@^4.2.0 fetched in 108ms
+518 http fetch GET 304 https://registry.npmjs.org/jws 101ms (from cache)
+519 silly pacote range manifest for jws@^4.0.0 fetched in 102ms
+520 http fetch GET 304 https://registry.npmjs.org/gtoken 132ms (from cache)
+521 http fetch GET 304 https://registry.npmjs.org/wrap-ansi 135ms (from cache)
+522 silly pacote range manifest for gtoken@^5.0.4 fetched in 139ms
+523 silly pacote range manifest for wrap-ansi@^6.2.0 fetched in 138ms
+524 silly pacote range manifest for tmp@^0.0.33 fetched in 4ms
+525 silly pacote range manifest for semver@^5.0.0 fetched in 5ms
+526 http fetch GET 304 https://registry.npmjs.org/locate-path 133ms (from cache)
+527 http fetch GET 304 https://registry.npmjs.org/path-exists 119ms (from cache)
+528 silly pacote range manifest for path-exists@^4.0.0 fetched in 122ms
+529 silly pacote range manifest for locate-path@^5.0.0 fetched in 137ms
+530 http fetch GET 304 https://registry.npmjs.org/emoji-regex 97ms (from cache)
+531 silly pacote range manifest for emoji-regex@^8.0.0 fetched in 98ms
+532 silly pacote range manifest for hosted-git-info@^2.7.1 fetched in 2ms
+533 http fetch GET 304 https://registry.npmjs.org/is-fullwidth-code-point 100ms (from cache)
+534 silly pacote range manifest for is-fullwidth-code-point@^3.0.0 fetched in 102ms
+535 silly pacote range manifest for npm-package-arg@^6.0.0 fetched in 1ms
+536 silly pacote range manifest for semver@^5.4.1 fetched in 2ms
+537 silly pacote range manifest for chownr@^1.1.1 fetched in 0ms
+538 http fetch GET 304 https://registry.npmjs.org/restore-cursor 134ms (from cache)
+539 silly pacote range manifest for restore-cursor@^3.1.0 fetched in 137ms
+540 http fetch GET 304 https://registry.npmjs.org/camelcase 154ms (from cache)
+541 silly pacote range manifest for camelcase@^5.0.0 fetched in 159ms
+542 http fetch GET 304 https://registry.npmjs.org/chardet 149ms (from cache)
+543 http fetch GET 304 https://registry.npmjs.org/iconv-lite 140ms (from cache)
+544 silly pacote range manifest for chardet@^0.7.0 fetched in 153ms
+545 silly pacote range manifest for iconv-lite@^0.4.24 fetched in 147ms
+546 silly pacote range manifest for npm-normalize-package-bin@^1.0.1 fetched in 3ms
+547 silly pacote range manifest for hosted-git-info@^2.1.4 fetched in 1ms
+548 silly pacote range manifest for semver@2 || 3 || 4 || 5 fetched in 2ms
+549 http fetch GET 304 https://registry.npmjs.org/cli-spinners 118ms (from cache)
+550 silly pacote range manifest for cli-spinners@^2.4.0 fetched in 120ms
+551 http fetch GET 304 https://registry.npmjs.org/builtins 97ms (from cache)
+552 silly pacote range manifest for builtins@^1.0.3 fetched in 98ms
+553 http fetch GET 304 https://registry.npmjs.org/is-interactive 141ms (from cache)
+554 silly pacote range manifest for is-interactive@^1.0.0 fetched in 142ms
+555 http fetch GET 304 https://registry.npmjs.org/log-symbols 129ms (from cache)
+556 http fetch GET 304 https://registry.npmjs.org/yallist 114ms (from cache)
+557 http fetch GET 304 https://registry.npmjs.org/wcwidth 129ms (from cache)
+558 silly pacote range manifest for log-symbols@^4.0.0 fetched in 131ms
+559 silly pacote range manifest for yallist@^3.0.2 fetched in 117ms
+560 silly pacote range manifest for wcwidth@^1.0.1 fetched in 133ms
+561 silly pacote range manifest for cacache@^12.0.0 fetched in 3ms
+562 silly pacote range manifest for https-proxy-agent@^2.2.3 fetched in 4ms
+563 http fetch GET 304 https://registry.npmjs.org/yallist 115ms (from cache)
+564 silly pacote range manifest for yallist@^3.0.0 fetched in 117ms
+565 http fetch GET 304 https://registry.npmjs.org/npm-bundled 116ms (from cache)
+566 silly pacote range manifest for npm-bundled@^1.0.1 fetched in 119ms
+567 silly pacote range manifest for ssri@^6.0.0 fetched in 2ms
+568 http fetch GET 304 https://registry.npmjs.org/ignore-walk 139ms (from cache)
+569 silly pacote range manifest for ignore-walk@^3.0.1 fetched in 145ms
+570 http fetch GET 304 https://registry.npmjs.org/validate-npm-package-license 151ms (from cache)
+571 http fetch GET 304 https://registry.npmjs.org/safe-buffer 139ms (from cache)
+572 http fetch GET 304 https://registry.npmjs.org/agentkeepalive 121ms (from cache)
+573 http fetch GET 304 https://registry.npmjs.org/node-fetch-npm 112ms (from cache)
+574 silly pacote range manifest for validate-npm-package-license@^3.0.1 fetched in 156ms
+575 http fetch GET 304 https://registry.npmjs.org/http-cache-semantics 119ms (from cache)
+576 silly pacote range manifest for safe-buffer@^5.2.0 fetched in 144ms
+577 http fetch GET 304 https://registry.npmjs.org/JSONStream 151ms (from cache)
+578 silly pacote range manifest for agentkeepalive@^3.4.1 fetched in 128ms
+579 silly pacote range manifest for node-fetch-npm@^2.0.2 fetched in 118ms
+580 silly pacote range manifest for http-cache-semantics@^3.8.1 fetched in 126ms
+581 silly pacote range manifest for JSONStream@^1.3.4 fetched in 159ms
+582 silly pacote range manifest for minipass@^2.8.6 fetched in 6ms
+583 silly pacote range manifest for yallist@^3.0.3 fetched in 2ms
+584 http fetch GET 304 https://registry.npmjs.org/http-proxy-agent 141ms (from cache)
+585 silly pacote range manifest for http-proxy-agent@^2.1.0 fetched in 142ms
+586 http fetch GET 304 https://registry.npmjs.org/socks-proxy-agent 96ms (from cache)
+587 silly pacote range manifest for socks-proxy-agent@^4.0.0 fetched in 97ms
+588 http fetch GET 304 https://registry.npmjs.org/retry 119ms (from cache)
+589 http fetch GET 304 https://registry.npmjs.org/genfun 97ms (from cache)
+590 silly pacote range manifest for retry@^0.10.0 fetched in 124ms
+591 silly pacote range manifest for genfun@^5.0.0 fetched in 108ms
+592 silly pacote range manifest for extend@~3.0.2 fetched in 13ms
+593 http fetch GET 304 https://registry.npmjs.org/minizlib 134ms (from cache)
+594 http fetch GET 304 https://registry.npmjs.org/err-code 192ms (from cache)
+595 silly pacote range manifest for minizlib@^1.2.1 fetched in 142ms
+596 http fetch GET 304 https://registry.npmjs.org/aws-sign2 137ms (from cache)
+597 http fetch GET 304 https://registry.npmjs.org/os-homedir 150ms (from cache)
+598 silly pacote range manifest for err-code@^1.0.0 fetched in 197ms
+599 silly pacote range manifest for aws-sign2@~0.7.0 fetched in 140ms
+600 silly pacote range manifest for os-homedir@^1.0.0 fetched in 154ms
+601 http fetch GET 304 https://registry.npmjs.org/fs-minipass 152ms (from cache)
+602 http fetch GET 304 https://registry.npmjs.org/os-tmpdir 154ms (from cache)
+603 http fetch GET 304 https://registry.npmjs.org/aws4 135ms (from cache)
+604 silly pacote range manifest for fs-minipass@^1.2.5 fetched in 157ms
+605 silly pacote range manifest for os-tmpdir@^1.0.0 fetched in 159ms
+606 silly pacote range manifest for aws4@^1.8.0 fetched in 140ms
+607 http fetch GET 304 https://registry.npmjs.org/forever-agent 99ms (from cache)
+608 silly pacote range manifest for forever-agent@~0.6.1 fetched in 100ms
+609 http fetch GET 304 https://registry.npmjs.org/combined-stream 131ms (from cache)
+610 silly pacote range manifest for combined-stream@~1.0.6 fetched in 132ms
+611 http fetch GET 304 https://registry.npmjs.org/form-data 87ms (from cache)
+612 silly pacote range manifest for form-data@~2.3.2 fetched in 88ms
+613 http fetch GET 200 https://registry.npmjs.org/tough-cookie 2ms (from cache)
+614 silly pacote range manifest for tough-cookie@~2.5.0 fetched in 4ms
+615 http fetch GET 304 https://registry.npmjs.org/http-signature 93ms (from cache)
+616 silly pacote range manifest for http-signature@~1.2.0 fetched in 94ms
+617 http fetch GET 304 https://registry.npmjs.org/is-typedarray 97ms (from cache)
+618 silly pacote range manifest for is-typedarray@~1.0.0 fetched in 99ms
+619 http fetch GET 304 https://registry.npmjs.org/isstream 98ms (from cache)
+620 silly pacote range manifest for isstream@~0.1.2 fetched in 99ms
+621 silly pacote range manifest for normalize-package-data@^2.0.0 fetched in 1ms
+622 http fetch GET 304 https://registry.npmjs.org/json-stringify-safe 112ms (from cache)
+623 silly pacote range manifest for json-stringify-safe@~5.0.1 fetched in 113ms
+624 http fetch GET 304 https://registry.npmjs.org/caseless 254ms (from cache)
+625 silly pacote range manifest for caseless@~0.12.0 fetched in 255ms
+626 http fetch GET 304 https://registry.npmjs.org/tunnel-agent 89ms (from cache)
+627 silly pacote range manifest for tunnel-agent@^0.6.0 fetched in 90ms
+628 silly pacote range manifest for debug@^3.1.0 fetched in 2ms
+629 silly pacote range manifest for semver@^6.0.0 fetched in 2ms
+630 http fetch GET 304 https://registry.npmjs.org/debuglog 93ms (from cache)
+631 silly pacote range manifest for debuglog@^1.0.1 fetched in 94ms
+632 silly pacote range manifest for type-fest@^0.8.1 fetched in 1ms
+633 http fetch GET 304 https://registry.npmjs.org/dezalgo 91ms (from cache)
+634 silly pacote range manifest for dezalgo@^1.0.0 fetched in 93ms
+635 http fetch GET 304 https://registry.npmjs.org/has-flag 89ms (from cache)
+636 silly pacote range manifest for has-flag@^4.0.0 fetched in 91ms
+637 http fetch GET 304 https://registry.npmjs.org/agent-base 87ms (from cache)
+638 silly pacote range manifest for agent-base@^4.3.0 fetched in 89ms
+639 silly pacote range manifest for os-tmpdir@~1.0.1 fetched in 5ms
+640 http fetch GET 304 https://registry.npmjs.org/performance-now 158ms (from cache)
+641 silly pacote range manifest for performance-now@^2.1.0 fetched in 159ms
+642 http fetch GET 304 https://registry.npmjs.org/json-parse-even-better-errors 135ms (from cache)
+643 silly pacote range manifest for json-parse-even-better-errors@^2.3.0 fetched in 136ms
+644 http fetch GET 200 https://registry.npmjs.org/is-path-cwd 2ms (from cache)
+645 silly pacote range manifest for is-path-cwd@^1.0.0 fetched in 3ms
+646 http fetch GET 304 https://registry.npmjs.org/lie 88ms (from cache)
+647 silly pacote range manifest for lie@~3.3.0 fetched in 90ms
+648 http fetch GET 304 https://registry.npmjs.org/set-immediate-shim 91ms (from cache)
+649 silly pacote range manifest for set-immediate-shim@~1.0.1 fetched in 92ms
+650 silly pacote range manifest for rimraf@^2.2.8 fetched in 1ms
+651 http fetch GET 304 https://registry.npmjs.org/color-convert 108ms (from cache)
+652 silly pacote range manifest for color-convert@^2.0.1 fetched in 109ms
+653 http fetch GET 304 https://registry.npmjs.org/shebang-regex 80ms (from cache)
+654 silly pacote range manifest for shebang-regex@^3.0.0 fetched in 80ms
+655 http fetch GET 304 https://registry.npmjs.org/xmlbuilder 99ms (from cache)
+656 silly pacote range manifest for xmlbuilder@~11.0.0 fetched in 100ms
+657 http fetch GET 304 https://registry.npmjs.org/globby 87ms (from cache)
+658 silly pacote range manifest for globby@^5.0.0 fetched in 89ms
+659 silly pacote range manifest for ansi-styles@^4.0.0 fetched in 2ms
+660 http fetch GET 304 https://registry.npmjs.org/is-path-in-cwd 94ms (from cache)
+661 silly pacote range manifest for is-path-in-cwd@^1.0.0 fetched in 96ms
+662 http fetch GET 304 https://registry.npmjs.org/flatted 82ms (from cache)
+663 silly pacote range manifest for flatted@^3.1.0 fetched in 83ms
+664 silly pacote range manifest for https-proxy-agent@^5.0.0 fetched in 1ms
+665 http fetch GET 304 https://registry.npmjs.org/pify 96ms (from cache)
+666 silly pacote range manifest for pify@^2.0.0 fetched in 97ms
+667 http fetch GET 304 https://registry.npmjs.org/json-schema-traverse 77ms (from cache)
+668 http fetch GET 304 https://registry.npmjs.org/callsites 89ms (from cache)
+669 silly pacote range manifest for json-schema-traverse@^1.0.0 fetched in 80ms
+670 silly pacote range manifest for callsites@^3.0.0 fetched in 92ms
+671 http fetch GET 200 https://registry.npmjs.org/jwa 3ms (from cache)
+672 silly pacote range manifest for jwa@^2.0.0 fetched in 4ms
+673 http fetch GET 304 https://registry.npmjs.org/astral-regex 107ms (from cache)
+674 http fetch GET 304 https://registry.npmjs.org/oauth-sign 416ms (from cache)
+675 silly pacote range manifest for astral-regex@^2.0.0 fetched in 109ms
+676 silly pacote range manifest for oauth-sign@~0.9.0 fetched in 419ms
+677 silly pacote range manifest for os-tmpdir@~1.0.2 fetched in 2ms
+678 http fetch GET 304 https://registry.npmjs.org/abort-controller 91ms (from cache)
+679 silly pacote range manifest for abort-controller@^3.0.0 fetched in 93ms
+680 http fetch GET 304 https://registry.npmjs.org/json-bigint 101ms (from cache)
+681 silly pacote range manifest for json-bigint@^1.0.0 fetched in 103ms
+682 http fetch GET 304 https://registry.npmjs.org/is-stream 118ms (from cache)
+683 silly pacote range manifest for is-stream@^2.0.0 fetched in 121ms
+684 http fetch GET 304 https://registry.npmjs.org/qs 419ms (from cache)
+685 silly pacote range manifest for qs@~6.5.2 fetched in 424ms
+686 http fetch GET 304 https://registry.npmjs.org/node-fetch 122ms (from cache)
+687 http fetch GET 304 https://registry.npmjs.org/google-p12-pem 114ms (from cache)
+688 silly pacote range manifest for node-fetch@^2.3.0 fetched in 126ms
+689 silly pacote range manifest for google-p12-pem@^3.0.3 fetched in 117ms
+690 http fetch GET 304 https://registry.npmjs.org/is-unicode-supported 96ms (from cache)
+691 silly pacote range manifest for is-unicode-supported@^0.1.0 fetched in 98ms
+692 http fetch GET 304 https://registry.npmjs.org/onetime 106ms (from cache)
+693 http fetch GET 304 https://registry.npmjs.org/p-locate 112ms (from cache)
+694 silly pacote range manifest for onetime@^5.1.0 fetched in 112ms
+695 silly pacote range manifest for p-locate@^4.1.0 fetched in 114ms
+696 silly pacote range manifest for through@>=2.2.7 <3 fetched in 2ms
+697 silly pacote range manifest for agent-base@4 fetched in 2ms
+698 silly pacote version manifest for debug@3.1.0 fetched in 2ms
+699 silly pacote range manifest for agent-base@~4.2.1 fetched in 2ms
+700 silly pacote range manifest for minipass@^2.9.0 fetched in 2ms
+701 silly pacote range manifest for minipass@^2.6.0 fetched in 2ms
+702 http fetch GET 304 https://registry.npmjs.org/defaults 91ms (from cache)
+703 silly pacote range manifest for defaults@^1.0.3 fetched in 92ms
+704 http fetch GET 304 https://registry.npmjs.org/spdx-correct 89ms (from cache)
+705 silly pacote range manifest for spdx-correct@^3.0.0 fetched in 90ms
+706 silly pacote range manifest for combined-stream@^1.0.6 fetched in 1ms
+707 http fetch GET 304 https://registry.npmjs.org/spdx-expression-parse 110ms (from cache)
+708 silly pacote range manifest for spdx-expression-parse@^3.0.0 fetched in 111ms
+709 http fetch GET 304 https://registry.npmjs.org/humanize-ms 110ms (from cache)
+710 silly pacote range manifest for humanize-ms@^1.2.1 fetched in 112ms
+711 http fetch GET 304 https://registry.npmjs.org/encoding 116ms (from cache)
+712 silly pacote range manifest for encoding@^0.1.11 fetched in 117ms
+713 http fetch GET 304 https://registry.npmjs.org/jsonparse 101ms (from cache)
+714 silly pacote range manifest for jsonparse@^1.2.0 fetched in 102ms
+715 http fetch GET 304 https://registry.npmjs.org/delayed-stream 119ms (from cache)
+716 silly pacote range manifest for delayed-stream@~1.0.0 fetched in 123ms
+717 http fetch GET 304 https://registry.npmjs.org/asynckit 99ms (from cache)
+718 http fetch GET 304 https://registry.npmjs.org/socks 137ms (from cache)
+719 silly pacote range manifest for asynckit@^0.4.0 fetched in 106ms
+720 http fetch GET 304 https://registry.npmjs.org/psl 104ms (from cache)
+721 silly pacote range manifest for socks@~2.3.2 fetched in 144ms
+722 silly pacote range manifest for psl@^1.1.28 fetched in 110ms
+723 http fetch GET 304 https://registry.npmjs.org/jsprim 98ms (from cache)
+724 http fetch GET 304 https://registry.npmjs.org/assert-plus 105ms (from cache)
+725 silly pacote range manifest for jsprim@^1.2.2 fetched in 103ms
+726 silly pacote range manifest for assert-plus@^1.0.0 fetched in 110ms
+727 silly pacote range manifest for arrify@^1.0.0 fetched in 5ms
+728 silly pacote range manifest for agent-base@6 fetched in 4ms
+729 http fetch GET 304 https://registry.npmjs.org/require-from-string 425ms (from cache)
+730 silly pacote range manifest for require-from-string@^2.0.2 fetched in 426ms
+731 silly pacote version manifest for ecdsa-sig-formatter@1.0.11 fetched in 1ms
+732 http fetch GET 304 https://registry.npmjs.org/sshpk 123ms (from cache)
+733 silly pacote range manifest for sshpk@^1.7.0 fetched in 124ms
+734 http fetch GET 304 https://registry.npmjs.org/asap 116ms (from cache)
+735 silly pacote range manifest for asap@^2.0.0 fetched in 117ms
+736 http fetch GET 304 https://registry.npmjs.org/es6-promisify 98ms (from cache)
+737 silly pacote range manifest for es6-promisify@^5.0.0 fetched in 99ms
+738 http fetch GET 304 https://registry.npmjs.org/immediate 94ms (from cache)
+739 silly pacote range manifest for immediate@~3.0.5 fetched in 95ms
+740 http fetch GET 304 https://registry.npmjs.org/array-union 93ms (from cache)
+741 silly pacote range manifest for array-union@^1.0.1 fetched in 94ms
+742 http fetch GET 304 https://registry.npmjs.org/buffer-equal-constant-time 80ms (from cache)
+743 silly pacote version manifest for buffer-equal-constant-time@1.0.1 fetched in 80ms
+744 http fetch GET 304 https://registry.npmjs.org/is-path-inside 93ms (from cache)
+745 silly pacote range manifest for is-path-inside@^1.0.0 fetched in 98ms
+746 silly pacote version manifest for assert-plus@1.0.0 fetched in 2ms
+747 http fetch GET 304 https://registry.npmjs.org/har-validator 835ms (from cache)
+748 http fetch GET 304 https://registry.npmjs.org/event-target-shim 96ms (from cache)
+749 silly pacote range manifest for har-validator@~5.1.3 fetched in 838ms
+750 warn deprecated har-validator@5.1.5: this library is no longer supported
+751 silly pacote range manifest for event-target-shim@^5.0.0 fetched in 99ms
+752 http fetch GET 304 https://registry.npmjs.org/bignumber.js 98ms (from cache)
+753 http fetch GET 304 https://registry.npmjs.org/mimic-fn 94ms (from cache)
+754 silly pacote range manifest for bignumber.js@^9.0.0 fetched in 101ms
+755 silly pacote range manifest for mimic-fn@^2.1.0 fetched in 98ms
+756 http fetch GET 304 https://registry.npmjs.org/clone 89ms (from cache)
+757 silly pacote range manifest for clone@^1.0.2 fetched in 91ms
+758 http fetch GET 304 https://registry.npmjs.org/spdx-license-ids 91ms (from cache)
+759 silly pacote range manifest for spdx-license-ids@^3.0.0 fetched in 93ms
+760 http fetch GET 304 https://registry.npmjs.org/spdx-exceptions 91ms (from cache)
+761 silly pacote range manifest for spdx-exceptions@^2.1.0 fetched in 92ms
+762 http fetch GET 304 https://registry.npmjs.org/smart-buffer 88ms (from cache)
+763 silly pacote range manifest for smart-buffer@^4.1.0 fetched in 89ms
+764 http fetch GET 304 https://registry.npmjs.org/extsprintf 82ms (from cache)
+765 silly pacote version manifest for extsprintf@1.3.0 fetched in 83ms
+766 http fetch GET 304 https://registry.npmjs.org/json-schema 92ms (from cache)
+767 silly pacote version manifest for json-schema@0.2.3 fetched in 95ms
+768 http fetch GET 304 https://registry.npmjs.org/asn1 123ms (from cache)
+769 silly pacote range manifest for asn1@~0.2.3 fetched in 125ms
+770 silly pacote range manifest for ajv@^6.12.3 fetched in 2ms
+771 http fetch GET 304 https://registry.npmjs.org/dashdash 128ms (from cache)
+772 http fetch GET 304 https://registry.npmjs.org/getpass 116ms (from cache)
+773 http fetch GET 304 https://registry.npmjs.org/verror 142ms (from cache)
+774 http fetch GET 304 https://registry.npmjs.org/jsbn 110ms (from cache)
+775 silly pacote range manifest for dashdash@^1.12.0 fetched in 134ms
+776 silly pacote range manifest for getpass@^0.1.1 fetched in 120ms
+777 silly pacote version manifest for verror@1.10.0 fetched in 145ms
+778 silly pacote range manifest for jsbn@~0.1.0 fetched in 113ms
+779 silly pacote range manifest for extsprintf@^1.2.0 fetched in 2ms
+780 http fetch GET 304 https://registry.npmjs.org/tweetnacl 113ms (from cache)
+781 http fetch GET 304 https://registry.npmjs.org/ecc-jsbn 94ms (from cache)
+782 silly pacote range manifest for tweetnacl@~0.14.0 fetched in 115ms
+783 silly pacote range manifest for ecc-jsbn@~0.1.1 fetched in 95ms
+784 http fetch GET 304 https://registry.npmjs.org/bcrypt-pbkdf 93ms (from cache)
+785 silly pacote range manifest for bcrypt-pbkdf@^1.0.0 fetched in 94ms
+786 silly pacote range manifest for tweetnacl@^0.14.3 fetched in 1ms
+787 http fetch GET 304 https://registry.npmjs.org/es6-promise 105ms (from cache)
+788 silly pacote range manifest for es6-promise@^4.0.3 fetched in 106ms
+789 http fetch GET 304 https://registry.npmjs.org/har-schema 105ms (from cache)
+790 silly pacote range manifest for har-schema@^2.0.0 fetched in 107ms
+791 http fetch GET 304 https://registry.npmjs.org/color-name 409ms (from cache)
+792 silly pacote range manifest for color-name@~1.1.4 fetched in 410ms
+793 silly pacote version manifest for @angular/animations@10.1.4 fetched in 5ms
+794 silly resolveWithNewModule @angular/animations@10.1.4 checking installable status
+795 silly pacote version manifest for @angular/cdk@10.2.4 fetched in 6ms
+796 silly resolveWithNewModule @angular/cdk@10.2.4 checking installable status
+797 silly pacote version manifest for @angular/compiler@10.1.4 fetched in 7ms
+798 silly resolveWithNewModule @angular/compiler@10.1.4 checking installable status
+799 silly pacote version manifest for @angular/common@10.1.4 fetched in 8ms
+800 silly resolveWithNewModule @angular/common@10.1.4 checking installable status
+801 silly pacote version manifest for @angular/forms@10.1.4 fetched in 8ms
+802 silly resolveWithNewModule @angular/forms@10.1.4 checking installable status
+803 silly pacote version manifest for @angular/platform-browser@10.1.4 fetched in 9ms
+804 silly resolveWithNewModule @angular/platform-browser@10.1.4 checking installable status
+805 silly pacote version manifest for @angular/core@10.1.4 fetched in 10ms
+806 silly resolveWithNewModule @angular/core@10.1.4 checking installable status
+807 silly pacote version manifest for @angular/material@10.2.4 fetched in 10ms
+808 silly resolveWithNewModule @angular/material@10.2.4 checking installable status
+809 silly pacote range manifest for @agm/core@^1.1.0 fetched in 14ms
+810 silly resolveWithNewModule @agm/core@1.1.0 checking installable status
+811 silly pacote version manifest for @angular/platform-browser-dynamic@10.1.4 fetched in 15ms
+812 silly resolveWithNewModule @angular/platform-browser-dynamic@10.1.4 checking installable status
+813 silly pacote version manifest for @angular/platform-server@10.1.4 fetched in 8ms
+814 silly resolveWithNewModule @angular/platform-server@10.1.4 checking installable status
+815 silly pacote version manifest for @angular/router@10.1.4 fetched in 10ms
+816 silly resolveWithNewModule @angular/router@10.1.4 checking installable status
+817 silly pacote version manifest for ajv@6.12.5 fetched in 10ms
+818 silly resolveWithNewModule ajv@6.12.5 checking installable status
+819 silly pacote version manifest for arrive@2.4.1 fetched in 12ms
+820 silly resolveWithNewModule arrive@2.4.1 checking installable status
+821 silly pacote version manifest for bootstrap@4.5.2 fetched in 13ms
+822 silly resolveWithNewModule bootstrap@4.5.2 checking installable status
+823 silly pacote version manifest for bootstrap-material-design@4.1.3 fetched in 13ms
+824 silly resolveWithNewModule bootstrap-material-design@4.1.3 checking installable status
+825 silly pacote version manifest for bootstrap-notify@3.1.3 fetched in 14ms
+826 silly resolveWithNewModule bootstrap-notify@3.1.3 checking installable status
+827 silly pacote version manifest for chartist@0.11.4 fetched in 16ms
+828 silly resolveWithNewModule chartist@0.11.4 checking installable status
+829 silly pacote version manifest for core-js@3.6.5 fetched in 12ms
+830 silly resolveWithNewModule core-js@3.6.5 checking installable status
+831 silly pacote version manifest for classlist.js@1.1.20150312 fetched in 14ms
+832 silly resolveWithNewModule classlist.js@1.1.20150312 checking installable status
+833 silly pacote version manifest for express@4.17.1 fetched in 5ms
+834 silly resolveWithNewModule express@4.17.1 checking installable status
+835 silly pacote range manifest for eslint@^7.10.0 fetched in 6ms
+836 silly resolveWithNewModule eslint@7.25.0 checking installable status
+837 silly pacote version manifest for hammerjs@2.0.8 fetched in 8ms
+838 silly resolveWithNewModule hammerjs@2.0.8 checking installable status
+839 silly pacote version manifest for jquery@3.5.1 fetched in 8ms
+840 silly resolveWithNewModule jquery@3.5.1 checking installable status
+841 silly pacote version manifest for moment@2.29.1 fetched in 9ms
+842 silly resolveWithNewModule moment@2.29.1 checking installable status
+843 silly pacote version manifest for googleapis@61.0.0 fetched in 10ms
+844 silly resolveWithNewModule googleapis@61.0.0 checking installable status
+845 silly pacote version manifest for perfect-scrollbar@1.5.0 fetched in 11ms
+846 silly resolveWithNewModule perfect-scrollbar@1.5.0 checking installable status
+847 silly pacote version manifest for popper.js@1.16.1 fetched in 8ms
+848 silly resolveWithNewModule popper.js@1.16.1 checking installable status
+849 silly pacote version manifest for rxjs@6.6.3 fetched in 9ms
+850 silly resolveWithNewModule rxjs@6.6.3 checking installable status
+851 silly pacote version manifest for rxjs-compat@6.6.3 fetched in 9ms
+852 silly resolveWithNewModule rxjs-compat@6.6.3 checking installable status
+853 silly pacote version manifest for web-animations-js@2.3.2 fetched in 6ms
+854 silly resolveWithNewModule web-animations-js@2.3.2 checking installable status
+855 silly pacote version manifest for zone.js@0.11.1 fetched in 7ms
+856 silly resolveWithNewModule zone.js@0.11.1 checking installable status
+857 silly pacote range manifest for tslib@^2.0.0 fetched in 1ms
+858 silly resolveWithNewModule tslib@2.2.0 checking installable status
+859 silly pacote range manifest for tslib@^2.0.0 fetched in 1ms
+860 silly resolveWithNewModule tslib@2.2.0 checking installable status
+861 silly pacote range manifest for parse5@^5.0.0 fetched in 2ms
+862 silly resolveWithNewModule parse5@5.1.1 checking installable status
+863 silly pacote range manifest for tslib@^2.0.0 fetched in 2ms
+864 silly resolveWithNewModule tslib@2.2.0 checking installable status
+865 silly pacote range manifest for tslib@^2.0.0 fetched in 1ms
+866 silly resolveWithNewModule tslib@2.2.0 checking installable status
+867 silly pacote range manifest for tslib@^2.0.0 fetched in 0ms
+868 silly resolveWithNewModule tslib@2.2.0 checking installable status
+869 silly pacote range manifest for tslib@^2.0.0 fetched in 1ms
+870 silly resolveWithNewModule tslib@2.2.0 checking installable status
+871 silly pacote range manifest for tslib@^2.0.0 fetched in 0ms
+872 silly resolveWithNewModule tslib@2.2.0 checking installable status
+873 silly pacote range manifest for tslib@^2.0.0 fetched in 1ms
+874 silly resolveWithNewModule tslib@2.2.0 checking installable status
+875 silly pacote range manifest for tslib@^2.0.0 fetched in 0ms
+876 silly resolveWithNewModule tslib@2.2.0 checking installable status
+877 silly pacote range manifest for domino@^2.1.2 fetched in 2ms
+878 silly resolveWithNewModule domino@2.1.6 checking installable status
+879 silly pacote range manifest for tslib@^2.0.0 fetched in 5ms
+880 silly resolveWithNewModule tslib@2.2.0 checking installable status
+881 silly pacote range manifest for xhr2@^0.2.0 fetched in 6ms
+882 silly resolveWithNewModule xhr2@0.2.1 checking installable status
+883 silly pacote range manifest for tslib@^2.0.0 fetched in 1ms
+884 silly resolveWithNewModule tslib@2.2.0 checking installable status
+885 silly pacote version manifest for @babel/code-frame@7.12.11 fetched in 4ms
+886 silly resolveWithNewModule @babel/code-frame@7.12.11 checking installable status
+887 silly pacote range manifest for @eslint/eslintrc@^0.4.0 fetched in 4ms
+888 silly resolveWithNewModule @eslint/eslintrc@0.4.0 checking installable status
+889 silly pacote range manifest for chalk@^4.0.0 fetched in 5ms
+890 silly resolveWithNewModule chalk@4.1.1 checking installable status
+891 silly pacote range manifest for cross-spawn@^7.0.2 fetched in 5ms
+892 silly resolveWithNewModule cross-spawn@7.0.3 checking installable status
+893 silly pacote range manifest for doctrine@^3.0.0 fetched in 6ms
+894 silly resolveWithNewModule doctrine@3.0.0 checking installable status
+895 silly pacote range manifest for enquirer@^2.3.5 fetched in 6ms
+896 silly resolveWithNewModule enquirer@2.3.6 checking installable status
+897 silly pacote range manifest for eslint-scope@^5.1.1 fetched in 7ms
+898 silly resolveWithNewModule eslint-scope@5.1.1 checking installable status
+899 silly pacote range manifest for eslint-utils@^2.1.0 fetched in 8ms
+900 silly resolveWithNewModule eslint-utils@2.1.0 checking installable status
+901 silly pacote range manifest for eslint-visitor-keys@^2.0.0 fetched in 8ms
+902 silly resolveWithNewModule eslint-visitor-keys@2.1.0 checking installable status
+903 silly pacote range manifest for espree@^7.3.1 fetched in 9ms
+904 silly resolveWithNewModule espree@7.3.1 checking installable status
+905 silly pacote range manifest for esquery@^1.4.0 fetched in 5ms
+906 silly resolveWithNewModule esquery@1.4.0 checking installable status
+907 silly pacote range manifest for file-entry-cache@^6.0.1 fetched in 5ms
+908 silly resolveWithNewModule file-entry-cache@6.0.1 checking installable status
+909 silly pacote range manifest for globals@^13.6.0 fetched in 6ms
+910 silly resolveWithNewModule globals@13.8.0 checking installable status
+911 silly pacote range manifest for functional-red-black-tree@^1.0.1 fetched in 6ms
+912 silly resolveWithNewModule functional-red-black-tree@1.0.1 checking installable status
+913 silly pacote range manifest for ignore@^4.0.6 fetched in 7ms
+914 silly resolveWithNewModule ignore@4.0.6 checking installable status
+915 silly pacote range manifest for import-fresh@^3.0.0 fetched in 9ms
+916 silly resolveWithNewModule import-fresh@3.3.0 checking installable status
+917 silly pacote range manifest for json-stable-stringify-without-jsonify@^1.0.1 fetched in 7ms
+918 silly resolveWithNewModule json-stable-stringify-without-jsonify@1.0.1 checking installable status
+919 silly pacote range manifest for levn@^0.4.1 fetched in 8ms
+920 silly resolveWithNewModule levn@0.4.1 checking installable status
+921 silly pacote range manifest for natural-compare@^1.4.0 fetched in 7ms
+922 silly resolveWithNewModule natural-compare@1.4.0 checking installable status
+923 silly pacote range manifest for optionator@^0.9.1 fetched in 8ms
+924 silly resolveWithNewModule optionator@0.9.1 checking installable status
+925 silly pacote range manifest for regexpp@^3.1.0 fetched in 5ms
+926 silly resolveWithNewModule regexpp@3.1.0 checking installable status
+927 silly pacote range manifest for progress@^2.0.0 fetched in 6ms
+928 silly resolveWithNewModule progress@2.0.3 checking installable status
+929 silly pacote range manifest for strip-ansi@^6.0.0 fetched in 6ms
+930 silly resolveWithNewModule strip-ansi@6.0.0 checking installable status
+931 silly pacote range manifest for strip-json-comments@^3.1.0 fetched in 6ms
+932 silly resolveWithNewModule strip-json-comments@3.1.1 checking installable status
+933 silly pacote range manifest for table@^6.0.4 fetched in 7ms
+934 silly resolveWithNewModule table@6.6.0 checking installable status
+935 silly pacote range manifest for text-table@^0.2.0 fetched in 6ms
+936 silly resolveWithNewModule text-table@0.2.0 checking installable status
+937 silly pacote range manifest for v8-compile-cache@^2.0.3 fetched in 5ms
+938 silly resolveWithNewModule v8-compile-cache@2.3.0 checking installable status
+939 silly pacote range manifest for globals@^12.1.0 fetched in 1ms
+940 silly resolveWithNewModule globals@12.4.0 checking installable status
+941 silly pacote range manifest for ignore@^4.0.6 fetched in 2ms
+942 silly resolveWithNewModule ignore@4.0.6 checking installable status
+943 silly pacote range manifest for import-fresh@^3.2.1 fetched in 2ms
+944 silly resolveWithNewModule import-fresh@3.3.0 checking installable status
+945 silly pacote range manifest for acorn@^7.4.0 fetched in 2ms
+946 silly resolveWithNewModule acorn@7.4.1 checking installable status
+947 silly pacote range manifest for acorn-jsx@^5.3.1 fetched in 2ms
+948 silly resolveWithNewModule acorn-jsx@5.3.1 checking installable status
+949 silly pacote range manifest for eslint-visitor-keys@^1.3.0 fetched in 3ms
+950 silly resolveWithNewModule eslint-visitor-keys@1.3.0 checking installable status
+951 silly pacote range manifest for type-fest@^0.8.1 fetched in 1ms
+952 silly resolveWithNewModule type-fest@0.8.1 checking installable status
+953 silly pacote range manifest for parent-module@^1.0.0 fetched in 1ms
+954 silly resolveWithNewModule parent-module@1.0.1 checking installable status
+955 silly pacote range manifest for resolve-from@^4.0.0 fetched in 1ms
+956 silly resolveWithNewModule resolve-from@4.0.0 checking installable status
+957 silly pacote range manifest for callsites@^3.0.0 fetched in 1ms
+958 silly resolveWithNewModule callsites@3.1.0 checking installable status
+959 silly pacote range manifest for ansi-styles@^4.1.0 fetched in 1ms
+960 silly resolveWithNewModule ansi-styles@4.3.0 checking installable status
+961 silly pacote range manifest for supports-color@^7.1.0 fetched in 2ms
+962 silly resolveWithNewModule supports-color@7.2.0 checking installable status
+963 silly pacote range manifest for color-convert@^2.0.1 fetched in 1ms
+964 silly resolveWithNewModule color-convert@2.0.1 checking installable status
+965 silly pacote range manifest for color-name@~1.1.4 fetched in 1ms
+966 silly resolveWithNewModule color-name@1.1.4 checking installable status
+967 silly pacote range manifest for has-flag@^4.0.0 fetched in 0ms
+968 silly resolveWithNewModule has-flag@4.0.0 checking installable status
+969 silly pacote range manifest for path-key@^3.1.0 fetched in 1ms
+970 silly resolveWithNewModule path-key@3.1.1 checking installable status
+971 silly pacote range manifest for shebang-command@^2.0.0 fetched in 2ms
+972 silly resolveWithNewModule shebang-command@2.0.0 checking installable status
+973 silly pacote range manifest for which@^2.0.1 fetched in 2ms
+974 silly resolveWithNewModule which@2.0.2 checking installable status
+975 silly pacote range manifest for shebang-regex@^3.0.0 fetched in 0ms
+976 silly resolveWithNewModule shebang-regex@3.0.0 checking installable status
+977 silly pacote range manifest for ansi-colors@^4.1.1 fetched in 1ms
+978 silly resolveWithNewModule ansi-colors@4.1.1 checking installable status
+979 silly pacote range manifest for eslint-visitor-keys@^1.1.0 fetched in 2ms
+980 silly resolveWithNewModule eslint-visitor-keys@1.3.0 checking installable status
+981 silly pacote range manifest for estraverse@^5.1.0 fetched in 1ms
+982 silly resolveWithNewModule estraverse@5.2.0 checking installable status
+983 silly pacote range manifest for flat-cache@^3.0.4 fetched in 1ms
+984 silly resolveWithNewModule flat-cache@3.0.4 checking installable status
+985 silly pacote range manifest for flatted@^3.1.0 fetched in 0ms
+986 silly resolveWithNewModule flatted@3.1.1 checking installable status
+987 silly pacote range manifest for type-fest@^0.20.2 fetched in 1ms
+988 silly resolveWithNewModule type-fest@0.20.2 checking installable status
+989 silly pacote range manifest for resolve-from@^4.0.0 fetched in 1ms
+990 silly resolveWithNewModule resolve-from@4.0.0 checking installable status
+991 silly pacote range manifest for prelude-ls@^1.2.1 fetched in 1ms
+992 silly resolveWithNewModule prelude-ls@1.2.1 checking installable status
+993 silly pacote range manifest for type-check@~0.4.0 fetched in 1ms
+994 silly resolveWithNewModule type-check@0.4.0 checking installable status
+995 silly pacote range manifest for deep-is@^0.1.3 fetched in 1ms
+996 silly resolveWithNewModule deep-is@0.1.3 checking installable status
+997 silly pacote range manifest for word-wrap@^1.2.3 fetched in 1ms
+998 silly resolveWithNewModule word-wrap@1.2.3 checking installable status
+999 silly pacote range manifest for fast-levenshtein@^2.0.6 fetched in 2ms
+1000 silly resolveWithNewModule fast-levenshtein@2.0.6 checking installable status
+1001 silly pacote range manifest for ansi-regex@^5.0.0 fetched in 0ms
+1002 silly resolveWithNewModule ansi-regex@5.0.0 checking installable status
+1003 silly pacote range manifest for ajv@^8.0.1 fetched in 3ms
+1004 silly resolveWithNewModule ajv@8.2.0 checking installable status
+1005 silly pacote range manifest for lodash.flatten@^4.4.0 fetched in 4ms
+1006 silly resolveWithNewModule lodash.flatten@4.4.0 checking installable status
+1007 silly pacote range manifest for lodash.truncate@^4.4.2 fetched in 4ms
+1008 silly resolveWithNewModule lodash.truncate@4.4.2 checking installable status
+1009 silly pacote range manifest for slice-ansi@^4.0.0 fetched in 5ms
+1010 silly resolveWithNewModule slice-ansi@4.0.0 checking installable status
+1011 silly pacote range manifest for string-width@^4.2.0 fetched in 5ms
+1012 silly resolveWithNewModule string-width@4.2.2 checking installable status
+1013 silly pacote range manifest for strip-ansi@^6.0.0 fetched in 5ms
+1014 silly resolveWithNewModule strip-ansi@6.0.0 checking installable status
+1015 silly pacote range manifest for json-schema-traverse@^1.0.0 fetched in 1ms
+1016 silly resolveWithNewModule json-schema-traverse@1.0.0 checking installable status
+1017 silly pacote range manifest for require-from-string@^2.0.2 fetched in 1ms
+1018 silly resolveWithNewModule require-from-string@2.0.2 checking installable status
+1019 silly pacote range manifest for ansi-styles@^4.0.0 fetched in 1ms
+1020 silly resolveWithNewModule ansi-styles@4.3.0 checking installable status
+1021 silly pacote range manifest for astral-regex@^2.0.0 fetched in 2ms
+1022 silly resolveWithNewModule astral-regex@2.0.0 checking installable status
+1023 silly pacote range manifest for is-fullwidth-code-point@^3.0.0 fetched in 2ms
+1024 silly resolveWithNewModule is-fullwidth-code-point@3.0.0 checking installable status
+1025 silly pacote range manifest for color-convert@^2.0.1 fetched in 1ms
+1026 silly resolveWithNewModule color-convert@2.0.1 checking installable status
+1027 silly pacote range manifest for color-name@~1.1.4 fetched in 2ms
+1028 silly resolveWithNewModule color-name@1.1.4 checking installable status
+1029 silly pacote range manifest for emoji-regex@^8.0.0 fetched in 2ms
+1030 silly resolveWithNewModule emoji-regex@8.0.0 checking installable status
+1031 silly pacote range manifest for is-fullwidth-code-point@^3.0.0 fetched in 2ms
+1032 silly resolveWithNewModule is-fullwidth-code-point@3.0.0 checking installable status
+1033 silly pacote range manifest for ansi-regex@^5.0.0 fetched in 1ms
+1034 silly resolveWithNewModule ansi-regex@5.0.0 checking installable status
+1035 silly pacote version manifest for array-flatten@1.1.1 fetched in 2ms
+1036 silly resolveWithNewModule array-flatten@1.1.1 checking installable status
+1037 silly pacote version manifest for debug@2.6.9 fetched in 2ms
+1038 silly resolveWithNewModule debug@2.6.9 checking installable status
+1039 silly pacote version manifest for ms@2.0.0 fetched in 1ms
+1040 silly resolveWithNewModule ms@2.0.0 checking installable status
+1041 silly pacote range manifest for google-auth-library@^6.0.0 fetched in 1ms
+1042 silly resolveWithNewModule google-auth-library@6.1.6 checking installable status
+1043 silly pacote range manifest for googleapis-common@^4.4.0 fetched in 2ms
+1044 silly resolveWithNewModule googleapis-common@4.4.3 checking installable status
+1045 silly pacote range manifest for arrify@^2.0.0 fetched in 3ms
+1046 silly resolveWithNewModule arrify@2.0.1 checking installable status
+1047 silly pacote range manifest for ecdsa-sig-formatter@^1.0.11 fetched in 4ms
+1048 silly resolveWithNewModule ecdsa-sig-formatter@1.0.11 checking installable status
+1049 silly pacote range manifest for fast-text-encoding@^1.0.0 fetched in 4ms
+1050 silly resolveWithNewModule fast-text-encoding@1.0.3 checking installable status
+1051 silly pacote range manifest for gaxios@^4.0.0 fetched in 5ms
+1052 silly resolveWithNewModule gaxios@4.2.1 checking installable status
+1053 silly pacote range manifest for gcp-metadata@^4.2.0 fetched in 6ms
+1054 silly resolveWithNewModule gcp-metadata@4.2.1 checking installable status
+1055 silly pacote range manifest for gtoken@^5.0.4 fetched in 7ms
+1056 silly resolveWithNewModule gtoken@5.2.1 checking installable status
+1057 silly pacote range manifest for jws@^4.0.0 fetched in 7ms
+1058 silly resolveWithNewModule jws@4.0.0 checking installable status
+1059 silly pacote range manifest for abort-controller@^3.0.0 fetched in 2ms
+1060 silly resolveWithNewModule abort-controller@3.0.0 checking installable status
+1061 silly pacote range manifest for extend@^3.0.2 fetched in 4ms
+1062 silly resolveWithNewModule extend@3.0.2 checking installable status
+1063 silly pacote range manifest for https-proxy-agent@^5.0.0 fetched in 4ms
+1064 silly resolveWithNewModule https-proxy-agent@5.0.0 checking installable status
+1065 silly pacote range manifest for is-stream@^2.0.0 fetched in 5ms
+1066 silly resolveWithNewModule is-stream@2.0.0 checking installable status
+1067 silly pacote range manifest for node-fetch@^2.3.0 fetched in 5ms
+1068 silly resolveWithNewModule node-fetch@2.6.1 checking installable status
+1069 silly pacote range manifest for event-target-shim@^5.0.0 fetched in 1ms
+1070 silly resolveWithNewModule event-target-shim@5.0.1 checking installable status
+1071 silly pacote range manifest for agent-base@6 fetched in 1ms
+1072 silly resolveWithNewModule agent-base@6.0.2 checking installable status
+1073 silly pacote range manifest for json-bigint@^1.0.0 fetched in 1ms
+1074 silly resolveWithNewModule json-bigint@1.0.0 checking installable status
+1075 silly pacote range manifest for bignumber.js@^9.0.0 fetched in 0ms
+1076 silly resolveWithNewModule bignumber.js@9.0.1 checking installable status
+1077 silly pacote range manifest for google-p12-pem@^3.0.3 fetched in 0ms
+1078 silly resolveWithNewModule google-p12-pem@3.0.3 checking installable status
+1079 silly pacote range manifest for jwa@^2.0.0 fetched in 1ms
+1080 silly resolveWithNewModule jwa@2.0.0 checking installable status
+1081 silly pacote version manifest for buffer-equal-constant-time@1.0.1 fetched in 1ms
+1082 silly resolveWithNewModule buffer-equal-constant-time@1.0.1 checking installable status
+1083 silly pacote range manifest for url-template@^2.0.8 fetched in 1ms
+1084 silly resolveWithNewModule url-template@2.0.8 checking installable status
+1085 silly pacote range manifest for uuid@^8.0.0 fetched in 2ms
+1086 silly resolveWithNewModule uuid@8.3.2 checking installable status
+1087 silly pacote range manifest for tslib@^2.0.0 fetched in 1ms
+1088 silly resolveWithNewModule tslib@2.2.0 checking installable status
+1089 silly pacote version manifest for @angular/cli@10.1.4 fetched in 7ms
+1090 silly resolveWithNewModule @angular/cli@10.1.4 checking installable status
+1091 silly pacote version manifest for @angular/compiler-cli@10.1.4 fetched in 9ms
+1092 silly resolveWithNewModule @angular/compiler-cli@10.1.4 checking installable status
+1093 silly pacote version manifest for @angular/language-service@10.1.4 fetched in 10ms
+1094 silly resolveWithNewModule @angular/language-service@10.1.4 checking installable status
+1095 silly pacote version manifest for @types/chartist@0.11.0 fetched in 12ms
+1096 silly resolveWithNewModule @types/chartist@0.11.0 checking installable status
+1097 silly pacote version manifest for @types/bootstrap@4.5.0 fetched in 13ms
+1098 silly resolveWithNewModule @types/bootstrap@4.5.0 checking installable status
+1099 silly pacote version manifest for @types/googlemaps@3.39.14 fetched in 13ms
+1100 silly resolveWithNewModule @types/googlemaps@3.39.14 checking installable status
+1101 silly pacote version manifest for @types/jasmine@3.5.14 fetched in 15ms
+1102 silly resolveWithNewModule @types/jasmine@3.5.14 checking installable status
+1103 silly pacote version manifest for @types/jquery@3.5.2 fetched in 16ms
+1104 silly resolveWithNewModule @types/jquery@3.5.2 checking installable status
+1105 silly pacote version manifest for @types/node@14.11.5 fetched in 18ms
+1106 silly resolveWithNewModule @types/node@14.11.5 checking installable status
+1107 silly pacote version manifest for codelyzer@6.0.1 fetched in 19ms
+1108 silly resolveWithNewModule codelyzer@6.0.1 checking installable status
+1109 silly pacote version manifest for jasmine-spec-reporter@6.0.0 fetched in 6ms
+1110 silly resolveWithNewModule jasmine-spec-reporter@6.0.0 checking installable status
+1111 silly pacote version manifest for jasmine-core@3.6.0 fetched in 7ms
+1112 silly resolveWithNewModule jasmine-core@3.6.0 checking installable status
+1113 silly pacote version manifest for karma-chrome-launcher@3.1.0 fetched in 8ms
+1114 silly resolveWithNewModule karma-chrome-launcher@3.1.0 checking installable status
+1115 silly pacote version manifest for karma-cli@2.0.0 fetched in 11ms
+1116 silly resolveWithNewModule karma-cli@2.0.0 checking installable status
+1117 silly pacote version manifest for karma-coverage-istanbul-reporter@3.0.3 fetched in 21ms
+1118 silly resolveWithNewModule karma-coverage-istanbul-reporter@3.0.3 checking installable status
+1119 silly pacote version manifest for karma-jasmine@4.0.1 fetched in 17ms
+1120 silly resolveWithNewModule karma-jasmine@4.0.1 checking installable status
+1121 silly pacote version manifest for karma-jasmine-html-reporter@1.5.4 fetched in 18ms
+1122 silly resolveWithNewModule karma-jasmine-html-reporter@1.5.4 checking installable status
+1123 silly pacote version manifest for ts-node@9.0.0 fetched in 19ms
+1124 silly resolveWithNewModule ts-node@9.0.0 checking installable status
+1125 silly pacote version manifest for protractor@7.0.0 fetched in 20ms
+1126 silly resolveWithNewModule protractor@7.0.0 checking installable status
+1127 silly pacote version manifest for tslint@6.1.3 fetched in 8ms
+1128 silly resolveWithNewModule tslint@6.1.3 checking installable status
+1129 silly pacote version manifest for typescript@4.0.3 fetched in 10ms
+1130 silly resolveWithNewModule typescript@4.0.3 checking installable status
+1131 http fetch GET 304 https://registry.npmjs.org/karma 159ms (from cache)
+1132 silly fetchPackageMetaData error for karma@5.2.3 Unexpected end of JSON input while parsing near '...":"^0.0.15","phantomj'
+1133 timing stage:rollbackFailedOptional Completed in 0ms
+1134 timing stage:runTopLevelLifecycles Completed in 7945ms
+1135 silly saveTree material-dashboard-angular@2.5.0
+1135 silly saveTree +-- @agm/core@1.1.0
+1135 silly saveTree | `-- tslib@1.14.1
+1135 silly saveTree +-- @angular-devkit/build-angular@0.1001.4
+1135 silly saveTree | +-- @angular-devkit/architect@0.1001.4
+1135 silly saveTree | | +-- @angular-devkit/core@10.1.4
+1135 silly saveTree | | | +-- ajv@6.12.4
+1135 silly saveTree | | | | +-- fast-deep-equal@3.1.3
+1135 silly saveTree | | | | +-- fast-json-stable-stringify@2.1.0
+1135 silly saveTree | | | | +-- json-schema-traverse@0.4.1
+1135 silly saveTree | | | | `-- uri-js@4.4.1
+1135 silly saveTree | | | |   `-- punycode@2.1.1
+1135 silly saveTree | | | +-- fast-json-stable-stringify@2.1.0
+1135 silly saveTree | | | +-- magic-string@0.25.7
+1135 silly saveTree | | | | `-- sourcemap-codec@1.4.8
+1135 silly saveTree | | | +-- rxjs@6.6.2
+1135 silly saveTree | | | `-- source-map@0.7.3
+1135 silly saveTree | | `-- rxjs@6.6.2
+1135 silly saveTree | +-- @angular-devkit/build-optimizer@0.1001.4
+1135 silly saveTree | | +-- loader-utils@2.0.0
+1135 silly saveTree | | | +-- big.js@5.2.2
+1135 silly saveTree | | | +-- emojis-list@3.0.0
+1135 silly saveTree | | | `-- json5@2.2.0
+1135 silly saveTree | | |   `-- minimist@1.2.5
+1135 silly saveTree | | +-- tslib@2.0.1
+1135 silly saveTree | | +-- typescript@4.0.2
+1135 silly saveTree | | `-- webpack-sources@1.4.3
+1135 silly saveTree | |   +-- source-list-map@2.0.1
+1135 silly saveTree | |   `-- source-map@0.6.1
+1135 silly saveTree | +-- @angular-devkit/build-webpack@0.1001.4
+1135 silly saveTree | | `-- rxjs@6.6.2
+1135 silly saveTree | +-- @angular-devkit/core@10.1.4
+1135 silly saveTree | +-- @babel/core@7.11.1
+1135 silly saveTree | | +-- @babel/code-frame@7.12.13
+1135 silly saveTree | | | `-- @babel/highlight@7.14.0
+1135 silly saveTree | | |   +-- @babel/helper-validator-identifier@7.14.0
+1135 silly saveTree | | |   +-- chalk@2.4.2
+1135 silly saveTree | | |   | +-- ansi-styles@3.2.1
+1135 silly saveTree | | |   | | `-- color-convert@1.9.3
+1135 silly saveTree | | |   | |   `-- color-name@1.1.3
+1135 silly saveTree | | |   | +-- escape-string-regexp@1.0.5
+1135 silly saveTree | | |   | `-- supports-color@5.5.0
+1135 silly saveTree | | |   |   `-- has-flag@3.0.0
+1135 silly saveTree | | |   `-- js-tokens@4.0.0
+1135 silly saveTree | | +-- @babel/generator@7.11.0
+1135 silly saveTree | | | +-- @babel/types@7.14.1
+1135 silly saveTree | | | | `-- to-fast-properties@2.0.0
+1135 silly saveTree | | | +-- jsesc@2.5.2
+1135 silly saveTree | | | `-- source-map@0.5.7
+1135 silly saveTree | | +-- @babel/helper-module-transforms@7.14.0
+1135 silly saveTree | | | +-- @babel/helper-module-imports@7.13.12
+1135 silly saveTree | | | +-- @babel/helper-replace-supers@7.13.12
+1135 silly saveTree | | | | +-- @babel/helper-member-expression-to-functions@7.13.12
+1135 silly saveTree | | | | +-- @babel/helper-optimise-call-expression@7.12.13
+1135 silly saveTree | | | | `-- @babel/traverse@7.14.0
+1135 silly saveTree | | | |   +-- @babel/generator@7.14.1
+1135 silly saveTree | | | |   | `-- source-map@0.5.7
+1135 silly saveTree | | | |   +-- @babel/helper-function-name@7.12.13
+1135 silly saveTree | | | |   | +-- @babel/helper-get-function-arity@7.12.13
+1135 silly saveTree | | | |   | `-- @babel/template@7.12.13
+1135 silly saveTree | | | |   |   `-- @babel/parser@7.14.1
+1135 silly saveTree | | | |   +-- @babel/helper-split-export-declaration@7.12.13
+1135 silly saveTree | | | |   +-- @babel/parser@7.14.1
+1135 silly saveTree | | | |   +-- debug@4.3.1
+1135 silly saveTree | | | |   | `-- ms@2.1.2
+1135 silly saveTree | | | |   `-- globals@11.12.0
+1135 silly saveTree | | | +-- @babel/helper-simple-access@7.13.12
+1135 silly saveTree | | | +-- @babel/helper-split-export-declaration@7.12.13
+1135 silly saveTree | | | +-- @babel/template@7.12.13
+1135 silly saveTree | | | `-- @babel/traverse@7.14.0
+1135 silly saveTree | | +-- @babel/helpers@7.14.0
+1135 silly saveTree | | | `-- @babel/template@7.12.13
+1135 silly saveTree | | +-- @babel/parser@7.14.1
+1135 silly saveTree | | +-- @babel/template@7.10.4
+1135 silly saveTree | | +-- @babel/traverse@7.14.0
+1135 silly saveTree | | +-- @babel/types@7.14.1
+1135 silly saveTree | | +-- convert-source-map@1.7.0
+1135 silly saveTree | | | `-- safe-buffer@5.1.2
+1135 silly saveTree | | +-- debug@4.3.1
+1135 silly saveTree | | +-- gensync@1.0.0-beta.2
+1135 silly saveTree | | +-- lodash@4.17.21
+1135 silly saveTree | | +-- resolve@1.20.0
+1135 silly saveTree | | | +-- is-core-module@2.3.0
+1135 silly saveTree | | | | `-- has@1.0.3
+1135 silly saveTree | | | |   `-- function-bind@1.1.1
+1135 silly saveTree | | | `-- path-parse@1.0.6
+1135 silly saveTree | | +-- semver@5.7.1
+1135 silly saveTree | | `-- source-map@0.5.7
+1135 silly saveTree | +-- @babel/generator@7.11.0
+1135 silly saveTree | +-- @babel/plugin-transform-runtime@7.11.0
+1135 silly saveTree | | +-- @babel/helper-plugin-utils@7.13.0
+1135 silly saveTree | | `-- semver@5.7.1
+1135 silly saveTree | +-- @babel/preset-env@7.11.0
+1135 silly saveTree | | +-- @babel/compat-data@7.14.0
+1135 silly saveTree | | +-- @babel/helper-compilation-targets@7.13.16
+1135 silly saveTree | | | +-- @babel/helper-validator-option@7.12.17
+1135 silly saveTree | | | +-- browserslist@4.16.6
+1135 silly saveTree | | | | +-- caniuse-lite@1.0.30001221
+1135 silly saveTree | | | | +-- colorette@1.2.2
+1135 silly saveTree | | | | +-- electron-to-chromium@1.3.726
+1135 silly saveTree | | | | +-- escalade@3.1.1
+1135 silly saveTree | | | | `-- node-releases@1.1.71
+1135 silly saveTree | | | `-- semver@6.3.0
+1135 silly saveTree | | +-- @babel/plugin-proposal-async-generator-functions@7.13.15
+1135 silly saveTree | | | +-- @babel/helper-remap-async-to-generator@7.13.0
+1135 silly saveTree | | | | +-- @babel/helper-annotate-as-pure@7.12.13
+1135 silly saveTree | | | | `-- @babel/helper-wrap-function@7.13.0
+1135 silly saveTree | | | |   `-- @babel/template@7.12.13
+1135 silly saveTree | | | `-- @babel/plugin-syntax-async-generators@7.8.4
+1135 silly saveTree | | +-- @babel/plugin-proposal-class-properties@7.13.0
+1135 silly saveTree | | | `-- @babel/helper-create-class-features-plugin@7.14.1
+1135 silly saveTree | | +-- @babel/plugin-proposal-dynamic-import@7.13.8
+1135 silly saveTree | | | `-- @babel/plugin-syntax-dynamic-import@7.8.3
+1135 silly saveTree | | +-- @babel/plugin-proposal-export-namespace-from@7.12.13
+1135 silly saveTree | | | `-- @babel/plugin-syntax-export-namespace-from@7.8.3
+1135 silly saveTree | | +-- @babel/plugin-proposal-json-strings@7.13.8
+1135 silly saveTree | | | `-- @babel/plugin-syntax-json-strings@7.8.3
+1135 silly saveTree | | +-- @babel/plugin-proposal-logical-assignment-operators@7.13.8
+1135 silly saveTree | | | `-- @babel/plugin-syntax-logical-assignment-operators@7.10.4
+1135 silly saveTree | | +-- @babel/plugin-proposal-nullish-coalescing-operator@7.13.8
+1135 silly saveTree | | | `-- @babel/plugin-syntax-nullish-coalescing-operator@7.8.3
+1135 silly saveTree | | +-- @babel/plugin-proposal-numeric-separator@7.12.13
+1135 silly saveTree | | | `-- @babel/plugin-syntax-numeric-separator@7.10.4
+1135 silly saveTree | | +-- @babel/plugin-proposal-object-rest-spread@7.13.8
+1135 silly saveTree | | | +-- @babel/plugin-syntax-object-rest-spread@7.8.3
+1135 silly saveTree | | | `-- @babel/plugin-transform-parameters@7.13.0
+1135 silly saveTree | | +-- @babel/plugin-proposal-optional-catch-binding@7.13.8
+1135 silly saveTree | | | `-- @babel/plugin-syntax-optional-catch-binding@7.8.3
+1135 silly saveTree | | +-- @babel/plugin-proposal-optional-chaining@7.13.12
+1135 silly saveTree | | | +-- @babel/helper-skip-transparent-expression-wrappers@7.12.1
+1135 silly saveTree | | | `-- @babel/plugin-syntax-optional-chaining@7.8.3
+1135 silly saveTree | | +-- @babel/plugin-proposal-private-methods@7.13.0
+1135 silly saveTree | | +-- @babel/plugin-proposal-unicode-property-regex@7.12.13
+1135 silly saveTree | | | `-- @babel/helper-create-regexp-features-plugin@7.12.17
+1135 silly saveTree | | |   `-- regexpu-core@4.7.1
+1135 silly saveTree | | |     +-- regenerate-unicode-properties@8.2.0
+1135 silly saveTree | | |     | `-- regenerate@1.4.2
+1135 silly saveTree | | |     +-- regenerate@1.4.2
+1135 silly saveTree | | |     +-- regjsgen@0.5.2
+1135 silly saveTree | | |     +-- regjsparser@0.6.9
+1135 silly saveTree | | |     | `-- jsesc@0.5.0
+1135 silly saveTree | | |     +-- unicode-match-property-ecmascript@1.0.4
+1135 silly saveTree | | |     | +-- unicode-canonical-property-names-ecmascript@1.0.4
+1135 silly saveTree | | |     | `-- unicode-property-aliases-ecmascript@1.1.0
+1135 silly saveTree | | |     `-- unicode-match-property-value-ecmascript@1.2.0
+1135 silly saveTree | | +-- @babel/plugin-syntax-async-generators@7.8.4
+1135 silly saveTree | | +-- @babel/plugin-syntax-class-properties@7.12.13
+1135 silly saveTree | | +-- @babel/plugin-syntax-dynamic-import@7.8.3
+1135 silly saveTree | | +-- @babel/plugin-syntax-export-namespace-from@7.8.3
+1135 silly saveTree | | +-- @babel/plugin-syntax-json-strings@7.8.3
+1135 silly saveTree | | +-- @babel/plugin-syntax-logical-assignment-operators@7.10.4
+1135 silly saveTree | | +-- @babel/plugin-syntax-nullish-coalescing-operator@7.8.3
+1135 silly saveTree | | +-- @babel/plugin-syntax-numeric-separator@7.10.4
+1135 silly saveTree | | +-- @babel/plugin-syntax-object-rest-spread@7.8.3
+1135 silly saveTree | | +-- @babel/plugin-syntax-optional-catch-binding@7.8.3
+1135 silly saveTree | | +-- @babel/plugin-syntax-optional-chaining@7.8.3
+1135 silly saveTree | | +-- @babel/plugin-syntax-top-level-await@7.12.13
+1135 silly saveTree | | +-- @babel/plugin-transform-arrow-functions@7.13.0
+1135 silly saveTree | | +-- @babel/plugin-transform-async-to-generator@7.13.0
+1135 silly saveTree | | +-- @babel/plugin-transform-block-scoped-functions@7.12.13
+1135 silly saveTree | | +-- @babel/plugin-transform-block-scoping@7.14.1
+1135 silly saveTree | | +-- @babel/plugin-transform-classes@7.13.0
+1135 silly saveTree | | +-- @babel/plugin-transform-computed-properties@7.13.0
+1135 silly saveTree | | +-- @babel/plugin-transform-destructuring@7.13.17
+1135 silly saveTree | | +-- @babel/plugin-transform-dotall-regex@7.12.13
+1135 silly saveTree | | +-- @babel/plugin-transform-duplicate-keys@7.12.13
+1135 silly saveTree | | +-- @babel/plugin-transform-exponentiation-operator@7.12.13
+1135 silly saveTree | | | `-- @babel/helper-builder-binary-assignment-operator-visitor@7.12.13
+1135 silly saveTree | | |   `-- @babel/helper-explode-assignable-expression@7.13.0
+1135 silly saveTree | | +-- @babel/plugin-transform-for-of@7.13.0
+1135 silly saveTree | | +-- @babel/plugin-transform-function-name@7.12.13
+1135 silly saveTree | | +-- @babel/plugin-transform-literals@7.12.13
+1135 silly saveTree | | +-- @babel/plugin-transform-member-expression-literals@7.12.13
+1135 silly saveTree | | +-- @babel/plugin-transform-modules-amd@7.14.0
+1135 silly saveTree | | | `-- babel-plugin-dynamic-import-node@2.3.3
+1135 silly saveTree | | |   `-- object.assign@4.1.2
+1135 silly saveTree | | |     +-- call-bind@1.0.2
+1135 silly saveTree | | |     | `-- get-intrinsic@1.1.1
+1135 silly saveTree | | |     |   `-- has-symbols@1.0.2
+1135 silly saveTree | | |     +-- define-properties@1.1.3
+1135 silly saveTree | | |     | `-- object-keys@1.1.1
+1135 silly saveTree | | |     +-- has-symbols@1.0.2
+1135 silly saveTree | | |     `-- object-keys@1.1.1
+1135 silly saveTree | | +-- @babel/plugin-transform-modules-commonjs@7.14.0
+1135 silly saveTree | | +-- @babel/plugin-transform-modules-systemjs@7.13.8
+1135 silly saveTree | | | `-- @babel/helper-hoist-variables@7.13.16
+1135 silly saveTree | | +-- @babel/plugin-transform-modules-umd@7.14.0
+1135 silly saveTree | | +-- @babel/plugin-transform-named-capturing-groups-regex@7.12.13
+1135 silly saveTree | | +-- @babel/plugin-transform-new-target@7.12.13
+1135 silly saveTree | | +-- @babel/plugin-transform-object-super@7.12.13
+1135 silly saveTree | | +-- @babel/plugin-transform-parameters@7.13.0
+1135 silly saveTree | | +-- @babel/plugin-transform-property-literals@7.12.13
+1135 silly saveTree | | +-- @babel/plugin-transform-regenerator@7.13.15
+1135 silly saveTree | | | `-- regenerator-transform@0.14.5
+1135 silly saveTree | | |   `-- @babel/runtime@7.11.2
+1135 silly saveTree | | |     `-- regenerator-runtime@0.13.7
+1135 silly saveTree | | +-- @babel/plugin-transform-reserved-words@7.12.13
+1135 silly saveTree | | +-- @babel/plugin-transform-shorthand-properties@7.12.13
+1135 silly saveTree | | +-- @babel/plugin-transform-spread@7.13.0
+1135 silly saveTree | | +-- @babel/plugin-transform-sticky-regex@7.12.13
+1135 silly saveTree | | +-- @babel/plugin-transform-template-literals@7.13.0
+1135 silly saveTree | | +-- @babel/plugin-transform-typeof-symbol@7.12.13
+1135 silly saveTree | | +-- @babel/plugin-transform-unicode-escapes@7.12.13
+1135 silly saveTree | | +-- @babel/plugin-transform-unicode-regex@7.12.13
+1135 silly saveTree | | +-- @babel/preset-modules@0.1.4
+1135 silly saveTree | | | `-- esutils@2.0.3
+1135 silly saveTree | | +-- browserslist@4.16.6
+1135 silly saveTree | | +-- core-js-compat@3.11.2
+1135 silly saveTree | | | `-- semver@7.0.0
+1135 silly saveTree | | +-- invariant@2.2.4
+1135 silly saveTree | | | `-- loose-envify@1.4.0
+1135 silly saveTree | | +-- levenary@1.1.1
+1135 silly saveTree | | | `-- leven@3.1.0
+1135 silly saveTree | | `-- semver@5.7.1
+1135 silly saveTree | +-- @babel/runtime@7.11.2
+1135 silly saveTree | +-- @babel/template@7.10.4
+1135 silly saveTree | +-- @jsdevtools/coverage-istanbul-loader@3.0.5
+1135 silly saveTree | | +-- istanbul-lib-instrument@4.0.3
+1135 silly saveTree | | | +-- @istanbuljs/schema@0.1.3
+1135 silly saveTree | | | +-- istanbul-lib-coverage@3.0.0
+1135 silly saveTree | | | `-- semver@6.3.0
+1135 silly saveTree | | +-- merge-source-map@1.1.0
+1135 silly saveTree | | | `-- source-map@0.6.1
+1135 silly saveTree | | `-- schema-utils@2.7.1
+1135 silly saveTree | |   +-- @types/json-schema@7.0.7
+1135 silly saveTree | |   +-- ajv-keywords@3.5.2
+1135 silly saveTree | |   `-- ajv@6.12.6
+1135 silly saveTree | +-- @ngtools/webpack@10.1.4
+1135 silly saveTree | | `-- enhanced-resolve@4.3.0
+1135 silly saveTree | |   +-- graceful-fs@4.2.6
+1135 silly saveTree | |   +-- memory-fs@0.5.0
+1135 silly saveTree | |   | +-- errno@0.1.8
+1135 silly saveTree | |   | | `-- prr@1.0.1
+1135 silly saveTree | |   | `-- readable-stream@2.3.7
+1135 silly saveTree | |   |   +-- core-util-is@1.0.2
+1135 silly saveTree | |   |   +-- inherits@2.0.4
+1135 silly saveTree | |   |   +-- isarray@1.0.0
+1135 silly saveTree | |   |   +-- process-nextick-args@2.0.1
+1135 silly saveTree | |   |   +-- string_decoder@1.1.1
+1135 silly saveTree | |   |   `-- util-deprecate@1.0.2
+1135 silly saveTree | |   `-- tapable@1.1.3
+1135 silly saveTree | +-- autoprefixer@9.8.6
+1135 silly saveTree | | +-- normalize-range@0.1.2
+1135 silly saveTree | | +-- num2fraction@1.2.2
+1135 silly saveTree | | +-- postcss-value-parser@4.1.0
+1135 silly saveTree | | `-- postcss@7.0.32
+1135 silly saveTree | |   +-- source-map@0.6.1
+1135 silly saveTree | |   `-- supports-color@6.1.0
+1135 silly saveTree | +-- babel-loader@8.1.0
+1135 silly saveTree | | +-- find-cache-dir@2.1.0
+1135 silly saveTree | | | +-- commondir@1.0.1
+1135 silly saveTree | | | +-- make-dir@2.1.0
+1135 silly saveTree | | | | +-- pify@4.0.1
+1135 silly saveTree | | | | `-- semver@5.7.1
+1135 silly saveTree | | | `-- pkg-dir@3.0.0
+1135 silly saveTree | | |   `-- find-up@3.0.0
+1135 silly saveTree | | |     `-- locate-path@3.0.0
+1135 silly saveTree | | |       +-- p-locate@3.0.0
+1135 silly saveTree | | |       | `-- p-limit@2.3.0
+1135 silly saveTree | | |       |   `-- p-try@2.2.0
+1135 silly saveTree | | |       `-- path-exists@3.0.0
+1135 silly saveTree | | +-- loader-utils@1.4.0
+1135 silly saveTree | | | `-- json5@1.0.1
+1135 silly saveTree | | +-- mkdirp@0.5.5
+1135 silly saveTree | | `-- pify@4.0.1
+1135 silly saveTree | +-- browserslist@4.16.6
+1135 silly saveTree | +-- cacache@15.0.5
+1135 silly saveTree | | +-- @npmcli/move-file@1.1.2
+1135 silly saveTree | | | +-- mkdirp@1.0.4
+1135 silly saveTree | | | `-- rimraf@3.0.2
+1135 silly saveTree | | |   `-- glob@7.1.6
+1135 silly saveTree | | |     +-- fs.realpath@1.0.0
+1135 silly saveTree | | |     +-- inflight@1.0.6
+1135 silly saveTree | | |     | +-- once@1.4.0
+1135 silly saveTree | | |     | | `-- wrappy@1.0.2
+1135 silly saveTree | | |     | `-- wrappy@1.0.2
+1135 silly saveTree | | |     +-- minimatch@3.0.4
+1135 silly saveTree | | |     | `-- brace-expansion@1.1.11
+1135 silly saveTree | | |     |   +-- balanced-match@1.0.2
+1135 silly saveTree | | |     |   `-- concat-map@0.0.1
+1135 silly saveTree | | |     +-- once@1.4.0
+1135 silly saveTree | | |     `-- path-is-absolute@1.0.1
+1135 silly saveTree | | +-- chownr@2.0.0
+1135 silly saveTree | | +-- fs-minipass@2.1.0
+1135 silly saveTree | | | `-- minipass@3.1.3
+1135 silly saveTree | | |   `-- yallist@4.0.0
+1135 silly saveTree | | +-- glob@7.1.6
+1135 silly saveTree | | +-- infer-owner@1.0.4
+1135 silly saveTree | | +-- lru-cache@6.0.0
+1135 silly saveTree | | +-- minipass-collect@1.0.2
+1135 silly saveTree | | +-- minipass-flush@1.0.5
+1135 silly saveTree | | +-- minipass-pipeline@1.2.4
+1135 silly saveTree | | +-- minipass@3.1.3
+1135 silly saveTree | | +-- mkdirp@1.0.4
+1135 silly saveTree | | +-- p-map@4.0.0
+1135 silly saveTree | | | `-- aggregate-error@3.1.0
+1135 silly saveTree | | |   +-- clean-stack@2.2.0
+1135 silly saveTree | | |   `-- indent-string@4.0.0
+1135 silly saveTree | | +-- promise-inflight@1.0.1
+1135 silly saveTree | | +-- rimraf@3.0.2
+1135 silly saveTree | | +-- ssri@8.0.1
+1135 silly saveTree | | +-- tar@6.1.0
+1135 silly saveTree | | | +-- minizlib@2.1.2
+1135 silly saveTree | | | `-- mkdirp@1.0.4
+1135 silly saveTree | | `-- unique-filename@1.1.1
+1135 silly saveTree | |   `-- unique-slug@2.0.2
+1135 silly saveTree | |     `-- imurmurhash@0.1.4
+1135 silly saveTree | +-- caniuse-lite@1.0.30001221
+1135 silly saveTree | +-- circular-dependency-plugin@5.2.0
+1135 silly saveTree | +-- copy-webpack-plugin@6.0.3
+1135 silly saveTree | | +-- fast-glob@3.2.5
+1135 silly saveTree | | | +-- @nodelib/fs.stat@2.0.4
+1135 silly saveTree | | | +-- @nodelib/fs.walk@1.2.6
+1135 silly saveTree | | | | +-- @nodelib/fs.scandir@2.1.4
+1135 silly saveTree | | | | | `-- run-parallel@1.2.0
+1135 silly saveTree | | | | |   `-- queue-microtask@1.2.3
+1135 silly saveTree | | | | `-- fastq@1.11.0
+1135 silly saveTree | | | |   `-- reusify@1.0.4
+1135 silly saveTree | | | +-- glob-parent@5.1.2
+1135 silly saveTree | | | | `-- is-glob@4.0.1
+1135 silly saveTree | | | |   `-- is-extglob@2.1.1
+1135 silly saveTree | | | +-- merge2@1.4.1
+1135 silly saveTree | | | +-- micromatch@4.0.4
+1135 silly saveTree | | | | +-- braces@3.0.2
+1135 silly saveTree | | | | | `-- fill-range@7.0.1
+1135 silly saveTree | | | | |   `-- to-regex-range@5.0.1
+1135 silly saveTree | | | | |     `-- is-number@7.0.0
+1135 silly saveTree | | | | `-- picomatch@2.2.3
+1135 silly saveTree | | | `-- picomatch@2.2.3
+1135 silly saveTree | | +-- find-cache-dir@3.3.1
+1135 silly saveTree | | | +-- make-dir@3.1.0
+1135 silly saveTree | | | | `-- semver@6.3.0
+1135 silly saveTree | | | `-- pkg-dir@4.2.0
+1135 silly saveTree | | |   `-- find-up@4.1.0
+1135 silly saveTree | | |     +-- locate-path@5.0.0
+1135 silly saveTree | | |     | `-- p-locate@4.1.0
+1135 silly saveTree | | |     `-- path-exists@4.0.0
+1135 silly saveTree | | +-- glob-parent@5.1.2
+1135 silly saveTree | | +-- globby@11.0.3
+1135 silly saveTree | | | +-- array-union@2.1.0
+1135 silly saveTree | | | +-- dir-glob@3.0.1
+1135 silly saveTree | | | | `-- path-type@4.0.0
+1135 silly saveTree | | | +-- ignore@5.1.8
+1135 silly saveTree | | | `-- slash@3.0.0
+1135 silly saveTree | | +-- normalize-path@3.0.0
+1135 silly saveTree | | +-- p-limit@3.1.0
+1135 silly saveTree | | | `-- yocto-queue@0.1.0
+1135 silly saveTree | | `-- serialize-javascript@4.0.0
+1135 silly saveTree | |   `-- randombytes@2.1.0
+1135 silly saveTree | +-- core-js@3.6.4
+1135 silly saveTree | +-- css-loader@4.2.2
+1135 silly saveTree | | +-- camelcase@6.2.0
+1135 silly saveTree | | +-- cssesc@3.0.0
+1135 silly saveTree | | +-- icss-utils@4.1.1
+1135 silly saveTree | | +-- postcss-modules-extract-imports@2.0.0
+1135 silly saveTree | | +-- postcss-modules-local-by-default@3.0.3
+1135 silly saveTree | | | `-- postcss-selector-parser@6.0.5
+1135 silly saveTree | | +-- postcss-modules-scope@2.2.0
+1135 silly saveTree | | +-- postcss-modules-values@3.0.0
+1135 silly saveTree | | `-- semver@7.3.2
+1135 silly saveTree | +-- cssnano@4.1.10
+1135 silly saveTree | | +-- cosmiconfig@5.2.1
+1135 silly saveTree | | | +-- import-fresh@2.0.0
+1135 silly saveTree | | | | +-- caller-path@2.0.0
+1135 silly saveTree | | | | | `-- caller-callsite@2.0.0
+1135 silly saveTree | | | | |   `-- callsites@2.0.0
+1135 silly saveTree | | | | `-- resolve-from@3.0.0
+1135 silly saveTree | | | +-- is-directory@0.3.1
+1135 silly saveTree | | | +-- js-yaml@3.14.1
+1135 silly saveTree | | | | +-- argparse@1.0.10
+1135 silly saveTree | | | | | `-- sprintf-js@1.0.3
+1135 silly saveTree | | | | `-- esprima@4.0.1
+1135 silly saveTree | | | `-- parse-json@4.0.0
+1135 silly saveTree | | |   +-- error-ex@1.3.2
+1135 silly saveTree | | |   | `-- is-arrayish@0.2.1
+1135 silly saveTree | | |   `-- json-parse-better-errors@1.0.2
+1135 silly saveTree | | +-- cssnano-preset-default@4.0.8
+1135 silly saveTree | | | +-- css-declaration-sorter@4.0.1
+1135 silly saveTree | | | | `-- timsort@0.3.0
+1135 silly saveTree | | | +-- cssnano-util-raw-cache@4.0.1
+1135 silly saveTree | | | +-- postcss-calc@7.0.5
+1135 silly saveTree | | | +-- postcss-colormin@4.0.3
+1135 silly saveTree | | | | +-- color@3.1.3
+1135 silly saveTree | | | | | `-- color-string@1.5.5
+1135 silly saveTree | | | | |   `-- simple-swizzle@0.2.2
+1135 silly saveTree | | | | |     `-- is-arrayish@0.3.2
+1135 silly saveTree | | | | `-- postcss-value-parser@3.3.1
+1135 silly saveTree | | | +-- postcss-convert-values@4.0.1
+1135 silly saveTree | | | | `-- postcss-value-parser@3.3.1
+1135 silly saveTree | | | +-- postcss-discard-comments@4.0.2
+1135 silly saveTree | | | +-- postcss-discard-duplicates@4.0.2
+1135 silly saveTree | | | +-- postcss-discard-empty@4.0.1
+1135 silly saveTree | | | +-- postcss-discard-overridden@4.0.1
+1135 silly saveTree | | | +-- postcss-merge-longhand@4.0.11
+1135 silly saveTree | | | | +-- css-color-names@0.0.4
+1135 silly saveTree | | | | +-- postcss-value-parser@3.3.1
+1135 silly saveTree | | | | `-- stylehacks@4.0.3
+1135 silly saveTree | | | |   `-- postcss-selector-parser@3.1.2
+1135 silly saveTree | | | |     +-- dot-prop@5.3.0
+1135 silly saveTree | | | |     | `-- is-obj@2.0.0
+1135 silly saveTree | | | |     +-- indexes-of@1.0.1
+1135 silly saveTree | | | |     `-- uniq@1.0.1
+1135 silly saveTree | | | +-- postcss-merge-rules@4.0.3
+1135 silly saveTree | | | | +-- caniuse-api@3.0.0
+1135 silly saveTree | | | | | +-- lodash.memoize@4.1.2
+1135 silly saveTree | | | | | `-- lodash.uniq@4.5.0
+1135 silly saveTree | | | | +-- cssnano-util-same-parent@4.0.1
+1135 silly saveTree | | | | +-- postcss-selector-parser@3.1.2
+1135 silly saveTree | | | | `-- vendors@1.0.4
+1135 silly saveTree | | | +-- postcss-minify-font-values@4.0.2
+1135 silly saveTree | | | | `-- postcss-value-parser@3.3.1
+1135 silly saveTree | | | +-- postcss-minify-gradients@4.0.2
+1135 silly saveTree | | | | +-- cssnano-util-get-arguments@4.0.0
+1135 silly saveTree | | | | +-- is-color-stop@1.1.0
+1135 silly saveTree | | | | | +-- hex-color-regex@1.1.0
+1135 silly saveTree | | | | | +-- hsl-regex@1.0.0
+1135 silly saveTree | | | | | +-- hsla-regex@1.0.0
+1135 silly saveTree | | | | | +-- rgb-regex@1.0.1
+1135 silly saveTree | | | | | `-- rgba-regex@1.0.0
+1135 silly saveTree | | | | `-- postcss-value-parser@3.3.1
+1135 silly saveTree | | | +-- postcss-minify-params@4.0.2
+1135 silly saveTree | | | | +-- alphanum-sort@1.0.2
+1135 silly saveTree | | | | +-- postcss-value-parser@3.3.1
+1135 silly saveTree | | | | `-- uniqs@2.0.0
+1135 silly saveTree | | | +-- postcss-minify-selectors@4.0.2
+1135 silly saveTree | | | | `-- postcss-selector-parser@3.1.2
+1135 silly saveTree | | | +-- postcss-normalize-charset@4.0.1
+1135 silly saveTree | | | +-- postcss-normalize-display-values@4.0.2
+1135 silly saveTree | | | | +-- cssnano-util-get-match@4.0.0
+1135 silly saveTree | | | | `-- postcss-value-parser@3.3.1
+1135 silly saveTree | | | +-- postcss-normalize-positions@4.0.2
+1135 silly saveTree | | | | `-- postcss-value-parser@3.3.1
+1135 silly saveTree | | | +-- postcss-normalize-repeat-style@4.0.2
+1135 silly saveTree | | | | `-- postcss-value-parser@3.3.1
+1135 silly saveTree | | | +-- postcss-normalize-string@4.0.2
+1135 silly saveTree | | | | `-- postcss-value-parser@3.3.1
+1135 silly saveTree | | | +-- postcss-normalize-timing-functions@4.0.2
+1135 silly saveTree | | | | `-- postcss-value-parser@3.3.1
+1135 silly saveTree | | | +-- postcss-normalize-unicode@4.0.1
+1135 silly saveTree | | | | `-- postcss-value-parser@3.3.1
+1135 silly saveTree | | | +-- postcss-normalize-url@4.0.1
+1135 silly saveTree | | | | +-- is-absolute-url@2.1.0
+1135 silly saveTree | | | | +-- normalize-url@3.3.0
+1135 silly saveTree | | | | `-- postcss-value-parser@3.3.1
+1135 silly saveTree | | | +-- postcss-normalize-whitespace@4.0.2
+1135 silly saveTree | | | | `-- postcss-value-parser@3.3.1
+1135 silly saveTree | | | +-- postcss-ordered-values@4.1.2
+1135 silly saveTree | | | | `-- postcss-value-parser@3.3.1
+1135 silly saveTree | | | +-- postcss-reduce-initial@4.0.3
+1135 silly saveTree | | | +-- postcss-reduce-transforms@4.0.2
+1135 silly saveTree | | | | `-- postcss-value-parser@3.3.1
+1135 silly saveTree | | | +-- postcss-svgo@4.0.3
+1135 silly saveTree | | | | +-- postcss-value-parser@3.3.1
+1135 silly saveTree | | | | `-- svgo@1.3.2
+1135 silly saveTree | | | |   +-- coa@2.0.2
+1135 silly saveTree | | | |   | +-- @types/q@1.5.4
+1135 silly saveTree | | | |   | `-- q@1.5.1
+1135 silly saveTree | | | |   +-- css-select-base-adapter@0.1.1
+1135 silly saveTree | | | |   +-- css-select@2.1.0
+1135 silly saveTree | | | |   | +-- boolbase@1.0.0
+1135 silly saveTree | | | |   | +-- css-what@3.4.2
+1135 silly saveTree | | | |   | +-- domutils@1.7.0
+1135 silly saveTree | | | |   | | +-- dom-serializer@0.2.2
+1135 silly saveTree | | | |   | | | +-- domelementtype@2.2.0
+1135 silly saveTree | | | |   | | | `-- entities@2.2.0
+1135 silly saveTree | | | |   | | `-- domelementtype@1.3.1
+1135 silly saveTree | | | |   | `-- nth-check@1.0.2
+1135 silly saveTree | | | |   +-- css-tree@1.0.0-alpha.37
+1135 silly saveTree | | | |   | +-- mdn-data@2.0.4
+1135 silly saveTree | | | |   | `-- source-map@0.6.1
+1135 silly saveTree | | | |   +-- csso@4.2.0
+1135 silly saveTree | | | |   | `-- css-tree@1.1.3
+1135 silly saveTree | | | |   |   +-- mdn-data@2.0.14
+1135 silly saveTree | | | |   |   `-- source-map@0.6.1
+1135 silly saveTree | | | |   +-- object.values@1.1.3
+1135 silly saveTree | | | |   | `-- es-abstract@1.18.0
+1135 silly saveTree | | | |   |   +-- es-to-primitive@1.2.1
+1135 silly saveTree | | | |   |   | +-- is-callable@1.2.3
+1135 silly saveTree | | | |   |   | +-- is-date-object@1.0.2
+1135 silly saveTree | | | |   |   | `-- is-symbol@1.0.3
+1135 silly saveTree | | | |   |   +-- is-callable@1.2.3
+1135 silly saveTree | | | |   |   +-- is-negative-zero@2.0.1
+1135 silly saveTree | | | |   |   +-- is-regex@1.1.2
+1135 silly saveTree | | | |   |   +-- is-string@1.0.5
+1135 silly saveTree | | | |   |   +-- object-inspect@1.10.2
+1135 silly saveTree | | | |   |   +-- string.prototype.trimend@1.0.4
+1135 silly saveTree | | | |   |   +-- string.prototype.trimstart@1.0.4
+1135 silly saveTree | | | |   |   `-- unbox-primitive@1.0.1
+1135 silly saveTree | | | |   |     +-- has-bigints@1.0.1
+1135 silly saveTree | | | |   |     `-- which-boxed-primitive@1.0.2
+1135 silly saveTree | | | |   |       +-- is-bigint@1.0.1
+1135 silly saveTree | | | |   |       +-- is-boolean-object@1.1.0
+1135 silly saveTree | | | |   |       `-- is-number-object@1.0.4
+1135 silly saveTree | | | |   +-- sax@1.2.4
+1135 silly saveTree | | | |   +-- stable@0.1.8
+1135 silly saveTree | | | |   +-- unquote@1.1.1
+1135 silly saveTree | | | |   `-- util.promisify@1.0.1
+1135 silly saveTree | | | |     `-- object.getownpropertydescriptors@2.1.2
+1135 silly saveTree | | | `-- postcss-unique-selectors@4.0.1
+1135 silly saveTree | | `-- is-resolvable@1.1.0
+1135 silly saveTree | +-- file-loader@6.0.0
+1135 silly saveTree | +-- find-cache-dir@3.3.1
+1135 silly saveTree | +-- glob@7.1.6
+1135 silly saveTree | +-- jest-worker@26.3.0
+1135 silly saveTree | | +-- @types/node@15.0.1
+1135 silly saveTree | | +-- merge-stream@2.0.0
+1135 silly saveTree | | `-- supports-color@7.2.0
+1135 silly saveTree | |   `-- has-flag@4.0.0
+1135 silly saveTree | +-- karma-source-map-support@1.4.0
+1135 silly saveTree | | `-- source-map-support@0.5.19
+1135 silly saveTree | |   +-- buffer-from@1.1.1
+1135 silly saveTree | |   `-- source-map@0.6.1
+1135 silly saveTree | +-- less-loader@6.2.0
+1135 silly saveTree | | +-- clone@2.1.2
+1135 silly saveTree | | `-- less@3.13.1
+1135 silly saveTree | |   +-- copy-anything@2.0.3
+1135 silly saveTree | |   | `-- is-what@3.14.1
+1135 silly saveTree | |   +-- image-size@0.5.5
+1135 silly saveTree | |   +-- mime@1.6.0
+1135 silly saveTree | |   +-- native-request@1.0.8
+1135 silly saveTree | |   `-- source-map@0.6.1
+1135 silly saveTree | +-- license-webpack-plugin@2.3.0
+1135 silly saveTree | | `-- @types/webpack-sources@0.1.8
+1135 silly saveTree | |   +-- @types/node@15.0.1
+1135 silly saveTree | |   +-- @types/source-list-map@0.1.2
+1135 silly saveTree | |   `-- source-map@0.6.1
+1135 silly saveTree | +-- loader-utils@2.0.0
+1135 silly saveTree | +-- mini-css-extract-plugin@0.10.0
+1135 silly saveTree | | +-- loader-utils@1.4.0
+1135 silly saveTree | | | `-- json5@1.0.1
+1135 silly saveTree | | +-- normalize-url@1.9.1
+1135 silly saveTree | | | +-- object-assign@4.1.1
+1135 silly saveTree | | | +-- prepend-http@1.0.4
+1135 silly saveTree | | | +-- query-string@4.3.4
+1135 silly saveTree | | | | `-- strict-uri-encode@1.1.0
+1135 silly saveTree | | | `-- sort-keys@1.1.2
+1135 silly saveTree | | |   `-- is-plain-obj@1.1.0
+1135 silly saveTree | | `-- schema-utils@1.0.0
+1135 silly saveTree | |   +-- ajv-errors@1.0.1
+1135 silly saveTree | |   `-- ajv@6.12.6
+1135 silly saveTree | +-- minimatch@3.0.4
+1135 silly saveTree | +-- open@7.2.0
+1135 silly saveTree | | +-- is-docker@2.2.1
+1135 silly saveTree | | `-- is-wsl@2.2.0
+1135 silly saveTree | +-- parse5-htmlparser2-tree-adapter@6.0.1
+1135 silly saveTree | | `-- parse5@6.0.1
+1135 silly saveTree | +-- parse5@6.0.1
+1135 silly saveTree | +-- pnp-webpack-plugin@1.6.4
+1135 silly saveTree | | `-- ts-pnp@1.2.0
+1135 silly saveTree | +-- postcss-import@12.0.1
+1135 silly saveTree | | +-- postcss-value-parser@3.3.1
+1135 silly saveTree | | `-- read-cache@1.0.0
+1135 silly saveTree | |   `-- pify@2.3.0
+1135 silly saveTree | +-- postcss-loader@3.0.0
+1135 silly saveTree | | +-- loader-utils@1.4.0
+1135 silly saveTree | | | `-- json5@1.0.1
+1135 silly saveTree | | +-- postcss-load-config@2.1.2
+1135 silly saveTree | | | `-- import-cwd@2.1.0
+1135 silly saveTree | | |   `-- import-from@2.1.0
+1135 silly saveTree | | `-- schema-utils@1.0.0
+1135 silly saveTree | |   `-- ajv@6.12.6
+1135 silly saveTree | +-- postcss@7.0.32
+1135 silly saveTree | +-- raw-loader@4.0.1
+1135 silly saveTree | +-- regenerator-runtime@0.13.7
+1135 silly saveTree | +-- resolve-url-loader@3.1.1
+1135 silly saveTree | | +-- adjust-sourcemap-loader@2.0.0
+1135 silly saveTree | | | +-- assert@1.4.1
+1135 silly saveTree | | | | `-- util@0.10.3
+1135 silly saveTree | | | |   `-- inherits@2.0.1
+1135 silly saveTree | | | +-- camelcase@5.0.0
+1135 silly saveTree | | | +-- loader-utils@1.2.3
+1135 silly saveTree | | | | +-- emojis-list@2.1.0
+1135 silly saveTree | | | | `-- json5@1.0.1
+1135 silly saveTree | | | +-- object-path@0.11.4
+1135 silly saveTree | | | `-- regex-parser@2.2.10
+1135 silly saveTree | | +-- camelcase@5.3.1
+1135 silly saveTree | | +-- compose-function@3.0.3
+1135 silly saveTree | | | `-- arity-n@1.0.4
+1135 silly saveTree | | +-- es6-iterator@2.0.3
+1135 silly saveTree | | | +-- d@1.0.1
+1135 silly saveTree | | | | +-- es5-ext@0.10.53
+1135 silly saveTree | | | | | +-- es6-symbol@3.1.3
+1135 silly saveTree | | | | | | `-- ext@1.4.0
+1135 silly saveTree | | | | | |   `-- type@2.5.0
+1135 silly saveTree | | | | | `-- next-tick@1.0.0
+1135 silly saveTree | | | | `-- type@1.2.0
+1135 silly saveTree | | | +-- es5-ext@0.10.53
+1135 silly saveTree | | | `-- es6-symbol@3.1.3
+1135 silly saveTree | | +-- loader-utils@1.2.3
+1135 silly saveTree | | | +-- emojis-list@2.1.0
+1135 silly saveTree | | | `-- json5@1.0.1
+1135 silly saveTree | | +-- postcss@7.0.21
+1135 silly saveTree | | | +-- source-map@0.6.1
+1135 silly saveTree | | | `-- supports-color@6.1.0
+1135 silly saveTree | | +-- rework-visit@1.0.0
+1135 silly saveTree | | +-- rework@1.0.1
+1135 silly saveTree | | | +-- convert-source-map@0.3.5
+1135 silly saveTree | | | `-- css@2.2.4
+1135 silly saveTree | | |   +-- source-map-resolve@0.5.3
+1135 silly saveTree | | |   | +-- atob@2.1.2
+1135 silly saveTree | | |   | +-- decode-uri-component@0.2.0
+1135 silly saveTree | | |   | +-- resolve-url@0.2.1
+1135 silly saveTree | | |   | +-- source-map-url@0.4.1
+1135 silly saveTree | | |   | `-- urix@0.1.0
+1135 silly saveTree | | |   +-- source-map@0.6.1
+1135 silly saveTree | | |   `-- urix@0.1.0
+1135 silly saveTree | | `-- source-map@0.6.1
+1135 silly saveTree | +-- rimraf@3.0.2
+1135 silly saveTree | +-- rollup@2.26.5
+1135 silly saveTree | | `-- fsevents@2.1.3
+1135 silly saveTree | +-- rxjs@6.6.2
+1135 silly saveTree | +-- sass-loader@10.0.1
+1135 silly saveTree | | +-- klona@2.0.4
+1135 silly saveTree | | `-- neo-async@2.6.2
+1135 silly saveTree | +-- sass@1.26.10
+1135 silly saveTree | | `-- chokidar@3.5.1
+1135 silly saveTree | |   +-- anymatch@3.1.2
+1135 silly saveTree | |   +-- fsevents@2.3.2
+1135 silly saveTree | |   +-- is-binary-path@2.1.0
+1135 silly saveTree | |   | `-- binary-extensions@2.2.0
+1135 silly saveTree | |   `-- readdirp@3.5.0
+1135 silly saveTree | +-- semver@7.3.2
+1135 silly saveTree | +-- source-map-loader@1.0.2
+1135 silly saveTree | | +-- data-urls@2.0.0
+1135 silly saveTree | | | +-- abab@2.0.5
+1135 silly saveTree | | | +-- whatwg-mimetype@2.3.0
+1135 silly saveTree | | | `-- whatwg-url@8.5.0
+1135 silly saveTree | | |   +-- tr46@2.0.2
+1135 silly saveTree | | |   `-- webidl-conversions@6.1.0
+1135 silly saveTree | | +-- iconv-lite@0.6.2
+1135 silly saveTree | | | `-- safer-buffer@2.1.2
+1135 silly saveTree | | `-- source-map@0.6.1
+1135 silly saveTree | +-- source-map-support@0.5.19
+1135 silly saveTree | +-- source-map@0.7.3
+1135 silly saveTree | +-- speed-measure-webpack-plugin@1.3.3
+1135 silly saveTree | +-- style-loader@1.2.1
+1135 silly saveTree | +-- stylus-loader@3.0.2
+1135 silly saveTree | | +-- loader-utils@1.4.0
+1135 silly saveTree | | | `-- json5@1.0.1
+1135 silly saveTree | | +-- lodash.clonedeep@4.5.0
+1135 silly saveTree | | `-- when@3.6.4
+1135 silly saveTree | +-- stylus@0.54.8
+1135 silly saveTree | | +-- css-parse@2.0.0
+1135 silly saveTree | | +-- debug@3.1.0
+1135 silly saveTree | | | `-- ms@2.0.0
+1135 silly saveTree | | +-- mkdirp@1.0.4
+1135 silly saveTree | | `-- semver@6.3.0
+1135 silly saveTree | +-- terser-webpack-plugin@4.1.0
+1135 silly saveTree | | +-- p-limit@3.1.0
+1135 silly saveTree | | +-- source-map@0.6.1
+1135 silly saveTree | | `-- terser@5.3.0
+1135 silly saveTree | |   +-- commander@2.20.3
+1135 silly saveTree | |   `-- source-map@0.6.1
+1135 silly saveTree | +-- terser@5.3.0
+1135 silly saveTree | +-- tree-kill@1.2.2
+1135 silly saveTree | +-- webpack-dev-middleware@3.7.2
+1135 silly saveTree | | +-- memory-fs@0.4.1
+1135 silly saveTree | | +-- mime@2.5.2
+1135 silly saveTree | | +-- range-parser@1.2.1
+1135 silly saveTree | | `-- webpack-log@2.0.0
+1135 silly saveTree | |   +-- ansi-colors@3.2.4
+1135 silly saveTree | |   `-- uuid@3.4.0
+1135 silly saveTree | +-- webpack-dev-server@3.11.0
+1135 silly saveTree | | +-- ansi-html@0.0.7
+1135 silly saveTree | | +-- bonjour@3.5.0
+1135 silly saveTree | | | +-- array-flatten@2.1.2
+1135 silly saveTree | | | +-- deep-equal@1.1.1
+1135 silly saveTree | | | | +-- is-arguments@1.1.0
+1135 silly saveTree | | | | +-- object-is@1.1.5
+1135 silly saveTree | | | | `-- regexp.prototype.flags@1.3.1
+1135 silly saveTree | | | +-- dns-equal@1.0.0
+1135 silly saveTree | | | +-- dns-txt@2.0.2
+1135 silly saveTree | | | | `-- buffer-indexof@1.1.1
+1135 silly saveTree | | | +-- multicast-dns-service-types@1.1.0
+1135 silly saveTree | | | `-- multicast-dns@6.2.3
+1135 silly saveTree | | |   +-- dns-packet@1.3.1
+1135 silly saveTree | | |   | `-- ip@1.1.5
+1135 silly saveTree | | |   `-- thunky@1.1.0
+1135 silly saveTree | | +-- chokidar@2.1.8
+1135 silly saveTree | | | +-- anymatch@2.0.0
+1135 silly saveTree | | | | +-- micromatch@3.1.10
+1135 silly saveTree | | | | | +-- arr-diff@4.0.0
+1135 silly saveTree | | | | | +-- array-unique@0.3.2
+1135 silly saveTree | | | | | +-- braces@2.3.2
+1135 silly saveTree | | | | | | +-- arr-flatten@1.1.0
+1135 silly saveTree | | | | | | +-- extend-shallow@2.0.1
+1135 silly saveTree | | | | | | | `-- is-extendable@0.1.1
+1135 silly saveTree | | | | | | +-- fill-range@4.0.0
+1135 silly saveTree | | | | | | | +-- extend-shallow@2.0.1
+1135 silly saveTree | | | | | | | +-- is-number@3.0.0
+1135 silly saveTree | | | | | | | | `-- kind-of@3.2.2
+1135 silly saveTree | | | | | | | |   `-- is-buffer@1.1.6
+1135 silly saveTree | | | | | | | +-- repeat-string@1.6.1
+1135 silly saveTree | | | | | | | `-- to-regex-range@2.1.1
+1135 silly saveTree | | | | | | +-- isobject@3.0.1
+1135 silly saveTree | | | | | | +-- repeat-element@1.1.4
+1135 silly saveTree | | | | | | +-- snapdragon-node@2.1.1
+1135 silly saveTree | | | | | | | +-- define-property@1.0.0
+1135 silly saveTree | | | | | | | | `-- is-descriptor@1.0.2
+1135 silly saveTree | | | | | | | |   +-- is-accessor-descriptor@1.0.0
+1135 silly saveTree | | | | | | | |   | `-- kind-of@6.0.3
+1135 silly saveTree | | | | | | | |   +-- is-data-descriptor@1.0.0
+1135 silly saveTree | | | | | | | |   `-- kind-of@6.0.3
+1135 silly saveTree | | | | | | | `-- snapdragon-util@3.0.1
+1135 silly saveTree | | | | | | |   `-- kind-of@3.2.2
+1135 silly saveTree | | | | | | +-- snapdragon@0.8.2
+1135 silly saveTree | | | | | | | +-- base@0.11.2
+1135 silly saveTree | | | | | | | | +-- cache-base@1.0.1
+1135 silly saveTree | | | | | | | | | +-- collection-visit@1.0.0
+1135 silly saveTree | | | | | | | | | | +-- map-visit@1.0.0
+1135 silly saveTree | | | | | | | | | | | `-- object-visit@1.0.1
+1135 silly saveTree | | | | | | | | | | `-- object-visit@1.0.1
+1135 silly saveTree | | | | | | | | | +-- component-emitter@1.3.0
+1135 silly saveTree | | | | | | | | | +-- get-value@2.0.6
+1135 silly saveTree | | | | | | | | | +-- has-value@1.0.0
+1135 silly saveTree | | | | | | | | | | `-- has-values@1.0.0
+1135 silly saveTree | | | | | | | | | |   +-- is-number@3.0.0
+1135 silly saveTree | | | | | | | | | |   | `-- kind-of@3.2.2
+1135 silly saveTree | | | | | | | | | |   `-- kind-of@4.0.0
+1135 silly saveTree | | | | | | | | | +-- set-value@2.0.1
+1135 silly saveTree | | | | | | | | | | +-- extend-shallow@2.0.1
+1135 silly saveTree | | | | | | | | | | +-- is-plain-object@2.0.4
+1135 silly saveTree | | | | | | | | | | `-- split-string@3.1.0
+1135 silly saveTree | | | | | | | | | |   `-- extend-shallow@3.0.2
+1135 silly saveTree | | | | | | | | | |     +-- assign-symbols@1.0.0
+1135 silly saveTree | | | | | | | | | |     `-- is-extendable@1.0.1
+1135 silly saveTree | | | | | | | | | +-- to-object-path@0.3.0
+1135 silly saveTree | | | | | | | | | | `-- kind-of@3.2.2
+1135 silly saveTree | | | | | | | | | +-- union-value@1.0.1
+1135 silly saveTree | | | | | | | | | | `-- arr-union@3.1.0
+1135 silly saveTree | | | | | | | | | `-- unset-value@1.0.0
+1135 silly saveTree | | | | | | | | |   `-- has-value@0.3.1
+1135 silly saveTree | | | | | | | | |     +-- has-values@0.1.4
+1135 silly saveTree | | | | | | | | |     `-- isobject@2.1.0
+1135 silly saveTree | | | | | | | | +-- class-utils@0.3.6
+1135 silly saveTree | | | | | | | | | +-- define-property@0.2.5
+1135 silly saveTree | | | | | | | | | | `-- is-descriptor@0.1.6
+1135 silly saveTree | | | | | | | | | |   +-- is-accessor-descriptor@0.1.6
+1135 silly saveTree | | | | | | | | | |   | `-- kind-of@3.2.2
+1135 silly saveTree | | | | | | | | | |   +-- is-data-descriptor@0.1.4
+1135 silly saveTree | | | | | | | | | |   | `-- kind-of@3.2.2
+1135 silly saveTree | | | | | | | | | |   `-- kind-of@5.1.0
+1135 silly saveTree | | | | | | | | | `-- static-extend@0.1.2
+1135 silly saveTree | | | | | | | | |   +-- define-property@0.2.5
+1135 silly saveTree | | | | | | | | |   `-- object-copy@0.1.0
+1135 silly saveTree | | | | | | | | |     +-- copy-descriptor@0.1.1
+1135 silly saveTree | | | | | | | | |     +-- define-property@0.2.5
+1135 silly saveTree | | | | | | | | |     `-- kind-of@3.2.2
+1135 silly saveTree | | | | | | | | +-- component-emitter@1.3.0
+1135 silly saveTree | | | | | | | | +-- define-property@1.0.0
+1135 silly saveTree | | | | | | | | | `-- is-descriptor@1.0.2
+1135 silly saveTree | | | | | | | | |   +-- is-accessor-descriptor@1.0.0
+1135 silly saveTree | | | | | | | | |   `-- is-data-descriptor@1.0.0
+1135 silly saveTree | | | | | | | | +-- mixin-deep@1.3.2
+1135 silly saveTree | | | | | | | | | +-- for-in@1.0.2
+1135 silly saveTree | | | | | | | | | `-- is-extendable@1.0.1
+1135 silly saveTree | | | | | | | | `-- pascalcase@0.1.1
+1135 silly saveTree | | | | | | | +-- debug@2.6.9
+1135 silly saveTree | | | | | | | | `-- ms@2.0.0
+1135 silly saveTree | | | | | | | +-- define-property@0.2.5
+1135 silly saveTree | | | | | | | +-- extend-shallow@2.0.1
+1135 silly saveTree | | | | | | | +-- map-cache@0.2.2
+1135 silly saveTree | | | | | | | +-- source-map@0.5.7
+1135 silly saveTree | | | | | | | `-- use@3.1.1
+1135 silly saveTree | | | | | | +-- split-string@3.1.0
+1135 silly saveTree | | | | | | `-- to-regex@3.0.2
+1135 silly saveTree | | | | | |   +-- define-property@2.0.2
+1135 silly saveTree | | | | | |   | `-- is-descriptor@1.0.2
+1135 silly saveTree | | | | | |   |   +-- is-accessor-descriptor@1.0.0
+1135 silly saveTree | | | | | |   |   `-- is-data-descriptor@1.0.0
+1135 silly saveTree | | | | | |   +-- regex-not@1.0.2
+1135 silly saveTree | | | | | |   | `-- safe-regex@1.1.0
+1135 silly saveTree | | | | | |   |   `-- ret@0.1.15
+1135 silly saveTree | | | | | |   `-- safe-regex@1.1.0
+1135 silly saveTree | | | | | +-- define-property@2.0.2
+1135 silly saveTree | | | | | +-- extend-shallow@3.0.2
+1135 silly saveTree | | | | | +-- extglob@2.0.4
+1135 silly saveTree | | | | | | +-- define-property@1.0.0
+1135 silly saveTree | | | | | | | `-- is-descriptor@1.0.2
+1135 silly saveTree | | | | | | |   +-- is-accessor-descriptor@1.0.0
+1135 silly saveTree | | | | | | |   `-- is-data-descriptor@1.0.0
+1135 silly saveTree | | | | | | +-- expand-brackets@2.1.4
+1135 silly saveTree | | | | | | | +-- debug@2.6.9
+1135 silly saveTree | | | | | | | | `-- ms@2.0.0
+1135 silly saveTree | | | | | | | +-- define-property@0.2.5
+1135 silly saveTree | | | | | | | +-- extend-shallow@2.0.1
+1135 silly saveTree | | | | | | | `-- posix-character-classes@0.1.1
+1135 silly saveTree | | | | | | +-- extend-shallow@2.0.1
+1135 silly saveTree | | | | | | `-- fragment-cache@0.2.1
+1135 silly saveTree | | | | | +-- fragment-cache@0.2.1
+1135 silly saveTree | | | | | +-- kind-of@6.0.3
+1135 silly saveTree | | | | | +-- nanomatch@1.2.13
+1135 silly saveTree | | | | | | +-- is-windows@1.0.2
+1135 silly saveTree | | | | | | `-- object.pick@1.3.0
+1135 silly saveTree | | | | | +-- object.pick@1.3.0
+1135 silly saveTree | | | | | +-- regex-not@1.0.2
+1135 silly saveTree | | | | | +-- snapdragon@0.8.2
+1135 silly saveTree | | | | | `-- to-regex@3.0.2
+1135 silly saveTree | | | | `-- normalize-path@2.1.1
+1135 silly saveTree | | | |   `-- remove-trailing-separator@1.1.0
+1135 silly saveTree | | | +-- async-each@1.0.3
+1135 silly saveTree | | | +-- braces@2.3.2
+1135 silly saveTree | | | +-- fsevents@1.2.13
+1135 silly saveTree | | | +-- glob-parent@3.1.0
+1135 silly saveTree | | | | +-- is-glob@3.1.0
+1135 silly saveTree | | | | `-- path-dirname@1.0.2
+1135 silly saveTree | | | +-- is-binary-path@1.0.1
+1135 silly saveTree | | | | `-- binary-extensions@1.13.1
+1135 silly saveTree | | | +-- readdirp@2.2.1
+1135 silly saveTree | | | `-- upath@1.2.0
+1135 silly saveTree | | +-- compression@1.7.4
+1135 silly saveTree | | | +-- accepts@1.3.7
+1135 silly saveTree | | | | +-- mime-types@2.1.30
+1135 silly saveTree | | | | | `-- mime-db@1.47.0
+1135 silly saveTree | | | | `-- negotiator@0.6.2
+1135 silly saveTree | | | +-- bytes@3.0.0
+1135 silly saveTree | | | +-- compressible@2.0.18
+1135 silly saveTree | | | +-- debug@2.6.9
+1135 silly saveTree | | | | `-- ms@2.0.0
+1135 silly saveTree | | | +-- on-headers@1.0.2
+1135 silly saveTree | | | `-- vary@1.1.2
+1135 silly saveTree | | +-- connect-history-api-fallback@1.6.0
+1135 silly saveTree | | +-- del@4.1.1
+1135 silly saveTree | | | +-- @types/glob@7.1.3
+1135 silly saveTree | | | | +-- @types/minimatch@3.0.4
+1135 silly saveTree | | | | `-- @types/node@15.0.1
+1135 silly saveTree | | | +-- globby@6.1.0
+1135 silly saveTree | | | | +-- array-union@1.0.2
+1135 silly saveTree | | | | | `-- array-uniq@1.0.3
+1135 silly saveTree | | | | +-- pify@2.3.0
+1135 silly saveTree | | | | `-- pinkie-promise@2.0.1
+1135 silly saveTree | | | |   `-- pinkie@2.0.4
+1135 silly saveTree | | | +-- is-path-cwd@2.2.0
+1135 silly saveTree | | | +-- is-path-in-cwd@2.1.0
+1135 silly saveTree | | | | `-- is-path-inside@2.1.0
+1135 silly saveTree | | | |   `-- path-is-inside@1.0.2
+1135 silly saveTree | | | +-- p-map@2.1.0
+1135 silly saveTree | | | `-- rimraf@2.7.1
+1135 silly saveTree | | +-- express@4.17.1
+1135 silly saveTree | | | +-- array-flatten@1.1.1
+1135 silly saveTree | | | +-- body-parser@1.19.0
+1135 silly saveTree | | | | +-- bytes@3.1.0
+1135 silly saveTree | | | | +-- content-type@1.0.4
+1135 silly saveTree | | | | +-- debug@2.6.9
+1135 silly saveTree | | | | | `-- ms@2.0.0
+1135 silly saveTree | | | | +-- depd@1.1.2
+1135 silly saveTree | | | | +-- http-errors@1.7.2
+1135 silly saveTree | | | | | +-- inherits@2.0.3
+1135 silly saveTree | | | | | +-- setprototypeof@1.1.1
+1135 silly saveTree | | | | | +-- statuses@1.5.0
+1135 silly saveTree | | | | | `-- toidentifier@1.0.0
+1135 silly saveTree | | | | +-- iconv-lite@0.4.24
+1135 silly saveTree | | | | +-- on-finished@2.3.0
+1135 silly saveTree | | | | | `-- ee-first@1.1.1
+1135 silly saveTree | | | | +-- qs@6.7.0
+1135 silly saveTree | | | | +-- raw-body@2.4.0
+1135 silly saveTree | | | | | +-- bytes@3.1.0
+1135 silly saveTree | | | | | +-- iconv-lite@0.4.24
+1135 silly saveTree | | | | | `-- unpipe@1.0.0
+1135 silly saveTree | | | | `-- type-is@1.6.18
+1135 silly saveTree | | | |   `-- media-typer@0.3.0
+1135 silly saveTree | | | +-- content-disposition@0.5.3
+1135 silly saveTree | | | +-- content-type@1.0.4
+1135 silly saveTree | | | +-- cookie-signature@1.0.6
+1135 silly saveTree | | | +-- cookie@0.4.0
+1135 silly saveTree | | | +-- debug@2.6.9
+1135 silly saveTree | | | | `-- ms@2.0.0
+1135 silly saveTree | | | +-- depd@1.1.2
+1135 silly saveTree | | | +-- encodeurl@1.0.2
+1135 silly saveTree | | | +-- escape-html@1.0.3
+1135 silly saveTree | | | +-- etag@1.8.1
+1135 silly saveTree | | | +-- finalhandler@1.1.2
+1135 silly saveTree | | | | +-- debug@2.6.9
+1135 silly saveTree | | | | | `-- ms@2.0.0
+1135 silly saveTree | | | | `-- parseurl@1.3.3
+1135 silly saveTree | | | +-- fresh@0.5.2
+1135 silly saveTree | | | +-- merge-descriptors@1.0.1
+1135 silly saveTree | | | +-- methods@1.1.2
+1135 silly saveTree | | | +-- on-finished@2.3.0
+1135 silly saveTree | | | +-- parseurl@1.3.3
+1135 silly saveTree | | | +-- path-to-regexp@0.1.7
+1135 silly saveTree | | | +-- proxy-addr@2.0.6
+1135 silly saveTree | | | | +-- forwarded@0.1.2
+1135 silly saveTree | | | | `-- ipaddr.js@1.9.1
+1135 silly saveTree | | | +-- qs@6.7.0
+1135 silly saveTree | | | +-- send@0.17.1
+1135 silly saveTree | | | | +-- debug@2.6.9
+1135 silly saveTree | | | | | `-- ms@2.0.0
+1135 silly saveTree | | | | +-- destroy@1.0.4
+1135 silly saveTree | | | | `-- ms@2.1.1
+1135 silly saveTree | | | +-- serve-static@1.14.1
+1135 silly saveTree | | | +-- setprototypeof@1.1.1
+1135 silly saveTree | | | +-- statuses@1.5.0
+1135 silly saveTree | | | +-- type-is@1.6.18
+1135 silly saveTree | | | `-- utils-merge@1.0.1
+1135 silly saveTree | | +-- html-entities@1.4.0
+1135 silly saveTree | | +-- http-proxy-middleware@0.19.1
+1135 silly saveTree | | | +-- http-proxy@1.18.1
+1135 silly saveTree | | | | +-- eventemitter3@4.0.7
+1135 silly saveTree | | | | +-- follow-redirects@1.14.0
+1135 silly saveTree | | | | `-- requires-port@1.0.0
+1135 silly saveTree | | | `-- micromatch@3.1.10
+1135 silly saveTree | | |   `-- braces@2.3.2
+1135 silly saveTree | | |     +-- extend-shallow@2.0.1
+1135 silly saveTree | | |     `-- fill-range@4.0.0
+1135 silly saveTree | | |       +-- extend-shallow@2.0.1
+1135 silly saveTree | | |       +-- is-number@3.0.0
+1135 silly saveTree | | |       | `-- kind-of@3.2.2
+1135 silly saveTree | | |       `-- to-regex-range@2.1.1
+1135 silly saveTree | | +-- import-local@2.0.0
+1135 silly saveTree | | | `-- resolve-cwd@2.0.0
+1135 silly saveTree | | +-- internal-ip@4.3.0
+1135 silly saveTree | | | `-- default-gateway@4.2.0
+1135 silly saveTree | | |   +-- execa@1.0.0
+1135 silly saveTree | | |   | +-- cross-spawn@6.0.5
+1135 silly saveTree | | |   | | +-- nice-try@1.0.5
+1135 silly saveTree | | |   | | +-- path-key@2.0.1
+1135 silly saveTree | | |   | | +-- semver@5.7.1
+1135 silly saveTree | | |   | | +-- shebang-command@1.2.0
+1135 silly saveTree | | |   | | | `-- shebang-regex@1.0.0
+1135 silly saveTree | | |   | | `-- which@1.3.1
+1135 silly saveTree | | |   | |   `-- isexe@2.0.0
+1135 silly saveTree | | |   | +-- get-stream@4.1.0
+1135 silly saveTree | | |   | | `-- pump@3.0.0
+1135 silly saveTree | | |   | |   `-- end-of-stream@1.4.4
+1135 silly saveTree | | |   | +-- is-stream@1.1.0
+1135 silly saveTree | | |   | +-- npm-run-path@2.0.2
+1135 silly saveTree | | |   | +-- p-finally@1.0.0
+1135 silly saveTree | | |   | +-- signal-exit@3.0.3
+1135 silly saveTree | | |   | `-- strip-eof@1.0.0
+1135 silly saveTree | | |   `-- ip-regex@2.1.0
+1135 silly saveTree | | +-- ip@1.1.5
+1135 silly saveTree | | +-- is-absolute-url@3.0.3
+1135 silly saveTree | | +-- killable@1.0.1
+1135 silly saveTree | | +-- loglevel@1.7.1
+1135 silly saveTree | | +-- opn@5.5.0
+1135 silly saveTree | | | `-- is-wsl@1.1.0
+1135 silly saveTree | | +-- p-retry@3.0.1
+1135 silly saveTree | | | `-- retry@0.12.0
+1135 silly saveTree | | +-- portfinder@1.0.28
+1135 silly saveTree | | | +-- async@2.6.3
+1135 silly saveTree | | | `-- debug@3.2.7
+1135 silly saveTree | | +-- schema-utils@1.0.0
+1135 silly saveTree | | | `-- ajv@6.12.6
+1135 silly saveTree | | +-- selfsigned@1.10.8
+1135 silly saveTree | | | `-- node-forge@0.10.0
+1135 silly saveTree | | +-- semver@6.3.0
+1135 silly saveTree | | +-- serve-index@1.9.1
+1135 silly saveTree | | | +-- batch@0.6.1
+1135 silly saveTree | | | +-- debug@2.6.9
+1135 silly saveTree | | | | `-- ms@2.0.0
+1135 silly saveTree | | | `-- http-errors@1.6.3
+1135 silly saveTree | | |   +-- inherits@2.0.3
+1135 silly saveTree | | |   `-- setprototypeof@1.1.0
+1135 silly saveTree | | +-- sockjs-client@1.4.0
+1135 silly saveTree | | | +-- debug@3.2.7
+1135 silly saveTree | | | +-- eventsource@1.1.0
+1135 silly saveTree | | | | `-- original@1.0.2
+1135 silly saveTree | | | |   `-- url-parse@1.5.1
+1135 silly saveTree | | | |     `-- querystringify@2.2.0
+1135 silly saveTree | | | +-- faye-websocket@0.11.3
+1135 silly saveTree | | | | `-- websocket-driver@0.6.5
+1135 silly saveTree | | | |   `-- websocket-extensions@0.1.4
+1135 silly saveTree | | | +-- json3@3.3.3
+1135 silly saveTree | | | `-- url-parse@1.5.1
+1135 silly saveTree | | +-- sockjs@0.3.20
+1135 silly saveTree | | | `-- faye-websocket@0.10.0
+1135 silly saveTree | | +-- spdy@4.0.2
+1135 silly saveTree | | | +-- handle-thing@2.0.1
+1135 silly saveTree | | | +-- http-deceiver@1.2.7
+1135 silly saveTree | | | +-- select-hose@2.0.0
+1135 silly saveTree | | | `-- spdy-transport@3.0.0
+1135 silly saveTree | | |   +-- detect-node@2.0.5
+1135 silly saveTree | | |   +-- hpack.js@2.1.6
+1135 silly saveTree | | |   | +-- obuf@1.1.2
+1135 silly saveTree | | |   | `-- wbuf@1.7.3
+1135 silly saveTree | | |   |   `-- minimalistic-assert@1.0.1
+1135 silly saveTree | | |   +-- obuf@1.1.2
+1135 silly saveTree | | |   +-- readable-stream@3.6.0
+1135 silly saveTree | | |   `-- wbuf@1.7.3
+1135 silly saveTree | | +-- strip-ansi@3.0.1
+1135 silly saveTree | | | `-- ansi-regex@2.1.1
+1135 silly saveTree | | +-- supports-color@6.1.0
+1135 silly saveTree | | +-- url@0.11.0
+1135 silly saveTree | | | +-- punycode@1.3.2
+1135 silly saveTree | | | `-- querystring@0.2.0
+1135 silly saveTree | | +-- ws@6.2.1
+1135 silly saveTree | | | `-- async-limiter@1.0.1
+1135 silly saveTree | | `-- yargs@13.3.2
+1135 silly saveTree | |   +-- cliui@5.0.0
+1135 silly saveTree | |   | +-- string-width@3.1.0
+1135 silly saveTree | |   | | +-- emoji-regex@7.0.3
+1135 silly saveTree | |   | | +-- is-fullwidth-code-point@2.0.0
+1135 silly saveTree | |   | | `-- strip-ansi@5.2.0
+1135 silly saveTree | |   | |   `-- ansi-regex@4.1.0
+1135 silly saveTree | |   | +-- strip-ansi@5.2.0
+1135 silly saveTree | |   | | `-- ansi-regex@4.1.0
+1135 silly saveTree | |   | `-- wrap-ansi@5.1.0
+1135 silly saveTree | |   |   `-- strip-ansi@5.2.0
+1135 silly saveTree | |   |     `-- ansi-regex@4.1.0
+1135 silly saveTree | |   +-- get-caller-file@2.0.5
+1135 silly saveTree | |   +-- require-directory@2.1.1
+1135 silly saveTree | |   +-- require-main-filename@2.0.0
+1135 silly saveTree | |   +-- set-blocking@2.0.0
+1135 silly saveTree | |   +-- string-width@3.1.0
+1135 silly saveTree | |   +-- which-module@2.0.0
+1135 silly saveTree | |   +-- y18n@4.0.3
+1135 silly saveTree | |   `-- yargs-parser@13.1.2
+1135 silly saveTree | |     +-- camelcase@5.3.1
+1135 silly saveTree | |     `-- decamelize@1.2.0
+1135 silly saveTree | +-- webpack-merge@4.2.2
+1135 silly saveTree | +-- webpack-sources@1.4.3
+1135 silly saveTree | +-- webpack-subresource-integrity@1.4.1
+1135 silly saveTree | +-- webpack@4.44.1
+1135 silly saveTree | | +-- @webassemblyjs/ast@1.9.0
+1135 silly saveTree | | | +-- @webassemblyjs/helper-module-context@1.9.0
+1135 silly saveTree | | | +-- @webassemblyjs/helper-wasm-bytecode@1.9.0
+1135 silly saveTree | | | `-- @webassemblyjs/wast-parser@1.9.0
+1135 silly saveTree | | |   +-- @webassemblyjs/floating-point-hex-parser@1.9.0
+1135 silly saveTree | | |   +-- @webassemblyjs/helper-api-error@1.9.0
+1135 silly saveTree | | |   +-- @webassemblyjs/helper-code-frame@1.9.0
+1135 silly saveTree | | |   | `-- @webassemblyjs/wast-printer@1.9.0
+1135 silly saveTree | | |   |   `-- @xtuc/long@4.2.2
+1135 silly saveTree | | |   +-- @webassemblyjs/helper-fsm@1.9.0
+1135 silly saveTree | | |   `-- @xtuc/long@4.2.2
+1135 silly saveTree | | +-- @webassemblyjs/helper-module-context@1.9.0
+1135 silly saveTree | | +-- @webassemblyjs/wasm-edit@1.9.0
+1135 silly saveTree | | | +-- @webassemblyjs/helper-buffer@1.9.0
+1135 silly saveTree | | | +-- @webassemblyjs/helper-wasm-section@1.9.0
+1135 silly saveTree | | | | `-- @webassemblyjs/wasm-gen@1.9.0
+1135 silly saveTree | | | |   +-- @webassemblyjs/ieee754@1.9.0
+1135 silly saveTree | | | |   | `-- @xtuc/ieee754@1.2.0
+1135 silly saveTree | | | |   +-- @webassemblyjs/leb128@1.9.0
+1135 silly saveTree | | | |   `-- @webassemblyjs/utf8@1.9.0
+1135 silly saveTree | | | +-- @webassemblyjs/wasm-gen@1.9.0
+1135 silly saveTree | | | +-- @webassemblyjs/wasm-opt@1.9.0
+1135 silly saveTree | | | | `-- @webassemblyjs/wasm-parser@1.9.0
+1135 silly saveTree | | | `-- @webassemblyjs/wasm-parser@1.9.0
+1135 silly saveTree | | +-- @webassemblyjs/wasm-parser@1.9.0
+1135 silly saveTree | | +-- acorn@6.4.2
+1135 silly saveTree | | +-- ajv@6.12.6
+1135 silly saveTree | | +-- chrome-trace-event@1.0.3
+1135 silly saveTree | | +-- eslint-scope@4.0.3
+1135 silly saveTree | | | +-- esrecurse@4.3.0
+1135 silly saveTree | | | | `-- estraverse@5.2.0
+1135 silly saveTree | | | `-- estraverse@4.3.0
+1135 silly saveTree | | +-- loader-runner@2.4.0
+1135 silly saveTree | | +-- loader-utils@1.4.0
+1135 silly saveTree | | | `-- json5@1.0.1
+1135 silly saveTree | | +-- memory-fs@0.4.1
+1135 silly saveTree | | +-- micromatch@3.1.10
+1135 silly saveTree | | | `-- braces@2.3.2
+1135 silly saveTree | | |   +-- extend-shallow@2.0.1
+1135 silly saveTree | | |   `-- fill-range@4.0.0
+1135 silly saveTree | | |     +-- extend-shallow@2.0.1
+1135 silly saveTree | | |     +-- is-number@3.0.0
+1135 silly saveTree | | |     | `-- kind-of@3.2.2
+1135 silly saveTree | | |     `-- to-regex-range@2.1.1
+1135 silly saveTree | | +-- node-libs-browser@2.2.1
+1135 silly saveTree | | | +-- browserify-zlib@0.2.0
+1135 silly saveTree | | | | `-- pako@1.0.11
+1135 silly saveTree | | | +-- buffer@4.9.2
+1135 silly saveTree | | | | +-- base64-js@1.5.1
+1135 silly saveTree | | | | `-- ieee754@1.2.1
+1135 silly saveTree | | | +-- console-browserify@1.2.0
+1135 silly saveTree | | | +-- constants-browserify@1.0.0
+1135 silly saveTree | | | +-- crypto-browserify@3.12.0
+1135 silly saveTree | | | | +-- browserify-cipher@1.0.1
+1135 silly saveTree | | | | | +-- browserify-aes@1.2.0
+1135 silly saveTree | | | | | | +-- buffer-xor@1.0.3
+1135 silly saveTree | | | | | | +-- cipher-base@1.0.4
+1135 silly saveTree | | | | | | +-- create-hash@1.2.0
+1135 silly saveTree | | | | | | | +-- md5.js@1.3.5
+1135 silly saveTree | | | | | | | | `-- hash-base@3.1.0
+1135 silly saveTree | | | | | | | |   +-- readable-stream@3.6.0
+1135 silly saveTree | | | | | | | |   `-- safe-buffer@5.2.1
+1135 silly saveTree | | | | | | | +-- ripemd160@2.0.2
+1135 silly saveTree | | | | | | | `-- sha.js@2.4.11
+1135 silly saveTree | | | | | | `-- evp_bytestokey@1.0.3
+1135 silly saveTree | | | | | +-- browserify-des@1.0.2
+1135 silly saveTree | | | | | | `-- des.js@1.0.1
+1135 silly saveTree | | | | | `-- evp_bytestokey@1.0.3
+1135 silly saveTree | | | | +-- browserify-sign@4.2.1
+1135 silly saveTree | | | | | +-- bn.js@5.2.0
+1135 silly saveTree | | | | | +-- browserify-rsa@4.1.0
+1135 silly saveTree | | | | | +-- create-hmac@1.1.7
+1135 silly saveTree | | | | | +-- elliptic@6.5.4
+1135 silly saveTree | | | | | | +-- bn.js@4.12.0
+1135 silly saveTree | | | | | | +-- brorand@1.1.0
+1135 silly saveTree | | | | | | +-- hash.js@1.1.7
+1135 silly saveTree | | | | | | +-- hmac-drbg@1.0.1
+1135 silly saveTree | | | | | | | `-- minimalistic-crypto-utils@1.0.1
+1135 silly saveTree | | | | | | `-- minimalistic-crypto-utils@1.0.1
+1135 silly saveTree | | | | | +-- parse-asn1@5.1.6
+1135 silly saveTree | | | | | | +-- asn1.js@5.4.1
+1135 silly saveTree | | | | | | | `-- bn.js@4.12.0
+1135 silly saveTree | | | | | | `-- pbkdf2@3.1.2
+1135 silly saveTree | | | | | +-- readable-stream@3.6.0
+1135 silly saveTree | | | | | `-- safe-buffer@5.2.1
+1135 silly saveTree | | | | +-- create-ecdh@4.0.4
+1135 silly saveTree | | | | | `-- bn.js@4.12.0
+1135 silly saveTree | | | | +-- create-hash@1.2.0
+1135 silly saveTree | | | | +-- create-hmac@1.1.7
+1135 silly saveTree | | | | +-- diffie-hellman@5.0.3
+1135 silly saveTree | | | | | +-- bn.js@4.12.0
+1135 silly saveTree | | | | | `-- miller-rabin@4.0.1
+1135 silly saveTree | | | | |   `-- bn.js@4.12.0
+1135 silly saveTree | | | | +-- pbkdf2@3.1.2
+1135 silly saveTree | | | | +-- public-encrypt@4.0.3
+1135 silly saveTree | | | | | `-- bn.js@4.12.0
+1135 silly saveTree | | | | `-- randomfill@1.0.4
+1135 silly saveTree | | | +-- domain-browser@1.2.0
+1135 silly saveTree | | | +-- events@3.3.0
+1135 silly saveTree | | | +-- https-browserify@1.0.0
+1135 silly saveTree | | | +-- os-browserify@0.3.0
+1135 silly saveTree | | | +-- path-browserify@0.0.1
+1135 silly saveTree | | | +-- process@0.11.10
+1135 silly saveTree | | | +-- punycode@1.4.1
+1135 silly saveTree | | | +-- querystring-es3@0.2.1
+1135 silly saveTree | | | +-- stream-browserify@2.0.2
+1135 silly saveTree | | | +-- stream-http@2.8.3
+1135 silly saveTree | | | | +-- builtin-status-codes@3.0.0
+1135 silly saveTree | | | | +-- to-arraybuffer@1.0.1
+1135 silly saveTree | | | | `-- xtend@4.0.2
+1135 silly saveTree | | | +-- timers-browserify@2.0.12
+1135 silly saveTree | | | | `-- setimmediate@1.0.5
+1135 silly saveTree | | | +-- tty-browserify@0.0.0
+1135 silly saveTree | | | +-- util@0.11.1
+1135 silly saveTree | | | | `-- inherits@2.0.3
+1135 silly saveTree | | | `-- vm-browserify@1.1.2
+1135 silly saveTree | | +-- schema-utils@1.0.0
+1135 silly saveTree | | +-- terser-webpack-plugin@1.4.5
+1135 silly saveTree | | | +-- cacache@12.0.4
+1135 silly saveTree | | | | +-- bluebird@3.7.2
+1135 silly saveTree | | | | +-- chownr@1.1.4
+1135 silly saveTree | | | | +-- figgy-pudding@3.5.2
+1135 silly saveTree | | | | +-- lru-cache@5.1.1
+1135 silly saveTree | | | | | `-- yallist@3.1.1
+1135 silly saveTree | | | | +-- mississippi@3.0.0
+1135 silly saveTree | | | | | +-- concat-stream@1.6.2
+1135 silly saveTree | | | | | | `-- typedarray@0.0.6
+1135 silly saveTree | | | | | +-- duplexify@3.7.1
+1135 silly saveTree | | | | | | `-- stream-shift@1.0.1
+1135 silly saveTree | | | | | +-- flush-write-stream@1.1.1
+1135 silly saveTree | | | | | +-- from2@2.3.0
+1135 silly saveTree | | | | | +-- parallel-transform@1.2.0
+1135 silly saveTree | | | | | | `-- cyclist@1.0.1
+1135 silly saveTree | | | | | +-- pumpify@1.5.1
+1135 silly saveTree | | | | | | `-- pump@2.0.1
+1135 silly saveTree | | | | | +-- stream-each@1.2.3
+1135 silly saveTree | | | | | `-- through2@2.0.5
+1135 silly saveTree | | | | +-- move-concurrently@1.0.1
+1135 silly saveTree | | | | | +-- aproba@1.2.0
+1135 silly saveTree | | | | | +-- copy-concurrently@1.0.5
+1135 silly saveTree | | | | | | +-- fs-write-stream-atomic@1.0.10
+1135 silly saveTree | | | | | | | `-- iferr@0.1.5
+1135 silly saveTree | | | | | | +-- iferr@0.1.5
+1135 silly saveTree | | | | | | +-- rimraf@2.7.1
+1135 silly saveTree | | | | | | `-- run-queue@1.0.3
+1135 silly saveTree | | | | | +-- fs-write-stream-atomic@1.0.10
+1135 silly saveTree | | | | | +-- rimraf@2.7.1
+1135 silly saveTree | | | | | `-- run-queue@1.0.3
+1135 silly saveTree | | | | +-- rimraf@2.7.1
+1135 silly saveTree | | | | `-- ssri@6.0.2
+1135 silly saveTree | | | +-- find-cache-dir@2.1.0
+1135 silly saveTree | | | +-- is-wsl@1.1.0
+1135 silly saveTree | | | +-- source-map@0.6.1
+1135 silly saveTree | | | +-- terser@4.8.0
+1135 silly saveTree | | | `-- worker-farm@1.7.0
+1135 silly saveTree | | `-- watchpack@1.7.5
+1135 silly saveTree | |   `-- watchpack-chokidar2@2.0.1
+1135 silly saveTree | |     `-- chokidar@2.1.8
+1135 silly saveTree | |       +-- anymatch@2.0.0
+1135 silly saveTree | |       | +-- micromatch@3.1.10
+1135 silly saveTree | |       | | `-- braces@2.3.2
+1135 silly saveTree | |       | |   +-- extend-shallow@2.0.1
+1135 silly saveTree | |       | |   `-- fill-range@4.0.0
+1135 silly saveTree | |       | |     +-- extend-shallow@2.0.1
+1135 silly saveTree | |       | |     +-- is-number@3.0.0
+1135 silly saveTree | |       | |     | `-- kind-of@3.2.2
+1135 silly saveTree | |       | |     `-- to-regex-range@2.1.1
+1135 silly saveTree | |       | `-- normalize-path@2.1.1
+1135 silly saveTree | |       +-- braces@2.3.2
+1135 silly saveTree | |       +-- fsevents@1.2.13
+1135 silly saveTree | |       +-- glob-parent@3.1.0
+1135 silly saveTree | |       | `-- is-glob@3.1.0
+1135 silly saveTree | |       +-- is-binary-path@1.0.1
+1135 silly saveTree | |       | `-- binary-extensions@1.13.1
+1135 silly saveTree | |       `-- readdirp@2.2.1
+1135 silly saveTree | `-- worker-plugin@5.0.0
+1135 silly saveTree |   `-- loader-utils@1.4.0
+1135 silly saveTree |     `-- json5@1.0.1
+1135 silly saveTree +-- @angular/animations@10.1.4
+1135 silly saveTree | `-- tslib@2.2.0
+1135 silly saveTree +-- @angular/cdk@10.2.4
+1135 silly saveTree | +-- parse5@5.1.1
+1135 silly saveTree | `-- tslib@2.2.0
+1135 silly saveTree +-- @angular/cli@10.1.4
+1135 silly saveTree +-- @angular/common@10.1.4
+1135 silly saveTree | `-- tslib@2.2.0
+1135 silly saveTree +-- @angular/compiler-cli@10.1.4
+1135 silly saveTree +-- @angular/compiler@10.1.4
+1135 silly saveTree | `-- tslib@2.2.0
+1135 silly saveTree +-- @angular/core@10.1.4
+1135 silly saveTree | `-- tslib@2.2.0
+1135 silly saveTree +-- @angular/forms@10.1.4
+1135 silly saveTree | `-- tslib@2.2.0
+1135 silly saveTree +-- @angular/language-service@10.1.4
+1135 silly saveTree +-- @angular/material@10.2.4
+1135 silly saveTree | `-- tslib@2.2.0
+1135 silly saveTree +-- @angular/platform-browser-dynamic@10.1.4
+1135 silly saveTree | `-- tslib@2.2.0
+1135 silly saveTree +-- @angular/platform-browser@10.1.4
+1135 silly saveTree | `-- tslib@2.2.0
+1135 silly saveTree +-- @angular/platform-server@10.1.4
+1135 silly saveTree | +-- domino@2.1.6
+1135 silly saveTree | +-- tslib@2.2.0
+1135 silly saveTree | `-- xhr2@0.2.1
+1135 silly saveTree +-- @angular/router@10.1.4
+1135 silly saveTree | `-- tslib@2.2.0
+1135 silly saveTree +-- @types/bootstrap@4.5.0
+1135 silly saveTree | +-- @types/jquery@3.5.2
+1135 silly saveTree | `-- popper.js@1.16.1
+1135 silly saveTree +-- @types/chartist@0.11.0
+1135 silly saveTree +-- @types/googlemaps@3.39.14
+1135 silly saveTree +-- @types/jasmine@3.5.14
+1135 silly saveTree +-- @types/jquery@3.5.2
+1135 silly saveTree +-- @types/node@14.11.5
+1135 silly saveTree +-- ajv@6.12.5
+1135 silly saveTree +-- arrive@2.4.1
+1135 silly saveTree +-- bootstrap-material-design@4.1.3
+1135 silly saveTree +-- bootstrap-notify@3.1.3
+1135 silly saveTree +-- bootstrap@4.5.2
+1135 silly saveTree +-- chartist@0.11.4
+1135 silly saveTree +-- classlist.js@1.1.20150312
+1135 silly saveTree +-- codelyzer@6.0.1
+1135 silly saveTree | `-- rxjs@6.6.3
+1135 silly saveTree +-- core-js@3.6.5
+1135 silly saveTree +-- eslint@7.25.0
+1135 silly saveTree | +-- @babel/code-frame@7.12.11
+1135 silly saveTree | +-- @eslint/eslintrc@0.4.0
+1135 silly saveTree | | +-- espree@7.3.1
+1135 silly saveTree | | | +-- acorn-jsx@5.3.1
+1135 silly saveTree | | | +-- acorn@7.4.1
+1135 silly saveTree | | | `-- eslint-visitor-keys@1.3.0
+1135 silly saveTree | | +-- globals@12.4.0
+1135 silly saveTree | | | `-- type-fest@0.8.1
+1135 silly saveTree | | +-- ignore@4.0.6
+1135 silly saveTree | | +-- import-fresh@3.3.0
+1135 silly saveTree | | | +-- parent-module@1.0.1
+1135 silly saveTree | | | | `-- callsites@3.1.0
+1135 silly saveTree | | | `-- resolve-from@4.0.0
+1135 silly saveTree | | `-- strip-json-comments@3.1.1
+1135 silly saveTree | +-- chalk@4.1.1
+1135 silly saveTree | | +-- ansi-styles@4.3.0
+1135 silly saveTree | | | `-- color-convert@2.0.1
+1135 silly saveTree | | |   `-- color-name@1.1.4
+1135 silly saveTree | | `-- supports-color@7.2.0
+1135 silly saveTree | |   `-- has-flag@4.0.0
+1135 silly saveTree | +-- cross-spawn@7.0.3
+1135 silly saveTree | | +-- path-key@3.1.1
+1135 silly saveTree | | +-- shebang-command@2.0.0
+1135 silly saveTree | | | `-- shebang-regex@3.0.0
+1135 silly saveTree | | `-- which@2.0.2
+1135 silly saveTree | +-- doctrine@3.0.0
+1135 silly saveTree | +-- enquirer@2.3.6
+1135 silly saveTree | | `-- ansi-colors@4.1.1
+1135 silly saveTree | +-- eslint-scope@5.1.1
+1135 silly saveTree | +-- eslint-utils@2.1.0
+1135 silly saveTree | | `-- eslint-visitor-keys@1.3.0
+1135 silly saveTree | +-- eslint-visitor-keys@2.1.0
+1135 silly saveTree | +-- espree@7.3.1
+1135 silly saveTree | +-- esquery@1.4.0
+1135 silly saveTree | | `-- estraverse@5.2.0
+1135 silly saveTree | +-- file-entry-cache@6.0.1
+1135 silly saveTree | | `-- flat-cache@3.0.4
+1135 silly saveTree | |   `-- flatted@3.1.1
+1135 silly saveTree | +-- functional-red-black-tree@1.0.1
+1135 silly saveTree | +-- globals@13.8.0
+1135 silly saveTree | | `-- type-fest@0.20.2
+1135 silly saveTree | +-- ignore@4.0.6
+1135 silly saveTree | +-- import-fresh@3.3.0
+1135 silly saveTree | | `-- resolve-from@4.0.0
+1135 silly saveTree | +-- json-stable-stringify-without-jsonify@1.0.1
+1135 silly saveTree | +-- levn@0.4.1
+1135 silly saveTree | | +-- prelude-ls@1.2.1
+1135 silly saveTree | | `-- type-check@0.4.0
+1135 silly saveTree | +-- natural-compare@1.4.0
+1135 silly saveTree | +-- optionator@0.9.1
+1135 silly saveTree | | +-- deep-is@0.1.3
+1135 silly saveTree | | +-- fast-levenshtein@2.0.6
+1135 silly saveTree | | `-- word-wrap@1.2.3
+1135 silly saveTree | +-- progress@2.0.3
+1135 silly saveTree | +-- regexpp@3.1.0
+1135 silly saveTree | +-- strip-ansi@6.0.0
+1135 silly saveTree | | `-- ansi-regex@5.0.0
+1135 silly saveTree | +-- strip-json-comments@3.1.1
+1135 silly saveTree | +-- table@6.6.0
+1135 silly saveTree | | +-- ajv@8.2.0
+1135 silly saveTree | | | +-- json-schema-traverse@1.0.0
+1135 silly saveTree | | | `-- require-from-string@2.0.2
+1135 silly saveTree | | +-- lodash.flatten@4.4.0
+1135 silly saveTree | | +-- lodash.truncate@4.4.2
+1135 silly saveTree | | +-- slice-ansi@4.0.0
+1135 silly saveTree | | | +-- ansi-styles@4.3.0
+1135 silly saveTree | | | | `-- color-convert@2.0.1
+1135 silly saveTree | | | |   `-- color-name@1.1.4
+1135 silly saveTree | | | +-- astral-regex@2.0.0
+1135 silly saveTree | | | `-- is-fullwidth-code-point@3.0.0
+1135 silly saveTree | | +-- string-width@4.2.2
+1135 silly saveTree | | | +-- emoji-regex@8.0.0
+1135 silly saveTree | | | +-- is-fullwidth-code-point@3.0.0
+1135 silly saveTree | | | `-- strip-ansi@6.0.0
+1135 silly saveTree | | |   `-- ansi-regex@5.0.0
+1135 silly saveTree | | `-- strip-ansi@6.0.0
+1135 silly saveTree | +-- text-table@0.2.0
+1135 silly saveTree | `-- v8-compile-cache@2.3.0
+1135 silly saveTree +-- express@4.17.1
+1135 silly saveTree | +-- array-flatten@1.1.1
+1135 silly saveTree | `-- debug@2.6.9
+1135 silly saveTree |   `-- ms@2.0.0
+1135 silly saveTree +-- googleapis@61.0.0
+1135 silly saveTree | +-- google-auth-library@6.1.6
+1135 silly saveTree | | +-- arrify@2.0.1
+1135 silly saveTree | | +-- ecdsa-sig-formatter@1.0.11
+1135 silly saveTree | | +-- fast-text-encoding@1.0.3
+1135 silly saveTree | | +-- gaxios@4.2.1
+1135 silly saveTree | | | +-- abort-controller@3.0.0
+1135 silly saveTree | | | | `-- event-target-shim@5.0.1
+1135 silly saveTree | | | +-- extend@3.0.2
+1135 silly saveTree | | | +-- https-proxy-agent@5.0.0
+1135 silly saveTree | | | | `-- agent-base@6.0.2
+1135 silly saveTree | | | +-- is-stream@2.0.0
+1135 silly saveTree | | | `-- node-fetch@2.6.1
+1135 silly saveTree | | +-- gcp-metadata@4.2.1
+1135 silly saveTree | | | `-- json-bigint@1.0.0
+1135 silly saveTree | | |   `-- bignumber.js@9.0.1
+1135 silly saveTree | | +-- gtoken@5.2.1
+1135 silly saveTree | | | +-- google-p12-pem@3.0.3
+1135 silly saveTree | | | `-- jws@4.0.0
+1135 silly saveTree | | |   `-- jwa@2.0.0
+1135 silly saveTree | | |     `-- buffer-equal-constant-time@1.0.1
+1135 silly saveTree | | `-- jws@4.0.0
+1135 silly saveTree | `-- googleapis-common@4.4.3
+1135 silly saveTree |   +-- url-template@2.0.8
+1135 silly saveTree |   `-- uuid@8.3.2
+1135 silly saveTree +-- hammerjs@2.0.8
+1135 silly saveTree +-- jasmine-core@3.6.0
+1135 silly saveTree +-- jasmine-spec-reporter@6.0.0
+1135 silly saveTree +-- jquery@3.5.1
+1135 silly saveTree +-- karma-chrome-launcher@3.1.0
+1135 silly saveTree +-- karma-cli@2.0.0
+1135 silly saveTree +-- karma-coverage-istanbul-reporter@3.0.3
+1135 silly saveTree +-- karma-jasmine-html-reporter@1.5.4
+1135 silly saveTree +-- karma-jasmine@4.0.1
+1135 silly saveTree +-- moment@2.29.1
+1135 silly saveTree +-- perfect-scrollbar@1.5.0
+1135 silly saveTree +-- popper.js@1.16.1
+1135 silly saveTree +-- protractor@7.0.0
+1135 silly saveTree +-- rxjs-compat@6.6.3
+1135 silly saveTree +-- rxjs@6.6.3
+1135 silly saveTree +-- ts-node@9.0.0
+1135 silly saveTree +-- tslint@6.1.3
+1135 silly saveTree +-- typescript@4.0.3
+1135 silly saveTree +-- web-animations-js@2.3.2
+1135 silly saveTree `-- zone.js@0.11.1
+1135 silly saveTree   `-- tslib@2.2.0
+1136 verbose stack SyntaxError: Unexpected end of JSON input while parsing near '...":"^0.0.15","phantomj'
+1136 verbose stack     at JSON.parse (<anonymous>)
+1136 verbose stack     at parseJson (C:\Program Files\nodejs\node_modules\npm\node_modules\json-parse-better-errors\index.js:7:17)
+1136 verbose stack     at C:\Program Files\nodejs\node_modules\npm\node_modules\node-fetch-npm\src\body.js:96:50
+1136 verbose stack     at runMicrotasks (<anonymous>)
+1136 verbose stack     at processTicksAndRejections (internal/process/task_queues.js:97:5)
+1137 verbose cwd C:\Users\pc\Downloads\material-dashboard-angular2-master\material-dashboard-angular2-master
+1138 verbose Windows_NT 10.0.19042
+1139 verbose argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "i"
+1140 verbose node v12.18.3
+1141 verbose npm  v6.14.6
+1142 error Unexpected end of JSON input while parsing near '...":"^0.0.15","phantomj'
+1143 verbose exit [ 1, true ]
