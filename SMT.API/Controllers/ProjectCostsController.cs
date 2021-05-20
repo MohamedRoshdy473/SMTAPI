@@ -36,10 +36,10 @@ namespace SMT.API.Controllers
 
         // POST api/<ProjectCostsController>
         [HttpPost]
-        public ActionResult<ProjectCosts> Post(ProjectCosts projectCosts)
+        public int Post(ProjectCosts projectCosts)
         {
             _projectCostsService.AddProjectCost(projectCosts);
-            return CreatedAtAction("Get", new { id = projectCosts.Id }, projectCosts);
+            return projectCosts.Id;
         }
 
         // PUT api/<ProjectCostsController>/5

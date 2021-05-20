@@ -11,7 +11,7 @@ namespace SMT.Domain.Services
     {
         ProjectCosts GetProjectCost(int id);
         IEnumerable<ProjectCosts> GetAllProjectCosts();
-        void AddProjectCost(ProjectCosts projectCost);
+        int AddProjectCost(ProjectCosts projectCost);
         void DeleteProjectCost(int projectCostId);
         void UpdateProjectCost(int projectCostId, ProjectCosts projectCost);
     }

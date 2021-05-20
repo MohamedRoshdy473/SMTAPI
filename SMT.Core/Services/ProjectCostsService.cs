@@ -17,9 +17,10 @@ namespace SMT.Core.Services
         {
             _unitOfWork = unitOfWork;
         }
-        public void AddProjectCost(ProjectCosts projectCost)
+        public int AddProjectCost(ProjectCosts projectCost)
         {
             _unitOfWork.ProjectCosts.Add(projectCost);
+            return projectCost.Id;
         }
 
         public void DeleteProjectCost(int projectCostId)

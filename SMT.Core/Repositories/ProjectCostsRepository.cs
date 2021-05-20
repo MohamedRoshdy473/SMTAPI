@@ -17,7 +17,7 @@ namespace SMT.Core.Repositories
         {
             _context = context;
         }
-        public void Add(ProjectCosts projectCost)
+        public int Add(ProjectCosts projectCost)
         {
             try
             {
@@ -25,6 +25,7 @@ namespace SMT.Core.Repositories
                 {
                     _context.Add(projectCost);
                     _context.SaveChanges();
+                    return projectCost.Id;
                 }
                 else
                 {

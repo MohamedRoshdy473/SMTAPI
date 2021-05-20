@@ -11,7 +11,7 @@ namespace SMT.Domain.Repositories
     {
         ProjectCosts Get(int id);
         IEnumerable<ProjectCosts> GetAll();
-        void Add(ProjectCosts projectCost);
+        int Add(ProjectCosts projectCost);
         void Delete(int projectCostId);
         void Update(int projectCostId, ProjectCosts projectCost);
     }
