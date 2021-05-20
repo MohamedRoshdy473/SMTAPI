@@ -20,12 +20,10 @@ namespace SMT.API.Controllers
     public class ProjectDocumentsController : ControllerBase
     {
         private readonly IProjectDocumentsService _projectDocumentsService;
-        private readonly SMTDbContext _context;
 
-        public ProjectDocumentsController(IProjectDocumentsService projectDocumentsService, SMTDbContext context)
+        public ProjectDocumentsController(IProjectDocumentsService projectDocumentsService)
         {
             _projectDocumentsService = projectDocumentsService;
-            _context = context;
         }
         [Route("GetLatestDocuments/{projectId}")]
         public List<ProjectDocumentsDTO> GetGetLatestDocuments(int projectId)

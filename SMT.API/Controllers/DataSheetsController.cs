@@ -42,34 +42,34 @@ namespace SMT.API.Controllers
         {
             return _dataSheetsService.GetDataSheet(id);
         }
-        [HttpPost, DisableRequestSizeLimit]
-        [Route("Uploadfile")]
-        public IActionResult Upload()
-        {
-            try
-            {
-                var file = Request.Form.Files[0];
-                var folderName = "F://desktop/";
-                //http://localhost:57910/wwwroot/documentFiles/CleanArch.txt
-                var pathToSave = Path.Combine(Directory.GetCurrentDirectory(), folderName);
-                if (file.Length > 0)
-                {
-                    var fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
-                    var fullPath = Path.Combine(pathToSave, fileName);
-                    //  var dbPath = Path.Combine(folderName, fileName);
+        //[HttpPost, DisableRequestSizeLimit]
+        //[Route("Uploadfile")]
+        //public IActionResult Upload()
+        //{
+        //    try
+        //    {
+        //        var file = Request.Form.Files[0];
+        //        var folderName = "F://desktop/";
+        //        //http://localhost:57910/wwwroot/documentFiles/CleanArch.txt
+        //        var pathToSave = Path.Combine(Directory.GetCurrentDirectory(), folderName);
+        //        if (file.Length > 0)
+        //        {
+        //            var fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
+        //            var fullPath = Path.Combine(pathToSave, fileName);
+        //            //  var dbPath = Path.Combine(folderName, fileName);
 
-                    return Ok(new { fullPath });
-                }
-                else
-                {
-                    return BadRequest();
-                }
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(500, $"Internal server error: {ex}");
-            }
-        }
+        //            return Ok(new { fullPath });
+        //        }
+        //        else
+        //        {
+        //            return BadRequest();
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return StatusCode(500, $"Internal server error: {ex}");
+        //    }
+        //}
         // POST api/<DataSheetsController>
         [HttpPost]
         public ActionResult<DataSheetsDTO> Post(DataSheetsDTO dataSheetsDTO)
@@ -93,6 +93,39 @@ namespace SMT.API.Controllers
             _dataSheetsService.DeleteDataSheet(id);
             return Ok();
         }
+        [HttpPost, DisableRequestSizeLimit]
+        [Route("Uploadfile")]
+        public IActionResult Upload()
+        {
+            try
+            {
+                var file = Request.Form.Files[0];
+                var folderName = Path.Combine("wwwroot", "DataSheets");
+                var pathToSave = Path.Combine(Directory.GetCurrentDirectory(), folderName);
+
+                if (file.Length > 0)
+                {
+                    var fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
+                    var fullPath = Path.Combine(pathToSave, fileName);
+                    var dbPath = Path.Combine(folderName, fileName);
+
+                    using (var stream = new FileStream(fullPath, FileMode.Create))
+                    {
+                        file.CopyTo(stream);
+                    }
+
+                    return Ok(new { dbPath });
+                }
+                else
+                {
+                    throw new NotCompletedException("Not Completed Exception");
+                }
+            }
+            catch (Exception)
+            {
+                throw new NotExistException("Not Exist Exception");
+            }
+        }
         [AllowAnonymous]
         [HttpGet]
         [Route("GetDocument/{docName}")]
@@ -101,8 +134,9 @@ namespace SMT.API.Controllers
             if (docName == null)
                 return Content("filename not present");
 
-            var path = docName;
-                //Path.Combine("F://desktop/", docName);
+            var path = Path.Combine(
+                           Directory.GetCurrentDirectory(),
+                           "wwwroot/DataSheets", docName);
 
             var memory = new MemoryStream();
             var ext = System.IO.Path.GetExtension(path);
