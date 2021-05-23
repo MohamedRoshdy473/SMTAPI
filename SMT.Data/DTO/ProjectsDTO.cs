@@ -25,5 +25,6 @@ namespace SMT.Data.DTO
         public string ProjectComponentName { get; set; }
         public int GovernorateId { get; set; }
         public string GovernorateName { get; set; }
+        public List<ProjectSystemsDTO> lstprojectSystems { get; set; }
     }
 }

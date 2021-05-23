@@ -71,6 +71,18 @@ namespace SMT.Core.Repositories
 
         public ProjectsDTO Get(int id)
         {
+            var projectSystem = _context.ProjectSystems.Include(s=>s.ProjectComponents).Where(p => p.ProjectId == id).ToList();
+            List<ProjectSystemsDTO> lstprojectSystems = new List<ProjectSystemsDTO>();
+            foreach (var item in projectSystem)
+            {
+                ProjectSystemsDTO projectSystemsDTO =new ProjectSystemsDTO
+                {
+                    Id = item.Id,
+                    ProjectComponentsId = item.Id,
+                    ProjectComponentName = item.ProjectComponents.ProjectComponentName,
+                };
+                lstprojectSystems.Add(projectSystemsDTO);
+            }             
             var project = _context.Projects.Where(p => p.Id == id).Include(p => p.EndUsers).Include(p => p.Contractors)
                                                                   .Include(p => p.EndUsers).Include(p => p.ProjectStatus)
                                                                   .Include(p => p.Governorates).FirstOrDefault();
@@ -97,7 +109,8 @@ namespace SMT.Core.Repositories
                     ContractorContactName = project.Contractors.ContactName,
                     ContractorName = project.Contractors.ContractorName,
                     GovernorateId = project.GovernoratesId,
-                    GovernorateName = project.Governorates.GovernorateName
+                    GovernorateName = project.Governorates.GovernorateName,
+                    lstprojectSystems = lstprojectSystems
                 };
                 return projectDTO;
             }
