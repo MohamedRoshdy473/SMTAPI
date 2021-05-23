@@ -11,6 +11,8 @@ namespace SMT.Domain.Services
     {
         ProjectsDTO GetProject(int id);
         IEnumerable<ProjectsDTO> GetAllProjects();
+        IEnumerable<ProjectsDTO> GetAllAcceptedProjects();
+        void AcceptProject(int ProjectId);
         int AddProject(ProjectsDTO projectsDTO);
         void DeleteProject(int projectsDTOId);
         void UpdateProject(int projectsDTOId, ProjectsDTO projectsDTO);

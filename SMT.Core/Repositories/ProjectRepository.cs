@@ -21,6 +21,39 @@ namespace SMT.Core.Repositories
         {
             _context = context;
         }
+
+        public void AcceptProject(int ProjectId)
+        {
+            try
+            {
+                var projectsDTO = _context.Projects.Where(p => p.Id == ProjectId).FirstOrDefault();
+                if (projectsDTO != null)
+                {
+                    Projects project = new Projects();
+                    project.Id = projectsDTO.Id;
+                    project.ProjectName = projectsDTO.ProjectName;
+                    project.ProjectCreationDate = projectsDTO.ProjectCreationDate;
+                    project.Rank = projectsDTO.Rank;
+                    project.ProjectStatusId = projectsDTO.ProjectStatusId;
+                    project.EndUsersId = projectsDTO.EndUsersId;
+                    project.ContractorsId = projectsDTO.ContractorsId;
+                    project.GovernoratesId = projectsDTO.GovernoratesId;
+                    project.IsAccept = true;
+                    _context.Add(project);
+                    _context.SaveChanges();
+                    projectsDTO.Id = project.Id;
+                }
+                else
+                {
+                    throw new NotCompletedException("Not Completed Exception");
+                }
+            }
+            catch (Exception)
+            {
+                throw new NotExistException("Not Exist Exception");
+            }
+        }
+
         public int Add(ProjectsDTO projectsDTO)
         {
             try
@@ -37,6 +70,7 @@ namespace SMT.Core.Repositories
                     project.EndUsersId = projectsDTO.EndUsersId;
                     project.ContractorsId = projectsDTO.ContractorsId;
                     project.GovernoratesId = projectsDTO.GovernorateId;
+                    project.IsAccept = false;
                     _context.Add(project);
                     _context.SaveChanges();
                     projectsDTO.Id = project.Id;
@@ -121,12 +155,33 @@ namespace SMT.Core.Repositories
             var projectDTO = _context.Projects.Include(p=>p.Contractors).Include(p => p.EndUsers).Include(p => p.ProjectStatus).Include(p => p.Governorates).Select(project => new ProjectsDTO
             {
                 Id = project.Id,
+                IsAccept=project.IsAccept,
                 ProjectName = project.ProjectName,
                 ProjectCreationDate = project.ProjectCreationDate,
                 Rank = project.Rank,
-                //list of ProjectComponents
-                //ProjectComponentsId = project.ProjectComponentsId,
-                //ProjectComponentName = project.ProjectComponents.ProjectComponentName,
+                ProjectStatusId = project.ProjectStatusId,
+                ProjectStatusName = project.ProjectStatus.ProjectStatusName,
+                EndUsersId = project.EndUsersId,
+                EndUserContactName = project.EndUsers.ContactName,
+                CompanyName = project.EndUsers.CompanyName,
+                ContractorsId = project.ContractorsId,
+                ContractorContactName = project.Contractors.ContactName,
+                ContractorName = project.Contractors.ContractorName,
+                GovernorateId = project.GovernoratesId,
+                GovernorateName = project.Governorates.GovernorateName
+            }).ToList();
+            return projectDTO;
+        }
+
+        public IEnumerable<ProjectsDTO> GetAllAcceptedProjects()
+        {
+            var projectDTO = _context.Projects.Where(p=>p.IsAccept==true).Include(p => p.Contractors).Include(p => p.EndUsers).Include(p => p.ProjectStatus).Include(p => p.Governorates).Select(project => new ProjectsDTO
+            {
+                Id = project.Id,
+                IsAccept = project.IsAccept,
+                ProjectName = project.ProjectName,
+                ProjectCreationDate = project.ProjectCreationDate,
+                Rank = project.Rank,
                 ProjectStatusId = project.ProjectStatusId,
                 ProjectStatusName = project.ProjectStatus.ProjectStatusName,
                 EndUsersId = project.EndUsersId,

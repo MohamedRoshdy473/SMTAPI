@@ -42,7 +42,18 @@ namespace SMT.API.Controllers
             _projectService.AddProject(projectsDTO);
             return projectsDTO.Id;
         }
-
+        [Route("GetAllAcceptedProjects")]
+        public IEnumerable<ProjectsDTO> GetAllAcceptedProjects()
+        {
+            return _projectService.GetAllAcceptedProjects();
+        }
+        [HttpPost]
+        [Route("AcceptProject/{ProjectId}")]
+        public ActionResult<ProjectsDTO> AcceptProject(int ProjectId)
+        {
+            _projectService.AcceptProject(ProjectId);
+            return CreatedAtAction("Get", new { id = ProjectId });
+        }
         // PUT api/<ProjectsController>/5
         [HttpPut("{id}")]
         public ActionResult<ProjectsDTO> Put(int id, ProjectsDTO projectsDTO)

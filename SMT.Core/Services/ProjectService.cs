@@ -17,6 +17,11 @@ namespace SMT.Core.Services
             _unitOfWork = unitOfWork;
         }
 
+        public void AcceptProject(int ProjectId)
+        {
+            _unitOfWork.Project.a
+        }
+
         public int AddProject(ProjectsDTO projectsDTO)
         {
             _unitOfWork.Project.Add(projectsDTO);
@@ -26,6 +31,11 @@ namespace SMT.Core.Services
         public void DeleteProject(int projectsDTOId)
         {
             _unitOfWork.Project.Delete(projectsDTOId);
+        }
+
+        public IEnumerable<ProjectsDTO> GetAllAcceptedProjects()
+        {
+            throw new NotImplementedException();
         }
 
         public IEnumerable<ProjectsDTO> GetAllProjects()

@@ -25,5 +25,6 @@ namespace SMT.Data.Models.SMTDBContext
         public int GovernoratesId { get; set; }
         [ForeignKey("GovernoratesId")]
         public virtual Governorates Governorates { get; set; }
+        public Boolean IsAccept { get; set; }
     }
 }
