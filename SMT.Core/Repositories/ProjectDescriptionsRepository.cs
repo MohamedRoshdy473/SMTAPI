@@ -128,6 +128,23 @@ namespace SMT.Core.Repositories
             return projDescriptions;
         }
 
+        public IEnumerable<ProjectDescriptionsDTO> GetDescriptionsByProjectUpdateId(int ProjectUpdateId)
+        {
+            var projDescriptions = _context.ProjectDescriptions.Where(d => d.ProjectUpdateId == ProjectUpdateId).Select(projDesc => new ProjectDescriptionsDTO
+            {
+                Id = projDesc.Id,
+                Description = projDesc.Description,
+                ProjectId = projDesc.ProjectId,
+                DescriptionDate = projDesc.DescriptionDate,
+                projectName = projDesc.projects.ProjectName,
+                UserId = projDesc.UserId,
+                ProjectUpdateId = projDesc.ProjectUpdateId,
+                UserName = projDesc.User.UserName
+            }).ToList();
+
+            return projDescriptions;
+        }
+
         public void Update(int projectDescriptionsDTOId, ProjectDescriptionsDTO projectDescriptionsDTO)
         {
             if (projectDescriptionsDTOId != projectDescriptionsDTO.Id)

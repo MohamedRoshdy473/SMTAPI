@@ -65,5 +65,12 @@ namespace SMT.API.Controllers
         {
           return _projectDescriptionsService.GetDescriptionsByProjectId(ProjectId);
         }
-  }
+
+        [HttpGet]
+        [Route("GetDescriptionsByProjectUpdateId/{ProjectUpdateId}")]
+        public IEnumerable<ProjectDescriptionsDTO> GetDescriptionsByProjectUpdateId(int ProjectUpdateId)
+        {
+            return _projectDescriptionsService.GetDescriptionsByProjectUpdateId(ProjectUpdateId);
+        }
+    }
 }

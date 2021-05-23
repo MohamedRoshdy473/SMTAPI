@@ -12,6 +12,7 @@ namespace SMT.Domain.Repositories
         ProjectDescriptionsDTO Get(int id);
         IEnumerable<ProjectDescriptionsDTO> GetAll();
         IEnumerable<ProjectDescriptionsDTO> GetDescriptionsByProjectId(int ProjectId);
+        IEnumerable<ProjectDescriptionsDTO> GetDescriptionsByProjectUpdateId(int ProjectUpdateId);
         void Add(ProjectDescriptionsDTO projectDescriptionsDTO);
         void Delete(int projectDescriptionsDTOId);
         void Update(int projectDescriptionsDTOId, ProjectDescriptionsDTO projectDescriptionsDTO);

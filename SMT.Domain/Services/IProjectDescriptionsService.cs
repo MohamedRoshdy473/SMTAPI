@@ -11,6 +11,7 @@ namespace SMT.Domain.Services
     {
         ProjectDescriptionsDTO GetProjectDescription(int id);
         IEnumerable<ProjectDescriptionsDTO> GetDescriptionsByProjectId(int projectId);
+        IEnumerable<ProjectDescriptionsDTO> GetDescriptionsByProjectUpdateId(int ProjectUpdateId);
         IEnumerable<ProjectDescriptionsDTO> GetAllProjectDescriptions();
         void AddProjectDescription(ProjectDescriptionsDTO projectDescriptionsDTO);
         void DeleteProjectDescription(int projectDescriptionsDTOId);
