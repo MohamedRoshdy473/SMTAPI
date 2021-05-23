@@ -27,6 +27,8 @@ namespace SMT.Domain
         IOfferDescriptionsRepository OfferDescriptions { get; }
         IDataSheetsRepository DataSheets { get; }
         IProjectSystemsRepository ProjectSystems { get; }
+        IEmployeeRepository Employee { get; }
+
 
     }
 }

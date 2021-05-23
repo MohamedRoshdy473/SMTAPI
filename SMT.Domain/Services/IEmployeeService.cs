@@ -10,5 +10,7 @@ namespace SMT.Domain.Services
    public interface IEmployeeService
     {
         IEnumerable<EmployeeDTO> GetAllEmployees();
+        EmployeeDTO GetEmployeeById(int EmpId);
+
     }
 }

@@ -33,6 +33,7 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\documentFiles\" />
+    <Folder Include="wwwroot\DataSheets\" />
   </ItemGroup>
 
 </Project>

@@ -20,7 +20,12 @@ namespace SMT.Core.Services
 
         public IEnumerable<EmployeeDTO> GetAllEmployees()
         {
-            throw new NotImplementedException();
+           return _unitOfWork.Employee.GetAllEmployeesDTO();
+        }
+
+        public EmployeeDTO GetEmployeeById(int EmpId)
+        {
+            return _unitOfWork.Employee.GetEmployeeById(EmpId);
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using SMT.Core.Repositories;
+using SMT.Data.Models.HRDBContext;
 using SMT.Data.Models.SMTDBContext;
 using SMT.Domain;
 using SMT.Domain.Repositories;
@@ -14,6 +15,7 @@ namespace SMT.Core
     {
         private bool disposed = false;
         private readonly SMTDbContext _context;
+        private readonly HRDBContext _HRcontext;
         private ProjectComponentsRepository _projectComponentsRepository;
         private ProjectStatusRepository _projectStatusRepository;
         private ContractorsRepository _contractors;
@@ -31,10 +33,15 @@ namespace SMT.Core
         private OfferDescriptionsRepository _offerDescriptions;
         private DataSheetsRepository _dataSheetsRepository;
         private ProjectSystemsRepository _projectSystemsRepository;
+        private EmployeeRepositories _employeeRepository;
 
         public UnitOfWork(SMTDbContext context)
         {
             _context = context;
+        }
+        public UnitOfWork(SMTDbContext context,HRDBContext HRcontext)
+        {
+            _HRcontext = HRcontext;
         }
         public IProjectComponentsRepository projectComponentsRepository => new ProjectComponentsRepository(_context);
         public IProjectStatusRepository ProjectStatusRepository => new ProjectStatusRepository(_context);
@@ -53,6 +60,8 @@ namespace SMT.Core
         public IOfferDescriptionsRepository OfferDescriptionsRepository => new OfferDescriptionsRepository(_context);
         public IDataSheetsRepository DataSheetsRepository => new DataSheetsRepository(_context);
         public IProjectSystemsRepository ProjectSystemsRepository => new ProjectSystemsRepository(_context);
+        public IEmployeeRepository EmployeeRepository => new EmployeeRepositories(_HRcontext);
+
 
         public int CommitAsync()
         {
@@ -92,5 +101,6 @@ namespace SMT.Core
         public IOfferDescriptionsRepository OfferDescriptions => _offerDescriptions = _offerDescriptions ?? new OfferDescriptionsRepository(_context);
         public IDataSheetsRepository DataSheets => _dataSheetsRepository = _dataSheetsRepository ?? new DataSheetsRepository(_context);
         public IProjectSystemsRepository ProjectSystems => _projectSystemsRepository = _projectSystemsRepository ?? new ProjectSystemsRepository(_context);
+        public IEmployeeRepository Employee => _employeeRepository = _employeeRepository ?? new EmployeeRepositories(_HRcontext);
     }
 }

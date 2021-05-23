@@ -10,5 +10,6 @@ namespace SMT.Domain.Repositories
     public interface IEmployeeRepository
     {
         IEnumerable<EmployeeDTO> GetAllEmployeesDTO();
+        EmployeeDTO GetEmployeeById(int EmpId);
     }
 }
