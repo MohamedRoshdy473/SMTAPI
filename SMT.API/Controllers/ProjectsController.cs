@@ -47,7 +47,6 @@ namespace SMT.API.Controllers
         {
             return _projectService.GetAllAcceptedProjects();
         }
-        [HttpPost]
         [Route("AcceptProject/{ProjectId}")]
         public ActionResult<ProjectsDTO> AcceptProject(int ProjectId)
         {

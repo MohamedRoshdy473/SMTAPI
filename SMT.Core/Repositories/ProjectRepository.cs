@@ -29,17 +29,8 @@ namespace SMT.Core.Repositories
                 var projectsDTO = _context.Projects.Where(p => p.Id == ProjectId).FirstOrDefault();
                 if (projectsDTO != null)
                 {
-                    Projects project = new Projects();
-                    project.Id = projectsDTO.Id;
-                    project.ProjectName = projectsDTO.ProjectName;
-                    project.ProjectCreationDate = projectsDTO.ProjectCreationDate;
-                    project.Rank = projectsDTO.Rank;
-                    project.ProjectStatusId = projectsDTO.ProjectStatusId;
-                    project.EndUsersId = projectsDTO.EndUsersId;
-                    project.ContractorsId = projectsDTO.ContractorsId;
-                    project.GovernoratesId = projectsDTO.GovernoratesId;
-                    project.IsAccept = true;
-                    _context.Entry(project).State = EntityState.Modified;
+                    projectsDTO.IsAccept = true;
+                    _context.Entry(projectsDTO).State = EntityState.Modified;
                     _context.SaveChanges();
                 }
                 else
