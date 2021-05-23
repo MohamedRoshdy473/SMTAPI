@@ -19,7 +19,7 @@ namespace SMT.Core.Services
 
         public void AcceptProject(int ProjectId)
         {
-            _unitOfWork.Project.a
+            _unitOfWork.Project.AcceptProject(ProjectId);
         }
 
         public int AddProject(ProjectsDTO projectsDTO)
@@ -35,7 +35,7 @@ namespace SMT.Core.Services
 
         public IEnumerable<ProjectsDTO> GetAllAcceptedProjects()
         {
-            throw new NotImplementedException();
+           return _unitOfWork.Project.GetAllAcceptedProjects();
         }
 
         public IEnumerable<ProjectsDTO> GetAllProjects()

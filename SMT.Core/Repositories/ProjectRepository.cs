@@ -39,9 +39,8 @@ namespace SMT.Core.Repositories
                     project.ContractorsId = projectsDTO.ContractorsId;
                     project.GovernoratesId = projectsDTO.GovernoratesId;
                     project.IsAccept = true;
-                    _context.Add(project);
+                    _context.Entry(project).State = EntityState.Modified;
                     _context.SaveChanges();
-                    projectsDTO.Id = project.Id;
                 }
                 else
                 {
