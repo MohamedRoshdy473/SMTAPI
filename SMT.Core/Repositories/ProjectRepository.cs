@@ -105,7 +105,7 @@ namespace SMT.Core.Repositories
 
         public IEnumerable<ProjectsDTO> GetAll()
         {
-            var projectDTO = _context.Projects.Select(project => new ProjectsDTO
+            var projectDTO = _context.Projects.Include(p=>p.Contractors).Include(p => p.EndUsers).Include(p => p.ProjectStatus).Include(p => p.Governorates).Select(project => new ProjectsDTO
             {
                 Id = project.Id,
                 ProjectName = project.ProjectName,

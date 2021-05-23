@@ -35,13 +35,14 @@ namespace SMT.Core
         private ProjectSystemsRepository _projectSystemsRepository;
         private EmployeeRepositories _employeeRepository;
 
-        public UnitOfWork(SMTDbContext context)
-        {
-            _context = context;
-        }
+        //public UnitOfWork(SMTDbContext context)
+        //{
+        //    _context = context;
+        //}
         public UnitOfWork(SMTDbContext context,HRDBContext HRcontext)
         {
             _HRcontext = HRcontext;
+            _context = context;
         }
         public IProjectComponentsRepository projectComponentsRepository => new ProjectComponentsRepository(_context);
         public IProjectStatusRepository ProjectStatusRepository => new ProjectStatusRepository(_context);
