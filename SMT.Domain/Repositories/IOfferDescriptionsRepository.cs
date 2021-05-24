@@ -11,6 +11,7 @@ namespace SMT.Domain.Repositories
     {
         OfferDescriptionsDTO Get(int id);
         IEnumerable<OfferDescriptionsDTO> GetAll();
+        IEnumerable<OfferDescriptionsDTO> GetAllOfferByUserId(string UserId);
         void Add(OfferDescriptionsDTO offerDescriptionsDTO);
         void Delete(int offerDescriptionsDTOId);
         void Update(int offerDescriptionsDTOId, OfferDescriptionsDTO offerDescriptionsDTO);

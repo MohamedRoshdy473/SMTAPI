@@ -29,7 +29,6 @@ namespace SMT.Core.Repositories
                         OfferDocuments offerDocuments = new OfferDocuments();
                         offerDocuments.Id = item.Id;
                         offerDocuments.DocumentFile = item.DocumentFile;
-                        offerDocuments.DocumentName = item.DocumentName;
                         offerDocuments.OfferId = item.OfferId;
                         _context.Add(offerDocuments);
                         _context.SaveChanges();

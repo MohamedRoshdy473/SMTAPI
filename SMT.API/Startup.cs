@@ -80,10 +80,13 @@ namespace SalesManagmentTool
             services.AddTransient<IProjectUpdateRepository, ProjectUpdateRepository>();
             services.AddTransient<IProjectUpdateService, ProjectUpdateService>();
             services.AddTransient<IProjectDocumentsService, ProjectDocumentsService>();
+            services.AddTransient<IOffersService, OffersService>();
+            services.AddTransient<IOffersRepsository, OffersRepsository>();
             services.AddTransient<IOfferDocumentsService, OfferDocumentsService>();
             services.AddTransient<IOfferDocumentsRepository, OfferDocumentsRepository>();
             services.AddTransient<IOfferStatusService, OfferStatusService>();
             services.AddTransient<IOfferStatusRepository, OfferStatusRepository>();
+
             services.AddTransient<IOfferDescriptionsService, OfferDescriptionsService>();
             services.AddTransient<IOfferDescriptionsRepository, OfferDescriptionsRepository>();
             services.AddTransient<IDataSheetsService, DataSheetsService>();

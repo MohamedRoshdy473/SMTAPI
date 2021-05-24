@@ -10,7 +10,6 @@ namespace SMT.Data.Models.SMTDBContext
     public class OfferDocuments
     {
         public int Id {get; set; }
-        public string DocumentName { get; set; }
         public string DocumentFile { get; set; }
         public int OfferId { get; set; }
         [ForeignKey("OfferId")]

@@ -50,12 +50,12 @@ namespace SMT.API.Controllers
                 EmailCompany = e.EmailCompany,
                 Mobile = e.Mobile,
                 NationalId = e.NationalId,
-                FacultyDepartmentName = e.FacultyDepartment.FacultyDepartmentName,
-                FacultyDepartmentId = (int)e.FacultyDepartmentId,
-                FacultyName = e.FacultyDepartment.Faculty.FacultyName,
-                UniversityName = e.FacultyDepartment.Faculty.University.UniversityName,
-                PositionId = e.PositionId,
-                PositionlevelId = e.PositionlevelId,
+                //FacultyDepartmentName = e.FacultyDepartment.FacultyDepartmentName,
+                //FacultyDepartmentId = (int)e.FacultyDepartmentId,
+                //FacultyName = e.FacultyDepartment.Faculty.FacultyName,
+                //UniversityName = e.FacultyDepartment.Faculty.University.UniversityName,
+                //PositionId = e.PositionId,
+                //PositionlevelId = e.PositionlevelId,
             }).ToList();
             return emps;
         }

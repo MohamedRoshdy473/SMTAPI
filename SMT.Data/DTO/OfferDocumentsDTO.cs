@@ -10,7 +10,6 @@ namespace SMT.Data.DTO
     public class OfferDocumentsDTO
     {
         public int Id { get; set; }
-        public string DocumentName { get; set; }
         public string DocumentFile { get; set; }
         public int OfferId { get; set; }
     }

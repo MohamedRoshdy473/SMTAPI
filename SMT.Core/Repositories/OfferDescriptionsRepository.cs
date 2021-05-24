@@ -100,6 +100,24 @@ namespace SMT.Core.Repositories
             return offerDescriptionDTO;
         }
 
+        public IEnumerable<OfferDescriptionsDTO> GetAllOfferByUserId(string UserId)
+        {
+            var offerDescriptionDTO = _context.OfferDescriptions.Where(o => o.UserId == UserId).Include(o => o.Offers).Include(o => o.User).Select(offerDescription =>
+                    new OfferDescriptionsDTO
+                    {
+                        Id = offerDescription.Id,
+                        Description = offerDescription.Description,
+                        DescriptionDate = offerDescription.DescriptionDate,
+                        OffersId = offerDescription.OffersId,
+                        // this refer to offer name
+                        projectName = offerDescription.Offers.Projects.ProjectName,
+                        UserId = offerDescription.UserId,
+                        UserName = offerDescription.User.UserName
+
+                    }).ToList();
+            return offerDescriptionDTO;
+        }
+
         public void Update(int offerDescriptionsDTOId, OfferDescriptionsDTO offerDescriptionsDTO)
         {
             if (offerDescriptionsDTOId != offerDescriptionsDTO.Id)
