@@ -79,6 +79,20 @@ namespace SMT.Core.Repositories
             return _context.OfferDocuments.ToList();
         }
 
+        public IEnumerable<OfferDocuments> GetAllOfferDocumentsByOfferId(int OfferId)
+        {
+            var offerDocument = _context.OfferDocuments.Where(o => o.OfferId == OfferId).ToList();
+
+            if (offerDocument == null)
+            {
+                throw new NotExistException("Not Exist Exception");
+            }
+            else
+            {
+                return offerDocument;
+            }
+        }
+
         public void Update(int offerDocumentsId, OfferDocuments offerDocuments)
         {
             if (offerDocumentsId != offerDocuments.Id)
