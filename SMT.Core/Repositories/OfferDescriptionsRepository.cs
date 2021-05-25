@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using SMT.Data.DTO;
 using SMT.Data.Models.SMTDBContext;
 using SMT.Domain.Repositories;
@@ -26,6 +26,7 @@ namespace SMT.Core.Repositories
                 {
                     OfferDescriptions offerDescription = new OfferDescriptions();
                     offerDescription.Description = offerDescriptionsDTO.Description;
+                    offerDescription.ProjectUpdateId = offerDescriptionsDTO.ProjectUpdateId;
                     offerDescription.DescriptionDate = offerDescriptionsDTO.DescriptionDate;
                     offerDescription.OffersId = offerDescriptionsDTO.OffersId;
                     offerDescription.UserId = offerDescriptionsDTO.UserId;

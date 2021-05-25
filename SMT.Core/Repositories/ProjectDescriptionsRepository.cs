@@ -139,6 +139,7 @@ namespace SMT.Core.Repositories
                 projectName = projDesc.projects.ProjectName,
                 UserId = projDesc.UserId,
                 ProjectUpdateId = projDesc.ProjectUpdateId,
+                
                 UserName = projDesc.User.UserName
             }).ToList();
 
