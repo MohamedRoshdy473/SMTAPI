@@ -12,6 +12,8 @@ namespace SMT.Domain.Services
     {
         OfferDocuments GetOfferDocument(int id);
         IEnumerable<OfferDocuments> GetAllOfferDocuments();
+        IEnumerable<OfferDocuments> GetAllOfferDocumentsByOfferId(int OfferId);
+
         void AddOfferDocument(List<OfferDocumentsDTO> offerDocumentsDTO);
         void DeleteOfferDocument(int offerDocumentsId);
         void UpdateOfferDocument(int offerDocumentsId, OfferDocuments offerDocuments);

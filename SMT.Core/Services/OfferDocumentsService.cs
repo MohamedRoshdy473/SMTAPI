@@ -33,6 +33,11 @@ namespace SMT.Core.Services
             return _unitOfWork.OfferDocuments.GetAll();
         }
 
+        public IEnumerable<OfferDocuments> GetAllOfferDocumentsByOfferId(int OfferId)
+        {
+            return _unitOfWork.OfferDocuments.GetAllOfferDocumentsByOfferId(OfferId);
+        }
+
         public OfferDocuments GetOfferDocument(int id)
         {
             return _unitOfWork.OfferDocuments.Get(id);

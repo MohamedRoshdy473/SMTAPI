@@ -10,6 +10,7 @@ namespace SMT.Domain.Services
     public interface IProjectDescriptionsService
     {
         ProjectDescriptionsDTO GetProjectDescription(int id);
+        IEnumerable<ProjectDescriptionsDTO> GetAllProjectByUserId(string UserId);
         IEnumerable<ProjectDescriptionsDTO> GetDescriptionsByProjectId(int projectId);
         IEnumerable<ProjectDescriptionsDTO> GetDescriptionsByProjectUpdateId(int ProjectUpdateId);
         IEnumerable<ProjectDescriptionsDTO> GetAllProjectDescriptions();

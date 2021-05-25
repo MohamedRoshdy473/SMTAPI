@@ -111,6 +111,39 @@ namespace SMT.Core.Repositories
             return projectDescriptionsDTO;
         }
 
+        public IEnumerable<ProjectDescriptionsDTO> GetAllProjectByUserId(string UserId)
+        {
+            var projects = _context.ProjectDescriptions.Where(d => d.UserId == UserId)
+                .Include(p => p.projects.Contractors).Include(p => p.projects.EndUsers).Include(p => p.projects.ProjectStatus)
+                .Select(projDesc => new ProjectDescriptionsDTO
+            {
+                Id = projDesc.Id,
+                Description = projDesc.Description,
+                ProjectId = projDesc.ProjectId,
+                DescriptionDate = projDesc.DescriptionDate,
+                projectName = projDesc.projects.ProjectName,
+                UserId = projDesc.UserId,
+                ProjectUpdateId = projDesc.ProjectUpdateId,
+                UserName = projDesc.User.UserName,
+
+                IsAccept = projDesc.projects.IsAccept,
+                ProjectCreationDate = projDesc.projects.ProjectCreationDate,
+                Rank = projDesc.projects.Rank,
+                ProjectStatusId = projDesc.projects.ProjectStatusId,
+                ProjectStatusName = projDesc.projects.ProjectStatus.ProjectStatusName,
+                EndUsersId = projDesc.projects.EndUsersId,
+                EndUserContactName = projDesc.projects.EndUsers.ContactName,
+                CompanyName = projDesc.projects.EndUsers.CompanyName,
+                ContractorsId = projDesc.projects.ContractorsId,
+                ContractorContactName = projDesc.projects.Contractors.ContactName,
+                ContractorName = projDesc.projects.Contractors.ContractorName,
+                GovernorateId = projDesc.projects.GovernoratesId,
+                GovernorateName = projDesc.projects.Governorates.GovernorateName
+            }).ToList();
+
+            return projects;
+        }
+
         public IEnumerable<ProjectDescriptionsDTO> GetDescriptionsByProjectId(int id)
         {
             var projDescriptions = _context.ProjectDescriptions.Where(d => d.ProjectId == id).Select(projDesc => new ProjectDescriptionsDTO

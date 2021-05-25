@@ -38,7 +38,11 @@ namespace SMT.API.Controllers
         {
             return _offerDocumentsService.GetOfferDocument(id);
         }
-
+        [Route("GetAllOfferDocumentsByOfferId/{OfferId}")]
+        public IEnumerable<OfferDocuments> GetAllOfferDocumentsByOfferId(int OfferId)
+        {
+            return _offerDocumentsService.GetAllOfferDocumentsByOfferId(OfferId);
+        }
         // POST api/<OfferDocumentsController>
         [HttpPost]
         public ActionResult<OfferDocuments> Post(List<OfferDocumentsDTO> offerDocumentsDTO)

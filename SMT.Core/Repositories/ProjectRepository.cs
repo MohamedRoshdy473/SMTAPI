@@ -186,6 +186,7 @@ namespace SMT.Core.Repositories
             return projectDTO;
         }
 
+
         public void Update(int projectsDTOId, ProjectsDTO projectsDTO)
         {
             if (projectsDTOId != projectsDTO.Id)
@@ -197,7 +198,6 @@ namespace SMT.Core.Repositories
             project.ProjectName = projectsDTO.ProjectName;
             project.ProjectCreationDate = projectsDTO.ProjectCreationDate;
             project.Rank = projectsDTO.Rank;
-            //project.ProjectComponentsId = projectsDTO.ProjectComponentsId;
             project.ProjectStatusId = projectsDTO.ProjectStatusId;
             project.EndUsersId = projectsDTO.EndUsersId;
             project.ContractorsId = projectsDTO.ContractorsId;
