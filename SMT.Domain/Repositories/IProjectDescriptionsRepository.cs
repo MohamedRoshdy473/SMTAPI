@@ -11,6 +11,7 @@ namespace SMT.Domain.Repositories
     {
         ProjectDescriptionsDTO Get(int id);
         IEnumerable<ProjectDescriptionsDTO> GetAll();
+        IEnumerable<ProjectDescriptionsDTO> GetAllProjectByUserId(string UserId);
         IEnumerable<ProjectDescriptionsDTO> GetDescriptionsByProjectId(int ProjectId);
         IEnumerable<ProjectDescriptionsDTO> GetDescriptionsByProjectUpdateId(int ProjectUpdateId);
         void Add(ProjectDescriptionsDTO projectDescriptionsDTO);

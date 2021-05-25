@@ -49,5 +49,10 @@ namespace SMT.Core.Services
         {
             return _unitOfWork.ProjectDescriptions.GetDescriptionsByProjectUpdateId(ProjectUpdateId);
         }
+
+        public IEnumerable<ProjectDescriptionsDTO> GetAllProjectByUserId(string UserId)
+        {
+            return _unitOfWork.ProjectDescriptions.GetAllProjectByUserId(UserId);
+        }
     }
 }

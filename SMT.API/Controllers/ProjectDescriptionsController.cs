@@ -34,7 +34,11 @@ namespace SMT.API.Controllers
         {
             return _projectDescriptionsService.GetProjectDescription(id);
         }
-
+        [Route("GetAllProjectByUserId/{UserId}")]
+        public IEnumerable<ProjectDescriptionsDTO> GetAllProjectByUserId(string UserId)
+        {
+            return _projectDescriptionsService.GetAllProjectByUserId(UserId);
+        }
         // POST api/<ProjectDescriptionsController>
         [HttpPost]
         public ActionResult<ProjectDescriptionsDTO> Post(ProjectDescriptionsDTO projectDescriptionsDTO)
