@@ -100,6 +100,30 @@ namespace SMT.Core.Repositories
             return offerDescriptionDTO;
         }
 
+        public IEnumerable<OfferDescriptionsDTO> GetAllOfferByProjectUpdateId(int ProjectUpdateId)
+        {
+            var offerDescriptionDTO = _context.OfferDescriptions.Where(o => o.ProjectUpdateId == ProjectUpdateId).Include(o => o.Offers).Include(o => o.User).Select(offerDescription =>
+                    new OfferDescriptionsDTO
+                    {
+                        Id = offerDescription.Id,
+                        Description = offerDescription.Description,
+                        DescriptionDate = offerDescription.DescriptionDate,
+                        OffersId = offerDescription.OffersId,
+                        ProjectCostsId=offerDescription.Offers.ProjectCostsId,
+                        Cost=offerDescription.Offers.ProjectCosts.Cost,
+                        OfferStatusId=offerDescription.Offers.OfferStatusId,
+                        OfferStatusName=offerDescription.Offers.OfferStatus.OfferStatusName,
+                        OfferCreationDate=offerDescription.Offers.OfferCreationDate,
+                        ProjectId=offerDescription.ProjectUpdate.ProjectId,
+                        // this refer to offer name
+                        projectName = offerDescription.Offers.Projects.ProjectName,
+                        UserId = offerDescription.UserId,
+                        UserName = offerDescription.User.UserName
+
+                    }).ToList();
+            return offerDescriptionDTO;
+        }
+
         public IEnumerable<OfferDescriptionsDTO> GetAllOfferByUserId(string UserId)
         {
             var offerDescriptionDTO = _context.OfferDescriptions.Where(o => o.UserId == UserId).Include(o => o.Offers).Include(o => o.User).Select(offerDescription =>

@@ -15,6 +15,12 @@ namespace SMT.Data.DTO
         public string UserName { get; set; }
         public int OffersId { get; set; }
         public int ProjectId { get; set; }
+        public int ProjectUpdateId { get; set; }
         public string projectName { get; set; }
+        public DateTime OfferCreationDate { get; set; }
+        public int OfferStatusId { get; set; }
+        public string OfferStatusName { get; set; }
+        public int ProjectCostsId { get; set; }
+        public int Cost { get; set; }
     }
 }
