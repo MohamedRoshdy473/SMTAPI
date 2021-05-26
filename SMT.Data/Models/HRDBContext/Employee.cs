@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 
 #nullable disable
 
@@ -45,19 +44,21 @@ namespace SMT.Data.Models.HRDBContext
         public int PositionId { get; set; }
         public int PositionlevelId { get; set; }
         public int? FacultyDepartmentId { get; set; }
+        public string Education { get; set; }
+        public bool? IsActive { get; set; }
+        public int? SchoolDepartmentsId { get; set; }
 
         public virtual FacultyDepartment FacultyDepartment { get; set; }
         public virtual Position Position { get; set; }
         public virtual PositionLevel Positionlevel { get; set; }
         public virtual Profession Profession { get; set; }
+        public virtual SchoolDepartment SchoolDepartments { get; set; }
         public virtual ICollection<Attendance> Attendances { get; set; }
         public virtual ICollection<Certificate> Certificates { get; set; }
         public virtual ICollection<Compensation> Compensations { get; set; }
         public virtual ICollection<EmployeeDocument> EmployeeDocuments { get; set; }
         public virtual ICollection<Evaluation> Evaluations { get; set; }
         public virtual ICollection<Excuse> Excuses { get; set; }
-        [InverseProperty("AlternativeEmp")]
-
         public virtual ICollection<LeaveRequest> LeaveRequestAlternativeEmps { get; set; }
         public virtual ICollection<LeaveRequest> LeaveRequestEmployees { get; set; }
         public virtual ICollection<MissionRequest> MissionRequests { get; set; }
