@@ -4,7 +4,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 -->
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <_PublishTargetUrl>D:\Publish SMT\api</_PublishTargetUrl>
-    <History>True|2021-05-25T09:29:54.5156546Z;</History>
+    <_PublishTargetUrl>D:\Publish SMT\SMT.API</_PublishTargetUrl>
+    <History>True|2021-05-26T10:33:36.3853472Z;True|2021-05-25T11:29:54.5156546+02:00;</History>
   </PropertyGroup>
 </Project>

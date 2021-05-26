@@ -1,4 +1,5 @@
 ﻿using SMT.Data.DTO;
+using SMT.Data.Models.HRDBContext;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,7 @@ namespace SMT.Domain.Services
     {
         IEnumerable<EmployeeDTO> GetAllEmployees();
         EmployeeDTO GetEmployeeById(int EmpId);
+        IEnumerable<Profession> GetAllProfessions();
         IEnumerable<EmployeeDTO> GetAllEmployeesByProfessionId(int ProfessionId);
 
     }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SMT.Data.DTO;
+using SMT.Data.Models.HRDBContext;
 using SMT.Domain.Services;
 using System;
 using System.Collections.Generic;
@@ -78,6 +79,11 @@ namespace SMT.API.Controllers
         public IEnumerable<EmployeeDTO> Get()
         {
             return _employeeService.GetAllEmployees();
+        }
+        [Route("GetAllProfessions")]
+        public IEnumerable<Profession> GetAllProfessions()
+        {
+            return _employeeService.GetAllProfessions();
         }
         [Route("GetAllEmployeesByProfessionId/{ProfessionId}")]
         public IEnumerable<EmployeeDTO> GetAllEmployeesByProfessionId(int ProfessionId)

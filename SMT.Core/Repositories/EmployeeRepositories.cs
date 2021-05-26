@@ -77,6 +77,11 @@ namespace SMT.Core.Repositories
             return emps;
         }
 
+        public IEnumerable<Profession> GetAllProfessions()
+        {
+            return _context.Professions.ToList();
+        }
+
         public EmployeeDTO GetEmployeeById(int EmpId)
         {
             var e = _context.Employees.Include(e => e.Profession).Include(e => e.Position).Include(e => e.Positionlevel).Where(e => e.Id == EmpId).FirstOrDefault();

@@ -2,8 +2,13 @@ D:\SMTAPI\SMT.API\obj\Release\net5.0\PubTmp\Out\SMT.API.exe
 D:\SMTAPI\SMT.API\obj\Release\net5.0\PubTmp\Out\wwwroot\DataSheets\0FMT896X7TA92RDGFR036N1QBDH1LN3SU1W8Y8E6 (3).jpg
 D:\SMTAPI\SMT.API\obj\Release\net5.0\PubTmp\Out\wwwroot\DataSheets\0FMT896X7TA92RDGFR036N1QBDH1LN3SU1W8Y8E6 (4).jpg
 D:\SMTAPI\SMT.API\obj\Release\net5.0\PubTmp\Out\wwwroot\DataSheets\0FMT896X7TA92RDGFR036N1QBDH1LN3SU1W8Y8E6 (5).jpg
+D:\SMTAPI\SMT.API\obj\Release\net5.0\PubTmp\Out\wwwroot\DataSheets\10-5-2021.sql
 D:\SMTAPI\SMT.API\obj\Release\net5.0\PubTmp\Out\wwwroot\DataSheets\1VVQ591JMYN4T1P6TCY1TMIAS01FZYO35XSZG99D (1).png
 D:\SMTAPI\SMT.API\obj\Release\net5.0\PubTmp\Out\wwwroot\DataSheets\1VVQ591JMYN4T1P6TCY1TMIAS01FZYO35XSZG99D.png
+D:\SMTAPI\SMT.API\obj\Release\net5.0\PubTmp\Out\wwwroot\DataSheets\Activity (1).docx
+D:\SMTAPI\SMT.API\obj\Release\net5.0\PubTmp\Out\wwwroot\DataSheets\Activity (2).docx
+D:\SMTAPI\SMT.API\obj\Release\net5.0\PubTmp\Out\wwwroot\DataSheets\Activity.docx
+D:\SMTAPI\SMT.API\obj\Release\net5.0\PubTmp\Out\wwwroot\DataSheets\New Rich Text Document (2).rtf
 D:\SMTAPI\SMT.API\obj\Release\net5.0\PubTmp\Out\wwwroot\DataSheets\TimeSheet.docx
 D:\SMTAPI\SMT.API\obj\Release\net5.0\PubTmp\Out\wwwroot\documentFiles\0FMT896X7TA92RDGFR036N1QBDH1LN3SU1W8Y8E6 (1).jpg
 D:\SMTAPI\SMT.API\obj\Release\net5.0\PubTmp\Out\wwwroot\documentFiles\0FMT896X7TA92RDGFR036N1QBDH1LN3SU1W8Y8E6 (4).jpg

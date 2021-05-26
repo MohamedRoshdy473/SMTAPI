@@ -1,4 +1,5 @@
 ﻿using SMT.Data.DTO;
+using SMT.Data.Models.HRDBContext;
 using SMT.Domain;
 using SMT.Domain.Services;
 using System;
@@ -26,6 +27,11 @@ namespace SMT.Core.Services
         public IEnumerable<EmployeeDTO> GetAllEmployeesByProfessionId(int ProfessionId)
         {
             return _unitOfWork.Employee.GetAllEmployeesByProfessionId(ProfessionId);
+        }
+
+        public IEnumerable<Profession> GetAllProfessions()
+        {
+            return _unitOfWork.Employee.GetAllProfessions();
         }
 
         public EmployeeDTO GetEmployeeById(int EmpId)
