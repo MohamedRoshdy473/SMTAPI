@@ -221,6 +221,721 @@ namespace SMT.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.Attendance", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("Arrival")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("Departure")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("EmployeeId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EmployeeId");
+
+                    b.ToTable("Attendance");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.Certificate", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Certificate1")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CertificateDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CertificatePlace")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("EmployeeId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EmployeeId");
+
+                    b.ToTable("Certificate");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.Compensation", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Comment")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("EmployeeId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EmployeeId");
+
+                    b.ToTable("Compensation");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.Course", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("CourseName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TrainingTypeId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("TrainingTypeId");
+
+                    b.ToTable("Course");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.CvBank", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool>("Accepted")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Cv")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ProfessionId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProfessionId");
+
+                    b.ToTable("CvBank");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.Employee", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("AllowedLeaveDays")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Code")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("DateOfBirth")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("EmailCompany")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("FacultyDepartmentId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Gender")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("GraduatioYear")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("HiringDateHiringDate")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("MaritalStatus")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Mobile")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NationalId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Phone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Photo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PositionId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PositionlevelId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ProfessionId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("RelevantPhone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FacultyDepartmentId");
+
+                    b.HasIndex("PositionId");
+
+                    b.HasIndex("PositionlevelId");
+
+                    b.HasIndex("ProfessionId");
+
+                    b.ToTable("Employee");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.EmployeeDocument", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("DocumentName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("EmployeeId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("FileName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EmployeeId");
+
+                    b.ToTable("EmployeeDocument");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.Evaluation", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("EmployeeId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("EvaluationDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<decimal>("EvaluationDegreee")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("EvaluationProfessionId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Note")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EmployeeId");
+
+                    b.HasIndex("EvaluationProfessionId");
+
+                    b.ToTable("Evaluation");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.EvaluationProfession", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("EvaluationTypeId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProfessionId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EvaluationTypeId");
+
+                    b.HasIndex("ProfessionId");
+
+                    b.ToTable("EvaluationProfession");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.EvaluationType", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("EvaluationType");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.Excuse", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Approved")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Comment")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("EmployeeId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Hours")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Time")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EmployeeId");
+
+                    b.ToTable("Excuse");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.Faculty", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("FacultyName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UniversityId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UniversityId");
+
+                    b.ToTable("Faculty");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.FacultyDepartment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("FacultyDepartmentName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("FacultyId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("FacultyId");
+
+                    b.ToTable("FacultyDepartment");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.Instructor", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Gender")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("HiringDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("InstructorName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Phone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Instructor");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.LeaveFile", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("FileName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("LeaveRequestId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("LeaveRequestId");
+
+                    b.ToTable("LeaveFile");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.LeaveRequest", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("AlternativeAddress")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("AlternativeEmpId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Comment")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("Date")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("Days")
+                        .HasColumnType("int");
+
+                    b.Property<int>("EmployeeId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("LeaveTypeId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("Start")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Status")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AlternativeEmpId");
+
+                    b.HasIndex("EmployeeId");
+
+                    b.HasIndex("LeaveTypeId");
+
+                    b.ToTable("LeaveRequest");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.LeavesType", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("LeavesType");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.MissionRequest", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Comment")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("EmployeeId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("End")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("Start")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Type")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EmployeeId");
+
+                    b.ToTable("MissionRequest");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.NeedsCategory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("NeedsCategory");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.NeedsRequest", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Comment")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("EmployeeId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("NeedRequestDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Status")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("SubCategoryId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoryId");
+
+                    b.HasIndex("EmployeeId");
+
+                    b.HasIndex("SubCategoryId");
+
+                    b.ToTable("NeedsRequest");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.Position", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("PositionName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Position");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.PositionLevel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("LevelName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("PositionLevel");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.Profession", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("ManagerId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ManagerId");
+
+                    b.ToTable("Profession");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.SubCategory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("SubCategoryName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoryId");
+
+                    b.ToTable("SubCategory");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.Training", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Certified")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("EmployeeId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("EndDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("InstructorId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("TrainingPlace")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TrainingProfessionId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EmployeeId");
+
+                    b.HasIndex("InstructorId");
+
+                    b.HasIndex("TrainingProfessionId");
+
+                    b.ToTable("Training");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.TrainingProfession", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("CourseId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProfessionId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CourseId");
+
+                    b.HasIndex("ProfessionId");
+
+                    b.ToTable("TrainingProfession");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.TrainingType", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("TrainingTypeName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TrainingType");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.University", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("UniversityName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("University");
+                });
+
             modelBuilder.Entity("SMT.Data.Models.SMTDBContext.AssignedProject", b =>
                 {
                     b.Property<int>("Id")
@@ -228,15 +943,17 @@ namespace SMT.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<bool>("IsAssigned")
-                        .HasColumnType("bit");
+                    b.Property<int>("EmployeeId")
+                        .HasColumnType("int");
 
-                    b.Property<int>("ProjectUpdateId")
+                    b.Property<int>("ProjectId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ProjectUpdateId");
+                    b.HasIndex("EmployeeId");
+
+                    b.HasIndex("ProjectId");
 
                     b.ToTable("AssignedProject");
                 });
@@ -698,15 +1415,333 @@ namespace SMT.Data.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("SMT.Data.Models.SMTDBContext.AssignedProject", b =>
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.Attendance", b =>
                 {
-                    b.HasOne("SMT.Data.Models.SMTDBContext.ProjectUpdate", "ProjectUpdate")
-                        .WithMany()
-                        .HasForeignKey("ProjectUpdateId")
+                    b.HasOne("SMT.Data.Models.HRDBContext.Employee", "Employee")
+                        .WithMany("Attendances")
+                        .HasForeignKey("EmployeeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("ProjectUpdate");
+                    b.Navigation("Employee");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.Certificate", b =>
+                {
+                    b.HasOne("SMT.Data.Models.HRDBContext.Employee", "Employee")
+                        .WithMany("Certificates")
+                        .HasForeignKey("EmployeeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Employee");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.Compensation", b =>
+                {
+                    b.HasOne("SMT.Data.Models.HRDBContext.Employee", "Employee")
+                        .WithMany("Compensations")
+                        .HasForeignKey("EmployeeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Employee");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.Course", b =>
+                {
+                    b.HasOne("SMT.Data.Models.HRDBContext.TrainingType", "TrainingType")
+                        .WithMany("Courses")
+                        .HasForeignKey("TrainingTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("TrainingType");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.CvBank", b =>
+                {
+                    b.HasOne("SMT.Data.Models.HRDBContext.Profession", "Profession")
+                        .WithMany("CvBanks")
+                        .HasForeignKey("ProfessionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Profession");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.Employee", b =>
+                {
+                    b.HasOne("SMT.Data.Models.HRDBContext.FacultyDepartment", "FacultyDepartment")
+                        .WithMany("Employees")
+                        .HasForeignKey("FacultyDepartmentId");
+
+                    b.HasOne("SMT.Data.Models.HRDBContext.Position", "Position")
+                        .WithMany("Employees")
+                        .HasForeignKey("PositionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SMT.Data.Models.HRDBContext.PositionLevel", "Positionlevel")
+                        .WithMany("Employees")
+                        .HasForeignKey("PositionlevelId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SMT.Data.Models.HRDBContext.Profession", "Profession")
+                        .WithMany("Employees")
+                        .HasForeignKey("ProfessionId");
+
+                    b.Navigation("FacultyDepartment");
+
+                    b.Navigation("Position");
+
+                    b.Navigation("Positionlevel");
+
+                    b.Navigation("Profession");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.EmployeeDocument", b =>
+                {
+                    b.HasOne("SMT.Data.Models.HRDBContext.Employee", "Employee")
+                        .WithMany("EmployeeDocuments")
+                        .HasForeignKey("EmployeeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Employee");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.Evaluation", b =>
+                {
+                    b.HasOne("SMT.Data.Models.HRDBContext.Employee", "Employee")
+                        .WithMany("Evaluations")
+                        .HasForeignKey("EmployeeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SMT.Data.Models.HRDBContext.EvaluationProfession", "EvaluationProfession")
+                        .WithMany("Evaluations")
+                        .HasForeignKey("EvaluationProfessionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Employee");
+
+                    b.Navigation("EvaluationProfession");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.EvaluationProfession", b =>
+                {
+                    b.HasOne("SMT.Data.Models.HRDBContext.EvaluationType", "EvaluationType")
+                        .WithMany("EvaluationProfessions")
+                        .HasForeignKey("EvaluationTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SMT.Data.Models.HRDBContext.Profession", "Profession")
+                        .WithMany("EvaluationProfessions")
+                        .HasForeignKey("ProfessionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("EvaluationType");
+
+                    b.Navigation("Profession");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.Excuse", b =>
+                {
+                    b.HasOne("SMT.Data.Models.HRDBContext.Employee", "Employee")
+                        .WithMany("Excuses")
+                        .HasForeignKey("EmployeeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Employee");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.Faculty", b =>
+                {
+                    b.HasOne("SMT.Data.Models.HRDBContext.University", "University")
+                        .WithMany("Faculties")
+                        .HasForeignKey("UniversityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("University");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.FacultyDepartment", b =>
+                {
+                    b.HasOne("SMT.Data.Models.HRDBContext.Faculty", "Faculty")
+                        .WithMany("FacultyDepartments")
+                        .HasForeignKey("FacultyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Faculty");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.LeaveFile", b =>
+                {
+                    b.HasOne("SMT.Data.Models.HRDBContext.LeaveRequest", "LeaveRequest")
+                        .WithMany("LeaveFiles")
+                        .HasForeignKey("LeaveRequestId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("LeaveRequest");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.LeaveRequest", b =>
+                {
+                    b.HasOne("SMT.Data.Models.HRDBContext.Employee", "AlternativeEmp")
+                        .WithMany("LeaveRequestAlternativeEmps")
+                        .HasForeignKey("AlternativeEmpId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SMT.Data.Models.HRDBContext.Employee", "Employee")
+                        .WithMany("LeaveRequestEmployees")
+                        .HasForeignKey("EmployeeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SMT.Data.Models.HRDBContext.LeavesType", "LeaveType")
+                        .WithMany("LeaveRequests")
+                        .HasForeignKey("LeaveTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AlternativeEmp");
+
+                    b.Navigation("Employee");
+
+                    b.Navigation("LeaveType");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.MissionRequest", b =>
+                {
+                    b.HasOne("SMT.Data.Models.HRDBContext.Employee", "Employee")
+                        .WithMany("MissionRequests")
+                        .HasForeignKey("EmployeeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Employee");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.NeedsRequest", b =>
+                {
+                    b.HasOne("SMT.Data.Models.HRDBContext.NeedsCategory", "Category")
+                        .WithMany("NeedsRequests")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SMT.Data.Models.HRDBContext.Employee", "Employee")
+                        .WithMany("NeedsRequests")
+                        .HasForeignKey("EmployeeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SMT.Data.Models.HRDBContext.SubCategory", "SubCategory")
+                        .WithMany("NeedsRequests")
+                        .HasForeignKey("SubCategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+
+                    b.Navigation("Employee");
+
+                    b.Navigation("SubCategory");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.Profession", b =>
+                {
+                    b.HasOne("SMT.Data.Models.HRDBContext.Employee", "Manager")
+                        .WithMany("Professions")
+                        .HasForeignKey("ManagerId");
+
+                    b.Navigation("Manager");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.SubCategory", b =>
+                {
+                    b.HasOne("SMT.Data.Models.HRDBContext.NeedsCategory", "Category")
+                        .WithMany("SubCategories")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.Training", b =>
+                {
+                    b.HasOne("SMT.Data.Models.HRDBContext.Employee", "Employee")
+                        .WithMany("training")
+                        .HasForeignKey("EmployeeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SMT.Data.Models.HRDBContext.Instructor", "Instructor")
+                        .WithMany("training")
+                        .HasForeignKey("InstructorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SMT.Data.Models.HRDBContext.TrainingProfession", "TrainingProfession")
+                        .WithMany("training")
+                        .HasForeignKey("TrainingProfessionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Employee");
+
+                    b.Navigation("Instructor");
+
+                    b.Navigation("TrainingProfession");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.TrainingProfession", b =>
+                {
+                    b.HasOne("SMT.Data.Models.HRDBContext.Course", "Course")
+                        .WithMany("TrainingProfessions")
+                        .HasForeignKey("CourseId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SMT.Data.Models.HRDBContext.Profession", "Profession")
+                        .WithMany("TrainingProfessions")
+                        .HasForeignKey("ProfessionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Course");
+
+                    b.Navigation("Profession");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.SMTDBContext.AssignedProject", b =>
+                {
+                    b.HasOne("SMT.Data.Models.HRDBContext.Employee", "Employee")
+                        .WithMany()
+                        .HasForeignKey("EmployeeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("SMT.Data.Models.SMTDBContext.Projects", "Project")
+                        .WithMany()
+                        .HasForeignKey("ProjectId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Employee");
+
+                    b.Navigation("Project");
                 });
 
             modelBuilder.Entity("SMT.Data.Models.SMTDBContext.DataSheets", b =>
@@ -892,6 +1927,121 @@ namespace SMT.Data.Migrations
                     b.Navigation("Governorates");
 
                     b.Navigation("ProjectStatus");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.Course", b =>
+                {
+                    b.Navigation("TrainingProfessions");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.Employee", b =>
+                {
+                    b.Navigation("Attendances");
+
+                    b.Navigation("Certificates");
+
+                    b.Navigation("Compensations");
+
+                    b.Navigation("EmployeeDocuments");
+
+                    b.Navigation("Evaluations");
+
+                    b.Navigation("Excuses");
+
+                    b.Navigation("LeaveRequestAlternativeEmps");
+
+                    b.Navigation("LeaveRequestEmployees");
+
+                    b.Navigation("MissionRequests");
+
+                    b.Navigation("NeedsRequests");
+
+                    b.Navigation("Professions");
+
+                    b.Navigation("training");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.EvaluationProfession", b =>
+                {
+                    b.Navigation("Evaluations");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.EvaluationType", b =>
+                {
+                    b.Navigation("EvaluationProfessions");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.Faculty", b =>
+                {
+                    b.Navigation("FacultyDepartments");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.FacultyDepartment", b =>
+                {
+                    b.Navigation("Employees");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.Instructor", b =>
+                {
+                    b.Navigation("training");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.LeaveRequest", b =>
+                {
+                    b.Navigation("LeaveFiles");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.LeavesType", b =>
+                {
+                    b.Navigation("LeaveRequests");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.NeedsCategory", b =>
+                {
+                    b.Navigation("NeedsRequests");
+
+                    b.Navigation("SubCategories");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.Position", b =>
+                {
+                    b.Navigation("Employees");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.PositionLevel", b =>
+                {
+                    b.Navigation("Employees");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.Profession", b =>
+                {
+                    b.Navigation("CvBanks");
+
+                    b.Navigation("Employees");
+
+                    b.Navigation("EvaluationProfessions");
+
+                    b.Navigation("TrainingProfessions");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.SubCategory", b =>
+                {
+                    b.Navigation("NeedsRequests");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.TrainingProfession", b =>
+                {
+                    b.Navigation("training");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.TrainingType", b =>
+                {
+                    b.Navigation("Courses");
+                });
+
+            modelBuilder.Entity("SMT.Data.Models.HRDBContext.University", b =>
+                {
+                    b.Navigation("Faculties");
                 });
 #pragma warning restore 612, 618
         }

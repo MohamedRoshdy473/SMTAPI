@@ -21,4 +21,8 @@
     <PackageReference Include="NETCore.MailKit" Version="2.0.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\HRDBContext\" />
+  </ItemGroup>
+
 </Project>

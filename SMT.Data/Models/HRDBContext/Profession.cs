@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 #nullable disable
 
@@ -21,6 +22,7 @@ namespace SMT.Data.Models.HRDBContext
 
         public virtual Employee Manager { get; set; }
         public virtual ICollection<CvBank> CvBanks { get; set; }
+        [InverseProperty("Profession")]
         public virtual ICollection<Employee> Employees { get; set; }
         public virtual ICollection<EvaluationProfession> EvaluationProfessions { get; set; }
         public virtual ICollection<TrainingProfession> TrainingProfessions { get; set; }

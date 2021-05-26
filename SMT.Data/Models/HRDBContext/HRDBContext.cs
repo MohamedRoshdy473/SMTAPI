@@ -29,9 +29,9 @@ namespace SMT.Data.Models.HRDBContext
         public virtual DbSet<Compensation> Compensations { get; set; }
         public virtual DbSet<Course> Courses { get; set; }
         public virtual DbSet<CvBank> CvBanks { get; set; }
-        public virtual DbSet<EducationStatus> EducationStatuses { get; set; }
         public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<EmployeeDocument> EmployeeDocuments { get; set; }
+        public virtual DbSet<EmployeeDocumentsDto> EmployeeDocumentsDtos { get; set; }
         public virtual DbSet<Evaluation> Evaluations { get; set; }
         public virtual DbSet<EvaluationProfession> EvaluationProfessions { get; set; }
         public virtual DbSet<EvaluationType> EvaluationTypes { get; set; }
@@ -39,6 +39,8 @@ namespace SMT.Data.Models.HRDBContext
         public virtual DbSet<Excuse> Excuses { get; set; }
         public virtual DbSet<Faculty> Faculties { get; set; }
         public virtual DbSet<FacultyDepartment> FacultyDepartments { get; set; }
+        public virtual DbSet<FacultyDepartmentDto> FacultyDepartmentDtos { get; set; }
+        public virtual DbSet<FacultyDto> FacultyDtos { get; set; }
         public virtual DbSet<Instructor> Instructors { get; set; }
         public virtual DbSet<LeaveFile> LeaveFiles { get; set; }
         public virtual DbSet<LeaveRequest> LeaveRequests { get; set; }
@@ -49,22 +51,20 @@ namespace SMT.Data.Models.HRDBContext
         public virtual DbSet<Position> Positions { get; set; }
         public virtual DbSet<PositionLevel> PositionLevels { get; set; }
         public virtual DbSet<Profession> Professions { get; set; }
-        public virtual DbSet<School> Schools { get; set; }
-        public virtual DbSet<SchoolDepartment> SchoolDepartments { get; set; }
         public virtual DbSet<SubCategory> SubCategories { get; set; }
         public virtual DbSet<Training> Trainings { get; set; }
         public virtual DbSet<TrainingProfession> TrainingProfessions { get; set; }
         public virtual DbSet<TrainingType> TrainingTypes { get; set; }
         public virtual DbSet<University> Universities { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server=.;Database=HRDB;Trusted_Connection=True;");
-            }
-        }
+//        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+//        {
+//            if (!optionsBuilder.IsConfigured)
+//            {
+//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+//                optionsBuilder.UseSqlServer("Server=.;Database=HRDB;Trusted_Connection=True;");
+//            }
+//        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -232,11 +232,6 @@ namespace SMT.Data.Models.HRDBContext
                     .HasForeignKey(d => d.ProfessionId);
             });
 
-            modelBuilder.Entity<EducationStatus>(entity =>
-            {
-                entity.ToTable("EducationStatus");
-            });
-
             modelBuilder.Entity<Employee>(entity =>
             {
                 entity.HasIndex(e => e.FacultyDepartmentId, "IX_Employees_FacultyDepartmentId");
@@ -247,15 +242,9 @@ namespace SMT.Data.Models.HRDBContext
 
                 entity.HasIndex(e => e.ProfessionId, "IX_Employees_ProfessionID");
 
-                entity.HasIndex(e => e.SchoolDepartmentsId, "IX_Employees_SchoolDepartmentsId");
-
                 entity.Property(e => e.Id).HasColumnName("ID");
 
                 entity.Property(e => e.Gender).HasColumnName("gender");
-
-                entity.Property(e => e.IsActive)
-                    .IsRequired()
-                    .HasDefaultValueSql("(CONVERT([bit],(0)))");
 
                 entity.Property(e => e.Photo).HasColumnName("photo");
 
@@ -277,10 +266,6 @@ namespace SMT.Data.Models.HRDBContext
                     .WithMany(p => p.Employees)
                     .HasForeignKey(d => d.ProfessionId)
                     .OnDelete(DeleteBehavior.Cascade);
-
-                entity.HasOne(d => d.SchoolDepartments)
-                    .WithMany(p => p.Employees)
-                    .HasForeignKey(d => d.SchoolDepartmentsId);
             });
 
             modelBuilder.Entity<EmployeeDocument>(entity =>
@@ -292,6 +277,13 @@ namespace SMT.Data.Models.HRDBContext
                 entity.HasOne(d => d.Employee)
                     .WithMany(p => p.EmployeeDocuments)
                     .HasForeignKey(d => d.EmployeeId);
+            });
+
+            modelBuilder.Entity<EmployeeDocumentsDto>(entity =>
+            {
+                entity.ToTable("EmployeeDocumentsDTO");
+
+                entity.Property(e => e.EmployeeId).HasColumnName("EmployeeID");
             });
 
             modelBuilder.Entity<Evaluation>(entity =>
@@ -384,6 +376,18 @@ namespace SMT.Data.Models.HRDBContext
                 entity.HasOne(d => d.Faculty)
                     .WithMany(p => p.FacultyDepartments)
                     .HasForeignKey(d => d.FacultyId);
+            });
+
+            modelBuilder.Entity<FacultyDepartmentDto>(entity =>
+            {
+                entity.ToTable("FacultyDepartmentDTO");
+            });
+
+            modelBuilder.Entity<FacultyDto>(entity =>
+            {
+                entity.ToTable("FacultyDTO");
+
+                entity.Property(e => e.UniversityId).HasColumnName("UniversityID");
             });
 
             modelBuilder.Entity<Instructor>(entity =>
@@ -504,20 +508,6 @@ namespace SMT.Data.Models.HRDBContext
                 entity.HasOne(d => d.Manager)
                     .WithMany(p => p.Professions)
                     .HasForeignKey(d => d.ManagerId);
-            });
-
-            modelBuilder.Entity<School>(entity =>
-            {
-                entity.ToTable("School");
-            });
-
-            modelBuilder.Entity<SchoolDepartment>(entity =>
-            {
-                entity.HasIndex(e => e.SchoolId, "IX_SchoolDepartments_SchoolId");
-
-                entity.HasOne(d => d.School)
-                    .WithMany(p => p.SchoolDepartments)
-                    .HasForeignKey(d => d.SchoolId);
             });
 
             modelBuilder.Entity<SubCategory>(entity =>
