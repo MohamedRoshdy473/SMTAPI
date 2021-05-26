@@ -19,14 +19,19 @@ namespace SMT.API.Controllers
         public OffersController(IOffersService offersService)
         {
             _offersService = offersService;
-        }
+        } 
+
         // GET: api/<OffersController>
         [HttpGet]
         public IEnumerable<OffersDTO> Get()
         {
             return _offersService.GetAllOffers();
         }
-
+        [Route("GetAllOffersOffered")]
+        public IEnumerable<OffersDTO> GetAllOffersOffered()
+        {
+            return _offersService.GetAllOffersOffered();
+        }
         // GET api/<OffersController>/5
         [HttpGet("{id}")]
         public ActionResult<OffersDTO> Get(int id)

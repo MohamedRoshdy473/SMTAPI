@@ -42,5 +42,9 @@ namespace SMT.Core.Services
         {
             _unitOfWork.Offers.Update(offersDTOId, offersDTO);
         }
+        public IEnumerable<OffersDTO> GetAllOffersOffered()
+        {
+            return _unitOfWork.Offers.GetAllOffersOffered();
+        }
     }
 }

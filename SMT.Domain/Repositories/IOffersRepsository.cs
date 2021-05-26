@@ -12,6 +12,7 @@ namespace SMT.Domain.Repositories
     {
         OffersDTO Get(int id);
         IEnumerable<OffersDTO> GetAll();
+        IEnumerable<OffersDTO> GetAllOffersOffered();
         int Add(OffersDTO offersDTO);
         void Delete(int offersDTOId);
         void Update(int offersDTOId, OffersDTO offersDTO);

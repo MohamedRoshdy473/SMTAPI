@@ -28,7 +28,7 @@ namespace SMT.Domain
         IDataSheetsRepository DataSheets { get; }
         IProjectSystemsRepository ProjectSystems { get; }
         IEmployeeRepository Employee { get; }
-
+        IAssignedProjectRepository AssignedProject { get; }
 
     }
 }
