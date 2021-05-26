@@ -1,4 +1,4 @@
-﻿using SMT.Data.DTO;
+using SMT.Data.DTO;
 using SMT.Data.Models.SMTDBContext;
 using SMT.Domain.Repositories;
 using System;
@@ -26,9 +26,9 @@ namespace SMT.Core.Repositories
                 {
                     AssignedProject assignedProject = new AssignedProject();
                     assignedProject.Id = assignedProjectDTO.Id;
-                    assignedProject.IsAssigned = true;
-                    assignedProject.EmployeeId = assignedProject.EmployeeId;
-                    assignedProject.ProjectUpdateId = assignedProject.ProjectUpdateId;
+                    assignedProject.IsAssigned = assignedProjectDTO.IsAssigned;
+                    assignedProject.EmployeeId = assignedProjectDTO.EmployeeId;
+                    assignedProject.ProjectUpdateId = assignedProjectDTO.ProjectUpdateId;
                     _context.AssignedProject.Add(assignedProject);
                     _context.SaveChanges();
                 }
