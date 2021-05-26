@@ -1,4 +1,5 @@
-﻿using SMT.Data.DTO;
+using SMT.Data.DTO;
+using SMT.Domain;
 using SMT.Domain.Services;
 using System;
 using System.Collections.Generic;
@@ -8,31 +9,37 @@ using System.Threading.Tasks;
 
 namespace SMT.Core.Services
 {
-    public class AssignedProjectService : IAssignedProjectService
+  public class AssignedProjectService : IAssignedProjectService
+  {
+    private readonly IUnitOfWork _unitOfWork;
+
+    public AssignedProjectService(IUnitOfWork unitOfWork)
     {
-        public void AddAssignedProject(AssignedProjectDTO assignedProjectDTO)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void DeleteAssignedProject(int assignedProjectDTOId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<AssignedProjectDTO> GetAllAssignedProjects()
-        {
-            throw new NotImplementedException();
-        }
-
-        public AssignedProjectDTO GetAssignedProject(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void UpdateAssignedProject(int assignedProjectDTOId, AssignedProjectDTO assignedProjectDTO)
-        {
-            throw new NotImplementedException();
-        }
+      _unitOfWork = unitOfWork;
     }
+    public void AddAssignedProject(AssignedProjectDTO assignedProjectDTO)
+    {
+      _unitOfWork.AssignedProject.Add(assignedProjectDTO);
+    }
+
+    public void DeleteAssignedProject(int assignedProjectDTOId)
+    {
+      _unitOfWork.AssignedProject.Delete(assignedProjectDTOId);
+    }
+
+    public IEnumerable<AssignedProjectDTO> GetAllAssignedProjects()
+    {
+      return _unitOfWork.AssignedProject.GetAll();
+    }
+
+    public AssignedProjectDTO GetAssignedProject(int id)
+    {
+      return _unitOfWork.AssignedProject.Get(id);
+    }
+
+    public void UpdateAssignedProject(int assignedProjectDTOId, AssignedProjectDTO assignedProjectDTO)
+    {
+      _unitOfWork.AssignedProject.Update(assignedProjectDTOId, assignedProjectDTO);
+    }
+  }
 }
