@@ -11,6 +11,7 @@ namespace SMT.Domain.Services
     {
         IEnumerable<EmployeeDTO> GetAllEmployees();
         EmployeeDTO GetEmployeeById(int EmpId);
+        IEnumerable<EmployeeDTO> GetAllEmployeesByProfessionId(int ProfessionId);
 
     }
 }

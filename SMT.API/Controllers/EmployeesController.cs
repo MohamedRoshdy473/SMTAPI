@@ -79,7 +79,11 @@ namespace SMT.API.Controllers
         {
             return _employeeService.GetAllEmployees();
         }
-
+        [Route("GetAllEmployeesByProfessionId/{ProfessionId}")]
+        public IEnumerable<EmployeeDTO> GetAllEmployeesByProfessionId(int ProfessionId)
+        {
+            return _employeeService.GetAllEmployeesByProfessionId(ProfessionId);
+        }
         // GET api/<EmployeesController>/5
         [HttpGet("{id}")]
         public EmployeeDTO Get(int id)

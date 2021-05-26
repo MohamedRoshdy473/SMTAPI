@@ -106,7 +106,7 @@ namespace SMT.Core.Repositories
         ProjectId = proUpdates.ProjectId,
         DueDate = proUpdates.DueDate,
         ProjectName = proUpdates.projects.ProjectName
-      }).ToList();
+      }).OrderByDescending(p=>p.Id).ToList();
       return projectUpdates;
     }
 

@@ -11,5 +11,6 @@ namespace SMT.Domain.Repositories
     {
         IEnumerable<EmployeeDTO> GetAllEmployeesDTO();
         EmployeeDTO GetEmployeeById(int EmpId);
+        IEnumerable<EmployeeDTO> GetAllEmployeesByProfessionId(int ProfessionId);
     }
 }

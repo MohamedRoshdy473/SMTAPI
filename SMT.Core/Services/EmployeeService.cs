@@ -23,6 +23,11 @@ namespace SMT.Core.Services
            return _unitOfWork.Employee.GetAllEmployeesDTO();
         }
 
+        public IEnumerable<EmployeeDTO> GetAllEmployeesByProfessionId(int ProfessionId)
+        {
+            return _unitOfWork.Employee.GetAllEmployeesByProfessionId(ProfessionId);
+        }
+
         public EmployeeDTO GetEmployeeById(int EmpId)
         {
             return _unitOfWork.Employee.GetEmployeeById(EmpId);

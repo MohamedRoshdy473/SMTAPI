@@ -18,6 +18,34 @@ namespace SMT.Core.Repositories
         {
             _context = context;
         }
+
+        public IEnumerable<EmployeeDTO> GetAllEmployeesByProfessionId(int ProfessionId)
+        {
+            var emps = _context.Employees.Where(e=>e.ProfessionId== ProfessionId).Include(e => e.Profession).Include(e => e.Position).Include(e => e.Positionlevel).Select(e => new EmployeeDTO
+            {
+                ID = e.Id,
+                Name = e.Name,
+                ProfessionName = e.Profession.Name,
+                GraduatioYear = e.GraduatioYear,
+                Address = e.Address,
+                Code = e.Code,
+                DateOfBirth = e.DateOfBirth,
+                Email = e.Email,
+                gender = e.Gender,
+                HiringDateHiringDate = e.HiringDateHiringDate,
+                MaritalStatus = e.MaritalStatus,
+                Phone = e.Phone,
+                RelevantPhone = e.RelevantPhone,
+                Photo = e.Photo,
+                EmailCompany = e.EmailCompany,
+                Mobile = e.Mobile,
+                NationalId = e.NationalId,
+                PositionId = e.PositionId,
+                PositionlevelId = e.PositionlevelId,
+            }).ToList();
+            return emps;
+        }
+
         public IEnumerable<EmployeeDTO> GetAllEmployeesDTO()
         {
             var emps = _context.Employees.Include(e=>e.Profession).Include(e => e.Position).Include(e => e.Positionlevel).Select(e => new EmployeeDTO
