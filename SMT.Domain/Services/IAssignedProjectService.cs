@@ -11,6 +11,7 @@ namespace SMT.Domain.Services
     {
         AssignedProjectDTO GetAssignedProject(int id);
         IEnumerable<AssignedProjectDTO> GetAllAssignedProjects();
+        IEnumerable<AssignedProjectDTO> GetAllAssignedProjectsByEmployeeId(int EmployeeId);
         void AddAssignedProject(AssignedProjectDTO assignedProjectDTO);
         void DeleteAssignedProject(int assignedProjectDTOId);
         void UpdateAssignedProject(int assignedProjectDTOId, AssignedProjectDTO assignedProjectDTO);

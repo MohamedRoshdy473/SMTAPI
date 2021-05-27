@@ -102,6 +102,23 @@ namespace SMT.Core.Repositories
             return assignedProjectDTO;
         }
 
+        public IEnumerable<AssignedProjectDTO> GetAllAssignedProjectsByEmployeeId(int EmployeeId)
+        {
+            var assignedProjectDTO = _context.AssignedProject.Where(a=>a.EmployeeId==EmployeeId).Include(p => p.ProjectUpdate.projects).Select(assignedProject => new AssignedProjectDTO
+            {
+                Id = assignedProject.Id,
+                IsAssigned = assignedProject.IsAssigned,
+                EmployeeId = assignedProject.EmployeeId,
+                EmployeeName = assignedProject.Employee.Name,
+                ProjectId = assignedProject.ProjectUpdate.ProjectId,
+                ProjectUpdateId = assignedProject.ProjectUpdateId,
+                ProjectName = assignedProject.ProjectUpdate.projects.ProjectName,
+                AssignedProjectDate = assignedProject.AssignedProjectDate,
+                Description = assignedProject.Description
+            }).ToList();
+            return assignedProjectDTO;
+        }
+
         public void Update(int assignedProjectDTOId, AssignedProjectDTO assignedProjectDTO)
         {
             if (assignedProjectDTOId != assignedProjectDTO.Id)
