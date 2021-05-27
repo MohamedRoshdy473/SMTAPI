@@ -29,6 +29,8 @@ namespace SMT.Core.Repositories
                     assignedProject.IsAssigned = assignedProjectDTO.IsAssigned;
                     assignedProject.EmployeeId = assignedProjectDTO.EmployeeId;
                     assignedProject.ProjectUpdateId = assignedProjectDTO.ProjectUpdateId;
+                    assignedProject.AssignedProjectDate = assignedProjectDTO.AssignedProjectDate;
+                    assignedProject.Description = assignedProjectDTO.Description;
                     _context.AssignedProject.Add(assignedProject);
                     _context.SaveChanges();
                 }
@@ -67,22 +69,25 @@ namespace SMT.Core.Repositories
             }
             else
             {
-                var assignedProjectDTO=new AssignedProjectDTO{
-                    Id=assignedProject.Id,
-                    IsAssigned=assignedProject.IsAssigned,
-                    EmployeeId=assignedProject.EmployeeId,
-                    EmployeeName=assignedProject.Employee.Name,
-                    ProjectId=assignedProject.ProjectUpdate.ProjectId,
-                    ProjectUpdateId=assignedProject.ProjectUpdateId,
-                    ProjectName=assignedProject.ProjectUpdate.projects.ProjectName
-                };
+                var assignedProjectDTO = new AssignedProjectDTO
+                {
+                    Id = assignedProject.Id,
+                    IsAssigned = assignedProject.IsAssigned,
+                    EmployeeId = assignedProject.EmployeeId,
+                    EmployeeName = assignedProject.Employee.Name,
+                    ProjectId = assignedProject.ProjectUpdate.ProjectId,
+                    ProjectUpdateId = assignedProject.ProjectUpdateId,
+                    ProjectName = assignedProject.ProjectUpdate.projects.ProjectName,
+                    AssignedProjectDate = assignedProject.AssignedProjectDate,
+                    Description = assignedProject.Description
+            };
                 return assignedProjectDTO;
             }
         }
 
         public IEnumerable<AssignedProjectDTO> GetAll()
         {
-            var assignedProjectDTO =_context.AssignedProject.Include(p => p.ProjectUpdate.projects).Select(assignedProject=> new AssignedProjectDTO
+            var assignedProjectDTO = _context.AssignedProject.Include(p => p.ProjectUpdate.projects).Select(assignedProject => new AssignedProjectDTO
             {
                 Id = assignedProject.Id,
                 IsAssigned = assignedProject.IsAssigned,
@@ -90,7 +95,9 @@ namespace SMT.Core.Repositories
                 EmployeeName = assignedProject.Employee.Name,
                 ProjectId = assignedProject.ProjectUpdate.ProjectId,
                 ProjectUpdateId = assignedProject.ProjectUpdateId,
-                ProjectName = assignedProject.ProjectUpdate.projects.ProjectName
+                ProjectName = assignedProject.ProjectUpdate.projects.ProjectName,
+                AssignedProjectDate = assignedProject.AssignedProjectDate,
+                Description = assignedProject.Description
             }).ToList();
             return assignedProjectDTO;
         }
@@ -106,6 +113,8 @@ namespace SMT.Core.Repositories
             assignedProject.IsAssigned = true;
             assignedProject.EmployeeId = assignedProject.EmployeeId;
             assignedProject.ProjectUpdateId = assignedProject.ProjectUpdateId;
+            assignedProject.AssignedProjectDate = assignedProjectDTO.AssignedProjectDate;
+            assignedProject.Description = assignedProjectDTO.Description;
             _context.Entry(assignedProject).State = EntityState.Modified;
             try
             {

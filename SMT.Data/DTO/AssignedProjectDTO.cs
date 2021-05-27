@@ -9,6 +9,8 @@ namespace SMT.Data.DTO
     public class AssignedProjectDTO
     {
         public int Id { get; set; }
+        public string Description { get; set; }
+        public DateTime AssignedProjectDate { get; set; }
         public Boolean IsAssigned { get; set; }
         public int ProjectId { get; set; }
         public int ProjectUpdateId { get; set; }
