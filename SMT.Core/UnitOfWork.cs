@@ -34,7 +34,7 @@ namespace SMT.Core
         private DataSheetsRepository _dataSheetsRepository;
         private ProjectSystemsRepository _projectSystemsRepository;
         private EmployeeRepositories _employeeRepository;
-        private IAssignedProjectRepository _assignedProjectRepository;
+        private AssignedProjectRepository _assignedProjectRepository;
 
         //public UnitOfWork(SMTDbContext context)
         //{
