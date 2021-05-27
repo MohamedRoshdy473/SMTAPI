@@ -1,4 +1,4 @@
-﻿using SMT.Data.DTO;
+using SMT.Data.DTO;
 using SMT.Domain;
 using SMT.Domain.Services;
 using System;
@@ -51,5 +51,10 @@ namespace SMT.Core.Services
         {
             return _unitOfWork.OfferDescriptions.GetAllOfferByProjectUpdateId(ProjectUpdateId);
         }
+
+    public IEnumerable<OfferDescriptionsDTO> GetAllOfferOfferedByUserId(string UserId)
+    {
+      return _unitOfWork.OfferDescriptions.GetAllOfferOfferedByUserId(UserId);
     }
+  }
 }

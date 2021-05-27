@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using SMT.Data.DTO;
 using SMT.Domain.Services;
 using System;
@@ -30,6 +30,11 @@ namespace SMT.API.Controllers
         public IEnumerable<OfferDescriptionsDTO> GetAllOffersByUserId(string UserId)
         {
             return _offerDescriptionsService.GetAllOfferByUserId(UserId);
+        }
+        [Route("GetAllOfferOfferedByUserId/{UserId}")]
+        public IEnumerable<OfferDescriptionsDTO> GetAllOfferOfferedByUserId(string UserId)
+        {
+            return _offerDescriptionsService.GetAllOfferOfferedByUserId(UserId);
         }
         [Route("GetAllOfferByProjectUpdateId/{ProjectUpdateId}")]
         public IEnumerable<OfferDescriptionsDTO> GetAllOfferByProjectUpdateId(int ProjectUpdateId)

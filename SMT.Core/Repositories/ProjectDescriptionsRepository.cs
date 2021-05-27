@@ -113,7 +113,7 @@ namespace SMT.Core.Repositories
 
         public IEnumerable<ProjectDescriptionsDTO> GetAllProjectByUserId(string UserId)
         {
-            var projects = _context.ProjectDescriptions.Where(d => d.UserId == UserId)
+            var projects = _context.ProjectDescriptions.Where(d => d.UserId == UserId && d.ProjectUpdateId==null)
                 .Include(p => p.projects.Contractors).Include(p => p.projects.EndUsers).Include(p => p.projects.ProjectStatus)
                 .Select(projDesc => new ProjectDescriptionsDTO
             {
@@ -156,7 +156,7 @@ namespace SMT.Core.Repositories
                 UserId = projDesc.UserId,
                 ProjectUpdateId = projDesc.ProjectUpdateId,
                 UserName = projDesc.User.UserName
-            }).ToList();
+            }).OrderByDescending(o=>o.Id).ToList();
 
             return projDescriptions;
         }
