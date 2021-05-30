@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using SMT.Data.DTO;
+using SMT.Data.Models.SMTDBContext;
 using SMT.Domain.Services;
 using System;
 using System.Collections.Generic;
@@ -36,10 +37,10 @@ namespace SMT.API.Controllers
         {
             return _offerDescriptionsService.GetAllOfferOfferedByUserId(UserId);
         }
-        [Route("GetAllOfferByProjectUpdateId/{ProjectUpdateId}")]
-        public IEnumerable<OfferDescriptionsDTO> GetAllOfferByProjectUpdateId(int ProjectUpdateId)
+        [Route("GetAllOfferByProjectUpdateId/{ProjectId}/{ProjectUpdateId}")]
+        public IEnumerable<OfferDescriptionsDTO> GetAllOfferByProjectUpdateId(int ProjectId, int ProjectUpdateId)
         {
-            return _offerDescriptionsService.GetAllOfferByProjectUpdateId(ProjectUpdateId);
+            return _offerDescriptionsService.GetAllOfferByProjectUpdateId(ProjectId, ProjectUpdateId);
         }
 
         // GET api/<OfferDescriptionsController>/5

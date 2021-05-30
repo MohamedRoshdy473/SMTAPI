@@ -13,7 +13,7 @@ namespace SMT.Data.DTO
         public DateTime AssignedProjectDate { get; set; }
         public Boolean IsAssigned { get; set; }
         public int ProjectId { get; set; }
-        public int ProjectUpdateId { get; set; }
+        public int? ProjectUpdateId { get; set; }
         public string ProjectName { get; set; }
         public int EmployeeId { get; set; }
         public string EmployeeName { get; set; }

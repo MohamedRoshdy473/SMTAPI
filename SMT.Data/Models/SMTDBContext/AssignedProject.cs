@@ -14,7 +14,10 @@ namespace SMT.Data.Models.SMTDBContext
         public Boolean IsAssigned { get; set; }
         public string Description { get; set; }
         public DateTime AssignedProjectDate { get; set; }
-        public int ProjectUpdateId { get; set; }
+        public int ProjectId { get; set; }
+        [ForeignKey("ProjectId")]
+        public virtual Projects projects { get; set; }
+        public int? ProjectUpdateId { get; set; }
         [ForeignKey("ProjectUpdateId")]
         public virtual ProjectUpdate ProjectUpdate { get; set; }
         public int EmployeeId { get; set; }

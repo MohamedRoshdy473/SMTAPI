@@ -25,9 +25,14 @@ namespace SMT.Core.Repositories
 
                 if (offersDTO != null)
                 {
+                    if (offersDTO.ProjectUpdateId==0)
+                    {
+                        offersDTO.ProjectUpdateId = null;
+                    }
                     Offers offer = new Offers();
                     offer.OfferStatusId = offersDTO.OfferStatusId;
                     offer.OfferCreationDate = offersDTO.OfferCreationDate;
+                    offer.ProjectUpdateId = offersDTO.ProjectUpdateId;
                     offer.ProjectsId = offersDTO.ProjectsId;
                     offer.ProjectCostsId = offersDTO.ProjectCostsId;
                     _context.Add(offer);
@@ -74,6 +79,7 @@ namespace SMT.Core.Repositories
                 var offersDTO = new OffersDTO
                 {
                     Id = offer.Id,
+                    ProjectUpdateId=offer.ProjectUpdateId,
                     ProjectsId = offer.ProjectsId,
                     ProjectName = offer.Projects.ProjectName,
                     ProjectCostsId = offer.ProjectCostsId,
@@ -92,6 +98,7 @@ namespace SMT.Core.Repositories
                 new OffersDTO
                 {
                     Id = offer.Id,
+                    ProjectUpdateId=offer.ProjectUpdateId,
                     ProjectsId = offer.ProjectsId,
                     ProjectName = offer.Projects.ProjectName,
                     ProjectCostsId = offer.ProjectCostsId,
@@ -109,6 +116,7 @@ namespace SMT.Core.Repositories
                      {
                          Id = offer.Id,
                          ProjectsId = offer.ProjectsId,
+                         ProjectUpdateId=offer.ProjectUpdateId,
                          ProjectName = offer.Projects.ProjectName,
                          ProjectCostsId = offer.ProjectCostsId,
                          Cost = offer.ProjectCosts.Cost,
@@ -129,6 +137,7 @@ namespace SMT.Core.Repositories
             offer.OfferStatusId = offersDTO.OfferStatusId;
             offer.OfferCreationDate = offersDTO.OfferCreationDate;
             offer.ProjectsId = offersDTO.ProjectsId;
+            offer.ProjectUpdateId = offersDTO.ProjectUpdateId;
             offer.ProjectCostsId = offersDTO.ProjectCostsId;
             _context.Entry(offer).State = EntityState.Modified;
             try

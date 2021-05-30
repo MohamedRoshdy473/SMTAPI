@@ -28,6 +28,7 @@ namespace SMT.Core.Repositories
                     assignedProject.Id = assignedProjectDTO.Id;
                     assignedProject.IsAssigned = assignedProjectDTO.IsAssigned;
                     assignedProject.EmployeeId = assignedProjectDTO.EmployeeId;
+                    assignedProject.ProjectId = assignedProjectDTO.ProjectId;
                     assignedProject.ProjectUpdateId = assignedProjectDTO.ProjectUpdateId;
                     assignedProject.AssignedProjectDate = assignedProjectDTO.AssignedProjectDate;
                     assignedProject.Description = assignedProjectDTO.Description;
@@ -75,9 +76,9 @@ namespace SMT.Core.Repositories
                     IsAssigned = assignedProject.IsAssigned,
                     EmployeeId = assignedProject.EmployeeId,
                     EmployeeName = assignedProject.Employee.Name,
-                    ProjectId = assignedProject.ProjectUpdate.ProjectId,
+                    ProjectId = assignedProject.ProjectId,
                     ProjectUpdateId = assignedProject.ProjectUpdateId,
-                    ProjectName = assignedProject.ProjectUpdate.projects.ProjectName,
+                    ProjectName = assignedProject.projects.ProjectName,
                     AssignedProjectDate = assignedProject.AssignedProjectDate,
                     Description = assignedProject.Description
             };
@@ -93,9 +94,9 @@ namespace SMT.Core.Repositories
                 IsAssigned = assignedProject.IsAssigned,
                 EmployeeId = assignedProject.EmployeeId,
                 EmployeeName = assignedProject.Employee.Name,
-                ProjectId = assignedProject.ProjectUpdate.ProjectId,
+                ProjectId = assignedProject.ProjectId,
                 ProjectUpdateId = assignedProject.ProjectUpdateId,
-                ProjectName = assignedProject.ProjectUpdate.projects.ProjectName,
+                ProjectName = assignedProject.projects.ProjectName,
                 AssignedProjectDate = assignedProject.AssignedProjectDate,
                 Description = assignedProject.Description
             }).ToList();
@@ -110,9 +111,9 @@ namespace SMT.Core.Repositories
                 IsAssigned = assignedProject.IsAssigned,
                 EmployeeId = assignedProject.EmployeeId,
                 EmployeeName = assignedProject.Employee.Name,
-                ProjectId = assignedProject.ProjectUpdate.ProjectId,
+                ProjectId = assignedProject.ProjectId,
                 ProjectUpdateId = assignedProject.ProjectUpdateId,
-                ProjectName = assignedProject.ProjectUpdate.projects.ProjectName,
+                ProjectName = assignedProject.projects.ProjectName,
                 AssignedProjectDate = assignedProject.AssignedProjectDate,
                 Description = assignedProject.Description
             }).ToList();
@@ -129,6 +130,7 @@ namespace SMT.Core.Repositories
             assignedProject.Id = assignedProjectDTO.Id;
             assignedProject.IsAssigned = true;
             assignedProject.EmployeeId = assignedProject.EmployeeId;
+            assignedProject.ProjectId = assignedProjectDTO.ProjectId;
             assignedProject.ProjectUpdateId = assignedProject.ProjectUpdateId;
             assignedProject.AssignedProjectDate = assignedProjectDTO.AssignedProjectDate;
             assignedProject.Description = assignedProjectDTO.Description;

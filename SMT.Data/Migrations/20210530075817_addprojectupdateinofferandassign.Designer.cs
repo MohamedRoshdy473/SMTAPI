@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SMT.Data.Models.SMTDBContext;
 
 namespace SMT.Data.Migrations
 {
     [DbContext(typeof(SMTDbContext))]
-    partial class SMTDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210530075817_addprojectupdateinofferandassign")]
+    partial class addprojectupdateinofferandassign
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1092,9 +1094,6 @@ namespace SMT.Data.Migrations
                     b.Property<int>("OffersId")
                         .HasColumnType("int");
 
-                    b.Property<int>("ProjectId")
-                        .HasColumnType("int");
-
                     b.Property<int?>("ProjectUpdateId")
                         .HasColumnType("int");
 
@@ -1104,8 +1103,6 @@ namespace SMT.Data.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("OffersId");
-
-                    b.HasIndex("ProjectId");
 
                     b.HasIndex("ProjectUpdateId");
 
@@ -1793,12 +1790,6 @@ namespace SMT.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("SMT.Data.Models.SMTDBContext.Projects", "projects")
-                        .WithMany()
-                        .HasForeignKey("ProjectId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.HasOne("SMT.Data.Models.SMTDBContext.ProjectUpdate", "ProjectUpdate")
                         .WithMany()
                         .HasForeignKey("ProjectUpdateId");
@@ -1808,8 +1799,6 @@ namespace SMT.Data.Migrations
                         .HasForeignKey("UserId");
 
                     b.Navigation("Offers");
-
-                    b.Navigation("projects");
 
                     b.Navigation("ProjectUpdate");
 

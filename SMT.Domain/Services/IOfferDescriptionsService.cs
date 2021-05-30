@@ -13,7 +13,7 @@ namespace SMT.Domain.Services
     IEnumerable<OfferDescriptionsDTO> GetAllOfferDescriptions();
     IEnumerable<OfferDescriptionsDTO> GetAllOfferByUserId(string UserId);
     IEnumerable<OfferDescriptionsDTO> GetAllOfferOfferedByUserId(string UserId);
-    IEnumerable<OfferDescriptionsDTO> GetAllOfferByProjectUpdateId(int ProjectUpdateId);
+    IEnumerable<OfferDescriptionsDTO> GetAllOfferByProjectUpdateId(int ProjectId, int ProjectUpdateId);
     void AddOfferDescription(OfferDescriptionsDTO offerDescriptionsDTO);
     void DeleteOfferDescription(int offerDescriptionsDTOId);
     void UpdateOfferDescription(int offerDescriptionsDTOId, OfferDescriptionsDTO offerDescriptionsDTO);

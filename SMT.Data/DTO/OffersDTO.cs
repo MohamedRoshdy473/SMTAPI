@@ -16,6 +16,7 @@ namespace SMT.Data.DTO
         public int ProjectCostsId { get; set; }
         public int Cost { get; set; }
         public int ProjectsId { get; set; }
+        public int? ProjectUpdateId { get; set; }
         public string ProjectName  { get; set; }
     }
 }

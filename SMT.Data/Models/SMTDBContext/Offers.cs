@@ -20,7 +20,9 @@ namespace SMT.Data.Models.SMTDBContext
         public int ProjectsId { get; set; }
         [ForeignKey("ProjectsId")]
         public virtual Projects Projects { get; set; }
-
+        public int? ProjectUpdateId { get; set; }
+        [ForeignKey("ProjectUpdateId")]
+        public virtual ProjectUpdate ProjectUpdate { get; set; }
 
     }
 }

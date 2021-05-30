@@ -47,9 +47,9 @@ namespace SMT.Core.Services
             return _unitOfWork.OfferDescriptions.GetAllOfferByUserId(UserId);
         }
 
-        public IEnumerable<OfferDescriptionsDTO> GetAllOfferByProjectUpdateId(int ProjectUpdateId)
+        public IEnumerable<OfferDescriptionsDTO> GetAllOfferByProjectUpdateId(int ProjectId, int ProjectUpdateId)
         {
-            return _unitOfWork.OfferDescriptions.GetAllOfferByProjectUpdateId(ProjectUpdateId);
+            return _unitOfWork.OfferDescriptions.GetAllOfferByProjectUpdateId(ProjectId,ProjectUpdateId);
         }
 
     public IEnumerable<OfferDescriptionsDTO> GetAllOfferOfferedByUserId(string UserId)

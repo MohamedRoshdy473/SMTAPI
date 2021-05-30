@@ -1,4 +1,5 @@
 using SMT.Data.DTO;
+using SMT.Data.Models.SMTDBContext;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace SMT.Domain.Repositories
         IEnumerable<OfferDescriptionsDTO> GetAll();
         IEnumerable<OfferDescriptionsDTO> GetAllOfferByUserId(string UserId);
         IEnumerable<OfferDescriptionsDTO> GetAllOfferOfferedByUserId(string UserId);
-        IEnumerable<OfferDescriptionsDTO> GetAllOfferByProjectUpdateId(int ProjectUpdateId);
+        IEnumerable<OfferDescriptionsDTO> GetAllOfferByProjectUpdateId(int ProjectId, int ProjectUpdateId);
         void Add(OfferDescriptionsDTO offerDescriptionsDTO);
         void Delete(int offerDescriptionsDTOId);
         void Update(int offerDescriptionsDTOId, OfferDescriptionsDTO offerDescriptionsDTO);
