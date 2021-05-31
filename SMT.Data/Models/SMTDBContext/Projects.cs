@@ -22,6 +22,9 @@ namespace SMT.Data.Models.SMTDBContext
         public int EndUsersId { get; set; }
         [ForeignKey("EndUsersId")]
         public virtual EndUsers EndUsers { get; set; }
+        public int? ConsultantId { get; set; }
+        [ForeignKey("ConsultantId")]
+        public virtual Consultant Consultant { get; set; }
         public int GovernoratesId { get; set; }
         [ForeignKey("GovernoratesId")]
         public virtual Governorates Governorates { get; set; }

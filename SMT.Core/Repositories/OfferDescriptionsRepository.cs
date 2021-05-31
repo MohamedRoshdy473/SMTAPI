@@ -191,7 +191,7 @@ namespace SMT.Core.Repositories
                     }).ToList();
             foreach (var item in projects)
             {
-                var offerDescriptionDTO = _context.OfferDescriptions.Where(o => o.ProjectUpdate.ProjectId == item.ProjectId
+                var offerDescriptionDTO = _context.OfferDescriptions.Where(o => o.ProjectId == item.ProjectId && o.ProjectUpdateId==null
                 && o.Offers.OfferStatus.OfferStatusName == "Offered").Include(o => o.Offers).Include(o => o.User).Select(offerDescription =>
                           new OfferDescriptionsDTO
                           {
@@ -204,44 +204,44 @@ namespace SMT.Core.Repositories
                               projectName = offerDescription.Offers.Projects.ProjectName,
                               UserId = offerDescription.UserId,
                               UserName = offerDescription.User.UserName
-                          }).FirstOrDefault();
+                          }).Distinct().FirstOrDefault();
                 OfferDescriptionsOffered.Add(offerDescriptionDTO);
             }
-            //foreach (var item in projects)
-            //{
+            foreach (var item in projects)
+            {
 
-            //  var projectUpdates = _context.projectUpdates.Where(e => e.ProjectId == item.ProjectId).Select(proUpdates => new ProjectUpdateDTO
-            //  {
-            //    Id = proUpdates.Id,
-            //    ProjectId = proUpdates.ProjectId,
-            //    DueDate = proUpdates.DueDate,
-            //    ProjectName = proUpdates.projects.ProjectName
-            //  }).OrderByDescending(p => p.Id).ToList();
-            //  foreach (var item2 in projectUpdates)
-            //  {
-            //    updates.Add(item2);
-            //  }
-            //}
+                var projectUpdates = _context.projectUpdates.Where(e => e.ProjectId == item.ProjectId).Select(proUpdates => new ProjectUpdateDTO
+                {
+                    Id = proUpdates.Id,
+                    ProjectId = proUpdates.ProjectId,
+                    DueDate = proUpdates.DueDate,
+                    ProjectName = proUpdates.projects.ProjectName
+                }).OrderByDescending(p => p.Id).ToList();
+                foreach (var item2 in projectUpdates)
+                {
+                    updates.Add(item2);
+                }
+            }
 
-            //foreach (var item in updates)
-            //{
-            //  var offerDescriptionDTO = _context.OfferDescriptions.Include(o => o.Offers.OfferStatus)
-            //    .Where(o => o.ProjectUpdateId == item.Id || o.ProjectUpdate.ProjectId==item.ProjectId && o.Offers.OfferStatus.OfferStatusName == "Offered").Include(o => o.Offers).Include(o => o.User).Select(offerDescription =>
-            //      new OfferDescriptionsDTO
-            //      {
-            //        Id = offerDescription.Id,
-            //        Description = offerDescription.Description,
-            //        DescriptionDate = offerDescription.DescriptionDate,
-            //        OffersId = offerDescription.OffersId,
-            //        OfferStatusName = offerDescription.Offers.OfferStatus.OfferStatusName,
-            //      // this refer to offer name
-            //        projectName = offerDescription.Offers.Projects.ProjectName,
-            //        UserId = offerDescription.UserId,
-            //        UserName = offerDescription.User.UserName
-            //      }).FirstOrDefault();
-            //  OfferDescriptionsOffered.Add(offerDescriptionDTO);
-            //}
-            OfferDescriptionsOffered.Remove(null);
+            foreach (var item in updates)
+            {
+                var offerDescriptionDTO = _context.OfferDescriptions.Include(o => o.Offers.OfferStatus)
+                  .Where(o => o.ProjectUpdateId == item.Id && o.Offers.OfferStatus.OfferStatusName == "Offered").Include(o => o.Offers).Include(o => o.User).Select(offerDescription =>
+                      new OfferDescriptionsDTO
+                    {
+                        Id = offerDescription.Id,
+                        Description = offerDescription.Description,
+                        DescriptionDate = offerDescription.DescriptionDate,
+                        OffersId = offerDescription.OffersId,
+                        OfferStatusName = offerDescription.Offers.OfferStatus.OfferStatusName,
+                      // this refer to offer name
+                      projectName = offerDescription.Offers.Projects.ProjectName,
+                        UserId = offerDescription.UserId,
+                        UserName = offerDescription.User.UserName
+                    }).FirstOrDefault();
+                OfferDescriptionsOffered.Add(offerDescriptionDTO);
+            }
+            OfferDescriptionsOffered.RemoveAll(item => item == null);
             return OfferDescriptionsOffered;
         }
 

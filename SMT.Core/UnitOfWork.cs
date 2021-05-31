@@ -35,6 +35,7 @@ namespace SMT.Core
         private ProjectSystemsRepository _projectSystemsRepository;
         private EmployeeRepositories _employeeRepository;
         private AssignedProjectRepository _assignedProjectRepository;
+        private ConsultantRepository _consultantRepository;
 
         //public UnitOfWork(SMTDbContext context)
         //{
@@ -64,6 +65,7 @@ namespace SMT.Core
         public IProjectSystemsRepository ProjectSystemsRepository => new ProjectSystemsRepository(_context);
         public IEmployeeRepository EmployeeRepository => new EmployeeRepositories(_HRcontext);
         public IAssignedProjectRepository AssignedProjectRepository => new AssignedProjectRepository(_context);
+        public IConsultantRepository ConsultantRepository => new ConsultantRepository(_context);
         public int CommitAsync()
         {
             return _context.SaveChanges();
@@ -104,5 +106,7 @@ namespace SMT.Core
         public IProjectSystemsRepository ProjectSystems => _projectSystemsRepository = _projectSystemsRepository ?? new ProjectSystemsRepository(_context);
         public IEmployeeRepository Employee => _employeeRepository = _employeeRepository ?? new EmployeeRepositories(_HRcontext);
         public IAssignedProjectRepository AssignedProject => _assignedProjectRepository = _assignedProjectRepository ?? new AssignedProjectRepository(_context);
+
+        public IConsultantRepository Consultant => _consultantRepository = _consultantRepository ?? new ConsultantRepository(_context);
     }
 }

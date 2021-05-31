@@ -11,6 +11,7 @@ namespace SMT.Data.Models.SMTDBContext
         public int ID { get; set; }
         public string ContractorName { get; set; }
         public string ContactName { get; set; }
+        public string TitleName { get; set; }
         public string Phone { get; set; }
         public string RelevantPhone { get; set; }
         public string Email { get; set; }

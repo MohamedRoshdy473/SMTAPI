@@ -94,9 +94,11 @@ namespace SalesManagmentTool
             services.AddTransient<IDataSheetsRepository, DataSheetsRepository>();
             services.AddTransient<IProjectSystemsService, ProjectSystemsService>();
             services.AddTransient<IProjectSystemsRepository, ProjectSystemsRepository>();
-
             services.AddTransient<IEmployeeRepository,EmployeeRepositories>();
             services.AddTransient<IEmployeeService, EmployeeService>();
+            services.AddTransient<IConsultantRepository, ConsultantRepository>();
+            services.AddTransient<IConsultantService, ConsultantService>();
+
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddIdentity<ApplicationUser, IdentityRole>()
                     .AddEntityFrameworkStores<SMTDbContext>()

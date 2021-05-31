@@ -972,6 +972,36 @@ namespace SMT.Data.Migrations
                     b.ToTable("AssignedProject");
                 });
 
+            modelBuilder.Entity("SMT.Data.Models.SMTDBContext.Consultant", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ConsultantName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ContactName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Phone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RelevantPhone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TitleName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Consultant");
+                });
+
             modelBuilder.Entity("SMT.Data.Models.SMTDBContext.Contractors", b =>
                 {
                     b.Property<int>("ID")
@@ -992,6 +1022,9 @@ namespace SMT.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RelevantPhone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TitleName")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
@@ -1054,6 +1087,9 @@ namespace SMT.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("RelevantPhone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("TitleName")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ID");
@@ -1344,6 +1380,9 @@ namespace SMT.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int?>("ConsultantId")
+                        .HasColumnType("int");
+
                     b.Property<int>("ContractorsId")
                         .HasColumnType("int");
 
@@ -1369,6 +1408,8 @@ namespace SMT.Data.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ConsultantId");
 
                     b.HasIndex("ContractorsId");
 
@@ -1940,6 +1981,10 @@ namespace SMT.Data.Migrations
 
             modelBuilder.Entity("SMT.Data.Models.SMTDBContext.Projects", b =>
                 {
+                    b.HasOne("SMT.Data.Models.SMTDBContext.Consultant", "Consultant")
+                        .WithMany()
+                        .HasForeignKey("ConsultantId");
+
                     b.HasOne("SMT.Data.Models.SMTDBContext.Contractors", "Contractors")
                         .WithMany()
                         .HasForeignKey("ContractorsId")
@@ -1963,6 +2008,8 @@ namespace SMT.Data.Migrations
                         .HasForeignKey("ProjectStatusId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Consultant");
 
                     b.Navigation("Contractors");
 
