@@ -110,7 +110,7 @@ namespace SMT.Core.Repositories
             }             
             var project = _context.Projects.Where(p => p.Id == id).Include(p => p.EndUsers).Include(p => p.Contractors)
                                                                   .Include(p => p.EndUsers).Include(p => p.ProjectStatus)
-                                                                  .Include(p => p.Governorates).FirstOrDefault();
+                                                                  .Include(p => p.Governorates).Include(p => p.Consultant).FirstOrDefault();
             if (project == null)
             {
                 throw new NotExistException("Not Exist Exception");
@@ -146,7 +146,7 @@ namespace SMT.Core.Repositories
 
         public IEnumerable<ProjectsDTO> GetAll()
         {
-            var projectDTO = _context.Projects.Include(p=>p.Contractors).Include(p => p.EndUsers).Include(p => p.ProjectStatus).Include(p => p.Governorates).Select(project => new ProjectsDTO
+            var projectDTO = _context.Projects.Include(p => p.Consultant).Include(p=>p.Contractors).Include(p => p.EndUsers).Include(p => p.ProjectStatus).Include(p => p.Governorates).Select(project => new ProjectsDTO
             {
                 Id = project.Id,
                 IsAccept=project.IsAccept,
@@ -171,7 +171,7 @@ namespace SMT.Core.Repositories
 
         public IEnumerable<ProjectsDTO> GetAllAcceptedProjects()
         {
-            var projectDTO = _context.Projects.Where(p=>p.IsAccept==true).Include(p => p.Contractors).Include(p => p.EndUsers).Include(p => p.ProjectStatus).Include(p => p.Governorates).Select(project => new ProjectsDTO
+            var projectDTO = _context.Projects.Where(p=>p.IsAccept==true).Include(p => p.Consultant).Include(p => p.Contractors).Include(p => p.EndUsers).Include(p => p.ProjectStatus).Include(p => p.Governorates).Select(project => new ProjectsDTO
             {
                 Id = project.Id,
                 IsAccept = project.IsAccept,
