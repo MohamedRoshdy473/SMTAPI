@@ -26,6 +26,8 @@ namespace SMT.Data.DTO
         public int GovernorateId { get; set; }
         public string GovernorateName { get; set; }
         public Boolean IsAccept { get; set; }
+        public int? ConsultantId { get; set; }
+        public string ConsultantName { get; set; }
         public List<ProjectSystemsDTO> lstprojectSystems { get; set; }
     }
 }

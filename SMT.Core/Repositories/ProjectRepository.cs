@@ -60,6 +60,7 @@ namespace SMT.Core.Repositories
                     project.EndUsersId = projectsDTO.EndUsersId;
                     project.ContractorsId = projectsDTO.ContractorsId;
                     project.GovernoratesId = projectsDTO.GovernorateId;
+                    project.ConsultantId = projectsDTO.ConsultantId;
                     project.IsAccept = false;
                     _context.Add(project);
                     _context.SaveChanges();
@@ -134,7 +135,10 @@ namespace SMT.Core.Repositories
                     ContractorName = project.Contractors.ContractorName,
                     GovernorateId = project.GovernoratesId,
                     GovernorateName = project.Governorates.GovernorateName,
-                    lstprojectSystems = lstprojectSystems
+                    lstprojectSystems = lstprojectSystems,
+                   ConsultantId=project.ConsultantId,
+                   ConsultantName=project.Consultant.ConsultantName,
+                   IsAccept=project.IsAccept
                 };
                 return projectDTO;
             }
@@ -158,8 +162,10 @@ namespace SMT.Core.Repositories
                 ContractorContactName = project.Contractors.ContactName,
                 ContractorName = project.Contractors.ContractorName,
                 GovernorateId = project.GovernoratesId,
-                GovernorateName = project.Governorates.GovernorateName
-            }).ToList();
+                GovernorateName = project.Governorates.GovernorateName,
+                ConsultantId = project.ConsultantId,
+                ConsultantName = project.Consultant.ConsultantName,
+            }).OrderByDescending(p => p.Id).ToList();
             return projectDTO;
         }
 
@@ -182,7 +188,7 @@ namespace SMT.Core.Repositories
                 ContractorName = project.Contractors.ContractorName,
                 GovernorateId = project.GovernoratesId,
                 GovernorateName = project.Governorates.GovernorateName
-            }).ToList();
+            }).OrderByDescending(p => p.Id).ToList();
             return projectDTO;
         }
 
@@ -202,6 +208,7 @@ namespace SMT.Core.Repositories
             project.EndUsersId = projectsDTO.EndUsersId;
             project.ContractorsId = projectsDTO.ContractorsId;
             project.GovernoratesId = projectsDTO.GovernorateId;
+            project.ConsultantId = projectsDTO.ConsultantId;
             _context.Entry(project).State = EntityState.Modified;
             try
             {
