@@ -12,7 +12,7 @@ namespace SMT.Domain.Repositories
     {
         ProjectDocumentsDTO Get(int id);
         IEnumerable<ProjectDocumentsDTO> GetProjectDocumentByProjectId(int ProjectId);
-        IEnumerable<ProjectDocumentsDTO> GetProjectDocumentByProjectUpdateId(int ProjectUpdateId);
+        IEnumerable<ProjectDocumentsDTO> GetProjectDocumentByProjectUpdateId(int ProjectId, int ProjectUpdateId);
         List<ProjectDocumentsDTO> GetGetLatestDocuments(int projectId);
         IEnumerable<ProjectDocumentsDTO> GetAll();
         IActionResult Upload();

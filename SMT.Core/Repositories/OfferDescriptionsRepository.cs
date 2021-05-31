@@ -102,7 +102,7 @@ namespace SMT.Core.Repositories
                     UserId = offerDescription.UserId,
                     UserName = offerDescription.User.UserName
 
-                }).ToList();
+                }).OrderByDescending(p => p.Id).ToList();
             return offerDescriptionDTO;
         }
 
@@ -129,7 +129,7 @@ namespace SMT.Core.Repositories
                         UserId = offerDescription.UserId,
                         UserName = offerDescription.User.UserName
                     
-                    }).ToList();
+                    }).OrderByDescending(p => p.Id).ToList();
                 return offerDescriptionDTO;
             }
             else
@@ -152,7 +152,7 @@ namespace SMT.Core.Repositories
                         UserId = offerDescription.UserId,
                         UserName = offerDescription.User.UserName
 
-                    }).ToList();
+                    }).OrderByDescending(p => p.Id).ToList();
             }
 
             return offerDescriptionDTO;
@@ -172,7 +172,7 @@ namespace SMT.Core.Repositories
                         UserId = offerDescription.UserId,
                         UserName = offerDescription.User.UserName
 
-                    }).ToList();
+                    }).OrderByDescending(p => p.Id).ToList();
             return offerDescriptionDTO;
         }
 
@@ -242,7 +242,7 @@ namespace SMT.Core.Repositories
                 OfferDescriptionsOffered.Add(offerDescriptionDTO);
             }
             OfferDescriptionsOffered.RemoveAll(item => item == null);
-            return OfferDescriptionsOffered;
+            return OfferDescriptionsOffered.OrderByDescending(p => p.Id);
         }
 
         public void Update(int offerDescriptionsDTOId, OfferDescriptionsDTO offerDescriptionsDTO)

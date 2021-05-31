@@ -50,10 +50,10 @@ namespace SMT.API.Controllers
         {
             return _projectDocumentsService.GetProjectDocumentByProjectId(ProjectId);
         }
-        [Route("GetProjectDocumentByProjectUpdateId/{ProjectUpdateId}")]
-        public IEnumerable<ProjectDocumentsDTO> GetProjectDocumentByProjectUpdateId(int ProjectUpdateId)
+        [Route("GetProjectDocumentByProjectUpdateId/{ProjectId}/{ProjectUpdateId}")]
+        public IEnumerable<ProjectDocumentsDTO> GetProjectDocumentByProjectUpdateId(int ProjectId, int ProjectUpdateId)
         {
-            return _projectDocumentsService.GetProjectDocumentByProjectUpdateId(ProjectUpdateId);
+            return _projectDocumentsService.GetProjectDocumentByProjectUpdateId(ProjectId,ProjectUpdateId);
         }
         // POST api/<ProjectDocumentsController>
         [HttpPost]

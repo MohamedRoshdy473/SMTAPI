@@ -41,9 +41,9 @@ namespace SMT.Core.Services
         {
             return _unitOfWork.ProjectDocuments.GetProjectDocumentByProjectId(ProjectId);
         }
-        public IEnumerable<ProjectDocumentsDTO> GetProjectDocumentByProjectUpdateId(int ProjectUpdateId)
+        public IEnumerable<ProjectDocumentsDTO> GetProjectDocumentByProjectUpdateId(int ProjectId, int ProjectUpdateId)
         {
-            return _unitOfWork.ProjectDocuments.GetProjectDocumentByProjectUpdateId(ProjectUpdateId);
+            return _unitOfWork.ProjectDocuments.GetProjectDocumentByProjectUpdateId(ProjectId,ProjectUpdateId);
         }
 
         public void UpdateProjectDocument(int projectDocumentsDTOId, ProjectDocumentsDTO projectDocumentsDTO)

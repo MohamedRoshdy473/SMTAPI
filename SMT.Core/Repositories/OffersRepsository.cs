@@ -106,7 +106,7 @@ namespace SMT.Core.Repositories
                     OfferCreationDate = offer.OfferCreationDate,
                     OfferStatusId = offer.OfferStatusId,
                     OfferStatusName = offer.OfferStatus.OfferStatusName,
-                }).ToList();
+                }).OrderByDescending(p => p.Id).ToList();
             return offerDTO;
         }
         public IEnumerable<OffersDTO> GetAllOffersOffered()
@@ -123,7 +123,7 @@ namespace SMT.Core.Repositories
                          OfferCreationDate = offer.OfferCreationDate,
                          OfferStatusId = offer.OfferStatusId,
                          OfferStatusName = offer.OfferStatus.OfferStatusName,
-                     }).ToList();
+                     }).OrderByDescending(p => p.Id).ToList();
             return offerDTO;
         }
         public void Update(int offersDTOId, OffersDTO offersDTO)
