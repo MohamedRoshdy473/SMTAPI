@@ -65,10 +65,10 @@ namespace SMT.Core.Repositories
                 throw new NotExistException("Not Exist Exception");
             }
         }
-    
+
         public ProjectUpdateDTO Get(int id)
         {
-            var ProjectUpdate = _context.projectUpdates.Include(p=>p.projects).FirstOrDefault(p=>p.Id==id);
+            var ProjectUpdate = _context.projectUpdates.Include(p => p.projects).FirstOrDefault(p => p.Id == id);
 
             if (ProjectUpdate == null)
             {
@@ -82,8 +82,8 @@ namespace SMT.Core.Repositories
                     ProjectId = ProjectUpdate.ProjectId,
                     ProjectName = ProjectUpdate.projects.ProjectName,
                     DueDate = ProjectUpdate.DueDate,
-                    Deadline=ProjectUpdate.Deadline,
-                    IsAccept=ProjectUpdate.IsAccept
+                    Deadline = ProjectUpdate.Deadline,
+                    IsAccept = ProjectUpdate.IsAccept
                 };
                 return ProjectUpdateDTO;
             }
@@ -103,21 +103,21 @@ namespace SMT.Core.Repositories
             return projectUpdates;
         }
 
-    public IEnumerable<ProjectUpdateDTO> GetAllUpdatesByProjectId(int projectId)
-    {
-      var projectUpdates = _context.projectUpdates.Where(e => e.ProjectId == projectId).Select(proUpdates => new ProjectUpdateDTO
-      {
-        Id = proUpdates.Id,
-        ProjectId = proUpdates.ProjectId,
-        DueDate = proUpdates.DueDate,
-        ProjectName = proUpdates.projects.ProjectName,
-          Deadline = proUpdates.Deadline,
-          IsAccept = proUpdates.IsAccept
-      }).OrderByDescending(p=>p.Id).ToList();
-      return projectUpdates;
-    }
+        public IEnumerable<ProjectUpdateDTO> GetAllUpdatesByProjectId(int projectId)
+        {
+            var projectUpdates = _context.projectUpdates.Where(e => e.ProjectId == projectId).Select(proUpdates => new ProjectUpdateDTO
+            {
+                Id = proUpdates.Id,
+                ProjectId = proUpdates.ProjectId,
+                DueDate = proUpdates.DueDate,
+                ProjectName = proUpdates.projects.ProjectName,
+                Deadline = proUpdates.Deadline,
+                IsAccept = proUpdates.IsAccept
+            }).OrderByDescending(p => p.Id).ToList();
+            return projectUpdates;
+        }
 
-    public void Update(int ProjectUpdateId, ProjectUpdateDTO projectUpdateDTO)
+        public void Update(int ProjectUpdateId, ProjectUpdateDTO projectUpdateDTO)
         {
             if (ProjectUpdateId != projectUpdateDTO.Id)
             {
