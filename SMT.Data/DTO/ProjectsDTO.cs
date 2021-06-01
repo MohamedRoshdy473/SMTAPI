@@ -28,6 +28,9 @@ namespace SMT.Data.DTO
         public Boolean IsAccept { get; set; }
         public int? ConsultantId { get; set; }
         public string ConsultantName { get; set; }
+        public DateTime Deadline { get; set; }
+        public string UserId { get; set; }
+        public string UserName { get; set; }
         public List<ProjectSystemsDTO> lstprojectSystems { get; set; }
     }
 }

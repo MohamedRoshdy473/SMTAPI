@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SMT.Data.Models.HRDBContext;
+using SMT.Data.Models.SMTDBContext.SMTDBContext;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -29,5 +31,9 @@ namespace SMT.Data.Models.SMTDBContext
         [ForeignKey("GovernoratesId")]
         public virtual Governorates Governorates { get; set; }
         public Boolean IsAccept { get; set; }
+        public string UserId { get; set; }
+        [ForeignKey("UserId")]
+        public virtual ApplicationUser User { get; set; }
+        public DateTime Deadline { get; set; }
     }
 }

@@ -61,6 +61,9 @@ namespace SMT.Core.Repositories
                     project.ContractorsId = projectsDTO.ContractorsId;
                     project.GovernoratesId = projectsDTO.GovernorateId;
                     project.ConsultantId = projectsDTO.ConsultantId;
+                    project.UserId = projectsDTO.UserId;
+                    project.Deadline = projectsDTO.Deadline;
+
                     project.IsAccept = false;
                     _context.Add(project);
                     _context.SaveChanges();
@@ -110,7 +113,8 @@ namespace SMT.Core.Repositories
             }             
             var project = _context.Projects.Where(p => p.Id == id).Include(p => p.EndUsers).Include(p => p.Contractors)
                                                                   .Include(p => p.EndUsers).Include(p => p.ProjectStatus)
-                                                                  .Include(p => p.Governorates).Include(p => p.Consultant).FirstOrDefault();
+                                                                  .Include(p => p.Governorates).Include(p => p.Consultant)
+                                                                  .Include(p=>p.User).FirstOrDefault();
             if (project == null)
             {
                 throw new NotExistException("Not Exist Exception");
@@ -138,7 +142,10 @@ namespace SMT.Core.Repositories
                     lstprojectSystems = lstprojectSystems,
                    ConsultantId=project.ConsultantId,
                    ConsultantName=project.Consultant.ConsultantName,
-                   IsAccept=project.IsAccept
+                   IsAccept=project.IsAccept,
+                   Deadline=project.Deadline,
+                   UserId=project.UserId,
+                   UserName=project.User.UserName
                 };
                 return projectDTO;
             }
@@ -146,7 +153,7 @@ namespace SMT.Core.Repositories
 
         public IEnumerable<ProjectsDTO> GetAll()
         {
-            var projectDTO = _context.Projects.Include(p => p.Consultant).Include(p=>p.Contractors).Include(p => p.EndUsers).Include(p => p.ProjectStatus).Include(p => p.Governorates).Select(project => new ProjectsDTO
+            var projectDTO = _context.Projects.Include(p => p.Consultant).Include(p=>p.Contractors).Include(p => p.EndUsers).Include(p => p.ProjectStatus).Include(p => p.Governorates).Include(p => p.User).Select(project => new ProjectsDTO
             {
                 Id = project.Id,
                 IsAccept=project.IsAccept,
@@ -165,6 +172,9 @@ namespace SMT.Core.Repositories
                 GovernorateName = project.Governorates.GovernorateName,
                 ConsultantId = project.ConsultantId,
                 ConsultantName = project.Consultant.ConsultantName,
+                Deadline = project.Deadline,
+                UserId = project.UserId,
+                UserName = project.User.UserName
             }).OrderByDescending(p => p.Id).ToList();
             return projectDTO;
         }
@@ -187,7 +197,10 @@ namespace SMT.Core.Repositories
                 ContractorContactName = project.Contractors.ContactName,
                 ContractorName = project.Contractors.ContractorName,
                 GovernorateId = project.GovernoratesId,
-                GovernorateName = project.Governorates.GovernorateName
+                GovernorateName = project.Governorates.GovernorateName,
+                Deadline = project.Deadline,
+                UserId = project.UserId,
+                UserName = project.User.UserName
             }).OrderByDescending(p => p.Id).ToList();
             return projectDTO;
         }
@@ -209,6 +222,8 @@ namespace SMT.Core.Repositories
             project.ContractorsId = projectsDTO.ContractorsId;
             project.GovernoratesId = projectsDTO.GovernorateId;
             project.ConsultantId = projectsDTO.ConsultantId;
+            project.UserId = projectsDTO.UserId;
+            project.Deadline = projectsDTO.Deadline;
             _context.Entry(project).State = EntityState.Modified;
             try
             {

@@ -12,5 +12,7 @@ namespace SMT.Data.DTO
         public DateTime DueDate { get; set; }
         public int ProjectId { get; set; }
         public string ProjectName  { get; set; }
+        public DateTime Deadline { get; set; }
+        public Boolean IsAccept { get; set; }
     }
 }
