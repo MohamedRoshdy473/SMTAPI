@@ -32,6 +32,8 @@ namespace SMT.Core.Repositories
                     projectUpdate.Id = ProjectUpdateDTO.Id;
                     projectUpdate.ProjectId = ProjectUpdateDTO.ProjectId;
                     projectUpdate.DueDate = ProjectUpdateDTO.DueDate;
+                    projectUpdate.Deadline = ProjectUpdateDTO.Deadline;
+                    projectUpdate.IsAccept = false;
                     _context.Add(projectUpdate);
                     _context.SaveChanges();
                     ProjectUpdateDTO.Id = projectUpdate.Id;
@@ -80,7 +82,8 @@ namespace SMT.Core.Repositories
                     ProjectId = ProjectUpdate.ProjectId,
                     ProjectName = ProjectUpdate.projects.ProjectName,
                     DueDate = ProjectUpdate.DueDate,
-
+                    Deadline=ProjectUpdate.Deadline,
+                    IsAccept=ProjectUpdate.IsAccept
                 };
                 return ProjectUpdateDTO;
             }
@@ -94,6 +97,8 @@ namespace SMT.Core.Repositories
                 ProjectId = ProjectUpdate.ProjectId,
                 ProjectName = ProjectUpdate.projects.ProjectName,
                 DueDate = ProjectUpdate.DueDate,
+                Deadline = ProjectUpdate.Deadline,
+                IsAccept = ProjectUpdate.IsAccept
             }).ToList();
             return projectUpdates;
         }
@@ -105,7 +110,9 @@ namespace SMT.Core.Repositories
         Id = proUpdates.Id,
         ProjectId = proUpdates.ProjectId,
         DueDate = proUpdates.DueDate,
-        ProjectName = proUpdates.projects.ProjectName
+        ProjectName = proUpdates.projects.ProjectName,
+          Deadline = proUpdates.Deadline,
+          IsAccept = proUpdates.IsAccept
       }).OrderByDescending(p=>p.Id).ToList();
       return projectUpdates;
     }
@@ -120,7 +127,8 @@ namespace SMT.Core.Repositories
             projectUpdate.Id = projectUpdateDTO.Id;
             projectUpdate.ProjectId = projectUpdateDTO.ProjectId;
             projectUpdate.DueDate = projectUpdateDTO.DueDate;
-
+            projectUpdate.Deadline = projectUpdateDTO.Deadline;
+            projectUpdate.IsAccept = projectUpdateDTO.IsAccept;
             try
             {
                 _context.Entry(projectUpdate).State = EntityState.Modified;
