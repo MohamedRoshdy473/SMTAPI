@@ -141,6 +141,23 @@ namespace SMT.Core.Repositories
             {
                 lstCount.Add(num.Id);
             }
+      if (proUpdateIdInProjectDocuments.Count==0)
+      {
+        List<ProjectDocumentsDTO> LastDoc1 = _context.ProjectDocuments
+                                                        .Where(p => p.ProjectId == projectId)
+                                                        .Select(projectDocuments => new ProjectDocumentsDTO
+                                                        {
+                                                          Id = projectDocuments.Id,
+                                                          DocumentFile = projectDocuments.DocumentFile,
+                                                          ProjectUpdateId = (int)projectDocuments.ProjectUpdateId,
+                                                                      //DueDate = projectDocuments.ProjectUpdate.DueDate,
+                                                                      ProjectId = projectDocuments.ProjectId,
+                                                          ProjectName = projectDocuments.projects.ProjectName,
+                                                          DocumentsCategoryId = projectDocuments.DocumentsCategoryId,
+                                                          DocumentsCategoryName = projectDocuments.DocumentsCategories.CategoryName
+                                                        }).ToList();
+        return LastDoc1;
+      }
             IEnumerable<ProjectDocumentsDTO> LastDoc = _context.ProjectDocuments
                                                                     .Where(p => p.ProjectUpdateId == proUpdateIdInProjectDocuments[0].Id)
                                                                     .Select(projectDocuments => new ProjectDocumentsDTO
@@ -148,7 +165,7 @@ namespace SMT.Core.Repositories
                                                                         Id = projectDocuments.Id,
                                                                         DocumentFile = projectDocuments.DocumentFile,
                                                                         ProjectUpdateId = (int)projectDocuments.ProjectUpdateId,
-                                                                        DueDate = projectDocuments.ProjectUpdate.DueDate,
+                                                                        //DueDate = projectDocuments.ProjectUpdate.DueDate,
                                                                         ProjectId = projectDocuments.ProjectId,
                                                                         ProjectName = projectDocuments.projects.ProjectName,
                                                                         DocumentsCategoryId = projectDocuments.DocumentsCategoryId,
@@ -245,8 +262,7 @@ namespace SMT.Core.Repositories
                 {
                     Id = projectDocuments.Id,
                     DocumentFile = projectDocuments.DocumentFile,
-                    ProjectUpdateId = (int)projectDocuments.ProjectUpdateId,
-                    DueDate = projectDocuments.ProjectUpdate.DueDate,
+                    ProjectUpdateId = projectDocuments.ProjectUpdateId,
                     ProjectId = projectDocuments.ProjectId,
                     ProjectName = projectDocuments.projects.ProjectName,
                     DocumentsCategoryId = projectDocuments.DocumentsCategoryId,
@@ -260,12 +276,11 @@ namespace SMT.Core.Repositories
                 {
                     Id = projectDocuments.Id,
                     DocumentFile = projectDocuments.DocumentFile,
-                    ProjectUpdateId = (int)projectDocuments.ProjectUpdateId,
-                    DueDate = projectDocuments.ProjectUpdate.DueDate,
-                    ProjectId = projectDocuments.ProjectId,
-                    ProjectName = projectDocuments.projects.ProjectName,
-                    DocumentsCategoryId = projectDocuments.DocumentsCategoryId,
-                    DocumentsCategoryName = projectDocuments.DocumentsCategories.CategoryName
+                  ProjectUpdateId = projectDocuments.ProjectUpdateId,
+                  ProjectId = projectDocuments.ProjectId,
+                  ProjectName = projectDocuments.projects.ProjectName,
+                  DocumentsCategoryId = projectDocuments.DocumentsCategoryId,
+                  DocumentsCategoryName = projectDocuments.DocumentsCategories.CategoryName
 
                 }).ToList();
             }
