@@ -30,6 +30,7 @@ namespace SMT.Core.Repositories
                 if (projectsDTO != null)
                 {
                     projectsDTO.IsAccept = true;
+                    projectsDTO.AcceptedDate = DateTime.Now;
                     _context.Entry(projectsDTO).State = EntityState.Modified;
                     _context.SaveChanges();
                 }
@@ -63,7 +64,7 @@ namespace SMT.Core.Repositories
                     project.ConsultantId = projectsDTO.ConsultantId;
                     project.UserId = projectsDTO.UserId;
                     project.Deadline = projectsDTO.Deadline;
-
+                    project.AcceptedDate = projectsDTO.AcceptedDate;
                     project.IsAccept = false;
                     _context.Add(project);
                     _context.SaveChanges();
@@ -99,22 +100,22 @@ namespace SMT.Core.Repositories
 
         public ProjectsDTO Get(int id)
         {
-            var projectSystem = _context.ProjectSystems.Include(s=>s.ProjectComponents).Where(p => p.ProjectId == id).ToList();
+            var projectSystem = _context.ProjectSystems.Include(s => s.ProjectComponents).Where(p => p.ProjectId == id).ToList();
             List<ProjectSystemsDTO> lstprojectSystems = new List<ProjectSystemsDTO>();
             foreach (var item in projectSystem)
             {
-                ProjectSystemsDTO projectSystemsDTO =new ProjectSystemsDTO
+                ProjectSystemsDTO projectSystemsDTO = new ProjectSystemsDTO
                 {
                     Id = item.Id,
                     ProjectComponentsId = item.Id,
                     ProjectComponentName = item.ProjectComponents.ProjectComponentName,
                 };
                 lstprojectSystems.Add(projectSystemsDTO);
-            }             
+            }
             var project = _context.Projects.Where(p => p.Id == id).Include(p => p.EndUsers).Include(p => p.Contractors)
                                                                   .Include(p => p.EndUsers).Include(p => p.ProjectStatus)
                                                                   .Include(p => p.Governorates).Include(p => p.Consultant)
-                                                                  .Include(p=>p.User).FirstOrDefault();
+                                                                  .Include(p => p.User).FirstOrDefault();
             if (project == null)
             {
                 throw new NotExistException("Not Exist Exception");
@@ -140,12 +141,13 @@ namespace SMT.Core.Repositories
                     GovernorateId = project.GovernoratesId,
                     GovernorateName = project.Governorates.GovernorateName,
                     lstprojectSystems = lstprojectSystems,
-                   ConsultantId=project.ConsultantId,
-                   ConsultantName=project.Consultant.ConsultantName,
-                   IsAccept=project.IsAccept,
-                   Deadline=project.Deadline,
-                   UserId=project.UserId,
-                   UserName=project.User.UserName
+                    ConsultantId = project.ConsultantId,
+                    ConsultantName = project.Consultant.ConsultantName,
+                    IsAccept = project.IsAccept,
+                    Deadline = project.Deadline,
+                    UserId = project.UserId,
+                    UserName = project.User.UserName,
+                    AcceptedDate = project.AcceptedDate
                 };
                 return projectDTO;
             }
@@ -153,10 +155,10 @@ namespace SMT.Core.Repositories
 
         public IEnumerable<ProjectsDTO> GetAll()
         {
-            var projectDTO = _context.Projects.Include(p => p.Consultant).Include(p=>p.Contractors).Include(p => p.EndUsers).Include(p => p.ProjectStatus).Include(p => p.Governorates).Include(p => p.User).Select(project => new ProjectsDTO
+            var projectDTO = _context.Projects.Include(p => p.Consultant).Include(p => p.Contractors).Include(p => p.EndUsers).Include(p => p.ProjectStatus).Include(p => p.Governorates).Include(p => p.User).Select(project => new ProjectsDTO
             {
                 Id = project.Id,
-                IsAccept=project.IsAccept,
+                IsAccept = project.IsAccept,
                 ProjectName = project.ProjectName,
                 ProjectCreationDate = project.ProjectCreationDate,
                 Rank = project.Rank,
@@ -174,14 +176,15 @@ namespace SMT.Core.Repositories
                 ConsultantName = project.Consultant.ConsultantName,
                 Deadline = project.Deadline,
                 UserId = project.UserId,
-                UserName = project.User.UserName
+                UserName = project.User.UserName,
+                AcceptedDate = project.AcceptedDate
             }).OrderByDescending(p => p.Id).ToList();
             return projectDTO;
         }
 
         public IEnumerable<ProjectsDTO> GetAllAcceptedProjects()
         {
-            var projectDTO = _context.Projects.Where(p=>p.IsAccept==true).Include(p => p.Consultant).Include(p => p.Contractors).Include(p => p.EndUsers).Include(p => p.ProjectStatus).Include(p => p.Governorates).Select(project => new ProjectsDTO
+            var projectDTO = _context.Projects.Where(p => p.IsAccept == true).Include(p => p.Consultant).Include(p => p.Contractors).Include(p => p.EndUsers).Include(p => p.ProjectStatus).Include(p => p.Governorates).Select(project => new ProjectsDTO
             {
                 Id = project.Id,
                 IsAccept = project.IsAccept,
@@ -200,7 +203,8 @@ namespace SMT.Core.Repositories
                 GovernorateName = project.Governorates.GovernorateName,
                 Deadline = project.Deadline,
                 UserId = project.UserId,
-                UserName = project.User.UserName
+                UserName = project.User.UserName,
+                AcceptedDate = project.AcceptedDate
             }).OrderByDescending(p => p.Id).ToList();
             return projectDTO;
         }
@@ -224,6 +228,7 @@ namespace SMT.Core.Repositories
             project.ConsultantId = projectsDTO.ConsultantId;
             project.UserId = projectsDTO.UserId;
             project.Deadline = projectsDTO.Deadline;
+            project.AcceptedDate = projectsDTO.AcceptedDate;
             _context.Entry(project).State = EntityState.Modified;
             try
             {

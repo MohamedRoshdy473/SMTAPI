@@ -42,7 +42,11 @@ namespace SMT.API.Controllers
         {
             return _offerDescriptionsService.GetAllOfferByProjectUpdateId(ProjectId, ProjectUpdateId);
         }
-
+        [Route("GetAllOfferByProjectUpdateIdAndUserId/{ProjectId}/{ProjectUpdateId}")]
+        public IEnumerable<OfferDescriptionsDTO> GetAllOfferByProjectUpdateIdAndUserId(int ProjectId, int ProjectUpdateId)
+        {
+            return _offerDescriptionsService.GetAllOfferByProjectUpdateIdAndUserId(ProjectId, ProjectUpdateId);
+        }
         // GET api/<OfferDescriptionsController>/5
         [HttpGet("{id}")]
         public ActionResult<OfferDescriptionsDTO> Get(int id)

@@ -10,8 +10,8 @@ using SMT.Data.Models.SMTDBContext;
 namespace SMT.Data.Migrations
 {
     [DbContext(typeof(SMTDbContext))]
-    [Migration("20210601131208_db5")]
-    partial class db5
+    [Migration("20210602135128_aceptdateinproject")]
+    partial class aceptdateinproject
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -1362,6 +1362,9 @@ namespace SMT.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<DateTime>("AcceptedDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<DateTime>("Deadline")
                         .HasColumnType("datetime2");
 
@@ -1387,6 +1390,9 @@ namespace SMT.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("AcceptedDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<int?>("ConsultantId")
                         .HasColumnType("int");

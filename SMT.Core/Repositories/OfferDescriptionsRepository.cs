@@ -158,6 +158,58 @@ namespace SMT.Core.Repositories
             return offerDescriptionDTO;
         }
 
+        public IEnumerable<OfferDescriptionsDTO> GetAllOfferByProjectUpdateIdAndUserId(int ProjectId, int ProjectUpdateId)
+        {
+            List<OfferDescriptionsDTO> offerDescriptionDTO = new List<OfferDescriptionsDTO>();
+            if (ProjectUpdateId != 0)
+            {
+                offerDescriptionDTO = _context.OfferDescriptions.Where(o => o.ProjectUpdateId == ProjectUpdateId && o.Offers.OfferStatus.OfferStatusName == "Offered").Include(o => o.Offers).Include(o => o.User).Select(offerDescription =>
+                   new OfferDescriptionsDTO
+                   {
+                       Id = offerDescription.Id,
+                       Description = offerDescription.Description,
+                       DescriptionDate = offerDescription.DescriptionDate,
+                       OffersId = offerDescription.OffersId,
+                       ProjectCostsId = offerDescription.Offers.ProjectCostsId,
+                       Cost = offerDescription.Offers.ProjectCosts.Cost,
+                       OfferStatusId = offerDescription.Offers.OfferStatusId,
+                       OfferStatusName = offerDescription.Offers.OfferStatus.OfferStatusName,
+                       OfferCreationDate = offerDescription.Offers.OfferCreationDate,
+                       ProjectId = offerDescription.ProjectId,
+                        // this refer to offer name
+                        projectName = offerDescription.projects.ProjectName,
+                       UserId = offerDescription.UserId,
+                       UserName = offerDescription.User.UserName
+
+                   }).OrderByDescending(p => p.Id).ToList();
+                return offerDescriptionDTO;
+            }
+            else
+            {
+                offerDescriptionDTO = _context.OfferDescriptions.Where(o => o.ProjectId == ProjectId && o.ProjectUpdateId == null && o.Offers.OfferStatus.OfferStatusName == "Offered").Include(o => o.Offers).Include(o => o.User).Select(offerDescription =>
+                         new OfferDescriptionsDTO
+                         {
+                             Id = offerDescription.Id,
+                             Description = offerDescription.Description,
+                             DescriptionDate = offerDescription.DescriptionDate,
+                             OffersId = offerDescription.OffersId,
+                             ProjectCostsId = offerDescription.Offers.ProjectCostsId,
+                             Cost = offerDescription.Offers.ProjectCosts.Cost,
+                             OfferStatusId = offerDescription.Offers.OfferStatusId,
+                             OfferStatusName = offerDescription.Offers.OfferStatus.OfferStatusName,
+                             OfferCreationDate = offerDescription.Offers.OfferCreationDate,
+                             ProjectId = offerDescription.ProjectId,
+                        // this refer to offer name
+                        projectName = offerDescription.projects.ProjectName,
+                             UserId = offerDescription.UserId,
+                             UserName = offerDescription.User.UserName
+
+                         }).OrderByDescending(p => p.Id).ToList();
+            }
+
+            return offerDescriptionDTO;
+        }
+
         public IEnumerable<OfferDescriptionsDTO> GetAllOfferByUserId(string UserId)
         {
             var offerDescriptionDTO = _context.OfferDescriptions.Where(o => o.UserId == UserId).Include(o => o.Offers).Include(o => o.User).Select(offerDescription =>
@@ -242,7 +294,7 @@ namespace SMT.Core.Repositories
                 OfferDescriptionsOffered.Add(offerDescriptionDTO);
             }
             OfferDescriptionsOffered.RemoveAll(item => item == null);
-            return OfferDescriptionsOffered.OrderByDescending(p => p.Id);
+            return OfferDescriptionsOffered.Distinct().OrderByDescending(p => p.Id);
         }
 
         public void Update(int offerDescriptionsDTOId, OfferDescriptionsDTO offerDescriptionsDTO)

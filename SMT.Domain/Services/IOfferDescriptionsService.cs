@@ -14,6 +14,7 @@ namespace SMT.Domain.Services
     IEnumerable<OfferDescriptionsDTO> GetAllOfferByUserId(string UserId);
     IEnumerable<OfferDescriptionsDTO> GetAllOfferOfferedByUserId(string UserId);
     IEnumerable<OfferDescriptionsDTO> GetAllOfferByProjectUpdateId(int ProjectId, int ProjectUpdateId);
+    IEnumerable<OfferDescriptionsDTO> GetAllOfferByProjectUpdateIdAndUserId(int ProjectId, int ProjectUpdateId);
     void AddOfferDescription(OfferDescriptionsDTO offerDescriptionsDTO);
     void DeleteOfferDescription(int offerDescriptionsDTOId);
     void UpdateOfferDescription(int offerDescriptionsDTOId, OfferDescriptionsDTO offerDescriptionsDTO);

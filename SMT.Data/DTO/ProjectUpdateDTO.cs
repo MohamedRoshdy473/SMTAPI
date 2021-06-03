@@ -14,5 +14,7 @@ namespace SMT.Data.DTO
         public string ProjectName  { get; set; }
         public DateTime Deadline { get; set; }
         public Boolean IsAccept { get; set; }
+        public string UserId { get; set; }
+        public string UserName { get; set; }
     }
 }

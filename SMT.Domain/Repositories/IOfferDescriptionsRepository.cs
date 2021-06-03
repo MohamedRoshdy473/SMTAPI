@@ -15,6 +15,7 @@ namespace SMT.Domain.Repositories
         IEnumerable<OfferDescriptionsDTO> GetAllOfferByUserId(string UserId);
         IEnumerable<OfferDescriptionsDTO> GetAllOfferOfferedByUserId(string UserId);
         IEnumerable<OfferDescriptionsDTO> GetAllOfferByProjectUpdateId(int ProjectId, int ProjectUpdateId);
+        IEnumerable<OfferDescriptionsDTO> GetAllOfferByProjectUpdateIdAndUserId(int ProjectId, int ProjectUpdateId);
         void Add(OfferDescriptionsDTO offerDescriptionsDTO);
         void Delete(int offerDescriptionsDTOId);
         void Update(int offerDescriptionsDTOId, OfferDescriptionsDTO offerDescriptionsDTO);

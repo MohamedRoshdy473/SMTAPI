@@ -68,7 +68,7 @@ namespace SMT.Core.Repositories
 
         public ProjectUpdateDTO Get(int id)
         {
-            var ProjectUpdate = _context.projectUpdates.Include(p => p.projects).FirstOrDefault(p => p.Id == id);
+            var ProjectUpdate = _context.projectUpdates.Include(p => p.projects).Include(p=>p.projects.User).FirstOrDefault(p => p.Id == id);
 
             if (ProjectUpdate == null)
             {
@@ -83,7 +83,9 @@ namespace SMT.Core.Repositories
                     ProjectName = ProjectUpdate.projects.ProjectName,
                     DueDate = ProjectUpdate.DueDate,
                     Deadline = ProjectUpdate.Deadline,
-                    IsAccept = ProjectUpdate.IsAccept
+                    IsAccept = ProjectUpdate.IsAccept,
+                    UserId= ProjectUpdate.projects.UserId,
+                    UserName=ProjectUpdate.projects.User.UserName
                 };
                 return ProjectUpdateDTO;
             }
@@ -91,29 +93,46 @@ namespace SMT.Core.Repositories
 
         public IEnumerable<ProjectUpdateDTO> GetAll()
         {
-            var projectUpdates = _context.projectUpdates.Select(ProjectUpdate => new ProjectUpdateDTO
+            var projectUpdates = _context.projectUpdates.Include(p => p.projects).Include(p => p.projects.User).Select(ProjectUpdate => new ProjectUpdateDTO
             {
                 Id = ProjectUpdate.Id,
                 ProjectId = ProjectUpdate.ProjectId,
                 ProjectName = ProjectUpdate.projects.ProjectName,
                 DueDate = ProjectUpdate.DueDate,
                 Deadline = ProjectUpdate.Deadline,
-                IsAccept = ProjectUpdate.IsAccept
+                IsAccept = ProjectUpdate.IsAccept,
+                UserId = ProjectUpdate.projects.UserId,
+                UserName = ProjectUpdate.projects.User.UserName
             }).ToList();
             return projectUpdates;
         }
 
         public IEnumerable<ProjectUpdateDTO> GetAllUpdatesByProjectId(int projectId)
         {
-            var projectUpdates = _context.projectUpdates.Where(e => e.ProjectId == projectId).Select(proUpdates => new ProjectUpdateDTO
+            List<ProjectUpdateDTO> projectUpdates = new List<ProjectUpdateDTO>();
+            var lstmainProject = _context.Projects.Include(p=>p.User).Where(p => p.Id == projectId).ToList();
+            var mainProject = new ProjectUpdateDTO();
+
+            foreach (var item in lstmainProject)
+            {
+                mainProject.ProjectId= item.Id;
+                mainProject.UserName = item.User.UserName;
+                mainProject.UserId = item.UserId;
+                mainProject.DueDate = item.ProjectCreationDate;
+            }
+
+             projectUpdates = _context.projectUpdates.Include(p => p.projects).Include(p => p.projects.User).Where(e => e.ProjectId == projectId).Select(proUpdates => new ProjectUpdateDTO
             {
                 Id = proUpdates.Id,
                 ProjectId = proUpdates.ProjectId,
                 DueDate = proUpdates.DueDate,
                 ProjectName = proUpdates.projects.ProjectName,
                 Deadline = proUpdates.Deadline,
-                IsAccept = proUpdates.IsAccept
+                IsAccept = proUpdates.IsAccept,
+                UserId = proUpdates.projects.UserId,
+                UserName = proUpdates.projects.User.UserName
             }).OrderByDescending(p => p.Id).ToList();
+            projectUpdates.Add(mainProject);
             return projectUpdates;
         }
 
