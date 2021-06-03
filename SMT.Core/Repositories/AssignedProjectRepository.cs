@@ -34,6 +34,11 @@ namespace SMT.Core.Repositories
                     assignedProject.Description = assignedProjectDTO.Description;
                     _context.AssignedProject.Add(assignedProject);
                     _context.SaveChanges();
+                    var projectsDTO = _context.Projects.Where(p => p.Id == assignedProjectDTO.ProjectId).FirstOrDefault();
+                    // projectsDTO.ProjectStatus Assigned
+                    projectsDTO.ProjectStatusId = 8;
+                    _context.Entry(projectsDTO).State = EntityState.Modified;
+                    _context.SaveChanges();
                 }
                 else
                 {

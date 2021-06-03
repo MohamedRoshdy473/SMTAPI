@@ -140,6 +140,13 @@ namespace SMT.Core.Repositories
             offer.ProjectUpdateId = offersDTO.ProjectUpdateId;
             offer.ProjectCostsId = offersDTO.ProjectCostsId;
             _context.Entry(offer).State = EntityState.Modified;
+            if (offer.OfferStatusId==1002)
+            {
+                var projectsDTO = _context.Projects.Where(p => p.Id == offersDTO.ProjectsId).FirstOrDefault();
+                // projectsDTO.ProjectStatus Offeres
+                projectsDTO.ProjectStatusId = 2;
+                _context.Entry(projectsDTO).State = EntityState.Modified;
+            }
             try
             {
                 _context.SaveChanges();

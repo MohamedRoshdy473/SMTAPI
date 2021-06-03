@@ -31,6 +31,8 @@ namespace SMT.Core.Repositories
                 {
                     projectsDTO.IsAccept = true;
                     projectsDTO.AcceptedDate = DateTime.Now;
+                    //projectsDTO.ProjectStatus InProgress
+                    projectsDTO.ProjectStatusId = 7;
                     _context.Entry(projectsDTO).State = EntityState.Modified;
                     _context.SaveChanges();
                 }
