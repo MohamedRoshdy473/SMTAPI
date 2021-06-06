@@ -5,6 +5,6 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <_PublishTargetUrl>D:\Publish SMT\SMT.API</_PublishTargetUrl>
-    <History>True|2021-05-26T10:33:36.3853472Z;True|2021-05-25T11:29:54.5156546+02:00;</History>
+    <History>True|2021-06-03T14:24:57.2437208Z;True|2021-06-03T15:30:57.5613299+02:00;True|2021-06-03T14:36:08.6179661+02:00;True|2021-06-03T14:17:38.7919589+02:00;True|2021-05-26T12:33:36.3853472+02:00;True|2021-05-25T11:29:54.5156546+02:00;</History>
   </PropertyGroup>
 </Project>
