@@ -64,7 +64,7 @@ namespace SMT.Core
         public IDataSheetsRepository DataSheetsRepository => new DataSheetsRepository(_context);
         public IProjectSystemsRepository ProjectSystemsRepository => new ProjectSystemsRepository(_context);
         public IEmployeeRepository EmployeeRepository => new EmployeeRepositories(_HRcontext);
-        public IAssignedProjectRepository AssignedProjectRepository => new AssignedProjectRepository(_context);
+        public IAssignedProjectRepository AssignedProjectRepository => new AssignedProjectRepository(_context,_HRcontext);
         public IConsultantRepository ConsultantRepository => new ConsultantRepository(_context);
         public int CommitAsync()
         {
@@ -105,7 +105,7 @@ namespace SMT.Core
         public IDataSheetsRepository DataSheets => _dataSheetsRepository = _dataSheetsRepository ?? new DataSheetsRepository(_context);
         public IProjectSystemsRepository ProjectSystems => _projectSystemsRepository = _projectSystemsRepository ?? new ProjectSystemsRepository(_context);
         public IEmployeeRepository Employee => _employeeRepository = _employeeRepository ?? new EmployeeRepositories(_HRcontext);
-        public IAssignedProjectRepository AssignedProject => _assignedProjectRepository = _assignedProjectRepository ?? new AssignedProjectRepository(_context);
+        public IAssignedProjectRepository AssignedProject => _assignedProjectRepository = _assignedProjectRepository ?? new AssignedProjectRepository(_context,_HRcontext);
 
         public IConsultantRepository Consultant => _consultantRepository = _consultantRepository ?? new ConsultantRepository(_context);
     }

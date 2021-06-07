@@ -112,7 +112,17 @@ namespace SMT.API.Controllers
             var userExists = await userManager.FindByEmailAsync(model.Email);
             if (userExists != null)
                 return StatusCode(StatusCodes.Status500InternalServerError, new Response { Status = "Error", Message = "User already exists!" });
-            model.UserName = model.UserName.Replace(' ', '_');
+           var names = model.UserName.Split('_');
+            if(names.Length > 1)
+            {
+                model.UserName = model.UserName.Remove(names[1].Length);
+            }
+           
+
+
+
+         //   model.UserName = model.UserName.Replace(' ', '_');
+
             ApplicationUser user = new ApplicationUser()
             {
                 Email = model.Email,

@@ -7,16 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using SMT.Data.Models.HRDBContext;
 
 namespace SMT.Core.Repositories
 {
     public class AssignedProjectRepository : IAssignedProjectRepository
     {
         private readonly SMTDbContext _context;
+        private readonly HRDBContext _hrContext;
 
-        public AssignedProjectRepository(SMTDbContext context)
+        public AssignedProjectRepository(SMTDbContext context,HRDBContext hrContext)
         {
             _context = context;
+            _hrContext = hrContext;
         }
         public void Add(AssignedProjectDTO assignedProjectDTO)
         {
@@ -93,7 +96,21 @@ namespace SMT.Core.Repositories
 
         public IEnumerable<AssignedProjectDTO> GetAll()
         {
-            var assignedProjectDTO = _context.AssignedProject.Include(p => p.ProjectUpdate.projects).Select(assignedProject => new AssignedProjectDTO
+            //var assignedProjectDTO=(from assign in _context.AssignedProject
+            //join emp in _hrContext.Employees on assign.EmployeeId equals emp.Id)
+            //.Select(assignedProject => new AssignedProjectDTO
+            //{
+            //    Id = assignedProject.Id,
+            //    IsAssigned = assignedProject.IsAssigned,
+            //    EmployeeId = assignedProject.EmployeeId,
+            //    EmployeeName = assignedProject.Employee.Name,
+            //    ProjectId = assignedProject.ProjectId,
+            //    ProjectUpdateId = assignedProject.ProjectUpdateId,
+            //    ProjectName = assignedProject.projects.ProjectName,
+            //    AssignedProjectDate = assignedProject.AssignedProjectDate,
+            //    Description = assignedProject.Description
+            //}).OrderByDescending(a => a.AssignedProjectDate).ToList();
+            var assignedProjectDTO = _context.AssignedProject.Include(p => p.ProjectUpdate.projects).Include(a => a.Employee).Select(assignedProject => new AssignedProjectDTO
             {
                 Id = assignedProject.Id,
                 IsAssigned = assignedProject.IsAssigned,
@@ -104,7 +121,7 @@ namespace SMT.Core.Repositories
                 ProjectName = assignedProject.projects.ProjectName,
                 AssignedProjectDate = assignedProject.AssignedProjectDate,
                 Description = assignedProject.Description
-            }).ToList();
+            }).OrderByDescending(a => a.AssignedProjectDate).ToList();
             return assignedProjectDTO;
         }
 
