@@ -188,7 +188,7 @@ namespace SMT.Core.Repositories
             ProjectDescriptions projectDescriptions = new ProjectDescriptions();
             projectDescriptions.Id = projectDescriptionsDTO.Id;
             projectDescriptions.Description = projectDescriptionsDTO.Description;
-            projectDescriptions.DescriptionDate = projectDescriptionsDTO.DescriptionDate;
+            projectDescriptions.DescriptionDate = projectDescriptionsDTO.DescriptionDate.ToLocalTime();
             projectDescriptions.ProjectId = projectDescriptionsDTO.ProjectId;
             projectDescriptions.ProjectUpdateId = projectDescriptionsDTO.ProjectUpdateId;
             projectDescriptions.UserId = projectDescriptionsDTO.UserId;

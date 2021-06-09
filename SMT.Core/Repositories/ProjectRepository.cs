@@ -229,7 +229,7 @@ namespace SMT.Core.Repositories
             project.GovernoratesId = projectsDTO.GovernorateId;
             project.ConsultantId = projectsDTO.ConsultantId;
             project.UserId = projectsDTO.UserId;
-            project.Deadline = projectsDTO.Deadline;
+            project.Deadline = projectsDTO.Deadline.ToLocalTime();
            // project.AcceptedDate = projectsDTO.AcceptedDate.ToLocalTime();
             project.IsAccept = projectsDTO.IsAccept;
             _context.Entry(project).State = EntityState.Modified;
