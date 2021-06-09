@@ -35,7 +35,7 @@ namespace SMT.Data.Models.SMTDBContext
         [ForeignKey("UserId")]
         public virtual ApplicationUser User { get; set; }
         public DateTime Deadline { get; set; }
-        public DateTime AcceptedDate { get; set; }
+        public DateTime? AcceptedDate { get; set; }
 
     }
 }

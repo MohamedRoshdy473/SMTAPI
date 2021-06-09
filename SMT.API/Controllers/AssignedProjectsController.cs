@@ -26,6 +26,11 @@ namespace SMT.API.Controllers
         {
             return _assignedProjectService.GetAllAssignedProjects();
         }
+        [Route("GetAllAssignedProjectsByProjectId/{ProjectId}")]
+        public IEnumerable<AssignedProjectDTO> GetAllAssignedProjectsByProjectId(int ProjectId)
+        {
+            return _assignedProjectService.GetAllAssignedProjectsByProjectId(ProjectId);
+        }
 
         // GET api/<AssignedProjectsController>/5
         [HttpGet("{id}")]

@@ -48,6 +48,7 @@ D:\SMTAPI\SMT.API\obj\Release\net5.0\PubTmp\Out\wwwroot\documentFiles\nagfa.jpg
 D:\SMTAPI\SMT.API\obj\Release\net5.0\PubTmp\Out\wwwroot\documentFiles\New Rich Text Document (2).rtf
 D:\SMTAPI\SMT.API\obj\Release\net5.0\PubTmp\Out\wwwroot\documentFiles\New Text Document.txt
 D:\SMTAPI\SMT.API\obj\Release\net5.0\PubTmp\Out\wwwroot\documentFiles\pagination.txt
+D:\SMTAPI\SMT.API\obj\Release\net5.0\PubTmp\Out\wwwroot\documentFiles\Screenshot (14).png
 D:\SMTAPI\SMT.API\obj\Release\net5.0\PubTmp\Out\wwwroot\documentFiles\script.sql
 D:\SMTAPI\SMT.API\obj\Release\net5.0\PubTmp\Out\wwwroot\documentFiles\script.sql2
 D:\SMTAPI\SMT.API\obj\Release\net5.0\PubTmp\Out\wwwroot\documentFiles\script10-5-2021.sql

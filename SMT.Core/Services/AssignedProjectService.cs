@@ -37,6 +37,11 @@ namespace SMT.Core.Services
             return _unitOfWork.AssignedProject.GetAllAssignedProjectsByEmployeeId(EmployeeId);
         }
 
+        public IEnumerable<AssignedProjectDTO> GetAllAssignedProjectsByProjectId(int ProjectId)
+        {
+            return _unitOfWork.AssignedProject.GetAllAssignedProjectsByProjectId(ProjectId);
+        }
+
         public AssignedProjectDTO GetAssignedProject(int id)
         {
             return _unitOfWork.AssignedProject.Get(id);

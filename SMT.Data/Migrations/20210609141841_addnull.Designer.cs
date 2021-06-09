@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SMT.Data.Models.SMTDBContext;
 
 namespace SMT.Data.Migrations
 {
     [DbContext(typeof(SMTDbContext))]
-    partial class SMTDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210609141841_addnull")]
+    partial class addnull
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

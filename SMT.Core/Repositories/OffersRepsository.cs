@@ -31,7 +31,7 @@ namespace SMT.Core.Repositories
                     }
                     Offers offer = new Offers();
                     offer.OfferStatusId = offersDTO.OfferStatusId;
-                    offer.OfferCreationDate = offersDTO.OfferCreationDate;
+                    offer.OfferCreationDate = DateTime.Now; //offersDTO.OfferCreationDate;
                     offer.ProjectUpdateId = offersDTO.ProjectUpdateId;
                     offer.ProjectsId = offersDTO.ProjectsId;
                     offer.ProjectCostsId = offersDTO.ProjectCostsId;
@@ -135,7 +135,7 @@ namespace SMT.Core.Repositories
             Offers offer = new Offers();
             offer.Id = offersDTO.Id;
             offer.OfferStatusId = offersDTO.OfferStatusId;
-            offer.OfferCreationDate = offersDTO.OfferCreationDate;
+            offer.OfferCreationDate = offersDTO.OfferCreationDate.ToLocalTime();
             offer.ProjectsId = offersDTO.ProjectsId;
             offer.ProjectUpdateId = offersDTO.ProjectUpdateId;
             offer.ProjectCostsId = offersDTO.ProjectCostsId;

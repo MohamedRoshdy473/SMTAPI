@@ -31,7 +31,7 @@ namespace SMT.Core.Repositories
                     ProjectUpdate projectUpdate = new ProjectUpdate();
                     projectUpdate.Id = ProjectUpdateDTO.Id;
                     projectUpdate.ProjectId = ProjectUpdateDTO.ProjectId;
-                    projectUpdate.DueDate = ProjectUpdateDTO.DueDate;
+                    projectUpdate.DueDate = DateTime.Now; //ProjectUpdateDTO.DueDate;
                     projectUpdate.Deadline = ProjectUpdateDTO.Deadline;
                     projectUpdate.IsAccept = false;
                     _context.Add(projectUpdate);

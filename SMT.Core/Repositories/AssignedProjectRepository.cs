@@ -33,7 +33,7 @@ namespace SMT.Core.Repositories
                     assignedProject.EmployeeId = assignedProjectDTO.EmployeeId;
                     assignedProject.ProjectId = assignedProjectDTO.ProjectId;
                     assignedProject.ProjectUpdateId = assignedProjectDTO.ProjectUpdateId;
-                    assignedProject.AssignedProjectDate = assignedProjectDTO.AssignedProjectDate;
+                    assignedProject.AssignedProjectDate = DateTime.Now; //assignedProjectDTO.AssignedProjectDate;
                     assignedProject.Description = assignedProjectDTO.Description;
                     _context.AssignedProject.Add(assignedProject);
                     _context.SaveChanges();
@@ -71,7 +71,7 @@ namespace SMT.Core.Repositories
 
         public AssignedProjectDTO Get(int id)
         {
-            var assignedProject = _context.AssignedProject.Where(a => a.Id == id).Include(p => p.ProjectUpdate.projects).FirstOrDefault();
+            var assignedProject = _context.AssignedProject.Where(a => a.Id == id).Include(p => p.projects).Include(p => p.ProjectUpdate.projects).FirstOrDefault();
             if (assignedProject == null)
             {
                 throw new NotExistException("Not Exist Exception");
@@ -83,7 +83,7 @@ namespace SMT.Core.Repositories
                     Id = assignedProject.Id,
                     IsAssigned = assignedProject.IsAssigned,
                     EmployeeId = assignedProject.EmployeeId,
-                    EmployeeName = assignedProject.Employee.Name,
+                    EmployeeName = _hrContext.Employees.Where(e => e.Id == assignedProject.EmployeeId).ToList().FirstOrDefault().Name,
                     ProjectId = assignedProject.ProjectId,
                     ProjectUpdateId = assignedProject.ProjectUpdateId,
                     ProjectName = assignedProject.projects.ProjectName,
@@ -96,33 +96,23 @@ namespace SMT.Core.Repositories
 
         public IEnumerable<AssignedProjectDTO> GetAll()
         {
-            //var assignedProjectDTO=(from assign in _context.AssignedProject
-            //join emp in _hrContext.Employees on assign.EmployeeId equals emp.Id)
-            //.Select(assignedProject => new AssignedProjectDTO
-            //{
-            //    Id = assignedProject.Id,
-            //    IsAssigned = assignedProject.IsAssigned,
-            //    EmployeeId = assignedProject.EmployeeId,
-            //    EmployeeName = assignedProject.Employee.Name,
-            //    ProjectId = assignedProject.ProjectId,
-            //    ProjectUpdateId = assignedProject.ProjectUpdateId,
-            //    ProjectName = assignedProject.projects.ProjectName,
-            //    AssignedProjectDate = assignedProject.AssignedProjectDate,
-            //    Description = assignedProject.Description
-            //}).OrderByDescending(a => a.AssignedProjectDate).ToList();
-            var assignedProjectDTO = _context.AssignedProject.Include(p => p.ProjectUpdate.projects).Include(a => a.Employee).Select(assignedProject => new AssignedProjectDTO
+            List<AssignedProjectDTO> assignedProjectDTOs = new List<AssignedProjectDTO>();
+            var lstassignedProject=  _context.AssignedProject.Include(p => p.projects).Include(p => p.ProjectUpdate.projects).ToList();
+            foreach (var assignedProject in lstassignedProject)
             {
-                Id = assignedProject.Id,
-                IsAssigned = assignedProject.IsAssigned,
-                EmployeeId = assignedProject.EmployeeId,
-                EmployeeName = assignedProject.Employee.Name,
-                ProjectId = assignedProject.ProjectId,
-                ProjectUpdateId = assignedProject.ProjectUpdateId,
-                ProjectName = assignedProject.projects.ProjectName,
-                AssignedProjectDate = assignedProject.AssignedProjectDate,
-                Description = assignedProject.Description
-            }).OrderByDescending(a => a.AssignedProjectDate).ToList();
-            return assignedProjectDTO;
+                AssignedProjectDTO assignedProjectDTOObj = new AssignedProjectDTO();
+                assignedProjectDTOObj.Id = assignedProject.Id;
+                assignedProjectDTOObj.IsAssigned = assignedProject.IsAssigned;
+                assignedProjectDTOObj.EmployeeId = assignedProject.EmployeeId;
+                assignedProjectDTOObj.EmployeeName = _hrContext.Employees.Where(e => e.Id == assignedProject.EmployeeId).ToList().FirstOrDefault().Name; //assignedProject.Employee.Name,
+                assignedProjectDTOObj.ProjectId = assignedProject.ProjectId;
+                assignedProjectDTOObj.ProjectUpdateId = assignedProject.ProjectUpdateId;
+                assignedProjectDTOObj.ProjectName = assignedProject.projects.ProjectName;
+                assignedProjectDTOObj.AssignedProjectDate = assignedProject.AssignedProjectDate;
+                assignedProjectDTOObj.Description = assignedProject.Description;
+                assignedProjectDTOs.Add(assignedProjectDTOObj);
+            }
+            return assignedProjectDTOs.OrderByDescending(a => a.AssignedProjectDate);
         }
 
         public IEnumerable<AssignedProjectDTO> GetAllAssignedProjectsByEmployeeId(int EmployeeId)
@@ -142,6 +132,28 @@ namespace SMT.Core.Repositories
             return assignedProjectDTO;
         }
 
+        public IEnumerable<AssignedProjectDTO> GetAllAssignedProjectsByProjectId(int ProjectId)
+        {
+
+            List<AssignedProjectDTO> assignedProjectDTOs = new List<AssignedProjectDTO>();
+            var lstassignedProject = _context.AssignedProject.Where(p=>p.ProjectId==ProjectId).Include(p => p.projects).Include(p => p.ProjectUpdate.projects).ToList();
+            foreach (var assignedProject in lstassignedProject)
+            {
+                AssignedProjectDTO assignedProjectDTOObj = new AssignedProjectDTO();
+                assignedProjectDTOObj.Id = assignedProject.Id;
+                assignedProjectDTOObj.IsAssigned = assignedProject.IsAssigned;
+                assignedProjectDTOObj.EmployeeId = assignedProject.EmployeeId;
+                assignedProjectDTOObj.EmployeeName = _hrContext.Employees.Where(e => e.Id == assignedProject.EmployeeId).ToList().FirstOrDefault().Name; //assignedProject.Employee.Name,
+                assignedProjectDTOObj.ProjectId = assignedProject.ProjectId;
+                assignedProjectDTOObj.ProjectUpdateId = assignedProject.ProjectUpdateId;
+                assignedProjectDTOObj.ProjectName = assignedProject.projects.ProjectName;
+                assignedProjectDTOObj.AssignedProjectDate = assignedProject.AssignedProjectDate;
+                assignedProjectDTOObj.Description = assignedProject.Description;
+                assignedProjectDTOs.Add(assignedProjectDTOObj);
+            }
+            return assignedProjectDTOs.OrderByDescending(a => a.AssignedProjectDate);
+        }
+
         public void Update(int assignedProjectDTOId, AssignedProjectDTO assignedProjectDTO)
         {
             if (assignedProjectDTOId != assignedProjectDTO.Id)
@@ -154,7 +166,7 @@ namespace SMT.Core.Repositories
             assignedProject.EmployeeId = assignedProject.EmployeeId;
             assignedProject.ProjectId = assignedProjectDTO.ProjectId;
             assignedProject.ProjectUpdateId = assignedProject.ProjectUpdateId;
-            assignedProject.AssignedProjectDate = assignedProjectDTO.AssignedProjectDate;
+            assignedProject.AssignedProjectDate = assignedProjectDTO.AssignedProjectDate.ToLocalTime();
             assignedProject.Description = assignedProjectDTO.Description;
             _context.Entry(assignedProject).State = EntityState.Modified;
             try

@@ -32,7 +32,7 @@ namespace SMT.Core.Repositories
                     offerDescription.Description = offerDescriptionsDTO.Description;
                     offerDescription.ProjectUpdateId = offerDescriptionsDTO.ProjectUpdateId;
                     offerDescription.ProjectId = offerDescriptionsDTO.ProjectId;
-                    offerDescription.DescriptionDate = offerDescriptionsDTO.DescriptionDate;
+                    offerDescription.DescriptionDate = DateTime.Now; //offerDescriptionsDTO.DescriptionDate;
                     offerDescription.OffersId = offerDescriptionsDTO.OffersId;
                     offerDescription.UserId = offerDescriptionsDTO.UserId;
                     _context.Add(offerDescription);

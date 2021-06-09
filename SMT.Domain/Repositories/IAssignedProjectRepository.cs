@@ -12,6 +12,7 @@ namespace SMT.Domain.Repositories
         AssignedProjectDTO Get(int id);
         IEnumerable<AssignedProjectDTO> GetAll();
         IEnumerable<AssignedProjectDTO> GetAllAssignedProjectsByEmployeeId(int EmployeeId);
+        IEnumerable<AssignedProjectDTO> GetAllAssignedProjectsByProjectId(int ProjectId);
         void Add(AssignedProjectDTO assignedProjectDTO);
         void Delete(int assignedProjectDTOId);
         void Update(int assignedProjectDTOId, AssignedProjectDTO assignedProjectDTO);

@@ -57,7 +57,7 @@ namespace SMT.Core.Repositories
                     Projects project = new Projects();
                     project.Id = projectsDTO.Id;
                     project.ProjectName = projectsDTO.ProjectName;
-                    project.ProjectCreationDate = projectsDTO.ProjectCreationDate;
+                    project.ProjectCreationDate = projectsDTO.ProjectCreationDate.ToLocalTime();//DateTime.Now; 
                     project.Rank = projectsDTO.Rank;
                     project.ProjectStatusId = projectsDTO.ProjectStatusId;
                     project.EndUsersId = projectsDTO.EndUsersId;
@@ -66,7 +66,7 @@ namespace SMT.Core.Repositories
                     project.ConsultantId = projectsDTO.ConsultantId;
                     project.UserId = projectsDTO.UserId;
                     project.Deadline = projectsDTO.Deadline;
-                    project.AcceptedDate = projectsDTO.AcceptedDate;
+                    project.AcceptedDate = null;
                     project.IsAccept = false;
                     _context.Add(project);
                     _context.SaveChanges();
@@ -179,7 +179,7 @@ namespace SMT.Core.Repositories
                 Deadline = project.Deadline,
                 UserId = project.UserId,
                 UserName = project.User.UserName,
-                AcceptedDate = project.AcceptedDate
+                AcceptedDate = Convert.ToDateTime(project.AcceptedDate)
             }).OrderByDescending(p => p.Id).ToList();
             return projectDTO;
         }
@@ -206,7 +206,7 @@ namespace SMT.Core.Repositories
                 Deadline = project.Deadline,
                 UserId = project.UserId,
                 UserName = project.User.UserName,
-                AcceptedDate = project.AcceptedDate
+                AcceptedDate = Convert.ToDateTime(project.AcceptedDate)
             }).OrderByDescending(p => p.Id).ToList();
             return projectDTO;
         }
@@ -221,7 +221,7 @@ namespace SMT.Core.Repositories
             Projects project = new Projects();
             project.Id = projectsDTO.Id;
             project.ProjectName = projectsDTO.ProjectName;
-            project.ProjectCreationDate = projectsDTO.ProjectCreationDate;
+            project.ProjectCreationDate = projectsDTO.ProjectCreationDate.ToLocalTime();
             project.Rank = projectsDTO.Rank;
             project.ProjectStatusId = projectsDTO.ProjectStatusId;
             project.EndUsersId = projectsDTO.EndUsersId;
@@ -230,7 +230,8 @@ namespace SMT.Core.Repositories
             project.ConsultantId = projectsDTO.ConsultantId;
             project.UserId = projectsDTO.UserId;
             project.Deadline = projectsDTO.Deadline;
-            project.AcceptedDate = projectsDTO.AcceptedDate;
+           // project.AcceptedDate = projectsDTO.AcceptedDate.ToLocalTime();
+            project.IsAccept = projectsDTO.IsAccept;
             _context.Entry(project).State = EntityState.Modified;
             try
             {
