@@ -230,7 +230,7 @@ namespace SMT.Core.Repositories
             project.ConsultantId = projectsDTO.ConsultantId;
             project.UserId = projectsDTO.UserId;
             project.Deadline = projectsDTO.Deadline.ToLocalTime();
-           // project.AcceptedDate = projectsDTO.AcceptedDate.ToLocalTime();
+            project.AcceptedDate = projectsDTO.AcceptedDate;
             project.IsAccept = projectsDTO.IsAccept;
             _context.Entry(project).State = EntityState.Modified;
             try
