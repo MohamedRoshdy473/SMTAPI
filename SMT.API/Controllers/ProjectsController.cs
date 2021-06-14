@@ -47,6 +47,12 @@ namespace SMT.API.Controllers
         {
             return _projectService.GetAllAcceptedProjects();
         }
+        [Route("GetAllProjectByUserId/{UserId}")]
+        public IEnumerable<ProjectsDTO> GetAllProjectByUserId(string UserId)
+        {
+            return _projectService.GetAllProjectByUserId(UserId);
+        }
+
         [Route("AcceptProject/{ProjectId}")]
         public ActionResult<ProjectsDTO> AcceptProject(int ProjectId)
         {

@@ -38,6 +38,11 @@ namespace SMT.Core.Services
            return _unitOfWork.Project.GetAllAcceptedProjects();
         }
 
+        public IEnumerable<ProjectsDTO> GetAllProjectByUserId(string UserId)
+        {
+            return _unitOfWork.Project.GetAllProjectByUserId(UserId);
+        }
+
         public IEnumerable<ProjectsDTO> GetAllProjects()
         {
            return _unitOfWork.Project.GetAll();

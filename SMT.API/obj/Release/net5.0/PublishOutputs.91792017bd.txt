@@ -21,6 +21,7 @@ D:\SMTAPI\SMT.API\obj\Release\net5.0\PubTmp\Out\wwwroot\DataSheets\script4.sql
 D:\SMTAPI\SMT.API\obj\Release\net5.0\PubTmp\Out\wwwroot\DataSheets\TimeSheet (1).docx
 D:\SMTAPI\SMT.API\obj\Release\net5.0\PubTmp\Out\wwwroot\DataSheets\TimeSheet.docx
 D:\SMTAPI\SMT.API\obj\Release\net5.0\PubTmp\Out\wwwroot\documentFiles\0FMT896X7TA92RDGFR036N1QBDH1LN3SU1W8Y8E6 (1).jpg
+D:\SMTAPI\SMT.API\obj\Release\net5.0\PubTmp\Out\wwwroot\documentFiles\0FMT896X7TA92RDGFR036N1QBDH1LN3SU1W8Y8E6 (3).jpg
 D:\SMTAPI\SMT.API\obj\Release\net5.0\PubTmp\Out\wwwroot\documentFiles\0FMT896X7TA92RDGFR036N1QBDH1LN3SU1W8Y8E6 (4).jpg
 D:\SMTAPI\SMT.API\obj\Release\net5.0\PubTmp\Out\wwwroot\documentFiles\0FMT896X7TA92RDGFR036N1QBDH1LN3SU1W8Y8E6 (5).jpg
 D:\SMTAPI\SMT.API\obj\Release\net5.0\PubTmp\Out\wwwroot\documentFiles\0FMT896X7TA92RDGFR036N1QBDH1LN3SU1W8Y8E6.jpg

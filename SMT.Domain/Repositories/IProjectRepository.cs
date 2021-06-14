@@ -13,6 +13,7 @@ namespace SMT.Domain.Repositories
         IEnumerable<ProjectsDTO> GetAll();
         void AcceptProject(int ProjectId);
         IEnumerable<ProjectsDTO> GetAllAcceptedProjects();
+        IEnumerable<ProjectsDTO> GetAllProjectByUserId(string UserId);
         int Add(ProjectsDTO projectsDTO);
         void Delete(int projectsDTOId);
         void Update(int projectsDTOId, ProjectsDTO projectsDTO);

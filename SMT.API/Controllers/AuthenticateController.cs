@@ -100,7 +100,8 @@ namespace SMT.API.Controllers
                     UserName = name,
                     roles = userRoles,
                     expiration = token.ValidTo,
-                    UserId = UserId
+                    UserId = UserId,
+                    empId=usrId
                 });
             }
             return Unauthorized();

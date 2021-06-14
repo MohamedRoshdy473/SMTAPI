@@ -117,19 +117,25 @@ namespace SMT.Core.Repositories
 
         public IEnumerable<AssignedProjectDTO> GetAllAssignedProjectsByEmployeeId(int EmployeeId)
         {
-            var assignedProjectDTO = _context.AssignedProject.Where(a=>a.EmployeeId==EmployeeId).Include(p => p.ProjectUpdate.projects).Select(assignedProject => new AssignedProjectDTO
+            
+
+           List<AssignedProjectDTO> assignedProjectDTOs = new List<AssignedProjectDTO>();
+            var lstassignedProject = _context.AssignedProject.Where(a => a.EmployeeId == EmployeeId).Include(p => p.projects).Include(p => p.ProjectUpdate.projects).ToList();
+            foreach (var assignedProject in lstassignedProject)
             {
-                Id = assignedProject.Id,
-                IsAssigned = assignedProject.IsAssigned,
-                EmployeeId = assignedProject.EmployeeId,
-                EmployeeName = assignedProject.Employee.Name,
-                ProjectId = assignedProject.ProjectId,
-                ProjectUpdateId = assignedProject.ProjectUpdateId,
-                ProjectName = assignedProject.projects.ProjectName,
-                AssignedProjectDate = assignedProject.AssignedProjectDate,
-                Description = assignedProject.Description
-            }).ToList();
-            return assignedProjectDTO;
+                AssignedProjectDTO assignedProjectDTOObj = new AssignedProjectDTO();
+                assignedProjectDTOObj.Id = assignedProject.Id;
+                assignedProjectDTOObj.IsAssigned = assignedProject.IsAssigned;
+                assignedProjectDTOObj.EmployeeId = assignedProject.EmployeeId;
+                assignedProjectDTOObj.EmployeeName = _hrContext.Employees.Where(e => e.Id == assignedProject.EmployeeId).ToList().FirstOrDefault().Name; //assignedProject.Employee.Name,
+                assignedProjectDTOObj.ProjectId = assignedProject.ProjectId;
+                assignedProjectDTOObj.ProjectUpdateId = assignedProject.ProjectUpdateId;
+                assignedProjectDTOObj.ProjectName = assignedProject.projects.ProjectName;
+                assignedProjectDTOObj.AssignedProjectDate = assignedProject.AssignedProjectDate;
+                assignedProjectDTOObj.Description = assignedProject.Description;
+                assignedProjectDTOs.Add(assignedProjectDTOObj);
+            }
+            return assignedProjectDTOs.OrderByDescending(a => a.AssignedProjectDate);
         }
 
         public IEnumerable<AssignedProjectDTO> GetAllAssignedProjectsByProjectId(int ProjectId)

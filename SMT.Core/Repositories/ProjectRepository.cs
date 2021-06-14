@@ -211,6 +211,34 @@ namespace SMT.Core.Repositories
             return projectDTO;
         }
 
+        public IEnumerable<ProjectsDTO> GetAllProjectByUserId(string UserId)
+        {
+            var projectDTO = _context.Projects.Where(p=>p.UserId==UserId).Include(p => p.Consultant).Include(p => p.Contractors).Include(p => p.EndUsers).Include(p => p.ProjectStatus).Include(p => p.Governorates).Include(p => p.User).Select(project => new ProjectsDTO
+            {
+                Id = project.Id,
+                IsAccept = project.IsAccept,
+                ProjectName = project.ProjectName,
+                ProjectCreationDate = project.ProjectCreationDate,
+                Rank = project.Rank,
+                ProjectStatusId = project.ProjectStatusId,
+                ProjectStatusName = project.ProjectStatus.ProjectStatusName,
+                EndUsersId = project.EndUsersId,
+                EndUserContactName = project.EndUsers.ContactName,
+                CompanyName = project.EndUsers.CompanyName,
+                ContractorsId = project.ContractorsId,
+                ContractorContactName = project.Contractors.ContactName,
+                ContractorName = project.Contractors.ContractorName,
+                GovernorateId = project.GovernoratesId,
+                GovernorateName = project.Governorates.GovernorateName,
+                ConsultantId = project.ConsultantId,
+                ConsultantName = project.Consultant.ConsultantName,
+                Deadline = project.Deadline,
+                UserId = project.UserId,
+                UserName = project.User.UserName,
+                AcceptedDate = Convert.ToDateTime(project.AcceptedDate)
+            }).OrderByDescending(p => p.Id).ToList();
+            return projectDTO;
+        }
 
         public void Update(int projectsDTOId, ProjectsDTO projectsDTO)
         {
